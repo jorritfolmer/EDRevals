@@ -1,0 +1,2537 @@
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe and command-line arguments using valid credentials of user Kmitnick."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Conficker (10.0.0.5) using credentials of user Kmitnick", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing a logon attempt via net.exe and command-line arguments using valid credentials of user Kmitnick."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Creeper (10.0.0.4) using credentials of user Kmitnick", 
+  "Step": "16.D.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed \\\"unregmp2.exe /FirstLogon\\\" (associated with user logon) as well as the user name \\\"Jesse J\\\" within Machine Properties."
+  ], 
+  "Procedure": "RDP connection to Conficker (10.0.0.5) authenticated using previously added user Jesse", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of mapped network drives", 
+  "Step": "12.E.1.9.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "TechniqueName": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of available shares", 
+  "Step": "12.E.1.9.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "TechniqueName": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'Get-ChildItem' via PowerShell to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing dir with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'dir /s /b \"\\\\conficker\\wormshare\"' via cmd", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing tree with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'tree \"C:\\Users\\debbie\"' via cmd", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of interesting files", 
+  "Step": "12.E.1.4.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of recently opened files", 
+  "Step": "12.E.1.4.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ls' (List) via Win32 APIs to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'type' via PowerShell to remotely enumerate a specific file (update.vbs) on Creeper (10.0.0.4)", 
+  "Step": "16.K.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed repeated logon attempts via net.exe and command-line arguments indicative of password spraying, eventually resulting in a successful logon."
+  ], 
+  "Procedure": "Empire: Successful authentication to Conficker (10.0.0.5) using credentials of user Kmitnick as a result of the brute force password spraying", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "TechniqueName": "Brute Force"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed repeated logon attempts via net.exe and command-line arguments indicative of password spraying."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to brute force password spraying authentication attempts to Morris (10.0.1.4) and Nimda (10.0.1.6) targeting credentials of users\u00a0Kmitnick, Bob, and Frieda", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "TechniqueName": "Brute Force"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility used to add new user through RDP connection", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1061", 
+  "TechniqueName": "Graphical User Interface"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed takeown.exe execution to change the file permissions on magnify.exe."
+  ], 
+  "Procedure": "Empire: 'takeown' via PowerShell to obtain ownership of magnify.exe", 
+  "Step": "17.B.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1222", 
+  "TechniqueName": "File Permissions Modification"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed icacls.exe execution to change permissions on magnify.exe granting discretionary access to SYSTEM."
+  ], 
+  "Procedure": "Empire: 'icacls' via PowerShell to modify the DACL for magnify.exe", 
+  "Step": "17.B.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1222", 
+  "TechniqueName": "File Permissions Modification"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though a floating code \\\"IIOC\\\" module alerted with a elevated risk score for DLL injection. An analyst could explore the module and observe multiple components related to jpegs, which may be related to screenshots, but does not show that execution occurred."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in screen capture capability executed to capture screenshot of current window of user Debbie", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "TechniqueName": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of sc.exe to start the AdobeUpdater service on 10.0.0.4 (Creeper). Telemetry on Creeper showed the execution of cmd.exe to run update.vbs."
+  ], 
+  "Procedure": "Empire: 'sc start' via PowerShell to remotely launch a specific service on Creeper (10.0.0.4)", 
+  "Step": "16.L.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1035", 
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing whoami.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'whoami /all /fo list' via PowerShell", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of whoami.exe."
+  ], 
+  "Procedure": "Executed 'whoami' via cmd persistence mechanism through RDP connection made to Creeper (10.0.0.4)", 
+  "Step": "20.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing echo with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'echo' via cmd to enumerate specific environment variables", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of user information", 
+  "Step": "12.E.1.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed an outbound network connection over port 443 and to letsencrypt.org (no protocol was identified for this traffic)."
+  ], 
+  "Procedure": "Empire: Encrypted C2 channel established using HTTPS", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1032", 
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of password policy information", 
+  "Step": "12.E.1.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1201", 
+  "TechniqueName": "Password Policy Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of Resume Viewer.exe."
+  ], 
+  "Procedure": "Legitimate user Debbie clicked and executed malicious self-extracting archive (Resume Viewer.exe) on 10.0.1.6 (Nimda)", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of firewall rules", 
+  "Step": "12.E.1.10.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1063", 
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of AV solutions", 
+  "Step": "12.E.1.10.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1063", 
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell collected a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "18.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1039", 
+  "TechniqueName": "Data from Network Shared Drive"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in download capability executed to a collect file (Shockwave_rackb_diagram.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "9.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1039", 
+  "TechniqueName": "Data from Network Shared Drive"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe creating a remote thread into cmd.exe."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in process injection capability executed to inject callback into cmd.exe", 
+  "Step": "3.C.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though a floating code \\\"IIOC\\\" module alerted with a elevated risk score for DLL injection. There was no telemetry available for the processes that were injected to verify its relation this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Screen capture capability involved process injection into explorer.exe", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Credential dump capability involved process injection into lsass", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Hash dump capability involved process injection into lsass.exe", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net group \"Domain Computers\" /domain' via PowerShell", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe running net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Controllers\" /domain' via cmd", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe running net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Computers\" /domain' via cmd", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed a connection to TCP port 80 (no detection showed HTTP specifically)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to use HTTP traffic to freegoogleadsenseinfo.com", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using DNS traffic to freegoogleadsenseinfo.com", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed an encoded PowerShell command that could be decoded outside the capability to show the IEX command used to download the file (wdbypass) over HTTP port 8080."
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over HTTP", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a connection over port 443 to freegoogleadsenseinfo.com (C2 domain)."
+  ], 
+  "Procedure": "Empire: C2 channel established using HTTPS traffic to freegoogleadsenseinfo.com", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though a floating code \\\"IIOC\\\" module alerted with a elevated risk score for DLL injection. An analyst could explore the module and observe the keylogger aggressor script, but this only showed that there is a potential capability of a keylogger, not that execution occurred."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in keylogging capability executed to capture keystrokes of user Debbie", 
+  "Step": "8.C.1", 
+  "TacticGroup": "collection, Credential Access", 
+  "Technique": "T1056", 
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: Built-in keylogging module executed to capture keystrokes of user Bob", 
+  "Step": "15.A.1", 
+  "TacticGroup": "collection, Credential Access", 
+  "Technique": "T1056", 
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using both NetBIOS and base64 encoding", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1132", 
+  "TechniqueName": "Data Encoding"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "RDP connection made to Creeper (10.0.0.4) as part of execution of persistence mechanism", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe connecting to 10.0.0.5 (Conficker) over port 3389."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to proxy RDP connection to Conficker (10.0.0.5)", 
+  "Step": "6.C.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "RDP connection made to Conficker (10.0.0.5) as part of execution of persistence mechanism", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed rundll32.exe executing updater.dll."
+  ], 
+  "Procedure": "Scheduled task executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (updater.dll) using Rundll32", 
+  "Step": "10.A.2", 
+  "TacticGroup": "Execution, Persistence, Privilege Escalation", 
+  "Technique": "T1053", 
+  "TechniqueName": "Scheduled Task"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the execution of schtasks.exe as well as the full command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'schtasks' via cmd to create scheduled task that executes a DLL payload (updater.dll)", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Execution, Persistence, Privilege Escalation", 
+  "Technique": "T1053", 
+  "TechniqueName": "Scheduled Task"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell staged a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5) in the Recycle Bin (C:\\$Recycle.Bin) on CodeRed (10.0.1.5)", 
+  "Step": "18.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1074", 
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Keylogging capability included residual enumeration of application windows", 
+  "Step": "8.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1010", 
+  "TechniqueName": "Application Window Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: Built-in keylogging module included residual enumeration of application windows", 
+  "Step": "15.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1010", 
+  "TechniqueName": "Application Window Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of system information via a Registry query", 
+  "Step": "12.E.1.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of reg.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire:\u00a0'reg query' via PowerShell to enumerate a specific Registry key", 
+  "Step": "13.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed reg.exe executing with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to enumerate a specific Registry key", 
+  "Step": "2.H.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to remotely enumerate a specific Registry key on Conficker (10.0.0.5)", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.D.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.E.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing autoupdate.vbs via wscript.exe as user Kmitnick\u00a0"
+  ], 
+  "Procedure": "Empire: Built-in runas module executed to launch malicious VBScript (autoupdate.vbs) as user Kmitnick\u00a0", 
+  "Step": "16.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.G.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.H.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.C.2 ", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.G.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ipconfig.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'ipconfig /all' via PowerShell", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe running netsh.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'netsh advfirewall show allprofiles' via cmd", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing route.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'route print' via PowerShell", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing arp.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'arp -a' via cmd", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing ipconfig.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'ipconfig /all' via cmd", 
+  "Step": "2.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of network adapters", 
+  "Step": "12.E.1.11", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of system information", 
+  "Step": "12.E.1.6.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of Windows update information", 
+  "Step": "12.E.1.6.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net config workstation' via cmd", 
+  "Step": "2.E.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing systeminfo.exe."
+  ], 
+  "Procedure": "Cobalt Strike: 'systeminfo' via cmd", 
+  "Step": "2.E.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Added user Jesse to Conficker (10.0.0.5) through RDP connection", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1136", 
+  "TechniqueName": "Create Account"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of sc.exe to create a new service called AdobeUpdater with a binPath set to run cmd.exe and execute update.vbs."
+  ], 
+  "Procedure": "Empire: 'sc create' via PowerShell to remotely create a service on Creeper (10.0.0.4)", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1050", 
+  "TechniqueName": "New Service"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'get-content' via PowerShell to collect sensitive file (it_tasks.txt) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "15.B.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1081", 
+  "TechniqueName": "Credentials in Files"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.F.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.G.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.G.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "18.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.K.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.H.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "19.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "19.D.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.J.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "15.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.L.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility displayed user account information", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net user /domain' via PowerShell", 
+  "Step": "12.G.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net user /domain' via cmd", 
+  "Step": "2.G.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net user george /domain' via cmd", 
+  "Step": "2.G.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net user' via PowerShell", 
+  "Step": "12.G.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe launching rundll32.exe."
+  ], 
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) launched a DLL payload (update.dat) using Rundll32", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1085", 
+  "TechniqueName": "Rundll32"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though an alert was created for PowerShell with the -enc command-line argument."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to elevate process integrity level", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1088", 
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: Built-in UAC bypass token duplication module executed to launch new callback with elevated process integrity level", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1088", 
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "2.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing tasklist.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'tasklist /v' via cmd", 
+  "Step": "2.C.2 ", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "8.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing qprocess.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'qprocess *' via PowerShell", 
+  "Step": "12.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of recycler.exe with full command-line arguments, including -hp flag, indicating compression and encryption was used with a WinRAR utility.[RS3]"
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) created encrypted archive (old.rar) of previously collected file", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1022", 
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to split communications between both HTTP and DNS", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1026", 
+  "TechniqueName": "Multiband Communication"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe and command-line arguments targeting ADMIN$ via net.exe and command-line arguments."
+  ], 
+  "Procedure": "Empire: Successful authentication targeted Windows admin share on Conficker (10.0.0.5)\u00a0", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe and command-line arguments targeting C$ via net.exe and command-line arguments."
+  ], 
+  "Procedure": "Empire: Successful authentication targeted Windows admin shares on Conficker (10.0.0.5)", 
+  "Step": "16.D.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed repeated logon attempts targeting ADMIN$ via net.exe and command-line arguments."
+  ], 
+  "Procedure": "Empire: Brute force password spraying attempts targeted Windows admin shares on Morris (10.0.1.4) and Nimda (10.0.1.6)", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed connections over TCP port 80 to freegoogleadsenseinfo.com (C2 domain)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to use port 80", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using port 53", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed network connection to 192.168.0.5 (C2 server) over port 8080. Though it does not count as a detection, telemetry also showed an encoded PowerShell command that could be decoded outside the capability to show the IEX command used to download the file (wdbypass) over HTTP port 8080."
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over port 8080", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed an outbound network connection over port 443 and to letsencrypt.org (no protocol was identified for this traffic)."
+  ], 
+  "Procedure": "Empire: C2 channel established using port 443", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed net.exe execution and command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net use /delete' via PowerShell", 
+  "Step": "16.C.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1126", 
+  "TechniqueName": "Network Share Connection Removal"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure. [RS2]"
+  ], 
+  "Procedure": "Empire: 'del C:\\\"$\"Recycle.bin\\old.rar'", 
+  "Step": "19.D.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1107", 
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'del recycler.exe'", 
+  "Step": "19.D.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1107", 
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of AD group memberships", 
+  "Step": "12.E.1.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net group \"Domain Admins\" /domain' via PowerShell", 
+  "Step": "12.F.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net\u00a0localgroup\u00a0administrators' via PowerShell", 
+  "Step": "12.F.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net localgroup administrators' via cmd", 
+  "Step": "2.F.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments.", 
+    " An \\\"IIOC\\\" module called \\\"Enumerates domain administrators\\\" was generated and provided enrichment."
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Admins\" /domain' via cmd", 
+  "Step": "2.F.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net localgroup administrators /domain' via cmd", 
+  "Step": "2.F.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a write file event for recycler.exe."
+  ], 
+  "Procedure": "Empire: Built-in upload module executed to write binary (recycler.exe) to disk on CodeRed (10.0.1.5)", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed file write of updater.dll."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in upload capability executed to write a DLL payload (updater.dll) to disk on Nimda (10.0.1.6)", 
+  "Step": "7.B.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed file write of autoupdate.vbs."
+  ], 
+  "Procedure": "Empire: Built-in upload module executed to write malicious VBScript (autoupdate.vbs) to disk on CodeRed (10.0.1.5)", 
+  "Step": "16.E.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed an encoded PowerShell command that could be decoded outside the capability to show the IEX command used to download the file (wdbypass) over HTTP port 8080."
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded and executed a new Empire stager (wdbypass)", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: Built-in move capability executed to write malicious VBScript (update.vbs) to disk on Creeper (10.0.0.4)", 
+  "Step": "16.G.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to modify current process token", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1134", 
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in token theft capability executed to change user context to George", 
+  "Step": "5.B.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1134", 
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed the execution sequence of Resume Viewer.exe executing cmd.exe, which executed rundll32.exe (the pdfhelper.cmd script was not shown)."
+  ], 
+  "Procedure": "Previously executed self-extracting archive (Resume Viewer.exe) launched an embedded batch file (pdfhelper.cmd)", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed wscript.exe executing autoupdate.vbs and the subsequent PowerShell child process. [RS1]"
+  ], 
+  "Procedure": "Legitimate user Bob clicked and executed malicious VBScript (autoupdate.vbs) on 10.0.1.5 (CodeRed)", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed PowerShell running and a PowerShell script being written to disk that coincided with the execution of WinEnum."
+  ], 
+  "Procedure": "Empire: Built-in WinEnum module executed to programmatically execute a series of enumeration techniques", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in Mimikatz credential dump capability executed", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in hash dump capability executed", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Download capability exfiltrated data through existing C2 channel", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing autoupdate.bat from the Startup folder."
+  ], 
+  "Procedure": "Batch file (autoupdate.bat) previously written to Startup folder executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (update.dat) using Rundll32", 
+  "Step": "10.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1060", 
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a cmd.exe \\\"rename to executable\\\" event for autoupdate.bat in the Startup folder."
+  ], 
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) moved a separate batch file (autoupdate.bat) to the Startup folder", 
+  "Step": "1.B.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1060", 
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net start' via PowerShell", 
+  "Step": "12.D.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed reg.exe executing with command-line arguments indicating a check to see if terminal services was enabled."
+  ], 
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key associated with terminal services", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of sc.exe to query for the AdobeUpdater service on 10.0.0.4 (Creeper)."
+  ], 
+  "Procedure": "Empire: 'sc qc' via PowerShell to remotely enumerate a specific service on Creeper (10.0.0.4)", 
+  "Step": "16.J.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'net start' via cmd", 
+  "Step": "2.D.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing sc.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'sc query' via cmd", 
+  "Step": "2.D.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of services", 
+  "Step": "12.E.1.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of sc.exe to query services on 10.0.0.4 (Creeper)."
+  ], 
+  "Procedure": "Empire: 'sc query' via PowerShell to remotely enumerate services on Creeper (10.0.0.4)", 
+  "Step": "16.H.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the execution of ftp.exe with command-line arguments, including ftp.txt, for exfiltration. The contents of ftp.txt was not seen."
+  ], 
+  "Procedure": "Empire: Sequence of 'echo' commands via PowerShell to populate commands in text file (ftp.txt), which is then executed by FTP to exfil data through network connection separate of existing C2 channel", 
+  "Step": "19.C.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1048", 
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing netstat.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of established network connections", 
+  "Step": "12.E.1.12", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure due to event suppression (previously detected)."
+  ], 
+  "Procedure": "Empire: 'netstat -ano' via PowerShell", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe running netstat.exe with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'netstat -ano' via cmd", 
+  "Step": "4.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of recycler.exe with full command-line arguments, including -hp flag, indicating compression and encryption was used with a WinRAR utility.[RS3]"
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) created compressed archive (old.rar) of previously collected file", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1002", 
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of clipboard contents", 
+  "Step": "12.E.1.5", 
+  "TacticGroup": "collection", 
+  "Technique": "T1115", 
+  "TechniqueName": "Clipboard Data"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[RS30]"
+  ], 
+  "Procedure": "Empire: File dropped to disk is a renamed copy of the WinRAR binary", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of recycler.exe with full command-line arguments, including -hp flag, indicating compression and encryption was used with a WinRAR utility.[RS4][RS3]"
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) is a renamed copy of the WinRAR binary", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of sc.exe to create a new service called AdobeUpdater with a binPath set to run cmd.exe and execute update.vbs as well as set the service description. An analyst can use this information to determine the service is masquerading."
+  ], 
+  "Procedure": "Empire: 'sc description' via PowerShell to remotely disguise a service on Creeper (10.0.0.4)", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of magnify.exe."
+  ], 
+  "Procedure": "magnifer.exe previously overwritten by cmd.exe launched through RDP connection made to Creeper (10.0.0.4)", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1015", 
+  "TechniqueName": "Accessibility Features"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a file write event on magnify.exe in the system directory. A search for \\\"cmd\\\" on CodeRed shows the hash value of magnify.exe matches cmd.exe."
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell to overwrite magnify.exe with cmd.exe", 
+  "Step": "17.C.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1015", 
+  "TechniqueName": "Accessibility Features"
+}

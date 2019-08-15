@@ -1,0 +1,8 @@
+<nav search_view="search" color="#65A637">
+  <view name="overview" default="true" />
+  <view name="main_detection_types" />
+  <view name="detection_modifiers" />
+  <view name="detection_results_per_step" />
+  <view name="bias_ahead" />
+  <view name="search" />
+</nav>

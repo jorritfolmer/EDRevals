@@ -1,0 +1,2555 @@
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments to connect using the valid credentials of user Kmitnick. The telemetry was tainted by the parent \\\"Powershell executed remote commands\\\" alert. Telemetry also showed explorer.exe (as the user Bob) write a PIPE on Conficker, which could indicate to an analyst that the share had been successfully mounted.[CT5]"
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Conficker (10.0.0.5) using credentials of user Kmitnick", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments targeting C$ on 10.0.0.4 (Creeper) using valid credentials for user Kmitnick. [CT5]"
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Creeper (10.0.0.4) using credentials of user Kmitnick", 
+  "Step": "16.D.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that the explorer.exe process was running as the user Jesse, indicating the account exists."
+  ], 
+  "Procedure": "RDP connection to Conficker (10.0.0.5) authenticated using previously added user Jesse", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of mapped network drives", 
+  "Step": "12.E.1.9.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "TechniqueName": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of available shares", 
+  "Step": "12.E.1.9.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "TechniqueName": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: 'Get-ChildItem' via PowerShell to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry, Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that svchost.exe created cmd.exe, which executed dir. The telemetry was tainted by the parent \\\"Powershell process created\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'dir /s /b \"\\\\conficker\\wormshare\"' via cmd", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that svchost.exe created cmd.exe, which executed tree with command-line arguments. The telemetry was tainted by the parent \\\"Powershell process created\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'tree \"C:\\Users\\debbie\"' via cmd", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of interesting files", 
+  "Step": "12.E.1.4.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of recently opened files", 
+  "Step": "12.E.1.4.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ls' (List) via Win32 APIs to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: 'type' via PowerShell to remotely enumerate a specific file (update.vbs) on Creeper (10.0.0.4)", 
+  "Step": "16.K.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted", 
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability enriched a net.exe logon attempt targeting ADMIN$ with the condition \\\"Net User Reconnaissance Command\\\". The enrichment was tainted by the parent \\\"Powershell executed remote commands\\\" alert.[CT5]", 
+    "Telemetry also showed explorer.exe (as the user Bob) write a PIPE on Conficker, which could indicate to an analyst that the share had been successfully mounted (tainted by the parent FileExts Registry Key modified alert).[CT5]"
+  ], 
+  "Procedure": "Empire: Successful authentication to Conficker (10.0.0.5) using credentials of user Kmitnick as a result of the brute force password spraying", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "TechniqueName": "Brute Force"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability enriched each individual net.exe logon attempt with the condition \u00a0\\\"Net User Reconnaissance Command\\\". The enrichment was tainted by the parent \\\"Powershell executed remote commands\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to brute force password spraying authentication attempts to Morris (10.0.1.4) and Nimda (10.0.1.6) targeting credentials of users\u00a0Kmitnick, Bob, and Frieda", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "TechniqueName": "Brute Force"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the GUI-based lusrmgr.msc (Local Users and Groups snap-in) (tainted by the parent \\\"LSA Registry Key modified\\\" alert)."
+  ], 
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility used to add new user through RDP connection", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1061", 
+  "TechniqueName": "Graphical User Interface"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing takeown.exe to take ownership of magnify.exe. The telemetry was tainted by the parent \\\"New Windows service created\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'takeown' via PowerShell to obtain ownership of magnify.exe", 
+  "Step": "17.B.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1222", 
+  "TechniqueName": "File Permissions Modification"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe running icacls.exe to modify magnify.exe access controls. The telemetry was tainted by the parent \\\"New Windows service created\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'icacls' via PowerShell to modify the DACL for magnify.exe", 
+  "Step": "17.B.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1222", 
+  "TechniqueName": "File Permissions Modification"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed a remote thread being created from cmd.exe into explorer.exe. The vendor also noted that if a user determined the process creation was suspicious, the user could manually kick off a DDNA scan. DDNA results on this process reported \\\"This module may capture screen shots,\\\" indicating the module has the capability to perform this."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in screen capture capability executed to capture screenshot of current window of user Debbie", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "TechniqueName": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing sc.exe to start the AdobeUpdater service on Creeper. The telemetry was tainted by the parent \\\"Powershell executed remote commands\\\" alert. Telemetry from Creeper also showed services.exe creating cmd.exe, which executed the update.vbs file (showing AdobeUpdater service starting).[CT5]"
+  ], 
+  "Procedure": "Empire: 'sc start' via PowerShell to remotely launch a specific service on Creeper (10.0.0.4)", 
+  "Step": "16.L.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1035", 
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing whoami.exe with command-line arguments and enriched the command with the condition Whoami Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT15]"
+  ], 
+  "Procedure": "Empire: 'whoami /all /fo list' via PowerShell", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed magnify.exe executing whoami.exe. The telemetry was tainted by the parent POS Interactive Login Event alert.[CT5]"
+  ], 
+  "Procedure": "Executed 'whoami' via cmd persistence mechanism through RDP connection made to Creeper (10.0.0.4)", 
+  "Step": "20.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing echo with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'echo' via cmd to enumerate specific environment variables", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of user information", 
+  "Step": "12.E.1.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed an outbound network connection over TCP port 443 (no protocol was identified for this traffic).[CT5]"
+  ], 
+  "Procedure": "Empire: Encrypted C2 channel established using HTTPS", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1032", 
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of password policy information", 
+  "Step": "12.E.1.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1201", 
+  "TechniqueName": "Password Policy Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that Resume Viewer.exe was executed. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Legitimate user Debbie clicked and executed malicious self-extracting archive (Resume Viewer.exe) on 10.0.1.6 (Nimda)", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of firewall rules", 
+  "Step": "12.E.1.10.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1063", 
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of AV solutions", 
+  "Step": "12.E.1.10.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1063", 
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe copying the .vsdx file from the network shared drive on Conficker to the Recycle Bin. The telemetry was tainted by the parent \\\"Powershell executed encoded commands\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell collected a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "18.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1039", 
+  "TechniqueName": "Data from Network Shared Drive"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in download capability executed to a collect file (Shockwave_rackb_diagram.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "9.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1039", 
+  "TechniqueName": "Data from Network Shared Drive"
+}
+{
+  "Detection": [
+    "Specific Behavior,Tainted"
+  ], 
+  "DetectionText": [
+    "A Specific Behavior alert was generated based on DLL injection for powershell.exe injecting into cmd.exe. The detection was labeled with Process Hijacking and Privilege Escalation and tainted by the parent \\\"Powershell process created\\\" alert.[CT23]"
+  ], 
+  "Procedure": "Cobalt Strike: Built-in process injection capability executed to inject callback into cmd.exe", 
+  "Step": "3.C.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a remote thread being created from cmd.exe into explorer.exe, which could be indicative of process injection."
+  ], 
+  "Procedure": "Cobalt Strike: Screen capture capability involved process injection into explorer.exe", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "General Behavior"
+  ], 
+  "DetectionText": [
+    "A General Behavior alert was generated when a DDNA Scan alerted for svchost.exe. DDNA scan results showed that svchost.exe \\\"appeared to inject code into another process.\\\"[CT2]"
+  ], 
+  "Procedure": "Cobalt Strike: Credential dump capability involved process injection into lsass", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Specific Behavior,Tainted", 
+    "General Behavior"
+  ], 
+  "DetectionText": [
+    "A Specific Behavior alert was generated for process hijacking based on a thread create within lsass.exe from svchost.exe (tainted by the parent \\\"Powershell process created\\\" and \\\"Policy Remote Process Compromise\\\" alerts.)[CT7]", 
+    "A General Behavior alert was generated when a DDNA Scan alerted for svchost.exe. The DDNA scan results showed that svchost.exe \\\"appeared to inject code into another process.\\\"[CT2]"
+  ], 
+  "Procedure": "Cobalt Strike: Hash dump capability involved process injection into lsass.exe", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing net.exe with command-line arguments and enriched the command with the\u00a0condition Net User Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT17] "
+  ], 
+  "Procedure": "Empire: 'net group \"Domain Computers\" /domain' via PowerShell", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the condition Net Group Reconnaissance Command. The enrichment was tainted by the parent \\\"Powershell Execution Policy ByPass command ran\\\" alert.[CT4]"
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Controllers\" /domain' via cmd", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the condition Net Group Reconnaissance Command. The enrichment was tainted by the parent \\\"Powershell Execution Policy ByPass command ran\\\" alert.[CT21]"
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Computers\" /domain' via cmd", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed an outbound HTTP request to www.freegoogleadsenseinfo.com (C2 domain)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to use HTTP traffic to freegoogleadsenseinfo.com", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that DNS requests to freegoogleadsenseinfo.com (C2 domain) were being performed out of svchost.exe on Nimda."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using DNS traffic to freegoogleadsenseinfo.com", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe making an HTTP GET request over port 8080 to freegoogleadsenseinfo.com (C2 domain) for the file wdbypass (tainted by the parent \\\"Powershell executed encoded commands\\\" alert).[CT5]"
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over HTTP", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed an outbound network connection over TCP port 443 (no protocol was identified for this traffic).[CT5]"
+  ], 
+  "Procedure": "Empire: C2 channel established using HTTPS traffic to freegoogleadsenseinfo.com", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed a remote thread being created from cmd.exe in explorer.exe. The vendor noted that if a user determined the process creation was suspicious, the user could manually kick off a DDNA scan from the Command-Line Interface (CLI) view by using the Process ID (PID)."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in keylogging capability executed to capture keystrokes of user Debbie", 
+  "Step": "8.C.1", 
+  "TacticGroup": "collection, Credential Access", 
+  "Technique": "T1056", 
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT30]"
+  ], 
+  "Procedure": "Empire: Built-in keylogging module executed to capture keystrokes of user Bob", 
+  "Step": "15.A.1", 
+  "TacticGroup": "collection, Credential Access", 
+  "Technique": "T1056", 
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though the capability identified DNS queries (no detection showed data encoding specifically)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using both NetBIOS and base64 encoding", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1132", 
+  "TechniqueName": "Data Encoding"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed an inbound connection to Creeper (10.0.0.4) on port 3389.[CT5]"
+  ], 
+  "Procedure": "RDP connection made to Creeper (10.0.0.4) as part of execution of persistence mechanism", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change", 
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe creating an outbound TCP port 3389 (RDP) connection from Nimda and enriched the connection with the conditions Lateral Movement and Remote Share Access. The enrichment was tainted by the parent \\\"Windows command prompt invoked\\\" alert. [CT22]", 
+    "Telemetry also identified an inbound connection to Conficker over TCP port 3389."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to proxy RDP connection to Conficker (10.0.0.5)", 
+  "Step": "6.C.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability enriched a TCP port 3389 (RDP) connection to 10.0.0.5 (Conficker) with the conditions Lateral Movement and Remote Share Access. One connection event was tainted by the parent \\\"Windows command prompt invoked\\\" alert. [CT19]"
+  ], 
+  "Procedure": "RDP connection made to Conficker (10.0.0.5) as part of execution of persistence mechanism", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed svchost.exe executing rundll32.exe, which executed updater.dll. The telemetry was tainted by the parent \\\"Sponsor process started V2\\\" alert."
+  ], 
+  "Procedure": "Scheduled task executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (updater.dll) using Rundll32", 
+  "Step": "10.A.2", 
+  "TacticGroup": "Execution, Persistence, Privilege Escalation", 
+  "Technique": "T1053", 
+  "TechniqueName": "Scheduled Task"
+}
+{
+  "Detection": [
+    "Specific Behavior", 
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "A Specific Behavior alert called \\\"Schtasks with create command\\\" was generated due to a schtasks.exe process create from cmd.exe.", 
+    "Telemetry within the Schtasks alert showed a process creation of schtasks.exe from cmd.exe, and would be available in a separate view.[CT9]"
+  ], 
+  "Procedure": "Cobalt Strike: 'schtasks' via cmd to create scheduled task that executes a DLL payload (updater.dll)", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Execution, Persistence, Privilege Escalation", 
+  "Technique": "T1053", 
+  "TechniqueName": "Scheduled Task"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe copying the .vsdx file from the network shared drive on Conficker to the Recycle Bin. The telemetry was tainted by the parent \\\"Powershell executed encoded commands\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell staged a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5) in the Recycle Bin (C:\\$Recycle.Bin) on CodeRed (10.0.1.5)", 
+  "Step": "18.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1074", 
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Keylogging capability included residual enumeration of application windows", 
+  "Step": "8.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1010", 
+  "TechniqueName": "Application Window Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: Built-in keylogging module included residual enumeration of application windows", 
+  "Step": "15.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1010", 
+  "TechniqueName": "Application Window Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of system information via a Registry query", 
+  "Step": "12.E.1.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of reg.exe with command-line arguments (tainted by the parent Script File Created alert).[CT5]"
+  ], 
+  "Procedure": "Empire:\u00a0'reg query' via PowerShell to enumerate a specific Registry key", 
+  "Step": "13.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing reg.exe with command-line arguments. The telemetry was tainted by the parent \\\"New Windows service created\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to enumerate a specific Registry key", 
+  "Step": "2.H.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments. Telemetry also showed that two PIPEs were created as a result of reg.exe execution. The telemetry was tainted by the parent \\\"Powershell process created\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to remotely enumerate a specific Registry key on Conficker (10.0.0.5)", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.D.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.E.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed svchost.exe creating cmd.exe, which ran autoupdate.vbs as user Kmitnick (tainted by the parent \\\"Powershell executed remote commands\\\" alert).[CT5]"
+  ], 
+  "Procedure": "Empire: Built-in runas module executed to launch malicious VBScript (autoupdate.vbs) as user Kmitnick\u00a0", 
+  "Step": "16.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.G.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.H.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.C.2 ", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.G.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing ipconfig.exe with command-line arguments and enriched the command with the condition Ipconfig All Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT6]"
+  ], 
+  "Procedure": "Empire: 'ipconfig /all' via PowerShell", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing netsh.exe with command-line arguments. The telemetry was tainted by the parent \\\"Powershell Execution Policy ByPass command ran\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'netsh advfirewall show allprofiles' via cmd", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing route.exe with command-line arguments and enriched the command with the conditions Reconnaissance Tool and Route Spawned with Reconnaissance. The enrichment was tainted by the parent Script File Created alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'route print' via PowerShell", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing arp.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'arp -a' via cmd", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing ipconfig.exe with command-line arguments and enriched the command with the condition Ipconfig All Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT21]"
+  ], 
+  "Procedure": "Cobalt Strike: 'ipconfig /all' via cmd", 
+  "Step": "2.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of network adapters", 
+  "Step": "12.E.1.11", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of system information", 
+  "Step": "12.E.1.6.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of Windows update information", 
+  "Step": "12.E.1.6.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'net config workstation' via cmd", 
+  "Step": "2.E.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing systeminfo.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'systeminfo' via cmd", 
+  "Step": "2.E.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Specific Behavior,Configuration Change"
+  ], 
+  "DetectionText": [
+    "A Specific Behavior alert named \\\"New user account created\\\" was generated based on the Registry change identifying that the new user Jesse was created. A child event of the alert indicated that the account had been added to the local admins group (but did not identify the account creation specifically).[CT18]"
+  ], 
+  "Procedure": "Added user Jesse to Conficker (10.0.0.5) through RDP connection", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1136", 
+  "TechniqueName": "Create Account"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted", 
+    "Specific Behavior,Configuration Change"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing sc.exe to create a new service named AdobeUpdater with binPath pointed to cmd.exe with arguments to run update.vbs and suspicious service description. The telemetry was tainted by the parent \\\"Powershell executed remote commands alert\\\".[CT5]", 
+    "An alert called \\\"Windows Service Registry Key modified\\\" and a Specific Behavior alert called \\\"New Windows service created\\\" were generated due to the AdobeUpdater service being created in the Registry.[CT11]"
+  ], 
+  "Procedure": "Empire: 'sc create' via PowerShell to remotely create a service on Creeper (10.0.0.4)", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1050", 
+  "TechniqueName": "New Service"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: 'get-content' via PowerShell to collect sensitive file (it_tasks.txt) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "15.B.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1081", 
+  "TechniqueName": "Credentials in Files"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.F.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.G.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.G.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "18.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.K.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.H.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "19.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "19.D.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.J.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "15.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.L.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the lusrmgr.msc (Local Users and Groups snap-in) which displays local account information. The telemetry was tainted by the parent \\\"LSA Registry Key modified\\\" alert."
+  ], 
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility displayed user account information", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing net.exe with command-line arguments and enriched the command with the\u00a0condition Net User Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'net user /domain' via PowerShell", 
+  "Step": "12.G.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the condition Net User Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'net user /domain' via cmd", 
+  "Step": "2.G.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the conditions Reconnaissance Tool and Net User Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT20]"
+  ], 
+  "Procedure": "Cobalt Strike: 'net user george /domain' via cmd", 
+  "Step": "2.G.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing net.exe with command-line arguments and enriched the command with the\u00a0condition Net User Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'net user' via PowerShell", 
+  "Step": "12.G.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that cmd.exe created the rundll32.exe process that started update.dat. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) launched a DLL payload (update.dat) using Rundll32", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1085", 
+  "TechniqueName": "Rundll32"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though an alert was triggered due to svchost.exe creating the process powershell.exe."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to elevate process integrity level", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1088", 
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though an alert called \\\"PowerShell executed encoded commands\\\" triggered due to svchost.exe creating powershell.exe with the -enc command-line argument.[CT5]"
+  ], 
+  "Procedure": "Empire: Built-in UAC bypass token duplication module executed to launch new callback with elevated process integrity level", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1088", 
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "2.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing tasklist.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'tasklist /v' via cmd", 
+  "Step": "2.C.2 ", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "8.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing qprocess.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'qprocess *' via PowerShell", 
+  "Step": "12.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change", 
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed recycler.exe creating old.rar in the Recycle Bin and enriched the data with \\\"Data Exfiltration Archiving\\\" due to the archive file being created. The enrichment was tainted by parent \\\"Powershell executed encoded command\\\" alerts.[CT14]", 
+    "Telemetry showed powershell.exe creating recycler.exe and executing the command-line arguments including the -hp flag indicating WinRAR utility execution with compression and encryption. The telemetry was tainted by parent \\\"Powershell executed encoded commands\\\" and \\\"Policy Dropper Behavior\\\" alerts[CT5]"
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) created encrypted archive (old.rar) of previously collected file", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1022", 
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed C2 traffic was over TCP port 80 as well as earlier traffic over DNS, which could indicate multiband communication. The HTTP telemetry over TCP port 80 was tainted by the parent \\\"Sponsor Process Established Network Connection\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to split communications between both HTTP and DNS", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1026", 
+  "TechniqueName": "Multiband Communication"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments targeting ADMIN$ using valid credentials for user Kmitnick. Telemetry also showed explorer.exe (as the user Bob) write a PIPE on Conficker, which could indicate to an analyst that the share had been successfully mounted (tainted by the parent FileExts Registry Key modified alert).[CT5]"
+  ], 
+  "Procedure": "Empire: Successful authentication targeted Windows admin share on Conficker (10.0.0.5)\u00a0", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments targeting C$ on 10.0.0.4 (Creeper) using valid credentials for user Kmitnick. [CT5]"
+  ], 
+  "Procedure": "Empire: Successful authentication targeted Windows admin shares on Conficker (10.0.0.5)", 
+  "Step": "16.D.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability enriched individual net.exe logon attempts targeting ADMIN$ with the condition \\\"Net User Reconnaissance Command\\\". The enrichment was tainted by the parent \\\"Powershell executed remote commands\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: Brute force password spraying attempts targeted Windows admin shares on Morris (10.0.1.4) and Nimda (10.0.1.6)", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed an outbound network connection from rundll32.exe to 192.168.0.4 (C2 server) over TCP port 80. The telemetry was tainted by the parent \\\"Sponsor Process Established Network Connection\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to use port 80", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though DNS requests were observed (no detection showed port 53 specifically)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using port 53", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe making an HTTP GET request over port 8080 to freegoogleadsenseinfo.com (C2 domain) for the file wdbypass (tainted by the parent \\\"Powershell executed encoded commands\\\" alert).[CT5]"
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over port 8080", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe creating an outbound connection to 192.168.0.5 (C2 server) over TCP port 443.[CT5]"
+  ], 
+  "Procedure": "Empire: C2 channel established using port 443", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed net.exe executing with command-line arguments (tainted by the parent \\\"Powershell executed remote commands\\\" alert). [CT5]"
+  ], 
+  "Procedure": "Empire: 'net use /delete' via PowerShell", 
+  "Step": "16.C.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1126", 
+  "TechniqueName": "Network Share Connection Removal"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe deleting old.rar from the Recycle Bin. The telemetry was tainted by the parent \\\"PowerShell executed encoded commands\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'del C:\\\"$\"Recycle.bin\\old.rar'", 
+  "Step": "19.D.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1107", 
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe deleting recycler.exe. The telemetry was tainted by the parent \\\"PowerShell executed encoded commands alert\\\".[CT5]"
+  ], 
+  "Procedure": "Empire: 'del recycler.exe'", 
+  "Step": "19.D.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1107", 
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry showed powershell.exe connecting to the domain controller. This could indicate AD group information was being obtained, but this was not directly detected. The vendor indicated the capability sees the start of a PowerShell connection, but would not see additional commands after that start.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of AD group memberships", 
+  "Step": "12.E.1.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing net.exe with command-line arguments and enriched the command with the\u00a0conditions Net Domain Admins Reconnaissance Command and Net Group Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT16]"
+  ], 
+  "Procedure": "Empire: 'net group \"Domain Admins\" /domain' via PowerShell", 
+  "Step": "12.F.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing net.exe with command-line arguments and enriched the command with the\u00a0conditions Net Group Reconnaissance Command and Net LocalGroup Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT16]"
+  ], 
+  "Procedure": "Empire: 'net\u00a0localgroup\u00a0administrators' via PowerShell", 
+  "Step": "12.F.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Enrichment, Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the conditions Net Group Reconnaissance Command and Net LocalGroup Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT19]"
+  ], 
+  "Procedure": "Cobalt Strike: 'net localgroup administrators' via cmd", 
+  "Step": "2.F.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the conditions Net Group Reconnaissance Command and Net LocalGroup Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT19]"
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Admins\" /domain' via cmd", 
+  "Step": "2.F.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Enrichment, Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing net.exe with command-line arguments and enriched the command with the conditions Net Group Reconnaissance Command and Net LocalGroup Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT19]"
+  ], 
+  "Procedure": "Cobalt Strike: 'net localgroup administrators /domain' via cmd", 
+  "Step": "2.F.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "General Behavior,Configuration Change", 
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "A General Behavior alert called \\\"Policy Dropper Behavior\\\" was generated based on three events occurring in the same parent process within a set time frame, a network connection (TCP Outbound to 192.168.0.5 over 443) followed by an executable file create (powershell.exe creating recycler.exe) followed by a process spawning from that executable (powershell.exe creating the recycler.exe process).[CT13]", 
+    "Telemetry showed powershell.exe creating recycler.exe. The telemetry was tainted by parent \\\"Powershell executed encoded commands\\\" and \\\"Policy Dropper Behavior\\\" alerts.[CT5]"
+  ], 
+  "Procedure": "Empire: Built-in upload module executed to write binary (recycler.exe) to disk on CodeRed (10.0.1.5)", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed creation of updater.dll. The telemetry was tainted by the parent \\\"Powershell process created\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in upload capability executed to write a DLL payload (updater.dll) to disk on Nimda (10.0.1.6)", 
+  "Step": "7.B.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe creating autoupdate.vbs (tainted by parent Powershell executed remote commands alerts) .[CT5]"
+  ], 
+  "Procedure": "Empire: Built-in upload module executed to write malicious VBScript (autoupdate.vbs) to disk on CodeRed (10.0.1.5)", 
+  "Step": "16.E.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe making an HTTP GET request over port 8080 to freegoogleadsenseinfo.com (C2 domain) for the file wdbypass (tainted by the parent \\\"Powershell executed encoded commands\\\" alert).[CT5]"
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded and executed a new Empire stager (wdbypass)", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability enriched the update.vbs creation event with the condition \\\"File created on hidden share (C$)\\\". The enrichment was tainted by parent \\\"Powershell executed remote commands\\\" alerts.[CT15]"
+  ], 
+  "Procedure": "Empire: Built-in move capability executed to write malicious VBScript (update.vbs) to disk on Creeper (10.0.0.4)", 
+  "Step": "16.G.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though an alert was triggered due to svchost.exe creating the process powershell.exe. "
+  ], 
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to modify current process token", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1134", 
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in token theft capability executed to change user context to George", 
+  "Step": "5.B.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1134", 
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that Resume Viewer.exe created cmd.exe, which ran the script pdfhelper.cmd. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Previously executed self-extracting archive (Resume Viewer.exe) launched an embedded batch file (pdfhelper.cmd)", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed wscript.exe executing autoupdate.vbs and that wscript.exe created a powershell.exe process, including the encoded command-line arguments (tainted by the parent Script File Created alert).[CT5]"
+  ], 
+  "Procedure": "Legitimate user Bob clicked and executed malicious VBScript (autoupdate.vbs) on 10.0.1.5 (CodeRed)", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe connecting to the domain controller 10.0.0.4 (Creeper), which coincided with the execution of WinEnum.[CT5]"
+  ], 
+  "Procedure": "Empire: Built-in WinEnum module executed to programmatically execute a series of enumeration techniques", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though a DDNA Scan alerted for svchost.exe and displayed details related to Project Injection.[CT2]"
+  ], 
+  "Procedure": "Cobalt Strike: Built-in Mimikatz credential dump capability executed", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a thread create within lsass.exe from svchost.exe, which could be indicative of credential dumping. The telemetry was tainted by the parent \\\"Powershell process created\\\" and \\\"Policy Remote Process Compromise\\\" alerts."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in hash dump capability executed", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Download capability exfiltrated data through existing C2 channel", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe starting rundll32.exe, which started update.dat, as well as cmd.exe executing autoupdate.bat from the Startup folder."
+  ], 
+  "Procedure": "Batch file (autoupdate.bat) previously written to Startup folder executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (update.dat) using Rundll32", 
+  "Step": "10.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1060", 
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed that autoupdate.bat was created in the Startup folder."
+  ], 
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) moved a separate batch file (autoupdate.bat) to the Startup folder", 
+  "Step": "1.B.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1060", 
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'net start' via PowerShell", 
+  "Step": "12.D.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing reg.exe with command-line arguments indicating a check to see if terminal services was enabled. The telemetry was tainted by the parent \\\"New Windows service created\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key associated with terminal services", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing sc.exe to query the AdobeUpdater service on Creeper and enriched sc.exe with the condition SC QC Reconnaissance Command. The enrichment was tainted by the parent \\\"Powershell executed remote commands alert\\\".[CT8]"
+  ], 
+  "Procedure": "Empire: 'sc qc' via PowerShell to remotely enumerate a specific service on Creeper (10.0.0.4)", 
+  "Step": "16.J.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by the parent Script File Created alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'net start' via cmd", 
+  "Step": "2.D.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed cmd.exe executing sc.exe with command-line arguments and enriched the command with the condition SC Query Reconnaissance Command. The enrichment was tainted by the parent Script File Created alert.[CT21]"
+  ], 
+  "Procedure": "Cobalt Strike: 'sc query' via cmd", 
+  "Step": "2.D.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of services", 
+  "Step": "12.E.1.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change"
+  ], 
+  "DetectionText": [
+    "The capability showed powershell.exe executing sc.exe to remotely query services on Creeper and enriched sc.exe with enriched with the condition SC Query Reconnaissance Command. The enrichment was tainted by the parent \\\"Powershell executed remote commands\\\" alert.[CT8]"
+  ], 
+  "Procedure": "Empire: 'sc query' via PowerShell to remotely enumerate services on Creeper (10.0.0.4)", 
+  "Step": "16.H.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ftp.exe with ftp.txt as an argument as well as an outbound FTP connection to 192.168.0.4 (C2 server) on TCP port 21. The telemetry was tainted by the parent \\\"Powershell executed encoded commands\\\" alert.[CT5]"
+  ], 
+  "Procedure": "Empire: Sequence of 'echo' commands via PowerShell to populate commands in text file (ftp.txt), which is then executed by FTP to exfil data through network connection separate of existing C2 channel", 
+  "Step": "19.C.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1048", 
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of established network connections", 
+  "Step": "12.E.1.12", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of net.exe with command-line arguments (tainted by the parent Script File Created alert).[CT5]"
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of netstat.exe with command-line arguments (tainted by the parent Script File Created alert).[CT5]"
+  ], 
+  "Procedure": "Empire: 'netstat -ano' via PowerShell", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing netstat.exe with command-line arguments. The telemetry was tainted by the parent \\\"Powershell Execution Policy ByPass command ran\\\" alert."
+  ], 
+  "Procedure": "Cobalt Strike: 'netstat -ano' via cmd", 
+  "Step": "4.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change", 
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed recycler.exe creating old.rar in the Recycle Bin and enriched the data with \\\"Data Exfiltration Archiving\\\" due to the archive file being created. The enrichment was tainted by parent \\\"Powershell executed encoded command\\\" alerts.[CT14]", 
+    "Telemetry showed powershell.exe creating recycler.exe and executing the command-line arguments including the -hp flag indicating WinRAR utility execution with compression and encryption. The telemetry was tainted by parent \\\"Powershell executed encoded commands\\\" and \\\"Policy Dropper Behavior\\\" alerts[CT5]"
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) created compressed archive (old.rar) of previously collected file", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1002", 
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CT5]"
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of clipboard contents", 
+  "Step": "12.E.1.5", 
+  "TacticGroup": "collection", 
+  "Technique": "T1115", 
+  "TechniqueName": "Clipboard Data"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though telemetry later identified recycler.exe as WinRAR during execution (no detections identified it as WinRAR upon file copy).[CT5]"
+  ], 
+  "Procedure": "Empire: File dropped to disk is a renamed copy of the WinRAR binary", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change", 
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability showed recycler.exe creating old.rar in the Recycle Bin and enriched the data with \\\"Data Exfiltration Archiving\\\" due to the archive file being created. The enrichment was tainted by parent \\\"Powershell executed encoded command\\\" alerts.[CT14]", 
+    "Telemetry showed powershell.exe creating recycler.exe and executing the command-line arguments including the -hp flag indicating WinRAR utility execution with compression and encryption. The telemetry was tainted by parent \\\"Powershell executed encoded commands\\\" and \\\"Policy Dropper Behavior\\\" alerts.[CT5]"
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) is a renamed copy of the WinRAR binary", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing sc.exe to create a new service named AdobeUpdater with binPath pointed to cmd.exe with arguments to run update.vbs and suspicious service description, which could assist an analyst in determining this was not a legitimate Adobe product. The telemetry was tainted by the parent \\\"Powershell executed remote commands alert\\\".[CT5]"
+  ], 
+  "Procedure": "Empire: 'sc description' via PowerShell to remotely disguise a service on Creeper (10.0.0.4)", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "Telemetry showed magnify.exe executing from parent process utilman.exe (PID 3996). The telemetry was tainted by the parent POS Interactive Login Event alert.[CT5]"
+  ], 
+  "Procedure": "magnifer.exe previously overwritten by cmd.exe launched through RDP connection made to Creeper (10.0.0.4)", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1015", 
+  "TechniqueName": "Accessibility Features"
+}
+{
+  "Detection": [
+    "Enrichment,Tainted,Configuration Change", 
+    "Telemetry,Tainted"
+  ], 
+  "DetectionText": [
+    "The capability enriched powershell.exe creating and writing magnify.exe to the system directory with the condition \\\"Creation of Sticky Keys File.\\\" The enrichment was tainted by parent \\\"New Windows service created\\\" alerts.[CT12]", 
+    "Telemetry also showed a different view of the event with powershell.exe copying cmd.exe as magnify.exe in the system directory. The telemetry was tainted by parent \\\"New Windows service created\\\" alerts.[CT5]"
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell to overwrite magnify.exe with cmd.exe", 
+  "Step": "17.C.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1015", 
+  "TechniqueName": "Accessibility Features"
+}

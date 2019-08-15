@@ -1,0 +1,2681 @@
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing a successful logon via net.exe."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Conficker (10.0.0.5) using credentials of user Kmitnick", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing a logon attempt via net.exe and command-line arguments using valid account credentials."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Creeper (10.0.0.4) using credentials of user Kmitnick", 
+  "Step": "16.D.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed rdpclip.exe execution by the user Jesse on the destination system of the RDP connection.", 
+    " The capability enriched rdpclip.exe with the correct ATT&CK Technique (Remote Desktop Protocol)."
+  ], 
+  "Procedure": "RDP connection to Conficker (10.0.0.5) authenticated using previously added user Jesse", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Defense Evasion, Persistence, Privilege Escalation, Initial Access", 
+  "Technique": "T1078", 
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of mapped network drives", 
+  "Step": "12.E.1.9.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "TechniqueName": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of available shares", 
+  "Step": "12.E.1.9.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "TechniqueName": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'Get-ChildItem' via PowerShell to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing dir with command-line arguments.", 
+    " The capability enriched cmd.exe with the correct ATT&CK Technique (T1083 - File and Directory Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'dir /s /b \"\\\\conficker\\wormshare\"' via cmd", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing tree.com with command-line arguments.", 
+    " The capability enriched tree.com with the correct ATT&CK Technique (T1083 - File and Directory Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'tree \"C:\\Users\\debbie\"' via cmd", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of interesting files", 
+  "Step": "12.E.1.4.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of recently opened files", 
+  "Step": "12.E.1.4.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ls' (List) via Win32 APIs to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'type' via PowerShell to remotely enumerate a specific file (update.vbs) on Creeper (10.0.0.4)", 
+  "Step": "16.K.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment, Configuration Change"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe and command-line arguments indicative of password spraying, eventually resulting in a successful logon.", 
+    " The capability enriched individual net.exe events with tagging titled \\\"Credential Access using Admin Shares - Failed Attempts\\\" for failures as well as a related ATT&CK Technique (T1077 - Windows Admin Shares) and Tactic (Lateral Movement) for successful logons. [CB8]"
+  ], 
+  "Procedure": "Empire: Successful authentication to Conficker (10.0.0.5) using credentials of user Kmitnick as a result of the brute force password spraying", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "TechniqueName": "Brute Force"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment, Configuration Change"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe and command-line arguments indicative of password spraying.", 
+    " The capability enriched individual net.exe events with tagging titled \\\"Credential Access using Admin Shares - Failed Attempts\\\". [CB8]"
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell to brute force password spraying authentication attempts to Morris (10.0.1.4) and Nimda (10.0.1.6) targeting credentials of users\u00a0Kmitnick, Bob, and Frieda", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "TechniqueName": "Brute Force"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the GUI-based lusrmgr.msc (Local Users and Groups snap-in)."
+  ], 
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility used to add new user through RDP connection", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1061", 
+  "TechniqueName": "Graphical User Interface"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment, Configuration Change "
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of takeown.exe with command-line arguments on magnify.exe. ", 
+    " The capability enriched the execution of takeown.exe with \\\"Permission modifications\\\".[CB1]"
+  ], 
+  "Procedure": "Empire: 'takeown' via PowerShell to obtain ownership of magnify.exe", 
+  "Step": "17.B.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1222", 
+  "TechniqueName": "File Permissions Modification"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment, Configuration Change "
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of icacls.exe with command-line arguments on magnify.exe. ", 
+    " The capability enriched the execution of icacls.exe with \\\"Permission modifications\\\".[CB1]"
+  ], 
+  "Procedure": "Empire: 'icacls' via PowerShell to modify the DACL for magnify.exe", 
+  "Step": "17.B.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1222", 
+  "TechniqueName": "File Permissions Modification"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though modloads showed the thumbnail com object masquerading followed by a modload of dwmapi.dll (Microsoft Desktop Windows Manager API) and then a crossprocess (open process) to the target application, which could be indicative of screen capture behavior."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in screen capture capability executed to capture screenshot of current window of user Debbie", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "TechniqueName": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to start the AdobeUpdater service on Creeper."
+  ], 
+  "Procedure": "Empire: 'sc start' via PowerShell to remotely launch a specific service on Creeper (10.0.0.4)", 
+  "Step": "16.L.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1035", 
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing whoami.exe with command-line arguments.", 
+    " The capability enriched whoami.exe with the correct ATT&CK Technique (T1033 - System Owner/User Discovery)."
+  ], 
+  "Procedure": "Empire: 'whoami /all /fo list' via PowerShell", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed magnify.exe executing whoami.exe. ", 
+    " The capability enriched whoami.exe with the correct ATT&CK Technique (T1033 - System Owner/User Discovery).\u00a0"
+  ], 
+  "Procedure": "Executed 'whoami' via cmd persistence mechanism through RDP connection made to Creeper (10.0.0.4)", 
+  "Step": "20.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing echo with command-line arguments."
+  ], 
+  "Procedure": "Cobalt Strike: 'echo' via cmd to enumerate specific environment variables", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of user information", 
+  "Step": "12.E.1.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed modload events importing dynamic libraries usually used for HTTP and SSL communication (e.g. winhttp.dll), followed by a CRL check to a CA, indicating that HTTPS was likely used."
+  ], 
+  "Procedure": "Empire: Encrypted C2 channel established using HTTPS", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1032", 
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of password policy information", 
+  "Step": "12.E.1.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1201", 
+  "TechniqueName": "Password Policy Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " General Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed Resume Viewer.exe running along with its children.", 
+    "A General Behavior alert was generated indicating that the user Debbie executed Resume Viewer.exe. This alert had a severity score of 51/100 and was based upon \\\"Newly Executed Applications\\\"."
+  ], 
+  "Procedure": "Legitimate user Debbie clicked and executed malicious self-extracting archive (Resume Viewer.exe) on 10.0.1.6 (Nimda)", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of firewall rules", 
+  "Step": "12.E.1.10.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1063", 
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of AV solutions", 
+  "Step": "12.E.1.10.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1063", 
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CB90]\u00a0"
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell collected a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "18.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1039", 
+  "TechniqueName": "Data from Network Shared Drive"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in download capability executed to a collect file (Shockwave_rackb_diagram.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "9.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1039", 
+  "TechniqueName": "Data from Network Shared Drive"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed \\\"crossproc\\\" events indicative of Process Injection into cmd.exe.", 
+    " A Specific Behavior alert was generated that was mapped to correct ATT&CK Technique (Process Injection)."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in process injection capability executed to inject callback into cmd.exe", 
+  "Step": "3.C.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a cross-process \\\"open handle\\\" event into explorer.exe, which could be indicative of process injection."
+  ], 
+  "Procedure": "Cobalt Strike: Screen capture capability involved process injection into explorer.exe", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed an open handle to a thread into lsass.exe, which is indicative of process injection."
+  ], 
+  "Procedure": "Cobalt Strike: Credential dump capability involved process injection into lsass", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a new thread and open handle into lsass.exe, which is indicative of process injection for credential dumping.", 
+    "A Specific Behavior alert was generated showing the correct ATT&CK Technique (Credential Dumping)."
+  ], 
+  "Procedure": "Cobalt Strike: Hash dump capability involved process injection into lsass.exe", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1055", 
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing net.exe with command-line arguments. ", 
+    " The capability enriched net.exe with a related ATT&CK Technique (Account Discovery)."
+  ], 
+  "Procedure": "Empire: 'net group \"Domain Computers\" /domain' via PowerShell", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with a related ATT&CK technique (Account Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Controllers\" /domain' via cmd", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with a related ATT&CK technique (Account Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Computers\" /domain' via cmd", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed network connections over TCP port 80 as well as a modload showing winhttp.dll was loaded, which an analyst could use to determine HTTP was used."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to use HTTP traffic to freegoogleadsenseinfo.com", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using DNS traffic to freegoogleadsenseinfo.com", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over HTTP", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed modload events importing dynamic libraries usually used for HTTP and SSL communication (e.g. winhttp.dll), followed by a CRL check to a CA, indicating that HTTPS was likely used."
+  ], 
+  "Procedure": "Empire: C2 channel established using HTTPS traffic to freegoogleadsenseinfo.com", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure.[CB2]"
+  ], 
+  "Procedure": "Cobalt Strike: Built-in keylogging capability executed to capture keystrokes of user Debbie", 
+  "Step": "8.C.1", 
+  "TacticGroup": "collection, Credential Access", 
+  "Technique": "T1056", 
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed modloads associated with the execution of a keylogger. ", 
+    " The capability enriched the events with a tag titled \\\"PowerShell Input Capture -keylogger\\\" based on known modloads that could be potentially abused to provide keylogger functionality."
+  ], 
+  "Procedure": "Empire: Built-in keylogging module executed to capture keystrokes of user Bob", 
+  "Step": "15.A.1", 
+  "TacticGroup": "collection, Credential Access", 
+  "Technique": "T1056", 
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using both NetBIOS and base64 encoding", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1132", 
+  "TechniqueName": "Data Encoding"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "RDP connection made to Creeper (10.0.0.4) as part of execution of persistence mechanism", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a connection to 10.0.0.5 (Conficker) over TCP port 3389 as well as rdpclip.exe executing.", 
+    " The capability enriched the rdpclip.exe events with the correct ATT&CK Technique (Remote Desktop Protocol)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to proxy RDP connection to Conficker (10.0.0.5)", 
+  "Step": "6.C.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed rdpclip.exe execution by the user Jesse on the destination system of the RDP connection.", 
+    " The capability enriched rdpclip.exe with the correct ATT&CK Technique (Remote Desktop Protocol)."
+  ], 
+  "Procedure": "RDP connection made to Conficker (10.0.0.5) as part of execution of persistence mechanism", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1076", 
+  "TechniqueName": "Remote Desktop Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed rundll32.exe executing updater.dll with a parent of svchost.exe running with command-line arguments \\\"-k netsvcs -p -s Schedule\\\"."
+  ], 
+  "Procedure": "Scheduled task executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (updater.dll) using Rundll32", 
+  "Step": "10.A.2", 
+  "TacticGroup": "Execution, Persistence, Privilege Escalation", 
+  "Technique": "T1053", 
+  "TechniqueName": "Scheduled Task"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the process tree containing schtasks.exe as well as the full command-line arguments.", 
+    " A Specific Behavior alert was generated mapped to the correct ATT&CK Technique (T1053 - Scheduled Task)."
+  ], 
+  "Procedure": "Cobalt Strike: 'schtasks' via cmd to create scheduled task that executes a DLL payload (updater.dll)", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Execution, Persistence, Privilege Escalation", 
+  "Technique": "T1053", 
+  "TechniqueName": "Scheduled Task"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed filemod events for the creation and write the .vsdx in the Recycle Bin. ", 
+    " A Specific Behavior alert was generated with a severity score of 60/100 and was correctly mapped to correct ATT&CK Technique (T1074 - Data Staged)."
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell staged a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5) in the Recycle Bin (C:\\$Recycle.Bin) on CodeRed (10.0.1.5)", 
+  "Step": "18.B.1", 
+  "TacticGroup": "collection", 
+  "Technique": "T1074", 
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Keylogging capability included residual enumeration of application windows", 
+  "Step": "8.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1010", 
+  "TechniqueName": "Application Window Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: Built-in keylogging module included residual enumeration of application windows", 
+  "Step": "15.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1010", 
+  "TechniqueName": "Application Window Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of system information via a Registry query", 
+  "Step": "12.E.1.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing reg.exe with command-line arguments. ", 
+    " The capability enriched reg.exe data with the correct ATT&CK Technique (Query Registry)."
+  ], 
+  "Procedure": "Empire:\u00a0'reg query' via PowerShell to enumerate a specific Registry key", 
+  "Step": "13.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment "
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed reg.exe executing with command-line arguments. ", 
+    " The capability enriched reg.exe with the correct ATT&CK Technique (T1012 - Query Registry)."
+  ], 
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing reg.exe with command-line arguments.", 
+    "The capability enriched reg.exe with the correct ATT&CK Technique (T1012 - Query Registry)."
+  ], 
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to enumerate a specific Registry key", 
+  "Step": "2.H.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments.", 
+    " The capability enriched reg.exe with the correct ATT&CK Technique (T1012 - Query Registry)."
+  ], 
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to remotely enumerate a specific Registry key on Conficker (10.0.0.5)", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.D.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.E.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment "
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree with cmd.exe execution and associated user context change.", 
+    "The capability enriched cmd.exe event data with the correct ATT&CK Technique (T1059 - Command-Line Interface)."
+  ], 
+  "Procedure": "Empire: Built-in runas module executed to launch malicious VBScript (autoupdate.vbs) as user Kmitnick\u00a0", 
+  "Step": "16.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.F.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.G.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.H.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.C.2 ", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.G.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "4.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing ipconfig.exe with command-line arguments.", 
+    " The capability enriched ipconfig.exe with the correct ATT&CK Technique (T1049 - System Network Configuration Discovery)."
+  ], 
+  "Procedure": "Empire: 'ipconfig /all' via PowerShell", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing netsh.exe with command-line arguments.", 
+    "The capability enriched netsh.exe with a related ATT&CK technique (T1063 - Security Software Discovery) and a tag for Potential Windows Firewall Rule Recon."
+  ], 
+  "Procedure": "Cobalt Strike: 'netsh advfirewall show allprofiles' via cmd", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing route.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'route print' via PowerShell", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing arp.exe with command-line arguments.", 
+    "The capability enriched arp.exe with a related ATT&CK Technique (T1018 - Remote System Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'arp -a' via cmd", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing ipconfig.exe with command-line arguments.", 
+    "The capability enriched ipconfig.exe with the correct ATT&CK Technique (T1016 - System Network Configuration Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'ipconfig /all' via cmd", 
+  "Step": "2.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of network adapters", 
+  "Step": "12.E.1.11", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of system information", 
+  "Step": "12.E.1.6.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of Windows update information", 
+  "Step": "12.E.1.6.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (System Information Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'net config workstation' via cmd", 
+  "Step": "2.E.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing systeminfo.exe.", 
+    "The capability enriched systeminfo.exe with the correct ATT&CK Technique (System Information Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'systeminfo' via cmd", 
+  "Step": "2.E.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment, Configuration Change"
+  ], 
+  "DetectionText": [
+    "Telemetry showed Registry modification events related to the creation of the user account Jesse.", 
+    "The capability enriched lsass.exe with the tag \\\"Create Accounts using GUI\\\". [CB1]"
+  ], 
+  "Procedure": "Added user Jesse to Conficker (10.0.0.5) through RDP connection", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1136", 
+  "TechniqueName": "Create Account"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior "
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to create a new AdobeUpdater service containing a binPath pointed to cmd.exe with arguments to execute update.vbs. ", 
+    " A Specific Behavior alert was generated for sc.exe execution to create the AdobeUpdater service with the correct ATT&CK Technique (New Service)."
+  ], 
+  "Procedure": "Empire: 'sc create' via PowerShell to remotely create a service on Creeper (10.0.0.4)", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1050", 
+  "TechniqueName": "New Service"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: 'get-content' via PowerShell to collect sensitive file (it_tasks.txt) from a network shared drive (Wormshare) on Conficker (10.0.0.5)", 
+  "Step": "15.B.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1081", 
+  "TechniqueName": "Credentials in Files"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.F.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.F.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.G.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.G.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "18.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.K.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.H.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "19.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "19.D.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.J.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "15.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "16.L.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1086", 
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the lusrmgr.msc (Local Users and Groups snap-in) which displays local account information."
+  ], 
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility displayed user account information", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.", 
+    " The capability enriched net.exe with a related ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ], 
+  "Procedure": "Empire: 'net user /domain' via PowerShell", 
+  "Step": "12.G.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (Account Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'net user /domain' via cmd", 
+  "Step": "2.G.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (Account Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'net user george /domain' via cmd", 
+  "Step": "2.G.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.", 
+    " The capability enriched net.exe with a related ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ], 
+  "Procedure": "Empire: 'net user' via PowerShell", 
+  "Step": "12.G.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "TechniqueName": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed the Resume Viewer.exe execution sequence and rundll32.exe executing.", 
+    " The capability enriched the rundll32.exe execution with the correct ATT&CK Technique (T1085, which corresponds to the Rundll32 Technique)."
+  ], 
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) launched a DLL payload (update.dat) using Rundll32", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1085", 
+  "TechniqueName": "Rundll32"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to elevate process integrity level", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1088", 
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: Built-in UAC bypass token duplication module executed to launch new callback with elevated process integrity level", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1088", 
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "2.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing tasklist.exe with command-line arguments.", 
+    "The capability enriched tasklist.exe with the correct ATT&CK Technique (T1057 - Process Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'tasklist /v' via cmd", 
+  "Step": "2.C.2 ", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs", 
+  "Step": "8.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing qprocess.exe with command-line arguments.", 
+    " The capability enriched qprocess.exe with the correct ATT&CK Technique (Process Discovery)."
+  ], 
+  "Procedure": "Empire: 'qprocess *' via PowerShell", 
+  "Step": "12.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. ", 
+    "The capability enriched recycler.exe with the correct ATT&CK Technique (1022 - Data Encrypted)."
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) created encrypted archive (old.rar) of previously collected file", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1022", 
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "8.D.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "2.C.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    ""
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "Telemetry "
+  ], 
+  "DetectionText": [
+    "Telemetry showed separate network connections over port TCP port 80 and UDP port 53, which could indicate multiband communication."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to split communications between both HTTP and DNS", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1026", 
+  "TechniqueName": "Multiband Communication"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe targeting ADMIN$, eventually resulting in a successful logon.", 
+    " Specific Behavior alerts were generated mapped to the correct ATT&CK Technique (T1077 - Windows Admin Shares) and Tactic (Lateral Movement) for successful logons."
+  ], 
+  "Procedure": "Empire: Successful authentication targeted Windows admin share on Conficker (10.0.0.5)\u00a0", 
+  "Step": "16.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing a logon attempt via net.exe and command-line arguments \u00a0targeting C$ using valid account credentials.", 
+    " \u00a0Specific Behavior alerts were generated mapped to the correct ATT&CK Technique (T1077 - Windows Admin Shares) and Tactic (Lateral Movement) for successful logons."
+  ], 
+  "Procedure": "Empire: Successful authentication targeted Windows admin shares on Conficker (10.0.0.5)", 
+  "Step": "16.D.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe targeting ADMIN$.", 
+    " Specific Behavior alerts titled \\\"Windows Admin Shares - Lateral Movement\\\" were generated for credential accesses specifically targeting admin shares."
+  ], 
+  "Procedure": "Empire: Brute force password spraying attempts targeted Windows admin shares on Morris (10.0.1.4) and Nimda (10.0.1.6)", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1077", 
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed network connections over TCP port 80 to 192.168.0.4 (C2 server).", 
+    " The capability enriched the network connections from rundll32.exe with the correct ATT&CK Technique (T1043 - Commonly Used Port)."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel modified to use port 80", 
+  "Step": "6.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry "
+  ], 
+  "DetectionText": [
+    "Telemetry showed a network connection over UDP port 53."
+  ], 
+  "Procedure": "Cobalt Strike: C2 channel established using port 53", 
+  "Step": "1.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed network connection to 192.168.0.5 (C2 server) over TCP port 8080."
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over port 8080", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Enrichment ", 
+    " Telemetry"
+  ], 
+  "DetectionText": [
+    "The capability enriched backgroundtaskhost.exe and powershell.exe with the correct ATT&CK Technique (T1043 - Commonly Used Port).", 
+    "Telemetry showed network connections, including over TCP port 443 to www.freegoogleadsenseinfo.com (C2 domain)."
+  ], 
+  "Procedure": "Empire: C2 channel established using port 443", 
+  "Step": "11.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1043", 
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing net.exe and command-line arguments. ", 
+    " A Specific Behavior alert was generated indicating that a connected network share was removed."
+  ], 
+  "Procedure": "Empire: 'net use /delete' via PowerShell", 
+  "Step": "16.C.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1126", 
+  "TechniqueName": "Network Share Connection Removal"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the deletion of old.rar."
+  ], 
+  "Procedure": "Empire: 'del C:\\\"$\"Recycle.bin\\old.rar'", 
+  "Step": "19.D.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1107", 
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the deletion of recycler.exe."
+  ], 
+  "Procedure": "Empire: 'del recycler.exe'", 
+  "Step": "19.D.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1107", 
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of AD group memberships", 
+  "Step": "12.E.1.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.", 
+    " The capability enriched net.exe with the correct ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ], 
+  "Procedure": "Empire: 'net group \"Domain Admins\" /domain' via PowerShell", 
+  "Step": "12.F.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.", 
+    " The capability enriched net.exe with the correct ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ], 
+  "Procedure": "Empire: 'net\u00a0localgroup\u00a0administrators' via PowerShell", 
+  "Step": "12.F.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (Permission Groups Discovery) as well as the tag Administrator Enumeration."
+  ], 
+  "Procedure": "Cobalt Strike: 'net localgroup administrators' via cmd", 
+  "Step": "2.F.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (Permission Groups Discovery) as well as the tag Administrator Enumeration."
+  ], 
+  "Procedure": "Cobalt Strike: 'net group \"Domain Admins\" /domain' via cmd", 
+  "Step": "2.F.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (Permission Groups Discovery) as well as the tag Administrator Enumeration."
+  ], 
+  "Procedure": "Cobalt Strike: 'net localgroup administrators /domain' via cmd", 
+  "Step": "2.F.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1069", 
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the creation of recycler.exe.\u00a0"
+  ], 
+  "Procedure": "Empire: Built-in upload module executed to write binary (recycler.exe) to disk on CodeRed (10.0.1.5)", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed file modification events indicating updater.dll being created and written to disk."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in upload capability executed to write a DLL payload (updater.dll) to disk on Nimda (10.0.1.6)", 
+  "Step": "7.B.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed filemods showing the creation and writing to autoupdate.vbs. "
+  ], 
+  "Procedure": "Empire: Built-in upload module executed to write malicious VBScript (autoupdate.vbs) to disk on CodeRed (10.0.1.5)", 
+  "Step": "16.E.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "The vendor demonstrated to MITRE that the capability can provide telemetry of network connections and file modifications indicating a Remote File Copy, but no screenshot was captured for this procedure."
+  ], 
+  "Procedure": "Empire: UAC bypass module downloaded and executed a new Empire stager (wdbypass)", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed filemods showing the creation and writing to update.vbs on remote host 10.0.0.4 (Creeper)."
+  ], 
+  "Procedure": "Empire: Built-in move capability executed to write malicious VBScript (update.vbs) to disk on Creeper (10.0.0.4)", 
+  "Step": "16.G.1", 
+  "TacticGroup": "Command and Control, Lateral Movement", 
+  "Technique": "T1105", 
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed svchost.exe, with the seclogon command-line argument, performing activity related to token manipulation."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to modify current process token", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1134", 
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a change in user execution context from Debbie to George between parent and child processes, which is indicative of token manipulation."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in token theft capability executed to change user context to George", 
+  "Step": "5.B.1", 
+  "TacticGroup": "Defense Evasion, Privilege Escalation", 
+  "Technique": "T1134", 
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing the pdfhelper.cmd script.", 
+    "The capability enriched the cmd.exe execution with the correct ATT&CK Technique (T1064 - Scripting)."
+  ], 
+  "Procedure": "Previously executed self-extracting archive (Resume Viewer.exe) launched an embedded batch file (pdfhelper.cmd)", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Enrichment ", 
+    " Telemetry ", 
+    " Specific Behavior", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "The capability enriched wscript.exe and powershell.exe with the correct ATT&CK Techniques (T1063 - Scripting, T1086 - Powershell).", 
+    "Telemetry of a process tree showed powershell.exe execution, including full command-line arguments.", 
+    " A Specific Behavior Alert was generated indicating that powershell.exe was a suspicious child process of wscript.exe.", 
+    " A Specific Behavior alert was generated indicating that powershell.exe was executed with encoded command-line arguments.\u00a0"
+  ], 
+  "Procedure": "Legitimate user Bob clicked and executed malicious VBScript (autoupdate.vbs) on 10.0.1.5 (CodeRed)", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed process execution of powershell.exe. The powershell.exe process loaded several non-default dynamically loaded libraries that may indicate the functionality may be used by the PowerShell script."
+  ], 
+  "Procedure": "Empire: Built-in WinEnum module executed to programmatically execute a series of enumeration techniques", 
+  "Step": "12.E.1", 
+  "TacticGroup": "Defense Evasion, Execution", 
+  "Technique": "T1064", 
+  "TechniqueName": "Scripting"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed an open handle to a thread into lsass.exe, which is indicative of process injection for credential dumping.", 
+    "A Specific Behavior alert was generated showing the correct ATT&CK Technique (Credential Dumping)."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in Mimikatz credential dump capability executed", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed an open handle to a thread into lsass.exe, which is indicative of process injection for credential dumping."
+  ], 
+  "Procedure": "Cobalt Strike: Built-in hash dump capability executed", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Cobalt Strike: Download capability exfiltrated data through existing C2 channel", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing autoupdate.bat from the Startup folder."
+  ], 
+  "Procedure": "Batch file (autoupdate.bat) previously written to Startup folder executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (update.dat) using Rundll32", 
+  "Step": "10.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1060", 
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed filemods indicating the creation and file write of autoupdate.bat to the Startup folder.", 
+    " The capability enriched cmd.exe with the correct ATT&CK Technique (T1060 - Registry Run Keys/Start Folder)."
+  ], 
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) moved a separate batch file (autoupdate.bat) to the Startup folder", 
+  "Step": "1.B.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1060", 
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments."
+  ], 
+  "Procedure": "Empire: 'net start' via PowerShell", 
+  "Step": "12.D.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed reg.exe executing with command-line arguments to check if terminal services were enabled. "
+  ], 
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key associated with terminal services", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment "
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to query the AdobeUpdater service on Creeper. ", 
+    " The capability enriched sc.exe execution with the correct ATT&CK Technique (System Service Discovery)."
+  ], 
+  "Procedure": "Empire: 'sc qc' via PowerShell to remotely enumerate a specific service on Creeper (10.0.0.4)", 
+  "Step": "16.J.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.", 
+    "The capability enriched net.exe with the correct ATT&CK Technique (System Service Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'net start' via cmd", 
+  "Step": "2.D.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing sc.exe with command-line arguments.", 
+    "The capability enriched sc.exe with the correct ATT&CK Technique (System Service Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'sc query' via cmd", 
+  "Step": "2.D.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of services", 
+  "Step": "12.E.1.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment "
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to remotely query services on Creeper. Telemetry also showed module loads and a network connection to Creeper (10.0.0.4). ", 
+    " The capability enriched the sc.exe execution with the correct ATT&CK Technique (System Service Discovery)."
+  ], 
+  "Procedure": "Empire: 'sc query' via PowerShell to remotely enumerate services on Creeper (10.0.0.4)", 
+  "Step": "16.H.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1007", 
+  "TechniqueName": "System Service Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree for ftp.exe being executed with command-line arguments including ftp.txt.", 
+    " The capability enriched ftp.exe with the correct ATT&CK Technique (Exfil Over Alternate Protocol)."
+  ], 
+  "Procedure": "Empire: Sequence of 'echo' commands via PowerShell to populate commands in text file (ftp.txt), which is then executed by FTP to exfil data through network connection separate of existing C2 channel", 
+  "Step": "19.C.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1048", 
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed netstat.exe executing with command-line arguments.", 
+    " The capability enriched netstat.exe with the correct ATT&CK Technique (System Network Connections Discovery)."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of established network connections", 
+  "Step": "12.E.1.12", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Enrichment ", 
+    " Telemetry"
+  ], 
+  "DetectionText": [
+    "The capability enriched net.exe with a related ATT&CK Technique (Account Discovery).", 
+    "The vendor demonstrated to MITRE that the capability can provide telemetry of net.exe, but no screenshot was captured for this procedure."
+  ], 
+  "Procedure": "Empire: 'net use' via PowerShell", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed a process tree containing netstat.exe with command-line arguments. ", 
+    " The capability enriched net.exe data with the correct ATT&CK Technique (T1049 - System Network Connections Discovery)."
+  ], 
+  "Procedure": "Empire: 'netstat -ano' via PowerShell", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing netstat.exe with command-line arguments.", 
+    "The capability enriched netstat.exe with the correct ATT&CK technique (System Network Connections Discovery)."
+  ], 
+  "Procedure": "Cobalt Strike: 'netstat -ano' via cmd", 
+  "Step": "4.C.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1049", 
+  "TechniqueName": "System Network Connections Discovery"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Enrichment"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. Telemetry also showed the creation of old.rar as the output of recycler.exe running.", 
+    "The capability enriched recycler.exe with the correct ATT&CK Technique (1002 - Data Compressed)."
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) created compressed archive (old.rar) of previously collected file", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1002", 
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ], 
+  "Procedure": "Empire: WinEnum module included enumeration of clipboard contents", 
+  "Step": "12.E.1.5", 
+  "TacticGroup": "collection", 
+  "Technique": "T1115", 
+  "TechniqueName": "Clipboard Data"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the creation of recycler.exe. Binary metadata on recycler.exe indicated it was masquerading and had a digital signature and file metadata that matched the WinRAR utility."
+  ], 
+  "Procedure": "Empire: File dropped to disk is a renamed copy of the WinRAR binary", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. ", 
+    " A Specific Behavior alert was generated on execution of recycler.exe indicating it was WinRAR and was masquerading as a renamed process."
+  ], 
+  "Procedure": "Empire: Executed binary (recycler.exe) is a renamed copy of the WinRAR binary", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process trees showed execution of sc.exe with command-line arguments to create the AdobeUpdater service with binPath pointed to cmd.exe with arguments to execute update.vbs and a suspicious service description, which indicates masquerading."
+  ], 
+  "Procedure": "Empire: 'sc description' via PowerShell to remotely disguise a service on Creeper (10.0.0.4)", 
+  "Step": "16.I.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior ", 
+    " General Behavior ", 
+    " General Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry within the process tree that showed magnify.exe executing from utilman.exe.", 
+    " A Specific Behavior alert was generated on execution of magnify.exe named \\\"Suspicious screen magnifier\u00a0process\\\" with a 76/100 severity score. ", 
+    " A General Behavior alert was generated named \\\"Suspicious renamed cmd process\\\" with a 72/100 severity score. ", 
+    " A General Behavior alert was generated named \\\"Execution of cmd from non-standard path\\\" with a 60/100 severity score."
+  ], 
+  "Procedure": "magnifer.exe previously overwritten by cmd.exe launched through RDP connection made to Creeper (10.0.0.4)", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1015", 
+  "TechniqueName": "Accessibility Features"
+}
+{
+  "Detection": [
+    "Telemetry ", 
+    " Specific Behavior"
+  ], 
+  "DetectionText": [
+    "Telemetry showed filemod events overwriting magnify.exe in the system directory. ", 
+    " A Specific Behavior alert was generated for powershell.exe with a severity score of 51/100 when magnify.exe was replaced. The alert was also mapped to the correct ATT&CK Technique (T1015 - Accessibility Features)."
+  ], 
+  "Procedure": "Empire: 'copy' via PowerShell to overwrite magnify.exe with cmd.exe", 
+  "Step": "17.C.1", 
+  "TacticGroup": "Persistence, Privilege Escalation", 
+  "Technique": "T1015", 
+  "TechniqueName": "Accessibility Features"
+}
