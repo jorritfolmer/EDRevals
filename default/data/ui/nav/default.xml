@@ -1,8 +1,19 @@
 <nav search_view="search" color="#65A637">
   <view name="overview" default="true" />
-  <view name="main_detection_types" />
-  <view name="detection_modifiers" />
-  <view name="detection_results_per_step" />
-  <view name="bias_ahead" />
+  <collection label="Main detection types">
+	<view name="main_detection_types_apt3" />
+	<view name="main_detection_types_apt29" />
+  </collection>
+  <collection label="Detection modifiers">
+  	<view name="detection_modifiers_apt3" />
+  	<view name="detection_modifiers_apt29" />
+  </collection>
+  <collection label="Detection results per step">
+  	<view name="detection_results_per_step_apt3" />
+  	<view name="detection_results_per_step_apt29" />
+  </collection>
+  <collection label="Biased barcharts">
+  	<view name="bias_ahead" />
+  </collection>
   <view name="search" />
 </nav>

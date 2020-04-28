@@ -1,5 +1,5 @@
 <dashboard>
-  <label>Main detection types</label>
+  <label>Main detection types APT3</label>
   <search id="base">
     <query>
       index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 

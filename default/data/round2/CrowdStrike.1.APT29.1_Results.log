@@ -1,0 +1,2257 @@
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed rundll32.exe executing kxwn.lock."
+  ],
+  "Procedure": "Executed Run key persistence payload on user login using RunDll32",
+  "Step": "20.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1085",
+  "TechniqueName": "Rundll32"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc reading file monkey.png. The event was correlated to a parent General detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Dropped stage 2 payload (monkey.png) to disk",
+  "Step": "3.A.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of the ZIP by PowerShell. The detection was correlated to a parent alert for Bypass User Account Control of control.exe spawning powershell.exe."
+  ],
+  "Procedure": "Dropped additional tools (SysinternalsSuite.zip) to disk over C2 channel (192.168.0.5)",
+  "Step": "4.A.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a file write event of python.exe. "
+  ],
+  "Procedure": "Copied python.exe payload from a WebDAV share (192.168.0.4) to remote host Scranton (10.0.1.4)",
+  "Step": "8.B.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an executable file write event for python.exe creating rar.exe."
+  ],
+  "Procedure": "Dropped rar.exe to disk on remote host Scranton (10.0.1.4)\u00a0",
+  "Step": "9.A.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed Executable File Write event for python.exe creating sdelete64.exe."
+  ],
+  "Procedure": "Dropped sdelete.exe to disk on remote host Scranton (10.0.1.4)\u00a0",
+  "Step": "9.A.2",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General detection called \"NewExecutableWritten\" was generated was generated for the PowerShell command to download m.exe.",
+    "Telemetry showed the file write event for m.exe into the System32 folder. The detection was correlated to a parent alert for Execution via Powershell."
+  ],
+  "Procedure": "Downloaded and dropped Mimikatz (m.exe) to disk",
+  "Step": "14.B.3",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a file write of m.exe to System32 directory by wsmprovhost.exe."
+  ],
+  "Procedure": "Dropped Mimikatz (m.exe) to disk on the domain controller host NewYork (10.0.0.4) over a WinRM connection",
+  "Step": "16.D.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the deletion of the command subkey. The event was correlated to a parent technique detection for Bypass User Account Control of control.exe spawning powershell.exe."
+  ],
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking",
+  "Step": "3.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "TechniqueName": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the deletion of the Registry value."
+  ],
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking using PowerShell",
+  "Step": "14.A.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "TechniqueName": "Modify Registry"
+}
+{
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) was generated when powershell.exe spawned from cmd.exe. The detection was correlated to a parent alert for user execution of rcs.3aka.doc.",
+    "Telemetry showed powershell.exe spawning from cmd.exe. The detection was correlated to a parent alert for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Spawned interactive powershell.exe",
+  "Step": "1.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed a new powershell.exe spawning from powershell.exe. The detection was correlated to a parent alert for Bypass User Account Control of control.exe spawning powershell.exe."
+  ],
+  "Procedure": "Spawned interactive powershell.exe",
+  "Step": "4.A.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed Python.exe executing powershell.exe\u200b."
+  ],
+  "Procedure": "Spawned interactive powershell.exe",
+  "Step": "9.B.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \u201cPowerShell\u201d was generated for the executed PowerShell stager matching existing malware characteristics. ",
+    "A Technique alert detection (yellow indicator) called \u201cPowerShell\u201d was generated for powershell.exe run with a hidden window and encoded commands.",
+    "Telemetry showed powershell.exe spawned from a PowerShell stager."
+  ],
+  "Procedure": "Executed PowerShell stager payload",
+  "Step": "11.A.12",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow unique icon) called \u201cPowerShell\u201d was generated when powershell was executed with a hidden window and encoded commands. ",
+    "A Technique detection called \u201cPShellExploitKit2\u201d was generated by wmiprvse.exe executing powershell.exe as SYSTEM.",
+    "Telemetry showed a SYSTEM-level PowerShell spawning from wmiprvse.exe."
+  ],
+  "Procedure": "Executed PowerShell payload from WMI event subscription persistence",
+  "Step": "20.A.3",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection for \"ServiceExecOnSMBFile\" was generated due to PsExec running a python.exe remotely. ",
+    "Telemetry showed python.exe spawned from PSEXESVC.exe."
+  ],
+  "Procedure": "Executed python.exe using PSExec",
+  "Step": "8.C.3",
+  "TacticGroup": "Execution",
+  "Technique": "T1035",
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Executed persistent service (javamtsup) on system startup",
+  "Step": "10.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1035",
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed net.exe with command-line arguments to connect to a OneDrive URL as well as net.exe subsequently making a network connection to public IPs over port 443. The detection was correlated to a parent technique detection for PowerShell."
+  ],
+  "Procedure": "Mapped a network drive to an online OneDrive account using PowerShell",
+  "Step": "18.A.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1102",
+  "TechniqueName": "Web Service"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe establishing a connection to NewYork (10.0.0.4) over port 389. The event was correlated to a parent General detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Enumerated remote systems using LDAP queries",
+  "Step": "8.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the System.DirectoryServices.dll module loaded by powershell.exe as well as powershell.exe executing the Get-NetDomainController cmdlet. The detection was correlated to a parent alert on PowerShell."
+  ],
+  "Procedure": "Enumerated the domain controller host NewYork (10.0.0.4) using LDAP queries",
+  "Step": "16.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a valid logon on Scranton (10.0.1.4) as user Pam.\t"
+  ],
+  "Procedure": "Logged on to remote host Scranton (10.0.1.4) using\u00a0valid credentials for user Pam",
+  "Step": "8.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed a successful logon on NewYork (10.0.0.4) as user MScott. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Logged on to the domain controller host NewYork (10.0.0.4) using\u00a0valid credentials for user MScott\u00a0",
+  "Step": "16.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) called \"Masquerading\" was generated when an executable ran containing a RTLO character.",
+    "An MSSP detection was received that included details of the file rcs.3aka3.doc and identified it as an portable executable."
+  ],
+  "Procedure": "Used unicode right-to-left override (RTLO) character to obfuscate file name rcs.3aka3.doc (originally cod.3aka.scr)",
+  "Step": "1.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General detection called \"HashPupAdwareCrowdStrikeSha256\" was generated when accesschk.exe matched known malicious payload hashes. The event was correlated to a parent General detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Masqueraded a Chrome password dump tool as accesscheck.exe, a legitimate Sysinternals tool",
+  "Step": "6.A.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though data showed rcs.3aka3.doc loading cryptographic libraries."
+  ],
+  "Procedure": "Used RC4 stream cipher to encrypt C2 (192.168.0.5) traffic",
+  "Step": "1.A.4",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1032",
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.5) traffic",
+  "Step": "3.B.5",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1032",
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP alert showed outbound connection with Cryptographic API calls to C2 server."
+  ],
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.4) traffic",
+  "Step": "11.A.15",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1032",
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of hostui.lnk in the Startup folder. The event was correlated to a parent General detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Created a LNK file (hostui.lnk) in the Startup folder that executes on login",
+  "Step": "5.B.1",
+  "TacticGroup": "Persistence",
+  "Technique": "T1060",
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed hostui.lnk executing from the Startup Folder."
+  ],
+  "Procedure": "Executed LNK payload (hostui.lnk) in Startup Folder on user login",
+  "Step": "10.B.1",
+  "TacticGroup": "Persistence",
+  "Technique": "T1060",
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe adding Run key persistence into the Registry."
+  ],
+  "Procedure": "Established Registry Run key persistence using PowerShell",
+  "Step": "11.A.11",
+  "TacticGroup": "Persistence",
+  "Technique": "T1060",
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Software Packing\" was generated when python.exe was written to disk. ",
+    "Telemetry showed a packed executable written event for python.exe. "
+  ],
+  "Procedure": "python.exe payload was packed with UPX",
+  "Step": "8.B.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1045",
+  "TechniqueName": "Software Packing"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecute Registry Value. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "Step": "3.B.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1122",
+  "TechniqueName": "Component Object Model Hijacking"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecute Registry value. "
+  ],
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "Step": "14.A.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1122",
+  "TechniqueName": "Component Object Model Hijacking"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) was generated for a suspicious file meeting the sensor's low-confidence threshold for a malicious file.",
+    "An MSSP detection for the suspicious execution of the rcs.3aka3.doc file.",
+    "Telemetry showed explorer.exe executing rcs.3aka3.doc."
+  ],
+  "Procedure": "User Pam executed payload rcs.3aka3.doc",
+  "Step": "1.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed explorer.exe executing powershell.exe. "
+  ],
+  "Procedure": "User Oscar executed payload 37486-the-shocking-truth-about-election-rigging-in-america.rtf.lnk",
+  "Step": "11.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell command used to create the new service javamtsup. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Created a new service (javamtsup) that executes a service binary (javamtsup.exe) at system startup",
+  "Step": "5.A.1",
+  "TacticGroup": "Persistence",
+  "Technique": "T1050",
+  "TechniqueName": "New Service"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe triggered a ScreenshotTakenETW event. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Captured and saved screenshots using PowerShell",
+  "Step": "7.A.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "TechniqueName": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe spawning from rcs.3aka3.doc\u200b. The detection was correlated to a parent alert for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Spawned interactive cmd.exe",
+  "Step": "1.B.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Clipboard. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Captured clipboard contents using PowerShell",
+  "Step": "7.A.2",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "TechniqueName": "Clipboard Data"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:USERDOMAIN. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated the current domain name using PowerShell",
+  "Step": "4.C.4",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Checked that the computer is joined to a domain using PowerShell",
+  "Step": "11.A.7",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the NetWkstaGetInfo API. "
+  ],
+  "Procedure": "Enumerated the domain name using the NetWkstaGetInfo API",
+  "Step": "13.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Compress-7Zip with arguments for encryption. The detection was correlated to a parent alert for User Execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Encrypted data from the user's Downloads directory using PowerShell",
+  "Step": "7.B.3",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1022",
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The event was correlated to a parent Technique detection for Windows Admin Shares."
+  ],
+  "Procedure": "Encrypted staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "Step": "9.B.6",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1022",
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Invoke-Mimikatz to create and inject a golden ticket into current session."
+  ],
+  "Procedure": "Created Kerberos Golden Ticket using\u00a0Invoke-Mimikatz",
+  "Step": "20.B.1",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1097",
+  "TechniqueName": "Pass the Ticket"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP report showed sdclt.exe spawned a process that connected to 192.168.0.5 on port 443.",
+    "Telemetry showed powershell.exe connecting to 192.168.0.5 on port 443.  The event was correlated to a parent technique detection for Bypass User Account Control of control.exe spawning powershell.exe."
+  ],
+  "Procedure": "Established C2 channel (192.168.0.5) via PowerShell payload over TCP port 443",
+  "Step": "3.B.3",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to the C2 (192.168.0.4) over port 443."
+  ],
+  "Procedure": "Established C2 channel (192.168.0.4) via PowerShell payload over port 443",
+  "Step": "11.A.13",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed network connection to remote host Scranton (10.0.1.4) over port 5985. The event was correlated to a parent General detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Established WinRM connection to remote host Scranton (10.0.1.4)",
+  "Step": "8.A.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1028",
+  "TechniqueName": "Windows Remote Management"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique detection called \u201cGenericWinRMLateralMovement\u201d was generated when powershell.exe executed Invoke-WinRMSession to connect to remote host NewYork (10.0.0.4) with credentials for user MScott. The detection was correlated to a parent grouping of malicious activity.",
+    "Telemetry showed powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Established a WinRM connection to the domain controller host NewYork (10.0.0.4) ",
+  "Step": "16.C.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1028",
+  "TechniqueName": "Windows Remote Management"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \u201cExecution via Windows Remote Management\u201d was generated for WinRM execution based on the WSMProvHost process on the remote host Scranton (10.0.1.4).",
+    "A Technique detection called \u201cGenericWinRMLateralMovement\u201d was generated based on PowerShell executing the Enter-PSSession cmdlet to open a network connection to the remote host Scranton (10.0.1.4).",
+    "Telemetry showed PowerShell with an open network connection to the remote host Scranton (10.0.1.4) over port 5985."
+  ],
+  "Procedure": "Established a WinRM connection to the remote host Scranton (10.0.1.4) using the Golden Ticket as credentials",
+  "Step": "20.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1028",
+  "TechniqueName": "Windows Remote Management"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Executed the CryptUnprotectedData API call to decrypt Chrome passwords",
+  "Step": "6.A.2",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red hexagon indicator) for \"Credential Dumping\" was generated when powershell.exe injected into LSASS. The event was correlated to a parent General detection for User Execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Dumped password hashes from the Windows Registry by injecting a malicious DLL into Lsass.exe",
+  "Step": "6.C.1",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Technique",
+    "Technique",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \u201cCredential Dumping\u201d was generated LSASS process was accessed by Mimikatz (m.exe). The detection was correlated to a parent alert for Execution via Powershell.",
+    "A Technique alert detection (red indicator) called \u201cCredential Dumping\u201d was generated when m.exe read LSASS memory. The detection was correlated to a parent alert for Execution via Powershell.",
+    "A Technique alert detection (red indicator) called \u201cCredential Dumping\u201d was generated when Mimikatz (m.exe) launched. The detection was correlated to a parent alert for Execution via Powershell.",
+    "A Technique alert detection (red indicator) called \u201cCredential Dumping\u201d was generated when the encoded powershell payload script launched a mimikatz process (m.exe) . The detection was correlated to a parent alert for Execution via Powershell.",
+    "A General alert detection (red indicator) called \u201cMachine Learning via Sensor-based ML\u201d was generated when m.exe met machine learning-based on-sensor AV protection\u2019s high confidence threshold for malicious files. The detection was correlated to a parent alert for Execution via Powershell."
+  ],
+  "Procedure": "Dumped plaintext credentials using Mimikatz (m.exe)",
+  "Step": "14.B.4",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Technique",
+    "Technique",
+    "Technique",
+    "Technique",
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Alert",
+    "Alert",
+    "Alert",
+    "Alert",
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called \u201cCredential Dumping\u201d was generated when a remote thread was written to LSASS memory by m.exe (mimikatz).",
+    "A Technique alert detection (orange indicator) called \u201cCredential Dumping\u201d was generated when a thread was injected into LSASS from a signed executable with untrusted root authority.",
+    "A Technique alert detection (orange indicator) called \u201cCredential Dumping\u201d was generated when m.exe allocated executable memory inside of LSASS.",
+    "A Technique alert detection (orange indicator) called \u201cCredential Dumping\u201d was generated when m.exe injected code into the LSASS process.",
+    "A Technique alert detection  (orange indicator) called \u201cCredential Dumping\u201d was generated when m.exe (mimikatz) accessed LSASS memory.",
+    "A Technique alert detection (orange indicator) called \u201cCredential Dumping\u201d was generated when m.exe read LSASS memory.",
+    "A General alert detection (orange indicator) called \u201cCredential Dumping\u201d was generated identifying m.exe as Mimikatz.",
+    "A General alert detection (orange indicator) called \u201cMachine Learning via Sensor-based ML\u201d was generated when m.exe met machine learning-based on-sensor AV protection\u2019s high confidence threshold for malicious files."
+  ],
+  "Procedure": "Dumped the KRBTGT hash on the domain controller host NewYork (10.0.0.4) using Mimikatz (m.exe)",
+  "Step": "16.D.2",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Checked that the BIOS version and serial number are not associated with VirtualBox or VMware using PowerShell",
+  "Step": "11.A.3",
+  "TacticGroup": "Discovery",
+  "Technique": "T1497",
+  "TechniqueName": "Virtualization/Sandbox Evasion"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Used HTTPS to transport\u00a0C2 (192.168.0.5) traffic",
+  "Step": "3.B.4",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though data showed powershell.exe loading http libraries."
+  ],
+  "Procedure": "Used HTTPS to transport\u00a0C2 (192.168.0.4) traffic",
+  "Step": "11.A.14",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-WmiObject...\u200b -Class AntiVirusProduct. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated anti-virus software using PowerShell",
+  "Step": "4.C.7",
+  "TacticGroup": "Discovery",
+  "Technique": "T1063",
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique detection called \"GenericSoftwareSystemDiscovery\" was generated when WMI was used to query information about firewall products. The detection was correlated to a parent grouping of malicious activity.",
+    "Telemetry showed powershell.exe executing Get-WmiObject...\u200b -Class FireWallProduct. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated firewall software using PowerShell",
+  "Step": "4.C.8",
+  "TacticGroup": "Discovery",
+  "Technique": "T1063",
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection called \u201cGenericSecuritySoftwareDiscovery\u201d was generated due to PowerShell gwmi query for AntiVirusProduct. ",
+    "Telemetry showed PowerShell gwmi query for AntiVirusProduct. "
+  ],
+  "Procedure": "Enumerated registered AV products using PowerShell",
+  "Step": "12.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1063",
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the NetUserGetGroups API. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated user's domain group membership via the NetUserGetGroups API",
+  "Step": "4.C.9",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the NetUserGetLocalGroups API. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated user's local group membership via\u00a0the NetUserGetLocalGroups API",
+  "Step": "4.C.11",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed Netapi32.dll loaded into powershell.exe. The event was correlated to a parent general detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "Step": "4.C.10",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed Netapi32.dll loaded into powershell.exe. The event was correlated to a parent general detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "Step": "4.C.12",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Executed PowerShell payload via the CreateProcessWithToken API",
+  "Step": "10.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed that PowerShell loaded Advapi32.dll in order to execute the ConvertSidToStringSid API function. The detection was correlated to a parent alert for PowerShell."
+  ],
+  "Procedure": "Executed the ConvertSidToStringSid API call by reflectively loading Advapi32.dll",
+  "Step": "16.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file opens of C:\\Users\\Pam\\*. The event was correlated to a parent general detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "Step": "2.A.3",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe reading files from C:\\Users\\pam\\Downloads. The detection was correlated to a parent alert for User Execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Read data in the user's Downloads directory using PowerShell",
+  "Step": "7.B.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "Step": "9.B.4",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Read and collected a local file using PowerShell",
+  "Step": "17.B.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of OfficeSupplies.7z being copied over the network to a remote adversary WebDav network share (192.168.0.4).",
+    "Telemetry showed PowerShell Copy-Item to a remote adversary WebDav network share (192.168.0.4). The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Exfiltrated collection (OfficeSupplies.7z) to WebDAV network share using PowerShell",
+  "Step": "7.B.4",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Copy-Item to exfiltrate data to a previously mapped OneDrive account. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Exfiltrated staged collection to an online OneDrive account using PowerShell",
+  "Step": "18.A.2",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Processing)"
+  ],
+  "DetectionText": [
+    "Telemetry showed accesschk.exe reading the Chrome database file for credentials. Detection incurred a delay based on accesschk.exe executing in a malware detonation chamber where the results were later available to an analyst."
+  ],
+  "Procedure": "Read the Chrome SQL database file to extract encrypted credentials",
+  "Step": "6.A.1",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1081",
+  "TechniqueName": "Credentials in Files"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed script block with commands to timestomp kxwn.lock. "
+  ],
+  "Procedure": "Modified the time attributes of the kxwn.lock persistence payload using PowerShell",
+  "Step": "12.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1099",
+  "TechniqueName": "Timestomp"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Exported a local certificate to a PFX file using PowerShell",
+  "Step": "6.B.1",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1145",
+  "TechniqueName": "Private Keys"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Reflectively injected SDelete binary into PowerShell",
+  "Step": "19.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Reflectively injected SDelete binary into PowerShell",
+  "Step": "19.B.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Reflectively injected SDelete binary into PowerShell",
+  "Step": "19.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the schemas ADS with Get-Content and IEX."
+  ],
+  "Procedure": "Executed an alternate data stream (ADS) using PowerShell",
+  "Step": "11.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1096",
+  "TechniqueName": "NTFS File Attributes"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed scriptblock with registry query for installed software."
+  ],
+  "Procedure": "Enumerated installed software via the Registry (Wow6432 Uninstall key) using PowerShell",
+  "Step": "12.C.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed script block with registry query for installed software. "
+  ],
+  "Procedure": "Enumerated installed software via the Registry (Uninstall key) using PowerShell",
+  "Step": "12.C.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe compressing via Compress-Archive."
+  ],
+  "Procedure": "Compressed and stored files into ZIP (Draft.zip) using PowerShell",
+  "Step": "2.A.4",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write event for OfficeSupplies.7z. The event was correlated to a parent General detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Compressed\u00a0data from the user's Downloads directory into a ZIP file (OfficeSupplies.7z) using PowerShell",
+  "Step": "7.B.2",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple indicator) called \"Data Compressed\" was generated due to powershell.exe executing rar.exe with command-line arguments indicative of compression. The event was correlated to a parent Technique detection for Windows Admin Shares.",
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments.The event was correlated to a parent Technique detection for Windows Admin Shares."
+  ],
+  "Procedure": "Compressed staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "Step": "9.B.7",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell compressing collection via ZipFile.CreateFromDirectory .NET method and the subsequent ZipFileWritten event. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Compressed a staging directory using PowerShell",
+  "Step": "17.C.1",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file read event for Draft.zip and an existing C2 channel (192.168.0.5 over port 1234). The event was correlated to a parent General detection for User Execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Read and downloaded ZIP (Draft.zip) over C2 channel (192.168.0.5 over TCP port 1234)",
+  "Step": "2.B.1",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Read and downloaded ZIP (working.zip on Desktop) over C2 channel (192.168.0.5 over TCP port 8443)",
+  "Step": "9.B.8",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process. The detection was correlated to a parent alert for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Enumerated current running processes using PowerShell",
+  "Step": "4.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $PID. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated the current process ID using PowerShell",
+  "Step": "4.C.5",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process."
+  ],
+  "Procedure": "Enumerated processes on remote host Scranton (10.0.1.4) using PowerShell",
+  "Step": "8.A.3",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Checked that processes such as procexp.exe, taskmgr.exe, or wireshark.exe are not running using PowerShell",
+  "Step": "11.A.8",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the CreateToolhelp32Snapshot API."
+  ],
+  "Procedure": "Enumerated running processes using the CreateToolhelp32Snapshot API",
+  "Step": "13.D.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-Process. "
+  ],
+  "Procedure": "Enumerated and tracked PowerShell processes using PowerShell",
+  "Step": "14.B.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"Input Capture\" was generated when a process performed reads of the user key buffers. The event was correlated to a parent General detection for User Execution of rcs.3aka.doc.",
+    "Telemetry showed PowerShell calling the GetAsyncKeyState API. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Captured user keystrokes using the GetAsyncKeyState API",
+  "Step": "7.A.3",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:USERNAME. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated the current username using PowerShell",
+  "Step": "4.C.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Checked that the username is not related to admin or a generic value (ex: user) using PowerShell",
+  "Step": "11.A.6",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing the GetUserNameEx API. "
+  ],
+  "Procedure": "Enumerated the current username using the GetUserNameEx API",
+  "Step": "13.C.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell script block executing $env:UserName. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated logged on users using PowerShell",
+  "Step": "15.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing the ConvertSidToStringSid API function. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated the domain SID (from current user SID) using\u00a0the ConvertSidToStringSid API",
+  "Step": "16.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem."
+  ],
+  "Procedure": "Searched filesystem for document and media files using PowerShell\u00a0",
+  "Step": "2.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:TEMP. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated user's temporary directory path using PowerShell",
+  "Step": "4.C.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem."
+  ],
+  "Procedure": "Searched filesystem for document and media files using PowerShell",
+  "Step": "9.B.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Checked that the payload is not inside a folder path that contains \"sample\" or is the length of a hash value using PowerShell",
+  "Step": "11.A.9",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell enumeration of System32. "
+  ],
+  "Procedure": "Enumerated the System32 directory using PowerShell",
+  "Step": "12.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"File Deletion\" was generated due to sdelete64.exe deleting rcs.3aka3.doc. The event was correlated to a parent general detection for user execution of rcs.3aka.doc.",
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename events. The detection was correlated to a parent alert for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Deleted rcs.3aka3.doc on disk using SDelete",
+  "Step": "4.B.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The detection was correlated to a parent alert for user execution of Draft.zip."
+  ],
+  "Procedure": "Deleted Draft.zip on disk using SDelete",
+  "Step": "4.B.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file rename and delete operations from sdelete64.exe deleting SysinternalsSuite.zip. The detection was correlated to a parent alert for user execution of SysinternalsSuite.zip."
+  ],
+  "Procedure": "Deleted SysinternalsSuite.zip on disk using SDelete",
+  "Step": "4.B.4",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete rar.exe. "
+  ],
+  "Procedure": "Deleted rar.exe on disk using SDelete",
+  "Step": "9.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Desktop\\working.zip. "
+  ],
+  "Procedure": "Deleted working.zip (from Desktop) on disk using SDelete",
+  "Step": "9.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Roaming\\working.zip. "
+  ],
+  "Procedure": "Deleted working.zip (from AppData directory) on disk using SDelete",
+  "Step": "9.C.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an ExecutableDeleted event for sdelete64.exe. "
+  ],
+  "Procedure": "Deleted SDelete on disk using cmd.exe del command",
+  "Step": "9.C.4",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Deleted Mimikatz (m.exe) on disk using SDelete",
+  "Step": "19.A.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Deleted exfiltrated data on disk using SDelete",
+  "Step": "19.B.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Deleted staged data on disk using SDelete",
+  "Step": "19.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed outlook.exe spawning from svchost.exe, which is indicative of programmatic access to Outlook emails."
+  ],
+  "Procedure": "Dumped messages from the local Outlook inbox using PowerShell",
+  "Step": "17.A.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "TechniqueName": "Email Collection"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"Access Token Manipulation\" was generated for token stealing activity.",
+    "Telemetry showed powershell.exe executing with the same token (identified by the AuthenticationID) as explorer.exe."
+  ],
+  "Procedure": "Manipulated the token of the PowerShell payload via the CreateProcessWithToken API",
+  "Step": "10.B.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell decompressing the ZIP via Expand-Archive and corresponding file writes. The event was correlated to a parent alert for Bypass User Account Control of control.exe spawning powershell.exe."
+  ],
+  "Procedure": "Decompressed ZIP (SysinternalsSuite.zip) file using PowerShell",
+  "Step": "4.A.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "TechniqueName": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (high severity) called \u201cDeobfuscate/Decode Files or Information\u201d was generated when certutil.exe decoded a malicious payload.",
+    "Telemetry showed the certutil.exe process and corresponding PE file write of the kxwn.lock payload."
+  ],
+  "Procedure": "Decoded an embedded DLL payload to disk using certutil.exe",
+  "Step": "11.A.10",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "TechniqueName": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell reading encoded content from the WMI class. "
+  ],
+  "Procedure": "Read and decoded Mimikatz output from a WMI class property using PowerShell",
+  "Step": "14.B.6",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "TechniqueName": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple hexagon) called \u201cCreate Account\u201d was generated for the addition of the new user Toby.",
+    "A Technique detection called \u201cGenericCreateAccountPersistence\u201d was generated for the addition of the new user Toby.",
+    "Telemetry showed wsmprovhost.exe spawning net.exe with the command-line arguments to add the new user Toby."
+  ],
+  "Procedure": "Added a new user to the remote host Scranton (10.0.1.4) using net.exe",
+  "Step": "20.B.3",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "TechniqueName": "Create Account"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file creation of Draft.zip."
+  ],
+  "Procedure": "Staged files for exfiltration into ZIP (Draft.zip) using PowerShell",
+  "Step": "2.A.5",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a ZipFileWritten event for the creation of working.zip."
+  ],
+  "Procedure": "Staged files for exfiltration into ZIP (working.zip in AppData directory) using PowerShell",
+  "Step": "9.B.5",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Staged collected file into directory using PowerShell",
+  "Step": "17.B.2",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique detection for \"WmiFilterConsumerBind\" was generated due to the WindowsParentalControlMigration event filter creation. ",
+    "Telemetry showed the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Established WMI event subscription persistence using PowerShell",
+  "Step": "15.A.2",
+  "TacticGroup": "Persistence",
+  "Technique": "T1084",
+  "TechniqueName": "Windows Management Instrumentation Event Subscription"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection for \"WmiFilterConsumerBind\" was generated due to PowerShell being executed by WMI. ",
+    "Telemetry showed wmiprvse.exe executing the PowerShell stager."
+  ],
+  "Procedure": "Executed WMI persistence on user login",
+  "Step": "20.A.2",
+  "TacticGroup": "Persistence",
+  "Technique": "T1084",
+  "TechniqueName": "Windows Management Instrumentation Event Subscription"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:COMPUTERNAME. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated the computer hostname using PowerShell",
+  "Step": "4.C.3",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Gwmi Win32_OperatingSystem. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Enumerated the OS version using PowerShell",
+  "Step": "4.C.6",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Enumerated computer manufacturer, model, and version information using PowerShell",
+  "Step": "11.A.4",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetComputerNameEx API. "
+  ],
+  "Procedure": "Enumerated the computer name using the GetComputerNameEx API",
+  "Step": "13.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) called \"Windows Admin Shares\" was generated when python.exe was copied to Scranton via SMB.",
+    "Telemetry showed an SMB session from Nashua (10.0.1.6) to Scranton (10.0.1.4) over TCP port 135."
+  ],
+  "Procedure": "Established SMB session to remote host Scranton's (10.0.1.4) IPC$ share using PsExec",
+  "Step": "8.C.2",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1077",
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed WmiPrvSE.exe executing powershell.exe. The detection was correlated to a parent alert for execution via PowerShell."
+  ],
+  "Procedure": "Created and executed a WMI class using PowerShell",
+  "Step": "14.B.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "TechniqueName": "Windows Management Instrumentation"
+}
+{
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple hexagon) called \"Bypass User Account Control\" was generated when control.exe spawned an elevated PowerShell payload. The event was correlated to a parent general detection for user execution of rcs.3aka.doc.",
+    "A Tactic alert detection (purple hexagon) called \"Defense Evasion\" was generated when a process reflectively loaded a DLL associated with meterpreter using the PowerShell payload. The event was correlated to a parent general detection for user execution of rcs.3aka.doc.",
+    "Telemetry showed control.exe creating a high integrity powershell.exe. The event was correlated to a parent general detection for user execution of rcs.3aka.doc."
+  ],
+  "Procedure": "Executed elevated PowerShell payload",
+  "Step": "3.B.2",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1088",
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \u201cBypass User Account Control\u201d was generated when the parent powershell.exe process of sdclt.exe attempted to escalated privileges with UAC bypass or UAC elevation. The event was correlated to a parent Technique detection for PowerShell.",
+    "A Tactic alert detection (red indicator) called \u201cPrivilege Escalation \u2013 Access Token Manipulation\u201d was generated powershell.exe impersonated another user via access token manipulation. The event was correlated to a parent technique detection for PowerShell.",
+    "Telemetry showed a new High Integrity PowerShell callback spawned from control.exe (spawned from sdclt.exe).  The event was correlated to a parent technique detection for PowerShell."
+  ],
+  "Procedure": "Executed elevated PowerShell payload",
+  "Step": "14.A.2",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1088",
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert (high severity) was generated for PowerShell using obfuscation. The event was correlated to a parent general detection for user execution of rcs.3aka.doc.",
+    "Telemetry showed PowerShell extracting and executing the code embedded within monkey.png. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Embedded PowerShell payload in monkey.png using steganography",
+  "Step": "3.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "TechniqueName": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell writing encoded content into the WMI class. "
+  ],
+  "Procedure": "Encoded and wrote Mimikatz output to a WMI class property using PowerShell",
+  "Step": "14.B.5",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "TechniqueName": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell appending the GIF file header to the compressed file. The detection was correlated to a parent grouping of malicious activity."
+  ],
+  "Procedure": "Prepended the GIF file header to a compressed staging file using PowerShell",
+  "Step": "17.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "TechniqueName": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was generated for rcs.3aka3.doc connecting to 192.168.0.5 on port 1234.",
+    "Telemetry showed the rcs.3aka3.doc process connecting to 192.168.0.5 on TCP port 1234."
+  ],
+  "Procedure": "Established C2 channel (192.168.0.5) via rcs.3aka3.doc payload over TCP port 1234",
+  "Step": "1.A.3",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1065",
+  "TechniqueName": "Uncommonly Used Port"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Enumerated devices/adapters to check for presence of VirtualBox driver(s) using PowerShell",
+  "Step": "11.A.5",
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "TechniqueName": "Peripheral Device Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple hexagon) called \"Automated Collection\" was generated when powershell.exe executed an automated search routine with Get-ChildItem. The event was correlated to a parent general detection for user execution of rcs.3aka.doc.",
+    "An MSSP alert was generated when a portable executable file used a script to collected various filetypes found on the filesystem.",
+    "Telemetry showed powershell.exe executing ChildItem."
+  ],
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell\u00a0",
+  "Step": "2.A.2",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "TechniqueName": "Automated Collection"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) called \"Automated Collection\" was generated when powershell.exe executed Get-ChildItem. The event was correlated to a parent Technique detection for Windows Admin Shares.",
+    "Telemetry showed Powershell.exe executing ChildItem\u200b."
+  ],
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell\u00a0",
+  "Step": "9.B.3",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "TechniqueName": "Automated Collection"
+}

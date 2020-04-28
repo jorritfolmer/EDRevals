@@ -1,5 +1,5 @@
 <dashboard>
-  <label>Detection modifiers</label>
+  <label>Detection modifiers APT3</label>
   <search id="base">
     <query>index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 
 | rex mode=sed field=Detection{} "s/(\s)//g" 

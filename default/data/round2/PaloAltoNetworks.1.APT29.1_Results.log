@@ -1,0 +1,2655 @@
+{
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (low severity) was generated for rcs.3aka3.doc, identified as a screensaver process, executing from users or temporary folder.",
+    "An MSSP detection for Masquerading \"(T1036\u200b)\" occurred containing evidence of of the RLO character to obfuscate payload file name\u200b."
+  ],
+  "Procedure": "Used unicode right-to-left override (RTLO) character to obfuscate file name rcs.3aka3.doc (originally cod.3aka.scr)",
+  "Step": "1.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Windows process masquerading by an unsigned process\" was generated when accesschk.exe was identified as an unsigned executable and the hash did not match the valid accesschk.exe hash. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred indicating that accesschk.exe is not the legitimate Sysinternals tool.",
+    "Telemetry showed accesschk.exe is not a signed Microsoft binary with hash values provided. This can be used to verify it is not the legitimate Sysinternals tool. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Masqueraded a Chrome password dump tool as accesscheck.exe, a legitimate Sysinternals tool",
+  "Step": "6.A.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "TechniqueName": "Masquerading"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of powershell.exe executing Get-Process.",
+    "Telemetry showed powershell.exe executing Get-Process. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated current running processes using PowerShell",
+  "Step": "4.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $PID. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated the current process ID using PowerShell",
+  "Step": "4.C.5",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Process Discovery with PowerShell\" was generated due to powershell.exe executing Get-Process.",
+    "An MSSP detection occurred for powershell.exe executing Get-Process.",
+    "Telemetry showed powershell.exe executing Get-Process."
+  ],
+  "Procedure": "Enumerated processes on remote host Scranton (10.0.1.4) using PowerShell",
+  "Step": "8.A.3",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"process discovery - T1057\" was generated for a PowerShell gwmi query for Win32_Process.",
+    "An MSSP detection contained evidence of PowerShell executing a gwmi query for Win32_Process.",
+    "Telemetry showed the PowerShell gwmi query for Win32_Process."
+  ],
+  "Procedure": "Checked that processes such as procexp.exe, taskmgr.exe, or wireshark.exe are not running using PowerShell",
+  "Step": "11.A.8",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the CreateToolhelp32Snapshot API. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Enumerated running processes using the CreateToolhelp32Snapshot API",
+  "Step": "13.D.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Enumerated and tracked PowerShell processes using PowerShell",
+  "Step": "14.B.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "TechniqueName": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Browser login data access by non-browser process\" was generated when accesschk.exe accessed the Chrome database file for credentials. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred for accesschk.exe reading the Chrome database file for credentials.",
+    "Telemetry showed accesschk.exe reading the Chrome database file for credentials. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Read the Chrome SQL database file to extract encrypted credentials",
+  "Step": "6.A.1",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1081",
+  "TechniqueName": "Credentials in Files"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Configuration Change (UX)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executed by WMI. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Created and executed a WMI class using PowerShell",
+  "Step": "14.B.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "TechniqueName": "Windows Management Instrumentation"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A MSSP detection occurred for powershell.exe executing the NetUserGetGroups API.",
+    "Telemetry showed powershell.exe executing the NetUserGetGroups API. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated user's domain group membership via the NetUserGetGroups API",
+  "Step": "4.C.9",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the NetUserGetLocalGroups API. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated user's local group membership via\u00a0the NetUserGetLocalGroups API",
+  "Step": "4.C.11",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "TechniqueName": "Permission Groups Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Remote File Copy \"(T1105)\" occurred containing evidence that cod.3aka3.scr\u200b has downloaded and wrote a file named\u200b monkey.png\u200b to \u200bC:\\Users\\pam\\Downloads.",
+    "Telemetry showed rcs.3aka3.doc creating monkey.png. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Dropped stage 2 payload (monkey.png) to disk",
+  "Step": "3.A.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection was generated for the creation of a file identified as compressed. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection for Remote File Copy \"(T1105)\" was received. The alert stated the privileged Powershell.exe created a zip file named SysInternalsSuite.zip in the Downloads folder.",
+    "Telemetry showed the file write of the ZIP by PowerShell.  The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Dropped additional tools (SysinternalsSuite.zip) to disk over C2 channel (192.168.0.5)",
+  "Step": "4.A.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \u201cExecutable copied to remote host via $ share\u201d was generated for python.exe being copied from Nashua to Scranton. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "A Technique alert detection (red indicator) called \"Remote File Copy\" was generated for python.exe being copied Scranton (10.0.1.4).",
+    "An MSSP detection contained evidence of remote file copy of python.exe to Scranton (10.0.1.4).",
+    "Telemetry showed the file create event of python.exe."
+  ],
+  "Procedure": "Copied python.exe payload from a WebDAV share (192.168.0.4) to remote host Scranton (10.0.1.4)",
+  "Step": "8.B.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for python.exe writing rar.exe to C:\\Windows\\Temp. The detection was correlated to a parent alert for an unsigned process running from a temporary directory.",
+    "An MSSP detection occurred for python.exe creating rar.exe.",
+    "Telemetry showed a file write event for python.exe creating rar.exe from a named pipe. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Dropped rar.exe to disk on remote host Scranton (10.0.1.4)\u00a0",
+  "Step": "9.A.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A MSSP detection occurred for python.exe creating sdelete64.exe.",
+    "Telemetry showed File Write/Create events for python.exe creating sdelete64.exe. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Dropped sdelete.exe to disk on remote host Scranton (10.0.1.4)\u00a0",
+  "Step": "9.A.2",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for an executable created by a Windows scripting engine. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "An MSSP detection contained evidence of the creation of m.exe in the System32 folder.",
+    "Telemetry showed the PowerShell command to download m.exe as well as the file create event for m.exe into the System32 folder. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Downloaded and dropped Mimikatz (m.exe) to disk",
+  "Step": "14.B.3",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the write of m.exe to the System32 directory by wsmprovhost.exe.",
+    "Telemetry showed the creation of m.exe in the System32 directory by wsmprovhost.exe."
+  ],
+  "Procedure": "Dropped Mimikatz (m.exe) to disk on the domain controller host NewYork (10.0.0.4) over a WinRM connection",
+  "Step": "16.D.1",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "TechniqueName": "Remote File Copy"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for a command line interface spawned from a process identified as malware with an active network connection.",
+    "An MSSP detection for Command Line Interfaces \"(T1059)\" occurred containing evidence of cmd.exe spawning from rcs.3aka3.doc\u200b.",
+    "Telemetry showed rcs.3aka3.doc spawning from cmd.exe. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Spawned interactive cmd.exe",
+  "Step": "1.B.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "TechniqueName": "Command-Line Interface"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Software Packing - T1045\" was generated for the file creation event for python.exe. ",
+    "An MSSP detection was generated containing evidence of observed UPX packing on a Python payload."
+  ],
+  "Procedure": "python.exe payload was packed with UPX",
+  "Step": "8.B.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1045",
+  "TechniqueName": "Software Packing"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:COMPUTERNAME. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated the computer hostname using PowerShell",
+  "Step": "4.C.3",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A MSSP detection occurred for PowerShell querying information about the system via querying WMI and built-in PowerShell functions.",
+    "Telemetry showed powershell.exe executing Gwmi Win32_OperatingSystem. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated the OS version using PowerShell",
+  "Step": "4.C.6",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"System Information Discovery\" was generated for a PowerShell gwmi query for Win32_BIOS.",
+    "A Tactic alert detection called WMI virtualization sandbox discovery was generated for a PowerShell gwmi query for Win32_ComputerSystem.",
+    "An MSSP detection occurred containing evidence of execution of WMI queries for Win32_BIOS and Win32_ComputerSystem.",
+    "Telemetry showed the PowerShell gwmi queries for Win32_BIOS and Win32_ComputerSystem."
+  ],
+  "Procedure": "Enumerated computer manufacturer, model, and version information using PowerShell",
+  "Step": "11.A.4",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetComputerNameEx API. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Enumerated the computer name using the GetComputerNameEx API",
+  "Step": "13.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "TechniqueName": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"Input Capture\" was generated due to powershell.exe making the GetAsyncKeyState API call. ",
+    "An MSSP detection occurred containing evidence of key logging.",
+    "Telemetry showed PowerShell calling the GetAsyncKeyState API."
+  ],
+  "Procedure": "Captured user keystrokes using the GetAsyncKeyState API",
+  "Step": "7.A.3",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "TechniqueName": "Input Capture"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for an Uncommonly used port \"(T1065)\" occurred containing evidence of rcs.3aka3.doc process connecting to 192.168.0.5 on TCP port 1234.",
+    "Telemetry showed the rcs.3aka3.doc process connecting to 192.168.0.5 on TCP port 1234."
+  ],
+  "Procedure": "Established C2 channel (192.168.0.5) via rcs.3aka3.doc payload over TCP port 1234",
+  "Step": "1.A.3",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1065",
+  "TechniqueName": "Uncommonly Used Port"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"created account T1136\" (high severity) was generated for net.exe with the command-line arguments to add the new user Toby.",
+    "An MSSP detection contained evidence of the creation of the user Toby on Scranton (10.0.1.4).",
+    "Telemetry showed wsmprovhost.exe spawning net.exe with the command-line arguments to add the new user Toby."
+  ],
+  "Procedure": "Added a new user to the remote host Scranton (10.0.1.4) using net.exe",
+  "Step": "20.B.3",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "TechniqueName": "Create Account"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Data Staged \"(T1074)\" occurred containing evidence that there was a compressed zip file created named Draft.zip.",
+    "Telemetry showed the creation of Draft.Zip. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Staged files for exfiltration into ZIP (Draft.zip) using PowerShell",
+  "Step": "2.A.5",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "Tactic",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Tactic alert detection called \"Collection\" was generated due to working.zip file creation in %APPDATA%\\roaming folder. The detection was correlated to a parent alert for an unsigned process running from a temporary directory.",
+    "An MSSP detection contained evidence of the creation of working.zip.",
+    "Telemetry showed the file create of working.zip. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Staged files for exfiltration into ZIP (working.zip in AppData directory) using PowerShell",
+  "Step": "9.B.5",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file create event for MITRE-ATTACK-EVALS.HTML. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Staged collected file into directory using PowerShell",
+  "Step": "17.B.2",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "TechniqueName": "Data Staged"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"registry run key or file in start up folder created - T1060\" was generated due to powershell.exe creating the hostui.lnk file. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred for the creation of the hostui.lnk file in the Startup folder.",
+    "Telemetry showed a file create event for hostui.lnk in the Startup folder. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Created a LNK file (hostui.lnk) in the Startup folder that executes on login",
+  "Step": "5.B.1",
+  "TacticGroup": "Persistence",
+  "Technique": "T1060",
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for hostui.lnk executing from Startup Folder. "
+  ],
+  "Procedure": "Executed LNK payload (hostui.lnk) in Startup Folder on user login",
+  "Step": "10.B.1",
+  "TacticGroup": "Persistence",
+  "Technique": "T1060",
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"commonly abused process creates a new autostart Registry key\" was generated for powershell.exe adding Run key persistence into the Registry.",
+    "A Technique alert detection (red indicator) called \"New entry added to startup related Registry keys by signed binary\" was generated for powershell.exe adding Run key persistence into the Registry.",
+    "An MSSP detection contained evidence of the Webcache subkey added to the Registry to establish persistence.",
+    "Telemetry showed powershell.exe adding Run key persistence into the Registry."
+  ],
+  "Procedure": "Established Registry Run key persistence using PowerShell",
+  "Step": "11.A.11",
+  "TacticGroup": "Persistence",
+  "Technique": "T1060",
+  "TechniqueName": "Registry Run Keys / Startup Folder"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Powershell \"(T1086)\" occurred containing evidence of powershell.exe spawning from cmd.exe.",
+    "Telemetry showed powershell.exe spawning from cmd.exe. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Spawned interactive powershell.exe",
+  "Step": "1.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of a new interactive session of PowerShell being created.",
+    "Telemetry showed a new powershell.exe spawning from powershell.exe. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Spawned interactive powershell.exe",
+  "Step": "4.A.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of python spawning powershell.exe.",
+    "Telemetry showed python.exe executing powershell.exe. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Spawned interactive powershell.exe",
+  "Step": "9.B.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of PowerShell executing from schemas ADS.",
+    "Telemetry showed powershell.exe spawned from a PowerShell stager."
+  ],
+  "Procedure": "Executed PowerShell stager payload",
+  "Step": "11.A.12",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was generated containing evidence of powershell.exe executing another powershell.exe.",
+    "Telemetry showed a SYSTEM-level PowerShell spawning from a svchost.exe associated with the WMI service."
+  ],
+  "Procedure": "Executed PowerShell payload from WMI event subscription persistence",
+  "Step": "20.A.3",
+  "TacticGroup": "Execution",
+  "Technique": "T1086",
+  "TechniqueName": "PowerShell"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"clipboard data accessed\" was generated due to the use of getclipboarddata API.",
+    "An MSSP detection occurred containing evidence of PowerShell capturing clipboard data.",
+    "Telemetry showed powershell.exe executing Get-Clipboard."
+  ],
+  "Procedure": "Captured clipboard contents using PowerShell",
+  "Step": "7.A.2",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "TechniqueName": "Clipboard Data"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Used HTTPS to transport\u00a0C2 (192.168.0.5) traffic",
+  "Step": "3.B.4",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Used HTTPS to transport\u00a0C2 (192.168.0.4) traffic",
+  "Step": "11.A.14",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "TechniqueName": "Standard Application Layer Protocol"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for the WinRM connection to remote host Scranton (10.0.1.4) over port 5985.",
+    "Telemetry showed a connection to Scranton (10.0.1.4) over port 5985. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from a temporary folder."
+  ],
+  "Procedure": "Established WinRM connection to remote host Scranton (10.0.1.4)",
+  "Step": "8.A.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1028",
+  "TechniqueName": "Windows Remote Management"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Windows Remote Management occurred containing evidence of the connection to remote host NewYork (10.0.0.4) over port 5985.",
+    "Telemetry showed powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Established a WinRM connection to the domain controller host NewYork (10.0.0.4) ",
+  "Step": "16.C.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1028",
+  "TechniqueName": "Windows Remote Management"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of a WinRM session to remote host SchruteFarms (10.0.1.7).",
+    "Telemetry showed PowerShell with an open network connection to the remote host Scranton (10.0.1.4) over port 5985. Telemetry also showed the WinRM process on Scranton (10.0.1.4) exchanging data with Utica (10.0.1.5)."
+  ],
+  "Procedure": "Established a WinRM connection to the remote host Scranton (10.0.1.4) using the Golden Ticket as credentials",
+  "Step": "20.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1028",
+  "TechniqueName": "Windows Remote Management"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (medium severity) was generated for rcs.3aka3.doc being tagged as malware.",
+    "An MSSP detection occurred containing evidence of the user Pam executing the malicious document rcs.3aka3.doc file.",
+    "Telemetry showed explorer.exe executing rcs.3aka3.doc."
+  ],
+  "Procedure": "User Pam executed payload rcs.3aka3.doc",
+  "Step": "1.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for a suspicious Powershell process being spawned by explorer.exe.",
+    "An MSSP detection was generated containing evidence user Oscar executed 37486-the-shockingtruth-about-election-rigging-in-america.rtf.lnk.",
+    "Telemetry showed explorer.exe executing powershell.exe."
+  ],
+  "Procedure": "User Oscar executed payload 37486-the-shocking-truth-about-election-rigging-in-america.rtf.lnk",
+  "Step": "11.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "TechniqueName": "User Execution"
+}
+{
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for PowerShell querying the registry. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "A Tactic alert detection (high severity) called for Discovery was generated when the software function was executed.",
+    "An MSSP detection occurred containing evidence of the registry query for installed software.",
+    "Telemetry showed script block with registry query for installed software."
+  ],
+  "Procedure": "Enumerated installed software via the Registry (Wow6432 Uninstall key) using PowerShell",
+  "Step": "12.C.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for PowerShell querying the registry. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "A Tactic alert detection (high severity) for Discovery was generated when the software function was executed.",
+    "An MSSP detection occurred containing evidence of the registry query for installed software.",
+    "Telemetry showed scriptblock with registry query for installed software."
+  ],
+  "Procedure": "Enumerated installed software via the Registry (Uninstall key) using PowerShell",
+  "Step": "12.C.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "TechniqueName": "Query Registry"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Data From Local System \"(T1005)\" occurred containing evidence that a discovery script was executed file read operations on local folder \u200bC:\\Users\\Pam. ",
+    "Telemetry showed file reads of C:\\Users\\Pam\\*. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "Step": "2.A.3",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of  powershell.exe accessing files from C:\\Users\\pam\\Downloads.",
+    "Telemetry showed Powershell.exe reading files from C:\\Users\\pam\\Downloads. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Read data in the user's Downloads directory using PowerShell",
+  "Step": "7.B.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A MSSP detection occurred for powershell.exe reading files in C:\\Users\\Pam.",
+    "Telemetry showed file reads of C:\\Users\\Pam\\*. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "Step": "9.B.4",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Read and collected a local file using PowerShell",
+  "Step": "17.B.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "TechniqueName": "Data from Local System"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Automated Collection \"(T1119)\" occurred containing evidence that a discovery script was using Get-Childitem to search the filesystem to specific file patterns.",
+    "Telemetry showed powershell.exe executing Get-ChildItem. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell\u00a0",
+  "Step": "2.A.2",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "TechniqueName": "Automated Collection"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Automated Collection \"(T1119)\" occurred containing evidence that a discovery script was using get-childitem to search the filesystem to specific file patterns.",
+    "Telemetry showed powershell.exe executing Get-ChildItem. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell\u00a0",
+  "Step": "9.B.3",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "TechniqueName": "Automated Collection"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the NetUserGetGroups API function loaded into PowerShell from Netapi32.dll. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "Step": "4.C.10",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed Netapi32.dll loaded into powershell.exe. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "Step": "4.C.12",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of powershell.exe executing with the explorer.exe token via the CreateProcessWithToken API."
+  ],
+  "Procedure": "Executed PowerShell payload via the CreateProcessWithToken API",
+  "Step": "10.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of the execution of the ConvertSidToStringSid API.",
+    "Telemetry showed PowerShell executing the ConvertSidToStringSid API function. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Executed the ConvertSidToStringSid API call by reflectively loading Advapi32.dll",
+  "Step": "16.B.2",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "TechniqueName": "Execution through API"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though data showed rcs.3aka3.doc loading cryptographic libraries."
+  ],
+  "Procedure": "Used RC4 stream cipher to encrypt C2 (192.168.0.5) traffic",
+  "Step": "1.A.4",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1032",
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.5) traffic",
+  "Step": "3.B.5",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1032",
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.4) traffic",
+  "Step": "11.A.15",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1032",
+  "TechniqueName": "Standard Cryptographic Protocol"
+}
+{
+  "Detection": [
+    "General",
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) called \"Non-browser access to a web service\" was generated when net.exe made an HTTPS connection to a OneDrive URL. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "A General alert detection (red indicator) called \"WebDAV drive mount from net.exe over HTTPS\" was generated when net.exe made an HTTPS connection. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "An MSSP detection contained evidence of net.exe connection to OneDrive over TCP port 443.",
+    "Telemetry showed net.exe with command-line arguments to connect to a OneDrive URL as well as net.exe subsequently making a network connection to public IPs over port 443. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Mapped a network drive to an online OneDrive account using PowerShell",
+  "Step": "18.A.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1102",
+  "TechniqueName": "Web Service"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence execution of an WMI query for Win32_PnPEntity.",
+    "Telemetry showed the PowerShell gwmi query for Win32_PnPEntity."
+  ],
+  "Procedure": "Enumerated devices/adapters to check for presence of VirtualBox driver(s) using PowerShell",
+  "Step": "11.A.5",
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "TechniqueName": "Peripheral Device Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of powershell.exe decompressing SysinternalsSuite.zip via Expand-Archive.",
+    "Telemetry showed PowerShell decompressing the ZIP via Expand-Archive and the corresponding file writes. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Decompressed ZIP (SysinternalsSuite.zip) file using PowerShell",
+  "Step": "4.A.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "TechniqueName": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) for \"encoding information using Windows certificate management tool\" was generated due to certutil decoding the kwxn.lock payload.",
+    "A MSSP detection occurred for certutil.exe decoding kxwn.lock.",
+    "Telemetry showed the certutil.exe process and corresponding file write of the kxwn.lock payload."
+  ],
+  "Procedure": "Decoded an embedded DLL payload to disk using certutil.exe",
+  "Step": "11.A.10",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "TechniqueName": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for PowerShell Get-WmiInstance reading encoded content from Win32_AuditCode."
+  ],
+  "Procedure": "Read and decoded Mimikatz output from a WMI class property using PowerShell",
+  "Step": "14.B.6",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "TechniqueName": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of PowerShell executing schemas ADS via Get-Content and IEX.",
+    "Telemetry showed powershell.exe executing the schemas ADS with Get-Content and IEX."
+  ],
+  "Procedure": "Executed an alternate data stream (ADS) using PowerShell",
+  "Step": "11.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1096",
+  "TechniqueName": "NTFS File Attributes"
+}
+{
+  "Detection": [
+    "Technique",
+    "General",
+    "General",
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"Service Execution Start service T1050\" was generated due to psexec.exe spawning python.exe.",
+    "A General alert detection (low severity) was generated due to an unsigned process running from a temporary directory.",
+    "A General alert detection (red indicator) for \"Lateral Movement\" was generated due to PSEXE64.exe execution with plain-text credentials from Nashua as the user Pam. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "A General alert detection was generated for PSEXESVC.exe being copied to a remote host. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred containing evidence of python.exe being spawned by PSEXESVC.exe.",
+    "Telemetry showed python.exe spawned by PSEXESVC.exe and originated from a RPC call originating on the remote host Nashua (10.0.1.6)."
+  ],
+  "Procedure": "Executed python.exe using PSExec",
+  "Step": "8.C.3",
+  "TacticGroup": "Execution",
+  "Technique": "T1035",
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Executed persistent service (javamtsup) on system startup",
+  "Step": "10.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1035",
+  "TechniqueName": "Service Execution"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Encrypted data from the user's Downloads directory using PowerShell",
+  "Step": "7.B.3",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1022",
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of execution of rar.exe with command line arguments to encrypt working.zip.",
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Encrypted staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "Step": "9.B.6",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1022",
+  "TechniqueName": "Data Encrypted"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was generated containing evidence of rundll32.exe executing kxwn.lock.",
+    "Telemetry showed rundll32.exe executing kxwn.lock."
+  ],
+  "Procedure": "Executed Run key persistence payload on user login using RunDll32",
+  "Step": "20.A.1",
+  "TacticGroup": "Execution",
+  "Technique": "T1085",
+  "TechniqueName": "Rundll32"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe establishing a connection to NewYork (10.0.0.4) over port 389. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated remote systems using LDAP queries",
+  "Step": "8.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though events showed the execution of the PowerShell Get-DomainController function."
+  ],
+  "Procedure": "Enumerated the domain controller host NewYork (10.0.0.4) using LDAP queries",
+  "Step": "16.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "TechniqueName": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Modify Registry \"(T1070)\" occurred for the Deletion of the registry value.",
+    "Telemetry showed the deletion of the command subkey. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking",
+  "Step": "3.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "TechniqueName": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the deletion of the Registry value. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking using PowerShell",
+  "Step": "14.A.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "TechniqueName": "Modify Registry"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) called \"File being written to remote path\" was generated for the file OfficeSupplies.7z being written a WebDav share at 192.168.0.4.  The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred containing evidence of OfficeSupplies.7z being copied over the network via WebDav to 192.168.0.4. ",
+    "Telemetry showed PowerShell creating OfficeSupplies.7z on a remote adversary WebDav network share (192.168.0.4). The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Exfiltrated collection (OfficeSupplies.7z) to WebDAV network share using PowerShell",
+  "Step": "7.B.4",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence  WindowsParentalControlMigration.tmp file was written to the mapped OneDrive network share.",
+    "Telemetry showed the creation of the exfiltrated data within the mapped OneDrive directory. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Exfiltrated staged collection to an online OneDrive account using PowerShell",
+  "Step": "18.A.2",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "TechniqueName": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Reflectively injected SDelete binary into PowerShell",
+  "Step": "19.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Reflectively injected SDelete binary into PowerShell",
+  "Step": "19.B.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Reflectively injected SDelete binary into PowerShell",
+  "Step": "19.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "TechniqueName": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Executed the CryptUnprotectedData API call to decrypt Chrome passwords",
+  "Step": "6.A.2",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Processing)",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Credentials in Registry\" was generated due to a group owner child process querying the User SAM registry keys. Detection incurred a delay based on additional data processing to generate the behavioral threat.",
+    "An MSSP detection for \"Mimikatz\" was received that described PowerShell dumping credentials from LSASS process memory."
+  ],
+  "Procedure": "Dumped password hashes from the Windows Registry by injecting a malicious DLL into Lsass.exe",
+  "Step": "6.C.1",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (high severity) for Credential Dumping was generated for PowerShell reading credentials from Lsass memory.",
+    "A Technique alert detection (red indicator) called \"Command line arguments matching Mimikatz execution\" was generated for m.exe with command-line arguments indicative of Mimikatz credential dumping. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "A General alert was generated identifying m.exe as malware.",
+    "An MSSP detection contained evidence of the creation of m.exe in the System32 folder."
+  ],
+  "Procedure": "Dumped plaintext credentials using Mimikatz (m.exe)",
+  "Step": "14.B.4",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "General",
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Command line arguments matching Mimikatz execution\" was generated for m.exe with command-line arguments indicative of Mimikatz credential dumping.",
+    "A Technique alert detection (red indicator) called \"Credential Dumping\" was generated for m.exe reading lsass.exe process memory.",
+    "A General alert detection called \"heuristic.b.mimikatz_lsadump_inject\" was generated for possible Mimikatz activity.",
+    "A General alert detection (red indicator) was generated for a rare child process spawned from wsmprovhost.exe.",
+    "An MSSP detection contained evidence of Mimikatz command-line arguments to dump credentials.",
+    "Telemetry showed m.exe injecting a thread into lsass.exe."
+  ],
+  "Procedure": "Dumped the KRBTGT hash on the domain controller host NewYork (10.0.0.4) using Mimikatz (m.exe)",
+  "Step": "16.D.2",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "TechniqueName": "Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"ioc.Timestomp_T1099\" (high severity) was generated due to PowerShell modifying timestamps on kxwn.lock file. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe.",
+    "Telemetry showed scriptblock with commands to timestomp kxwn.lock."
+  ],
+  "Procedure": "Modified the time attributes of the kxwn.lock persistence payload using PowerShell",
+  "Step": "12.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1099",
+  "TechniqueName": "Timestomp"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure."
+  ],
+  "Procedure": "Logged on to remote host Scranton (10.0.1.4) using\u00a0valid credentials for user Pam",
+  "Step": "8.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a successful logon on NewYork (10.0.0.4) as user MScott."
+  ],
+  "Procedure": "Logged on to the domain controller host NewYork (10.0.0.4) using\u00a0valid credentials for user MScott\u00a0",
+  "Step": "16.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "TechniqueName": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:USERNAME. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated the current username using PowerShell",
+  "Step": "4.C.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Tactic",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Tactic alert detection called WMI virtualization sandbox discovery was generated for a PowerShell gwmi query for Win32_ComputerSystem.",
+    "An MSSP detection occurred containing evidence of execution of an WMI query for Win32_ComputerSystem.",
+    "Telemetry showed the PowerShell gwmi query for Win32_ComputerSystem."
+  ],
+  "Procedure": "Checked that the username is not related to admin or a generic value (ex: user) using PowerShell",
+  "Step": "11.A.6",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetUserNameEx API. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Enumerated the current username using the GetUserNameEx API",
+  "Step": "13.C.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for PowerShell executing $env:UserName.",
+    "Telemetry showed PowerShell script block executing $env:UserName. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Enumerated logged on users using PowerShell",
+  "Step": "15.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of the execution of the ConvertSidToStringSid API.",
+    "Telemetry showed PowerShell executing the ConvertSidToStringSid API function. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Enumerated the domain SID (from current user SID) using\u00a0the ConvertSidToStringSid API",
+  "Step": "16.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "TechniqueName": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for for \"Bypass User Account Control VIA registry hijack T1088\" for control.exe creating a high integrity powershell.exe.",
+    "An MSSP detection for \"UAC bypass (T1088)\" occurred for a new high hntegrity PowerShell callback spawning from control.exe\u200b\u200b.",
+    "Telemetry showed control.exe creating a high integrity powershell.exe."
+  ],
+  "Procedure": "Executed elevated PowerShell payload",
+  "Step": "3.B.2",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1088",
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of High Integrity PowerShell process spawned from control.exe.",
+    "Telemetry showed a new High Integrity PowerShell callback spawned from control.exe (spawned from sdclt.exe)."
+  ],
+  "Procedure": "Executed elevated PowerShell payload",
+  "Step": "14.A.2",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1088",
+  "TechniqueName": "Bypass User Account Control"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of sdelete64.exe deleting ?cod.3aka.scr.",
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Deleted rcs.3aka3.doc on disk using SDelete",
+  "Step": "4.B.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of sdelete64.exe deleting Draft.zip.",
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Deleted Draft.zip on disk using SDelete",
+  "Step": "4.B.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of sdelete64.exe deleting SysinternalsSuite.zip.",
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Deleted SysinternalsSuite.zip on disk using SDelete",
+  "Step": "4.B.4",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the deletion of Rar.exe by SDelete64.exe.",
+    "Telemetry showed sdelete64.exe with command-line arguments to delete rar.exe. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Deleted rar.exe on disk using SDelete",
+  "Step": "9.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"file deletion T1107\"  was generated when sdelete64.exe with command-line arguments was used to delete Desktop\\working.zip.",
+    "An MSSP detection contained evidence of the deletion of Desktop\\working.zip by SDelete64.exe.",
+    "Telemetry showed file delete event for sdelete64.exe deleting Desktop\\working.zip. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Deleted working.zip (from Desktop) on disk using SDelete",
+  "Step": "9.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the deletion of roaming\\working.zip by SDelete64.exe.",
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Roaming\\working.zip. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Deleted working.zip (from AppData directory) on disk using SDelete",
+  "Step": "9.C.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"file deletion T1107\" was generated when cmd.exe deleted sdelete.exe.",
+    "An MSSP detection contained evidence of the deletion of SDelete64.exe.",
+    "Telemetry showed cmd.exe deleting sdelete64.exe and file deletion event. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Deleted SDelete on disk using cmd.exe del command",
+  "Step": "9.C.4",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Deleted Mimikatz (m.exe) on disk using SDelete",
+  "Step": "19.A.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Deleted exfiltrated data on disk using SDelete",
+  "Step": "19.B.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Due to execution inconsistencies Step 19 has been omitted from the evaluation results."
+  ],
+  "Procedure": "Deleted staged data on disk using SDelete",
+  "Step": "19.C.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1107",
+  "TechniqueName": "File Deletion"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"Screen Capture - T1056\" was generated for powershell.exe making the GdiBitBlt API call. ",
+    "An MSSP detection occurred containing evidence of powershell.exe executing performing a Screen Capture.",
+    "Telemetry showed powershell.exe executing CopyFromScreen from System.Drawing.dll."
+  ],
+  "Procedure": "Captured and saved screenshots using PowerShell",
+  "Step": "7.A.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "TechniqueName": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed outlook.exe spawning from powershell.exe, which is indicative of programmatic access to Outlook emails. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Dumped messages from the local Outlook inbox using PowerShell",
+  "Step": "17.A.1",
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "TechniqueName": "Email Collection"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Obfuscated Files or Information\" occurred containing evidence of the PowerShell script contained within monkey.png.",
+    "Telemetry showed PowerShell extracting and executing the code embedded within monkey.png. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Embedded PowerShell payload in monkey.png using steganography",
+  "Step": "3.A.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "TechniqueName": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of PowerShell executing Set-WmiInstance to write encoded content to Win32_AuditCode.",
+    "Telemetry showed PowerShell writing encoded content into the WMI class. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Encoded and wrote Mimikatz output to a WMI class property using PowerShell",
+  "Step": "14.B.5",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "TechniqueName": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred contained evidence that WindowsParentalControlMigration.tmp was a zip archive that had its file header modified to begin with a GIF image header.",
+    "Telemetry showed PowerShell appending the GIF file header to the compressed file. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Prepended the GIF file header to a compressed staging file using PowerShell",
+  "Step": "17.C.2",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "TechniqueName": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"New certificate file has been created\" was generated for the file creation event of the lotu40lg.b0j.pfx file.  The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection was generated for the creation of the $RandomFileName.pfx file. ",
+    "Telemetry showed file create event for a $RandomFileName.pfx file by powershell.exe. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Exported a local certificate to a PFX file using PowerShell",
+  "Step": "6.B.1",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1145",
+  "TechniqueName": "Private Keys"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Commonly Used Port was\ngenerated containing evidence monkey.png performed C&C over port 443 to IP address 192.168.0.5.",
+    "Telemetry showed powershell.exe connecting to 192.168.0.5 on TCP port 443. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Established C2 channel (192.168.0.5) via PowerShell payload over TCP port 443",
+  "Step": "3.B.3",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of PowerShell establishing C2 with 192.168.0.4 over TCP port 443.",
+    "Telemetry showed powershell.exe making a network connection to the C2 (192.168.0.4) over port 443."
+  ],
+  "Procedure": "Established C2 channel (192.168.0.4) via PowerShell payload over port 443",
+  "Step": "11.A.13",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "TechniqueName": "Commonly Used Port"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for PowerShell creating a WMI event subscription.",
+    "An MSSP detection contained evidence of WMI persistence established for user Oscar.",
+    "Telemetry showed the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Established WMI event subscription persistence using PowerShell",
+  "Step": "15.A.2",
+  "TacticGroup": "Persistence",
+  "Technique": "T1084",
+  "TechniqueName": "Windows Management Instrumentation Event Subscription"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (high severity) called was generated for PowerShell executing as part of a Windows Management Instrumentation Event Subscription.",
+    "An MSSP detection was generated containing evidence of powershell.exe executing from Windows Management Instrumentation Event Subscription."
+  ],
+  "Procedure": "Executed WMI persistence on user login",
+  "Step": "20.A.2",
+  "TacticGroup": "Persistence",
+  "Technique": "T1084",
+  "TechniqueName": "Windows Management Instrumentation Event Subscription"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Access Token Manipulation\" was generated for thread impersonation.",
+    "An MSSP detection occurred containing evidence of powershell.exe executing with the explorer.exe token via the CreateProcessWithToken API."
+  ],
+  "Procedure": "Manipulated the token of the PowerShell payload via the CreateProcessWithToken API",
+  "Step": "10.B.3",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "TechniqueName": "Access Token Manipulation"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for PowerShell executing suspicious File and Directory Discovery commands. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection for File and Directory Discovery \"(T1083)\" occurred containing evidence that a discovery script was using get-childitem to search the filesystem to specific file patterns.",
+    "Telemetry showed powershell.exe executing Get-ChildItem. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Searched filesystem for document and media files using PowerShell\u00a0",
+  "Step": "2.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:TEMP. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated user's temporary directory path using PowerShell",
+  "Step": "4.C.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A MSSP detection occurred for PowerShell looking for certain files in a directory. ",
+    "Telemetry showed powershell.exe executing Get-ChildItem. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Searched filesystem for document and media files using PowerShell",
+  "Step": "9.B.2",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "No detection capability demonstrated for this procedure, though events showed PowerShell executing the Get-Item cmdlet."
+  ],
+  "Procedure": "Checked that the payload is not inside a folder path that contains \"sample\" or is the length of a hash value using PowerShell",
+  "Step": "11.A.9",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Timestomping was generated containing evidence of PowerShell enumeration of System32."
+  ],
+  "Procedure": "Enumerated the System32 directory using PowerShell",
+  "Step": "12.A.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "TechniqueName": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection was generated identifying the Registry modification as a malware behavior threat. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred containing evidence of addition of DelegateExecute \u200bsubkey.",
+    "Telemetry showed the addition of the DelegateExecute Registry Value. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "Step": "3.B.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1122",
+  "TechniqueName": "Component Object Model Hijacking"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of the addition of DelegateExecute subkey.",
+    "Telemetry showed the addition of the DelegateExecute Registry value. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "Step": "14.A.1",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1122",
+  "TechniqueName": "Component Object Model Hijacking"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:USERDOMAIN. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated the current domain name using PowerShell",
+  "Step": "4.C.4",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Tactic",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Tactic alert detection called WMI virtualization sandbox discovery was generated for a PowerShell gwmi query for Win32_ComputerSystem.",
+    "An MSSP detection occurred containing evidence of execution of an WMI query for Win32_ComputerSystem.",
+    "Telemetry showed powershell.exe gwmi query for Win32_ComputerSystem."
+  ],
+  "Procedure": "Checked that the computer is joined to a domain using PowerShell",
+  "Step": "11.A.7",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the NetWkstaGetInfo API. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Enumerated the domain name using the NetWkstaGetInfo API",
+  "Step": "13.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "TechniqueName": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was generated containing evidence of powershell.exe executing Invoke-Mimikatz (kerberos::golden) to create and inject ticket into current session."
+  ],
+  "Procedure": "Created Kerberos Golden Ticket using\u00a0Invoke-Mimikatz",
+  "Step": "20.B.1",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1097",
+  "TechniqueName": "Pass the Ticket"
+}
+{
+  "Detection": [
+    "Technique",
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection for network share access was generated due to remote access to a Windows admin share.",
+    "A Technique alert detection was generated for an executable being copied to a remote host via a share. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred containing evidence of an SMB session from Nashua (10.0.1.6) to Scranton (10.0.1.4) over TCP port 445.",
+    "Telemetry showed an SMB session from Nashua (10.0.1.6) to Scranton (10.0.1.4) over port 135. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Established SMB session to remote host Scranton's (10.0.1.4) IPC$ share using PsExec",
+  "Step": "8.C.2",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1077",
+  "TechniqueName": "Windows Admin Shares"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell created the new service javamtsup. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Created a new service (javamtsup) that executes a service binary (javamtsup.exe) at system startup",
+  "Step": "5.A.1",
+  "TacticGroup": "Persistence",
+  "Technique": "T1050",
+  "TechniqueName": "New Service"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Scripting engine creates compressed file under suspicious folder\" was generated due identifying Draft.zip as compressed. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection for Data Compressed \"(T1002)\" occurred containing evidence that the files \"C:\\Users\\pam\\Links\\Downloads.lnk, C:\\Users\\pam\\Links\\Desktop.lnk, C:\\Users\\pam\\Favorites\\Bing.url, and C:\\Users\\pam\\Desktop\\Microsoft Edge.lnk\" were compressed into a zip file draft.zip.",
+    "Telemetry showed powershell.exe compressing via Compress-Archive. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Compressed and stored files into ZIP (Draft.zip) using PowerShell",
+  "Step": "2.A.4",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Scripting engine creates compressed file under suspicious location\" was generated for the file creation event of a .7z file in %APPDATA%. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder.",
+    "An MSSP detection occurred containing evidence of the file create of OfficeSupplies.7z.",
+    "Telemetry showed the file create event for OfficeSupplies.7z. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Compressed\u00a0data from the user's Downloads directory into a ZIP file (OfficeSupplies.7z) using PowerShell",
+  "Step": "7.B.2",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Scripting engine creates compressed file under suspicious folder\" was generated when rar.exe was used to create an compressed zip archive in %APPDATA%. The detection was correlated to a parent alert for an unsigned process running from a temporary directory.",
+    "An MSSP detection contained evidence of execution of rar.exe with command line arguments to compress working.zip.",
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Compressed staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "Step": "9.B.7",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "General",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection for Data Staged was generated when the WindowsParentalControlMigration.tmp file was compressed.",
+    "An MSSP detection occurred containing evidence of data compression.",
+    "Telemetry showed PowerShell compressing collection via the ZipFile.CreateFromDirectory .NET method. The detection was correlated to a parent alert for a suspicious Powershell process being spawned by explorer.exe."
+  ],
+  "Procedure": "Compressed a staging directory using PowerShell",
+  "Step": "17.C.1",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1002",
+  "TechniqueName": "Data Compressed"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"System Information Discovery\" was generated for a PowerShell gwmi query for Win32_BIOS.",
+    "An MSSP detection occurred containing evidence of execution of an WMI query for Win32_BIOS.",
+    "Telemetry showed the PowerShell gwmi query for Win32_BIOS."
+  ],
+  "Procedure": "Checked that the BIOS version and serial number are not associated with VirtualBox or VMware using PowerShell",
+  "Step": "11.A.3",
+  "TacticGroup": "Discovery",
+  "Technique": "T1497",
+  "TechniqueName": "Virtualization/Sandbox Evasion"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for Exfiltration Over Command and Control Channel \"(T1041)\" occurred containing evidence that \"After the zip file is created, it\u2019s read by \u200bcod.3aka3.scr... [and] the timeline view shows a C2 connection from \u200bnashua \u200bto \u200b192.168.0.5,\u200b in which cod.3aka3.scr s\u200bent 319,936 Bytes.\"",
+    "Telemetry showed file read event for Draft.zip and an existing C2 channel (192.168.0.5 over port 1234). The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Read and downloaded ZIP (Draft.zip) over C2 channel (192.168.0.5 over TCP port 1234)",
+  "Step": "2.B.1",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file read event for working.zip and an existing C2 channel (192.168.0.4 over port 8443). The detection was correlated to a parent alert for an unsigned process running from a temporary directory."
+  ],
+  "Procedure": "Read and downloaded ZIP (working.zip on Desktop) over C2 channel (192.168.0.5 over TCP port 8443)",
+  "Step": "9.B.8",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "TechniqueName": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (high severity) was generated for PowerShell performing suspicious Security Software Discovery.",
+    "A MSSP detection occurred for PowerShell querying information about the system via querying WMI and built-in PowerShell functions.",
+    "Telemetry showed powershell.exe executing Get-WmiObject...\u200b -Class AntiVirusProduct. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated anti-virus software using PowerShell",
+  "Step": "4.C.7",
+  "TacticGroup": "Discovery",
+  "Technique": "T1063",
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A MSSP detection occurred for PowerShell querying information about the system via querying WMI and built-in PowerShell functions.",
+    "Telemetry showed powershell.exe executing Get-WmiObject...\u200b -Class FireWallProduct. The detection was correlated to a parent alert for the rcs.3aka3.doc screensaver process executing from users or temporary folder."
+  ],
+  "Procedure": "Enumerated firewall software using PowerShell",
+  "Step": "4.C.8",
+  "TacticGroup": "Discovery",
+  "Technique": "T1063",
+  "TechniqueName": "Security Software Discovery"
+}
+{
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (high severity) called \"Security Software Discovery\" was generated due to powershell executing a gwmi query for AntiVirusProduct.",
+    "A MSSP detection occurred containing evidence of security software discovery attempts. ",
+    "Telemetry showed PowerShell gwmi query for AntiVirusProduct."
+  ],
+  "Procedure": "Enumerated registered AV products using PowerShell",
+  "Step": "12.B.1",
+  "TacticGroup": "Discovery",
+  "Technique": "T1063",
+  "TechniqueName": "Security Software Discovery"
+}

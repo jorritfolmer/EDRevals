@@ -1,11 +1,15 @@
 # EDR evaluation app for Splunk 
 
-This Splunk app accompanies a blog post about the [MITRE ATTACK round1 EDR evaluation results](https://medium.com/@jorritfolmer/comparing-evaluations-of-endpoint-detection-and-response-edr-solutions-eb6bbcb20fad). 
-It shows data and dashboards from the JSON data published in round 1 of the [MITRE ATTACK evaluations](https://attackevals.mitre.org/evaluations.html?round=APT3)
+This app for Splunk accompanies two blog posts about the MITRE ATTACK Endpoint Detection and Response (EDR) results for:
+
+1. [APT3](https://medium.com/@jorritfolmer/comparing-evaluations-of-endpoint-detection-and-response-edr-solutions-eb6bbcb20fad). 
+2. [APT29](https://medium.com/@jorritfolmer/detecting-apt29-mitre-edr-evaluations-round-2-a8dcf7a3f486)
+
+It shows data and dashboards from the JSON data published in the [MITRE ATTACK evaluations](https://attackevals.mitre.org/)
 
 ## Why does this Splunk app exist?
 
-To make it easier to play with the EDR evaluation results. The JSON files from MITRE weren't that friendly for slicing and dicing in Splunk, so I write a Python script to transpose them [here](https://gist.github.com/jorritfolmer/2a606c9936674ff9e15677185b8cda86), and included that data in this app for onboarding in Splunk.
+To make it easier to play with the EDR evaluation results. The JSON files from MITRE weren't that friendly for slicing and dicing in Splunk, so I write a Python script to [transpose them for APT3](https://gist.github.com/jorritfolmer/2a606c9936674ff9e15677185b8cda86) and [APT29](https://gist.github.com/jorritfolmer/c623f8cc2281245714484210813f9ca5) here, and included that data in this app for onboarding in Splunk.
 
 ## How do I use this app?
 
@@ -20,7 +24,7 @@ The opinionated bar chart below shows how many of the APT3 steps were detected b
 
 ![screenshot](appserver/static/screenshot.png)
 
-More charts available in the companion [EDR evaluation results post](https://medium.com/@jorritfolmer/comparing-evaluations-of-endpoint-detection-and-response-edr-solutions-eb6bbcb20fad)
+More charts available in the companion [EDR evaluation results post for APT3](https://medium.com/@jorritfolmer/comparing-evaluations-of-endpoint-detection-and-response-edr-solutions-eb6bbcb20fad) or [APT29](https://medium.com/@jorritfolmer/detecting-apt29-mitre-edr-evaluations-round-2-a8dcf7a3f486)
 
 ## LICENSE
 

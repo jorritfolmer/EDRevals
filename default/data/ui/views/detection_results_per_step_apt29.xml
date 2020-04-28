@@ -1,0 +1,25 @@
+<dashboard>
+  <label>Detection results per step APT29</label>
+  <row>
+    <panel>
+      <title>Operational flow and detections</title>
+      <table>
+        <search>
+          <query>index=main sourcetype="attackeval:json" source="*APT29*"
+| eval OperationalFlow=trim(Step) . " - " . trim(TechniqueName)
+| xyseries OperationalFlow,host,Detection{}
+| sort OperationalFlow</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

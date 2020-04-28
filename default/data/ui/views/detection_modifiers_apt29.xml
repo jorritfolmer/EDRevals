@@ -1,0 +1,83 @@
+<dashboard>
+  <label>Detection modifiers APT29</label>
+  <search id="base">
+    <query>index=main sourcetype="attackeval:json" source="*APT29*" 
+| rex field=DetectionModifiers{} mode=sed "s/ \\(.*$//g" 
+| stats count by host,DetectionModifiers{} 
+| xyseries host,DetectionModifiers{},count
+| rename host AS vendor
+    </query>
+    <earliest>0</earliest>
+    <latest>now</latest>
+  </search>
+  <row>
+    <panel>
+      <title>Alert</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,Alert| sort - Alert</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">380</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Correlated</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,Correlated| sort - Correlated</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">380</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Configuration change</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,"Configuration Change" | sort - "Configuration Change"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">380</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Delayed</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,Delayed | sort - "Delayed"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">380</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Host Interrogation</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,"Host Interrogation" | sort - "Host Interrogation"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">380</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

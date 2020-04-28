@@ -1,5 +1,5 @@
 <dashboard>
-  <label>Detection results per step</label>
+  <label>Detection results per step APT3</label>
   <row>
     <panel>
       <title>Operational flow and detections</title>

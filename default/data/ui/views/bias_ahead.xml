@@ -1,5 +1,5 @@
 <dashboard>
-  <label>Biased barcharts</label>
+  <label>Biased barcharts APT3</label>
   <search id="base">
     <query>
       index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 
