@@ -1,0 +1,2917 @@
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file launch\" (Low) was generated when explorer.exe spawned winword.exe when the user clicks 1-list.rtf.", 
+    "A Tactic detection named \"Execution\" was generated when explorer.exe spawned winword.exe when the user clicks 1-list.rtf."
+  ], 
+  "Procedure": "explorer.exe spawns winword.exe when user clicks 1-list.rtf", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "Technique_Name": "User Execution"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)", 
+    "Configuration Change (Detection Logic)", 
+    "Configuration Change (Data Sources)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Office application Winword.exe loaded Visual Basic COM interface module VBE7.dll.\" was generated when winword.exe loaded VBE7.DLL and spawned 1-list.rtf."
+  ], 
+  "Procedure": "winword.exe loads VBE7.DLL", 
+  "Step": "1.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1559", 
+  "Technique_Name": "Inter-Process Communication"
+}
+{
+  "Detection": [
+    "General", 
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"ASR - Block Office applications from creating executable content\" was generated when wscript.exe executed unprotected.vbe.", 
+    "A Technique detection named \"wscript.exe process was observed using \"Command and Scripting Interpreter\" technique\" (Low) was generated when wscript.exe spawned unprotected.vbe.", 
+    "", 
+    "A Technique detection named \"suspicious patterns in AMSI content\" was generated when patterns in AMSI content indicated suspicious script activity when wscript.exe executed unprotected.vbe."
+  ], 
+  "Procedure": "wscript.exe executes unprotected.vbe", 
+  "Step": "1.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"SuspAmsiScript malware was detected\" (Informational) was generated when unprotected.vbe script content was identified as malicious.", 
+    ""
+  ], 
+  "Procedure": "unprotected.vbe is an encoded file", 
+  "Step": "1.A.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"Trojan:VBS/JsExecutor.A\" (Low) was generated when starter.vbs was created and identified as a malicious VBS executor of JScript.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe decodes content and creates starter.vbs", 
+  "Step": "1.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe decodes content and creates TransBaseOdbcDriver.js", 
+  "Step": "1.A.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious VB activity\" (Low) was generated when suspicious behavior was identified during execution of starter.vbs."
+  ], 
+  "Procedure": "wscript.exe executes starter.vbs", 
+  "Step": "1.A.7", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when cmd.exe spawned a suspicious child process.", 
+    "", 
+    "A Tactic detection named \"Execution\" was generated when wscript.exe spawned cmd.exe."
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "1.A.8", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious JavaScript process\" (Low) was generated when cmd.exe spawned wscript.exe to execute TransBaseOdbcDriver.js.", 
+    "", 
+    "A General detection named \"Reshelva backdoor was detected\" (Low) was generated when TransBaseOdbcDriver.js was identified as malware."
+  ], 
+  "Procedure": "cmd.exe spawns wscript.exe to execute TransBaseOdbcDriver.js", 
+  "Step": "1.A.9", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "1.A.10", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "1.A.11", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious system information discovery\" (Low) was generated when wscript.exe made a WMI query for Win32_OperatingSystem.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe makes WMI queries for Win32_Processor &  Win32_OperatingSystem", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process discovery\" (Low) was generated when wscript.exe made a WMI query for Win32_Process.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe makes a WMI query for Win32_Process", 
+  "Step": "2.A.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "General", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"An active 'ScreenCapture' malware was detected\" (Low) was generated when screenshot__.ps1 was dropped by Powershell and identified as a screenshot capture tool.", 
+    "A Technique detection named \"wscript.exe created a downloaded file\" was generated when wscript.exe downloaded screenshot__.ps1 from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe downloads screenshot__.ps1 from 192.168.0.4", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when wscript.exe spawned cmd.exe.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "2.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when cmd.exe spawned powershell.exe.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "2.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious screen capture activity\" (Medium) was generated when powershell.exe executed CopyFromScreen()."
+  ], 
+  "Procedure": "powershell.exe executes CopyFromScreen()", 
+  "Step": "2.B.4", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "wscript.exe reads and uploads screenshot__.png to 192.168.0.4", 
+  "Step": "2.B.5", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when wscript.exe spawned cmd.exe.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns reg.exe to add a value under HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer", 
+  "Step": "3.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Value added to Registry is base64 encoded", 
+  "Step": "3.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Technique", 
+    "General", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"wscript.exe created a downloaded file\" was generated when wscript.exe downloaded LanCradDriver.ps1 from 192.168.0.4.", 
+    "A General detection named \"Trojan:Powershell/Posdyna.B!amsi\" was generated when LanCradDriver.ps1 was identified as malware.", 
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when wscript.exe downloaded LanCradDriver.ps1 from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe downloads LanCradDriver.ps1 from 192.168.0.4", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when wscript.exe spawned cmd.exe."
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "3.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when cmd.exe spawned powershell.exe.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "3.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious System Information Discovery\" (Low) was generated when powershell.exe was used to query the Registry.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe reads HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer via Get-ItemProperty", 
+  "Step": "3.B.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "Technique_Name": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"powershell.exe process contains suspicious patterns in AMSI content associated with \"Deobfuscate/Decode Files or Information\" technique\" was generated when powershell.exe executed functions associated with decrypting, decompressing, and base64 decoding data."
+  ], 
+  "Procedure": "powershell.exe decrypts, decompresses, and base64 decodes the Registry value into plaintext shellcode", 
+  "Step": "3.B.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Native API\" was generated when powershell.exe executed VirtualAlloc() and CreateThread().", 
+    ""
+  ], 
+  "Procedure": "powershell.exe executes the shellcode from the Registry by calling the CreateThread() API", 
+  "Step": "3.B.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "Technique_Name": "Native API"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Tactic detection named \"powershell.exe established an outbound connection with 192.168.0.4 to commonly used port 8080 (HTTP Alternative).\" was generated when powershell.exe connected to 192.168.0.4 over TCP port 8080."
+  ], 
+  "Procedure": "powershell.exe transmits data to 192.168.0.4 over TCP", 
+  "Step": "3.B.7", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1095", 
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe calls the FindFirstFileW() and FindNextFileW() APIs", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection was generated when powershell.exe executed Get-NetComputer to query LDAP (port 389) via a network connection to 10.0.0.4.", 
+    "A Technique detection named \"Suspicious LDAP query\" (Medium) was generated when powershell.exe performed suspicious LDAP queries associated with enumerating remote systems within an organization.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe executes Get-NetComputer to query LDAP (port 389) via a network connection to 10.0.0.4", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"A malicious PowerShell cmdlet was invoked on the machine\" (Medium) was generated when powershell.exe executed Find-LocalAdminAccess, which connected to multiple hosts over port 135 to check for access.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe executes Find-LocalAdminAccess, which attempts a DCOM/RPC (port 135) connection to multiple hosts to check for access", 
+  "Step": "4.A.3", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "Technique_Name": "Brute Force"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"A successful windows domain account logon by kmitnick\" was generated when user kmitnick successfully logged into bankdc (10.0.0.4)."
+  ], 
+  "Procedure": "powershell.exe successfully logs in to host 10.0.0.4 or 10.0.0.5 as user kmitnick", 
+  "Step": "4.A.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Technique", 
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded rad353F7.ps1 from 192.168.0.4.", 
+    "A General detection named \"PSUACBypass malware was detected\" (Informational) was generated when rad353F7.ps1 was dropped and identified as UAC bypass malware.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads rad353F7.ps1 from 192.168.0.4", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file download\" (Medium) was generated when powershell.exe downloaded smrs.exe from 192.168.0.4."
+  ], 
+  "Procedure": "powershell.exe downloads smrs.exe from 192.168.0.4", 
+  "Step": "4.B.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when powershell.exe executed rad353F7.ps1.", 
+    "A Technique detection named \"Suspicious PowerShell command line\" (Medium) was generated when powershell.exe executed with suspicious command-line parameters.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe executes rad353F7.ps1", 
+  "Step": "4.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"powershell.exe set registry value \"DelegateExecute\"\" was generated when powershell.exe added a value to the Registry via New-Item and New-ItemProperty."
+  ], 
+  "Procedure": "powershell.exe adds a value under HKCU:\\Software\\Classes\\ms-settings\\shell\\open\\command via New-Item and New-ItemProperty", 
+  "Step": "4.B.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious \"UACBypassExp\" behavior was detected\" (Low) was generated when the behavior of a file was associated with bypassing UAC.", 
+    "A Technique detection named \"UAC bypass was detected\" (Medium) was generated when fodhelper.exe spawned cmd.exe as a high-integrity process.", 
+    ""
+  ], 
+  "Procedure": "fodhelper.exe spawns cmd.exe as a high-integrity process (note: Due to the configuration of the environment, the adversary's process was high by default. This sub-step was evaluated based on the criteria of detecting data related to process integrity level as well as the executed mechanics of the UAC bypass)", 
+  "Step": "4.B.5", 
+  "TacticGroup": "Privilege Escalation", 
+  "Technique": "T1548", 
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when cmd.exe executed smrs.exe.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns smrs.exe", 
+  "Step": "4.B.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Sensitive credential memory read\" (High) was generated when smrs.exe opened and read lsass.exe.", 
+    "A Technique detection named \"Password hashes dumped from LSASS memory\" (Medium) was generated when smrs.exe opened and read lsass.exe.", 
+    "", 
+    "A Technique detection named \"Suspicious access to LSASS service\" (Medium) was generated when smrs.exe opened and read lsass.exe."
+  ], 
+  "Procedure": "smrs.exe opens and reads lsass.exe", 
+  "Step": "4.B.7", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded pscp.exe from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads pscp.exe from 192.168.0.4", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A General detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded psexec.py from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads psexec.py from 192.168.0.4", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe downloads runtime from 192.168.0.4", 
+  "Step": "5.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded plink.exe from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads plink.exe from 192.168.0.4", 
+  "Step": "5.A.4", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded tiny.exe from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads tiny.exe from 192.168.0.4", 
+  "Step": "5.A.5", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"A malicious PowerShell cmdlet was invoked on the machine\" (Medium) was generated when powershell.exe executed cmd.exe with a named pipe as stdin.", 
+    "", 
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when powershell.exe spawned cmd.exe."
+  ], 
+  "Procedure": "powershell.exe spawns cmd.exe", 
+  "Step": "5.A.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious connection to remote service\" (Low) was generated when pscp.exe connected over SCP (port 22) to 10.0.0.7.", 
+    ""
+  ], 
+  "Procedure": "Pscp.exe connects over SCP (port 22) to 10.0.0.7", 
+  "Step": "5.A.7", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious logon from remote device\" (Low) was generated when user kmitnick logged on to bankfileserver (10.0.0.7).", 
+    "A Technique detection named \"Suspicious privileged user logon\" (Low) was generated when user kmitnick logged on to bankfileserver (10.0.0.7)."
+  ], 
+  "Procedure": "User kmitnick logs on to bankfileserver (10.0.0.7)", 
+  "Step": "5.A.8", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file copied or dropped\" (Low) was generated when psexec.py was transferred from 10.0.0.6 to 10.0.0.7 via SCP."
+  ], 
+  "Procedure": "Pscp.exe copies psexec.py to 10.0.0.7", 
+  "Step": "5.A.9", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Delayed"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file copied or dropped\" (Low) was generated when runtime was transferred from 10.0.0.6 to 10.0.0.7 via SCP.", 
+    "A Technique detection named \"Suspicious binary dropped and launched\" (Low) was generated when a Linux binary (runtime) was transferred from 10.0.0.6 to 10.0.0.7 via SCP.", 
+    ""
+  ], 
+  "Procedure": "Pscp.exe copies runtime to 10.0.0.7", 
+  "Step": "5.A.10", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file dropped or copied\" (Low) was generated when tiny.exe was transferred from 10.0.0.6 to 10.0.0.7 via SCP.", 
+    "A Technique detection named \"Suspicious Windows executable on a Linux device.\" (Low) was generated when a Windows executable (tiny.exe) was transferred from 10.0.0.6 to 10.0.0.7 via SCP."
+  ], 
+  "Procedure": "Pscp.exe copies tiny.exe to 10.0.0.7", 
+  "Step": "5.A.11", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious connection to remote service\" (Low) was generated when plink.exe connected over SSH (port 22) to 10.0.0.7.", 
+    ""
+  ], 
+  "Procedure": "plink.exe connects over SSH (port 22) to 10.0.0.7", 
+  "Step": "5.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious logon from remote device\" (Low) was generated when user kmitnick logged on to bankfileserver (10.0.0.7).", 
+    ""
+  ], 
+  "Procedure": "User kmitnick logs on to bankfileserver (10.0.0.7)", 
+  "Step": "5.B.2", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious process discovery\" (Low) was generated when user kmitnick executed ps ax."
+  ], 
+  "Procedure": "User kmitnick executes ps ax", 
+  "Step": "5.B.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"bash process performed File and Directory Discovery by invoking ls\" was generated when user kmitnick executed ls -lsahR /var/.", 
+    ""
+  ], 
+  "Procedure": "User kmitnick executes ls -lsahR /var/", 
+  "Step": "5.B.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process collected data from local system\" (Low) was generated when user kmitnick read network-diagram-financial.xml via cat.", 
+    ""
+  ], 
+  "Procedure": "User kmitnick reads network-diagram-financial.xml via cat", 
+  "Step": "5.B.5", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1005", 
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious process collected data from local system\" (Low) was generated when user kmitnick read help-desk-ticket.txt via cat."
+  ], 
+  "Procedure": "User kmitnick reads help-desk-ticket.txt via cat", 
+  "Step": "5.B.6", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1005", 
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious Remote System Discovery\" (Low) was generated when user kmitnick enumerated the domain controller via nslookup.", 
+    "", 
+    "A Tactic detection named \"Discovery\" was generated when user kmitnick enumerated the domain controller via nslookup."
+  ], 
+  "Procedure": "User kmitnick enumerates the domain controller via nslookup, which queries for the DC (10.0.0.4) over DNS (port 53)", 
+  "Step": "5.B.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "General", 
+    "Technique", 
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)", 
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A General detection named \"PthToolkit.D/IngressImpacket.A\" (Medium) was generated when psexec.py was identified as Impacket.", 
+    "A Technique detection named \"Pass-the-Hash activity detected\" (Medium) was generated when psexec.py created a logon to 10.0.0.4 as user kmitnick.", 
+    "", 
+    "A Technique detection named \"Non-standard authentication with possibly stolen credentials\" (High) was generated when credential theft occurred in close proximity to an attempt to validate credentials without going through a standard authentication process.", 
+    "A Technique detection named \"Possible pass-the-hash authentication\" (High) was generated when authentication attempted for a remote connection indicated use of Pass the Hash."
+  ], 
+  "Procedure": "psexec.py creates a logon to 10.0.0.4 as user kmitnick", 
+  "Step": "5.C.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1550", 
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"python3.6 communicated over SMB\" was generated when psexec.py connected to SMB shares on 10.0.0.4.", 
+    "", 
+    "A Technique detection named \"Remote command launched\" (Medium) was generated when a remote command was executed from a Linux device (10.0.0.7) to a Windows device (10.0.0.4)."
+  ], 
+  "Procedure": "psexec.py connects to SMB shares on 10.0.0.4", 
+  "Step": "5.C.2", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "General", 
+    "General", 
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"SusSvcRemoteDroppedExe\" (Low) was generated when a remotely registered service was used to drop a service executable.", 
+    "A General detection named \"'RemoteExec' malware detected\" (Informational) was generated when the service executable in C:\\Windows\\ was identified as remote execution malware.", 
+    "A Technique detection named \"Suspicious remote activity\" (Medium) was generated when a suspicious service was executed remotely.", 
+    "A Technique detection named \"Suspicious service launched\" (Medium) was generated when a suspicious service was executed by services.exe.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns from a service executable in C:\\Windows\\", 
+  "Step": "5.C.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1569", 
+  "Technique_Name": "System Services"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"File dropped and launched from remote location\" (Medium) was generated when tiny.exe was dropped and executed from a remote location.", 
+    ""
+  ], 
+  "Procedure": "tiny.exe is created on 10.0.0.4", 
+  "Step": "5.C.4", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Tactic", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Tactic detection named \"Execution\" was generated when cmd.exe spawned tiny.exe.", 
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when cmd.exe spawned tiny.exe.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns tiny.exe", 
+  "Step": "5.C.5", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Tactic", 
+    "General", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Tactic detection named \"Reflective DLL loading detected\" (Medium) was generated when tiny.exe performed suspicious memory allocations that indicated a DLL was reflectively loaded.", 
+    "A General detection named \"Win32/Meterpreter.gen!A\" was generated when tiny.exe behavior was identified as meterpreter.", 
+    "A Tactic detection named \"DefenseEvasion\" was generated when anomalous memory allocation was identified in the process memory of tiny.exe."
+  ], 
+  "Procedure": "tiny.exe loads shellcode from network connection into memory", 
+  "Step": "5.C.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "tiny.exe loads system.management.automation.dll", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious User Account Discovery\" (Low) was generated when PowerShell executed Get-ADComputer.", 
+    ""
+  ], 
+  "Procedure": "PowerShell executes Get-ADComputer", 
+  "Step": "6.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Account Discovery\" was generated when PowerShell executed Get-NetUser.", 
+    "A General detection named \"PowerShell/PowerView.A\" was generated when PowerView was identified in memory.", 
+    ""
+  ], 
+  "Procedure": "PowerShell executes Get-NetUser", 
+  "Step": "6.A.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when tiny.exe downloaded plink.exe from 192.168.0.4."
+  ], 
+  "Procedure": "tiny.exe downloads plink.exe from 192.168.0.4", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Tactic", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when tiny.exe spawned cmd.exe.", 
+    "", 
+    "A Tactic detection named \"Execution\" was generated when tiny.exe spawned cmd.exe.", 
+    "A Technique detection named \"A malicious PowerShell cmdlet was invoked on the machine\" (Medium) was generated when tiny.exe spawned cmd.exe with a named pipe as stdin."
+  ], 
+  "Procedure": "tiny.exe spawns cmd.exe", 
+  "Step": "7.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "plink.exe transmits data to 192.168.0.4 over SSH protocol", 
+  "Step": "7.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"A successful windows domain account logon by kmitnick\" was generated when user kmitnick logged on to bankdc (10.0.0.4).", 
+    ""
+  ], 
+  "Procedure": "User kmitnick logs on to bankdc (10.0.0.4)", 
+  "Step": "7.A.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Sucessful inbound RDP connection from ::1\" was generated when an RDP session was established from the localhost over TCP port 3389."
+  ], 
+  "Procedure": "RDP session from the localhost over TCP port 3389", 
+  "Step": "7.A.5", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious System Owner/User Discovery\" was generated when powershell.exe executed qwinsta /server:cfo."
+  ], 
+  "Procedure": "powershell.exe executes qwinsta /server:cfo", 
+  "Step": "7.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"A successful windows domain account logon by kmitnick from 10.0.0.4\" was generated when user kmitnick logged on to cfo (10.0.0.5).", 
+    "", 
+    "A Technique detection named \"kmitnick connected to the device through a Remote Desktop session\" was generated when user kmitnick logged on to cfo (10.0.0.5) using RDP."
+  ], 
+  "Procedure": "User kmitnick logs on to cfo (10.0.0.5)", 
+  "Step": "7.B.2", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"mstsc.exe established an outbound connection\" was generated when an RDP session was established from 10.0.0.4 to 10.0.0.5 over TCP port 3389.", 
+    "", 
+    "A Technique detection named \"Successful inbound RDP connection\" was generated when an RDP session was established from 10.0.0.4 to 10.0.0.5 over TCP port 3389.", 
+    "A Technique detection named \"kmitnick connected to the device through a Remote Desktop session\" was generated when an RDP session was established by user kmitnick."
+  ], 
+  "Procedure": "RDP session from 10.0.0.4 to 10.0.0.5 over TCP port 3389", 
+  "Step": "7.B.3", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"An active \"Meterpreter\" hacktool was detected\" (Medium) was generated when Java-Update.exe was identified as Meterpreter.", 
+    ""
+  ], 
+  "Procedure": "scp.exe downloads Java-Update.exe from 192.168.0.4", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "dir lists the contents of C:\\Users\\Public", 
+  "Step": "7.C.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe downloads Java-Update.vbs from 192.168.0.4", 
+  "Step": "7.C.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Anomaly detected in ASEP registry\" (Medium) was generated when the Java-Update subkey added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run was identified as a Registry run key Autostart Extensibility Point (ASEP)."
+  ], 
+  "Procedure": "Java-Update subkey is added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", 
+  "Step": "7.C.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1547", 
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious VB activity\" (Low) was generated when wscript.exe spawned Java-Update.exe.", 
+    "", 
+    "A General detection named \"Suspicious file or command launched from registry run keys\" (Low) was generated when a Registry run key caused wscript.exe to execute Java-Update.vbs, which then spawned Java-Update.exe."
+  ], 
+  "Procedure": "wscript.exe spawns Java-Update.exe", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Java-Update.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Java-Update.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "8.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file downloaded\" was generated when Java-Update.exe downloaded DefenderUpgradeExec.exe from 192.168.0.4."
+  ], 
+  "Procedure": "Java-Update.exe downloads DefenderUpgradeExec.exe from 192.168.0.4", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Possible keylogging activity\" (High) was generated when DefenderUpgradeExec.exe called the SetWindowsHookEx API.", 
+    "", 
+    "A Tactic detection named \"Collection\" was generated when DefenderUpgradeExec.exe created a system hook."
+  ], 
+  "Procedure": "DefenderUpgradeExec.exe calls the SetWindowsHookEx API", 
+  "Step": "9.A.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1056", 
+  "Technique_Name": "Input Capture"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Portable Executable Injection\" was generated when Java-Update.exe injected into explorer.exe with CreateRemoteThread.", 
+    ""
+  ], 
+  "Procedure": "Java-Update.exe injects into explorer.exe with CreateRemoteThread", 
+  "Step": "9.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"explorer.exe is attempting to take a screenshot using BitBlt API\" was generated when explorer.exe executed the BitBlt API."
+  ], 
+  "Procedure": "explorer.exe calls the CreateCompatibleBitmap API from Gdi32.dll", 
+  "Step": "9.A.4", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "explorer.exe reads C:\\Users\\jsmith\\AppData\\Local\\Temp\\Klog2.txt over to 192.168.0.4", 
+  "Step": "9.A.5", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1005", 
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when explorer.exe downloaded infosMin48.exe from 192.168.0.4.", 
+    "", 
+    "A General detection named \"explorer.exe created a PE file with mismatching original PE name\" was generated when explorer.exe created infosMin48.exe, which had a mismatch with its original file name (webCreds.exe)."
+  ], 
+  "Procedure": "explorer.exe downloads infosMin48.exe from 192.168.0.4", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"queried a unique vault credential from the Credential Manager\" was generated when infosMin48.exe accessed a stored GitHub web credential from the Credential Manager.", 
+    "", 
+    "A Technique detection named \"enumerated vault credentials from the Credential Manager.\" was generated when infosMin48.exe accessed the Credential Manager."
+  ], 
+  "Procedure": "infosMin48.exe calls the VaultEnumerateItems API from vaultcli.dll", 
+  "Step": "9.B.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1555", 
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe deletes files from C:\\Users\\jsmith\\AppData\\Local\\Temp\\", 
+  "Step": "9.B.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1070", 
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe downloads tightvnc-2.8.27-gpl-setup-64bit.msi from 192.168.0.4", 
+  "Step": "10.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe downloads vnc-settings.reg from 192.168.0.4", 
+  "Step": "10.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious NetShFirewallRule behavior was detected\" (Low) was generated when netsh.exe added 'Service Host' rule to allow TCP port 5900 inbound.", 
+    ""
+  ], 
+  "Procedure": "netsh adds Service Host rule for TCP port 5900", 
+  "Step": "10.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1562", 
+  "Technique_Name": "Impair Defenses"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious RemoteAccessToolInRunKey was detected\" (Low) was generated when remote access software was added as a Registry run key."
+  ], 
+  "Procedure": "msiexec.exe adds the tvncontrol subkey in HKLM\\Software\\Microsoft\\CurrentVersion\\Run", 
+  "Step": "10.A.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1547", 
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Addition of subkeys in HKLM\\Software\\TightVNC\\Server", 
+  "Step": "10.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Deletion of the Java-Update subkey in HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", 
+  "Step": "10.A.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"tvnserver.exe established inbound connection\" was generated when tvnserver.exe accepted a connection from 192.168.0.4 over TCP port 5900\n."
+  ], 
+  "Procedure": "tvnserver.exe accepts a connection from 192.168.0.4 over TCP port 5900", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1219", 
+  "Technique_Name": "Remote Access Software"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Tactic", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"User executed file hosted in winword.exe process\" was generated when explorer.exe spawned winword.exe when the user clicked 2-list.rtf.", 
+    "A Tactic detection named \"Execution\" was generated when explorer.exe spawned winword.exe when the user clicked 2-list.rtf.", 
+    ""
+  ], 
+  "Procedure": "explorer.exe spawns winword.exe when user clicks 2-list.rtf", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "Technique_Name": "User Execution"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Script/Foretype.A!ml\" was generated when unprotected.lnk was identified as JScript malware."
+  ], 
+  "Procedure": "2-list.rtf contains an embedded lnk payload that is dropped to disk", 
+  "Step": "11.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Tactic", 
+    "Telemetry", 
+    "Technique", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious mshta process launched\" (Low) was generated when winword.exe spawned mshta.exe.", 
+    "A Tactic detection named \"Execution\" was generated when winword.exe spawned mshta.exe.", 
+    "", 
+    "A Technique detection named \"Use of living-off-the-land binary to run malicious code\" (Low) was generated when winword.exe spawned a known living-off-the-land binary (mshta.exe).", 
+    "A General detection named \"An Office application ran suspicious commands\" was generated when mshta.exe was executed as a child process from an Office application (winword.exe)."
+  ], 
+  "Procedure": "winword.exe spawns mshta.exe", 
+  "Step": "11.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1218", 
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious VB activity\" (Low) was generated when the Visual Basic interpreter was invoked by mshta.exe.", 
+    ""
+  ], 
+  "Procedure": "mshta.exe executes an embedded VBScript payload", 
+  "Step": "11.A.4", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"\"Nemucod\" malware was detected\" (Informational) was generated when sql-rat.js was identified as JS malware.", 
+    ""
+  ], 
+  "Procedure": "mshta.exe assembles text embedded within 2-list.rtf into a JS payload", 
+  "Step": "11.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"process contains suspicious patterns in AMSI content associated with \"Masquerading\"\" was generated when patterns in script content executed by mshta.exe indicated the use of masquerading.", 
+    "A Technique detection named \"Attempt to hide use of dual-purpose tool\" (Medium) was generated when a known tool (wscript.exe) was created with a non-standard filename (Adb156.exe).", 
+    "A Technique detection named \"mshta.exe created a PE file with mismatching original PE name\" was generated when mshta.exe made a copy of the legitimate wscript.exe as Adb156.exe.", 
+    ""
+  ], 
+  "Procedure": "mshta.exe makes a copy of the legitimate wscript.exe as Adb156.exe", 
+  "Step": "11.A.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "Technique_Name": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "winword.exe spawns verclsid.exe and loads VBE7.DLL, VBEUI.DLL, and VBE7INTL.DLL", 
+  "Step": "11.A.7", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1559", 
+  "Technique_Name": "Inter-Process Communication"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"An anomalous scheduled task was created\" (Medium) was generated when an anomalous scheduled task was created for execution of sql-rat.js.", 
+    "A Technique detection named \"mshta.exe process created a scheduled task\" was generated when mshta.exe was observed creating a new scheduled task (Micriosoft Update Service).", 
+    ""
+  ], 
+  "Procedure": "mshta.exe loads taskschd.dll and creates a scheduled task to execute in 5 minutes", 
+  "Step": "11.A.8", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1053", 
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious Scheduled Task Process Launched\" (Medium) was generated when a scheduled task was launched that pointed at a file previously identified as malicious.", 
+    "", 
+    "A Technique detection named \"Suspicious Task Scheduler activity\" was generated when a scheduled task process was created that was involved in earlier malicious activity."
+  ], 
+  "Procedure": "svchost.exe (-s Schedule) spawns Adb156.exe", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1053", 
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious JavaScript process\" (Low) was generated when adb156.exe executed sql-rat.js.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe loads scrobj.dll and executes sql-rat.js using Jscript", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe transmits data to 192.168.0.6 via MSSQL transactions", 
+  "Step": "12.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"process performed System Network Configuration Discovery\" was generated when Adb156.exe made a WMI query for Win32_NetworkAdapterConfiguration.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_NetworkAdapterConfiguration", 
+  "Step": "12.A.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"process performed System Hardware Discovery\" was generated when Adb156.exe made a WMI query for Win32_LogicalDisk.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_LogicalDisk", 
+  "Step": "12.A.5", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when Adb156.exe downloaded stager.ps1 from 192.168.0.6."
+  ], 
+  "Procedure": "Adb156.exe downloads stager.ps1 from 192.168.0.6", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"process performed Process Discovery\" was generated when Adb156.exe made a WMI query for Win32_Process. .", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_Process", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when Adb156.exe spawned cmd.exe."
+  ], 
+  "Procedure": "Adb156.exe spawns cmd.exe", 
+  "Step": "13.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious Network Share Discovery\" was generated when cmd.exe executed net view."
+  ], 
+  "Procedure": "cmd.exe executes net view", 
+  "Step": "13.A.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"process performed Virtualization/Sandbox Evasion\" was generated when a WMI query was made for Win32_BIOS."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_BIOS", 
+  "Step": "13.A.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1497", 
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"process performed User Account Discovery\" was generated when svchost.exe.exe queried the USERNAME environment variable by invoking Adb156.exe."
+  ], 
+  "Procedure": "Adb156.exe queries the USERNAME environment variable", 
+  "Step": "13.A.5", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"process performed System Information Discovery\" was generated when svchost.exe queries the COMPUTERNAME environment variable by invoking Adb156.exe."
+  ], 
+  "Procedure": "Adb156.exe queries the COMPUTERNAME environment variable", 
+  "Step": "13.A.6", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"process performed System Information Discovery\" was generated when svchost.exe made a WMI query for Win32_ComputerSystem. .", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_ComputerSystem", 
+  "Step": "13.A.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"process performed System Information Discovery\" was generated when Adb156.exe made a WMI query for Win32_OperatingSystem. .", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_OperatingSystem", 
+  "Step": "13.A.9", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when Adb156.exe downloaded takeScreenshot.ps1 from 192.168.0.6 via MSSQL transactions.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe downloads takeScreenshot.ps1 from 192.168.0.6 via MSSQL transactions", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when Adb156.exe spawned cmd.exe.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe spawns cmd.exe", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when cmd.exe spawned powershell.exe.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "13.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious screen capture activity\" (Medium) was generated when powershell.exe executed CopyFromScreen().", 
+    "A Technique detection named \"File associated with possible attack activity\" (Low) was generated when powershell.exe executed CopyFromScreen().", 
+    ""
+  ], 
+  "Procedure": "powershell.exe executes CopyFromScreen()", 
+  "Step": "13.B.4", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe reads and uploads image.png to 192.168.0.6 via MSSQL transactions", 
+  "Step": "13.B.5", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Tactic", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when Adb156.exe spawned cmd.exe.", 
+    "A Tactic detection named \"Execution\" was generated when Adb156.exe spawned cmd.exe.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe spawns cmd.exe", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when cmd.exe spawned powershell.exe.", 
+    "", 
+    "A Tactic detection named \"Execution\" was generated when cmd.exe spawned powershell.exe."
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "14.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "General", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"'Posdyna' malware was detected\" (Informational) was generated when powershell.exe decoded an embedded DLL payload that was identified as malware.", 
+    "A Technique detection named \"process contains suspicious patterns in AMSI content associated with \"Deobfuscate/Decode Files or Information\"\" was generated when powershell.exe decoded an embedded DLL payload.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe decodes an embedded DLL payload", 
+  "Step": "14.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes the decoded payload using Invoke-Expression (IEX)", 
+  "Step": "14.A.4", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe loads shellcode from network connection into memory", 
+  "Step": "14.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "14.A.6", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "14.A.7", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe calls the CreateToolhelp32Snapshot() API", 
+  "Step": "15.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium ) was generated when powershell.exe downloaded samcat.exe from 192.168.0.4.", 
+    "", 
+    "A General detection named \"\"Mimikatz\" hacktool was detected\" (Low) was generated when samcat.exe was identified as Mimikatz."
+  ], 
+  "Procedure": "powershell.exe downloads samcat.exe from 192.168.0.4", 
+  "Step": "15.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded uac-samcats.ps1 from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads uac-samcats.ps1 from 192.168.0.4", 
+  "Step": "15.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Tactic", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when powershell.exe spawned powershell.exe.", 
+    "A Tactic detection named \"Execution\" was generated when powershell.exe spawned powershell.exe.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns powershell.exe", 
+  "Step": "15.A.4", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"UAC bypass was detected\" (Medium) was generated when a process performed actions on a child process that would normally require UAC prompt.", 
+    "A Technique detection named \"process was observed using \"Bypass User Access Control\"\" was generated when powershell.exe spawned samcat.exe as a high-integrity process.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns samcat.exe as a high-integrity process (note: Due to the configuration of the environment, the adversary's process was high by default. This sub-step was evaluated based on the criteria of detecting data related to process integrity level as well as the executed mechanics of the UAC bypass)", 
+  "Step": "15.A.5", 
+  "TacticGroup": "Privilege Escalation", 
+  "Technique": "T1548", 
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "General", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Possible Security Account Manager sensitive info theft\" (Medium) was generated when samcat.exe opened and read the SAM.", 
+    "A General detection named \"An active 'Mimikatz' hacktool was detected\" (Medium) was generated when execution of samcat.exe was identified as Mimikatz.", 
+    "A Technique detection named \"Block credential stealing from the Windows local security authority subsystem (lsass.exe)\" was generated when an ASR audit rule indicated samcat.exe had attemped to access LSASS memory.", 
+    "A Technique detection named \"Suspicious access to LSASS service\" (Medium) was generated when samcat.exe opened lsass.exe with memory read access."
+  ], 
+  "Procedure": "samcat.exe opens and reads the SAM via LSASS", 
+  "Step": "15.A.6", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe calls the GetIpNetTable() API", 
+  "Step": "15.A.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Tactic"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Tactic detection named \"Suspicious System Network Configuration Discovery\" (Low) was generated when powershell.exe spawned nslookup.exe, which queried the DC (10.0.1.4) over DNS (port 53)."
+  ], 
+  "Procedure": "powershell.exe spawns nslookup.exe, which queries the DC (10.0.1.4) over DNS (port 53)", 
+  "Step": "15.A.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded paexec.exe from 192.168.0.4."
+  ], 
+  "Procedure": "powershell.exe downloads paexec.exe from 192.168.0.4", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General", 
+    "General", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"powershell.exe created a PE file with an empty original PE name\" was generated when powershell.exe created a PE file (hollow.exe) that had no original PE name.", 
+    "A General detection named \"\"Meterpreter\" malware was detected\" (Informational) was generated when Meterpreter shellcode was identified within hollow.exe.", 
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when powershell.exe downloaded hollow.exe from 192.168.0.4."
+  ], 
+  "Procedure": "powershell.exe downloads hollow.exe from 192.168.0.4", 
+  "Step": "16.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Tactic", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when powershell.exe spawned cmd.exe.", 
+    "A Tactic detection named \"powershell.exe created process cmd.exe\" was generated when powershell.exe spawned cmd.exe.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns cmd.exe", 
+  "Step": "16.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"A successful windows domain account logon by kmitnick\" was generated when user kmitnick logged on to itadmin (10.0.1.6).", 
+    ""
+  ], 
+  "Procedure": "User kmitnick logs on to itadmin (10.0.1.6)", 
+  "Step": "16.A.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Possible lateral movement involving a suspicious file transfer over SMB\" (Medium) was generated when an SMB session was established from 10.0.1.5 to 10.0.1.6 over TCP port 135 or 445.", 
+    "A Technique detection named \"File dropped and launched from remote location\" (Medium) was generated when a file was copied from 10.0.1.5 to 10.0.1.6 over SMB.", 
+    ""
+  ], 
+  "Procedure": "SMB session from 10.0.1.5 to 10.0.1.6 over TCP port 135 or 445 with admin shares accessed", 
+  "Step": "16.A.5", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious remote activity\" (Medium) was generated when a Windows service started PAExec-{PID}-HOTELMANAGER.exe, which executed hollow.exe.", 
+    "A Technique detection named \"Suspicious service launched\" (Medium) was generated when a Windows service started PAExec-{PID}-HOTELMANAGER.exe, which executed hollow.exe.", 
+    "", 
+    "A Technique detection named \"Suspicious service creation initiated remotely\" (Medium) was generated when a Windows service was executed from a remote location."
+  ], 
+  "Procedure": "Windows service started PAExec-{PID}-HOTELMANAGER.exe, which executes hollow.exe", 
+  "Step": "16.A.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1569", 
+  "Technique_Name": "System Services"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"A process was injected with potentially malicious code\" (Medium) was generated when hollow.exe set a thread context in svchost.exe.", 
+    "A Technique detection named \"hollow.exe process was observed using \"Process Hollowing\" and \"Process Injection\"\" was generated when hollow.exe spawned svchost.exe and umapped its memory image."
+  ], 
+  "Procedure": "hollow.exe spawns svchost.exe and unmaps its memory image via: NtUnmapViewOfSection", 
+  "Step": "16.A.7", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "svchost.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "16.A.8", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "svchost.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "16.A.9", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Win32/Meterinject.A!dll\" (Low) was generated when Meterpreter shellcode was identified within srrstr.dll.", 
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when svchost.exe downloaded srrstr.dll from 192.168.0.4."
+  ], 
+  "Procedure": "svchost.exe downloads srrstr.dll from 192.168.0.4 (port 443)", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"DLL search order hijack\" (Medium) was generated when an uncommon/unsigned DLL with the same name as a system DLL (srrstr.dll) was placed in a non-standard directory."
+  ], 
+  "Procedure": "srrstr.dll is not the legitimate Windows System Protection Configuration Library", 
+  "Step": "17.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "Technique_Name": "Masquerading"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious process launched using cmd.exe\" (Low) was generated when svchost.exe spawned cmd.exe.", 
+    ""
+  ], 
+  "Procedure": "svchost.exe spawns cmd.exe", 
+  "Step": "17.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"DLL search order hijack\" (Medium) was generated when an uncommon/unsigned DLL with the same name as a system DLL (srrstr.dll) was placed in a non-standard directory."
+  ], 
+  "Procedure": "SystemPropertiesAdvanced.exe executes code in the illegitimate srrstr.dll", 
+  "Step": "17.A.4", 
+  "TacticGroup": "Privilege Escalation", 
+  "Technique": "T1574", 
+  "Technique_Name": "Hijack Execution Flow"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "17.A.5", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "17.A.6", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"A process was injected with potentially malicious code\" (Medium) was generated when svchost.exe allocated remote executable memory (RWX) in the address space of explorer.exe.", 
+    "A Technique detection named \"Suspicious process injection observed\" (Medium) was generated when svchost.exe injected into explorer.exe with CreateRemoteThread.", 
+    ""
+  ], 
+  "Procedure": "svchost.exe injects into explorer.exe with CreateRemoteThread", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"explorer.exe is attempting to take a screenshot using BitBlt API\" was generated when explorer.exe called the BitBlt API.", 
+    ""
+  ], 
+  "Procedure": "explorer.exe calls the CreateCompatibleBitmap API from Gdi32.dll", 
+  "Step": "18.A.2", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"explorer created a remote threat in the context of mstsc.exe\" was generated when explorer.exe injected into mstsc.exe with CreateRemoteThread."
+  ], 
+  "Procedure": "explorer.exe injects into mstsc.exe with CreateRemoteThread", 
+  "Step": "18.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "mstsc.exe calls APIs such as GetAsyncKeyState, GetKeyState, or GetKeyboardState", 
+  "Step": "18.A.4", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1056", 
+  "Technique_Name": "Input Capture"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"HOSPITALITY\\kmitnick connected to the device through a Remote Desktop session from 10.0.1.6\" was generated when user kmitnick logged on to accounting (10.0.1.7) via a Remote Desktop session.", 
+    "A Technique detection named \"A successful windows domain account logon\" was generated when user kmitnick logged on to accounting (10.0.1.7)."
+  ], 
+  "Procedure": "User kmitnick logs on to accounting (10.0.1.7)", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"kmitnick connected to the device through a Remote Desktop session from 10.0.1.6\" was generated when user kmitnick logged on to accounting (10.0.1.7) using a Remote Desktop session.", 
+    "", 
+    "A Technique detection named \"Remote Desktop session\" (Medium) was generated when an RDP session was created from itadmin (10.0.1.6) to accounting (10.0.1.7) over port 3389.", 
+    "A Technique detection named \"Successful inbound RDP connection from 10.0.1.6\" was generated when an RDP session was created from itadmin (10.0.1.6) to accounting (10.0.1.7) over port 3389."
+  ], 
+  "Procedure": "RDP session from 10.0.1.6 to 10.0.1.7 over TCP port 3389", 
+  "Step": "19.A.2", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "itadmin (10.0.1.6) is relaying RDP traffic from attacker infrastructure", 
+  "Step": "19.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1090", 
+  "Technique_Name": "Proxy"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Suspicious PowerShell process\" (Low) was generated when powershell.exe spawned powershell.exe."
+  ], 
+  "Procedure": "powershell.exe spawns powershell.exe", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes base64 encoded commands", 
+  "Step": "19.B.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"powershell.exe dropped 2 files from the local system into a staging directory\" was generated when powershell.exe created dll329.dll\n.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads dll329.dll from 192.168.0.4", 
+  "Step": "19.B.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"powershell.exe dropped 2 files from the local system into a staging directory\" was generated when powershell.exe created sdbE376.tmp\n."
+  ], 
+  "Procedure": "powershell.exe downloads sdbE376.tmp from 192.168.0.4", 
+  "Step": "19.B.4", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Tactic", 
+    "Tactic", 
+    "Technique", 
+    "Technique", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Tactic detection named \"Persistence\" was generated when powershell.exe executed sdbinst.exe.", 
+    "A Tactic detection named \"Persistence\" was generated when sdbinst.exe created a new shim database file (.sdb).", 
+    "A Technique detection named \"An abnormal installation of a Shim Database (SDB) has been observed\" (Medium ) was generated when sdbinst.exe installed a custom application shim database file.", 
+    "A Technique detection named \"\"ApplicationShimming\" malware was detected\" was generated when a custom application shim file was identified as malware.", 
+    "A Technique detection named \"Anomaly detected in ASEP registry\" (Medium) was generated when an Autostart Extensibility Point (ASEP) was set in the Registry, identified as application shimming value name DatabasePath.", 
+    ""
+  ], 
+  "Procedure": "sdbinst.exe installs sdbE376.tmp shim", 
+  "Step": "19.B.5", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1546", 
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"File associated with possible attack activity\" (Low) was generated when AccountingIQ.exe accessed a custom .sdb file that was previously tied to suspicious attack activity."
+  ], 
+  "Procedure": "AccountingIQ.exe queries HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\ and loads dll329.dll", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1546", 
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Process hollowing detected\" (Medium) was generated when AccountingIQ.exe mapped an executable region of memory inside SyncHost.exe with NtMapViewOfSection."
+  ], 
+  "Procedure": "AccountingIQ.exe injects into SyncHost.exe with CreateRemoteThread", 
+  "Step": "20.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "20.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "20.A.4", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when rundll32.exe downloaded debug.exe from 192.168.0.4\n.", 
+    ""
+  ], 
+  "Procedure": "rundll32.exe downloads debug.exe from 192.168.0.4", 
+  "Step": "20.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "debug.exe calls the CreateToolhelp32Snapshot API", 
+  "Step": "20.B.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Suspicious file downloaded\" (Medium) was generated when rundll32.exe downloaded 7za.exe from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "rundll32.exe downloads 7za.exe from 192.168.0.4", 
+  "Step": "20.B.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Compression of sensitive data\" (Low) was generated when rundll32.exe invoked an archive utility (7za.exe).", 
+    "A Technique detection named \"7za.exe modified a compressed file log.7z\" was generated when 7za.exe modified a compressed file (log.7z)."
+  ], 
+  "Procedure": "7za.exe creates C:\\Users\\Public\\log.7z", 
+  "Step": "20.B.4", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1560", 
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "rundll32.exe reads and uploads log.7z to 192.168.0.4", 
+  "Step": "20.B.5", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}

@@ -1,12 +1,13 @@
-<dashboard>
+<dashboard version="1.1">
   <label>Overview</label>
   <row>
     <panel>
       <html>
       <h1>Detection types</h1>
       <ul>
-        <li>For APT3 see <a href="https://attackevals.mitre.org/methodology/round1/detection-categories.html">Detection categories</a> on the MITRE webpage</li>
-        <li>For APT29 see <a href="https://attackevals.mitre.org/APT29/detection-categories.html">Detection categories</a> on the MITRE webpage</li>
+        <li>For APT3 see <a href="https://attackevals.mitre-engenuity.org/enterprise/APT3/#detection-categories">Detection categories</a> on the MITRE webpage</li>
+        <li>For APT29 see <a href="https://attackevals.mitre-engenuity.org/enterprise/APT29/#detection-categories">Detection categories</a> on the MITRE webpage</li>
+        <li>For Carbanak+FIN7 see <a href="https://attackevals.mitre-engenuity.org/enterprise/carbanak_fin7/#detection-categories">Detection categories</a> on the MITRE webpage</li>
       </ul>
       
     </html>
@@ -117,6 +118,58 @@
     </panel>
   </row>
   <row>
+    <panel>
+      <title>Carbanak+FIN7 - Detection by type, deduplicated and ranked by operational flow</title>
+      <chart>
+        <search>
+          <query>index=main sourcetype="attackeval:json" source="*round3*"
+| eval Step=trim(Step)
+| eval Detection=trim('Detection{}') 
+| eval Detection=case(Detection=="Technique", "4 Technique", Detection=="Tactic", "3 Tactic", Detection=="General", "2 General", Detection=="Telemetry", "1 Telemetry", 1==1, "0 None")
+| stats count by Detection,host
+| rename Detection AS DetectionType, host AS vendor
+| xyseries vendor,DetectionType,count
+| fillnull value=0
+| sort "0 None"</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+   <row>
     <panel>
       <html>
       <p>LICENSE</p>

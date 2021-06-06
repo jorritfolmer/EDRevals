@@ -1,0 +1,2521 @@
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe spawns winword.exe when user clicks 1-list.rtf", 
+  "Step": "1.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "Technique_Name": "User Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "winword.exe loads VBE7.DLL", 
+  "Step": "1.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1559", 
+  "Technique_Name": "Inter-Process Communication"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe executes unprotected.vbe", 
+  "Step": "1.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "unprotected.vbe is an encoded file", 
+  "Step": "1.A.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe decodes content and creates starter.vbs", 
+  "Step": "1.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe decodes content and creates TransBaseOdbcDriver.js", 
+  "Step": "1.A.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe executes starter.vbs", 
+  "Step": "1.A.7", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "1.A.8", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"W32.WscriptExecuteSuspiciousJS\" (Low) was generated when cmd.exe spawned wscript.exe to execute TransBaseOdbcDriver.js.", 
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns wscript.exe to execute TransBaseOdbcDriver.js", 
+  "Step": "1.A.9", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "wscript.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "1.A.10", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "wscript.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "1.A.11", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "wscript.exe makes WMI queries for Win32_Processor &  Win32_OperatingSystem", 
+  "Step": "2.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "wscript.exe makes a WMI query for Win32_Process", 
+  "Step": "2.A.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"Clam.Win.Malware.ScreenCapture.UNOFFICIAL\" (Medium ) was generated when detected screenshot_.ps1 as Clam.Win.Malware.ScreenCapture.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe downloads screenshot__.ps1 from 192.168.0.4", 
+  "Step": "2.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "2.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "2.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes CopyFromScreen()", 
+  "Step": "2.B.4", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "wscript.exe reads and uploads screenshot__.png to 192.168.0.4", 
+  "Step": "2.B.5", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "3.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns reg.exe to add a value under HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer", 
+  "Step": "3.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Command-line Obfuscation\" (Medium) was generated when cmd.exe spawned reg.exe to modify the registry with base64 encoded data."
+  ], 
+  "Procedure": "Value added to Registry is base64 encoded", 
+  "Step": "3.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"Generic.Sharpshooter\" (Medium) was generated when LanCradDriver.ps1 was detected as Generic.Sharpshooter.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe downloads LanCradDriver.ps1 from 192.168.0.4", 
+  "Step": "3.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns cmd.exe", 
+  "Step": "3.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Heur.BZC.PZQ.Boxter\" (Medium) was generated when LanCradDriver.ps1 was detected as Heur.BZC.PZQ.Boxter."
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "3.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe reads HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer via Get-ItemProperty", 
+  "Step": "3.B.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1012", 
+  "Technique_Name": "Query Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe decrypts, decompresses, and base64 decodes the Registry value into plaintext shellcode", 
+  "Step": "3.B.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes the shellcode from the Registry by calling the CreateThread() API", 
+  "Step": "3.B.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1106", 
+  "Technique_Name": "Native API"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe transmits data to 192.168.0.4 over TCP", 
+  "Step": "3.B.7", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1095", 
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe calls the FindFirstFileW() and FindNextFileW() APIs", 
+  "Step": "4.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)", 
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Powershell Queried LDAP\" (Low) was generated when powershell.exe executed Get-NetComputer to query LDAP (port 389) via a network connection to 10.0.0.4.", 
+    "", 
+    "A General detection named \"Suspicious Network Activity\" (Low ) was generated when powershell.exe executed Get-NetComputer to query LDAP (port 389) via a network connection to 10.0.0.4."
+  ], 
+  "Procedure": "powershell.exe executes Get-NetComputer to query LDAP (port 389) via a network connection to 10.0.0.4", 
+  "Step": "4.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes Find-LocalAdminAccess, which attempts a DCOM/RPC (port 135) connection to multiple hosts to check for access", 
+  "Step": "4.A.3", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1110", 
+  "Technique_Name": "Brute Force"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Successful Remote Logon Detected\" (Threat Detection) was generated when user kmitnick successfully logged into bankdc (10.0.0.4)."
+  ], 
+  "Procedure": "powershell.exe successfully logs in to host 10.0.0.4 or 10.0.0.5 as user kmitnick", 
+  "Step": "4.A.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads rad353F7.ps1 from 192.168.0.4", 
+  "Step": "4.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "General", 
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"W32.33A15DA56C.in12.Talos\" was generated when smrs.exe was detected as W32.33A15DA56C.in12.Talos.", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe downloaded smrs.exe from 192.168.0.4.", 
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads smrs.exe from 192.168.0.4", 
+  "Step": "4.B.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes rad353F7.ps1", 
+  "Step": "4.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe adds a value under HKCU:\\Software\\Classes\\ms-settings\\shell\\open\\command via New-Item and New-ItemProperty", 
+  "Step": "4.B.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"W32.FodHelperUACBypass.ioc\" (High) was generated when fodhelper.exe spawned cmd.exe as part of a possible UAC Bypass with the FodHelper Executable."
+  ], 
+  "Procedure": "fodhelper.exe spawns cmd.exe as a high-integrity process (note: Due to the configuration of the environment, the adversary's process was high by default. This sub-step was evaluated based on the criteria of detecting data related to process integrity level as well as the executed mechanics of the UAC bypass)", 
+  "Step": "4.B.5", 
+  "TacticGroup": "Privilege Escalation", 
+  "Technique": "T1548", 
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns smrs.exe", 
+  "Step": "4.B.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"System Process Protection\" (Low) was generated when smrs.exe opened and read lsass.exe."
+  ], 
+  "Procedure": "smrs.exe opens and reads lsass.exe", 
+  "Step": "4.B.7", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe downloaded pscp.exe."
+  ], 
+  "Procedure": "powershell.exe downloads pscp.exe from 192.168.0.4", 
+  "Step": "5.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads psexec.py from 192.168.0.4", 
+  "Step": "5.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads runtime from 192.168.0.4", 
+  "Step": "5.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Cloud IOC: W32.SuspiciousOperations.ioc\" (Medium) was generated when plink.exe was identified.", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe downloaded plink.exe."
+  ], 
+  "Procedure": "powershell.exe downloads plink.exe from 192.168.0.4", 
+  "Step": "5.A.4", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe created tiny.exe."
+  ], 
+  "Procedure": "powershell.exe downloads tiny.exe from 192.168.0.4", 
+  "Step": "5.A.5", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns cmd.exe", 
+  "Step": "5.A.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Pscp.exe connects over SCP (port 22) to 10.0.0.7", 
+  "Step": "5.A.7", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "User kmitnick logs on to bankfileserver (10.0.0.7)", 
+  "Step": "5.A.8", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Pscp.exe copies psexec.py to 10.0.0.7", 
+  "Step": "5.A.9", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Pscp.exe copies runtime to 10.0.0.7", 
+  "Step": "5.A.10", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Pscp.exe copies tiny.exe to 10.0.0.7", 
+  "Step": "5.A.11", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "plink.exe connects over SSH (port 22) to 10.0.0.7", 
+  "Step": "5.B.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "User kmitnick logs on to bankfileserver (10.0.0.7)", 
+  "Step": "5.B.2", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "User kmitnick executes ps ax", 
+  "Step": "5.B.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "User kmitnick executes ls -lsahR /var/", 
+  "Step": "5.B.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "User kmitnick reads network-diagram-financial.xml via cat", 
+  "Step": "5.B.5", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1005", 
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "User kmitnick reads help-desk-ticket.txt via cat", 
+  "Step": "5.B.6", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1005", 
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "User kmitnick enumerates the domain controller via nslookup, which queries for the DC (10.0.0.4) over DNS (port 53)", 
+  "Step": "5.B.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "psexec.py creates a logon to 10.0.0.4 as user kmitnick", 
+  "Step": "5.C.1", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1550", 
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "psexec.py connects to SMB shares on 10.0.0.4", 
+  "Step": "5.C.2", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"W32.File.MalParent\" (Medium) was generated when service executable in C:\\Windows\\ was detected as W32.File.MalParent.", 
+    "A General detection named \"W32.RemoteAdmin:SPR.22lu.1201\" (Medium) was generated when service executable in C:\\Windows\\ was detected as W32.RemoteAdmin:SPR.22lu.1201."
+  ], 
+  "Procedure": "cmd.exe spawns from a service executable in C:\\Windows\\", 
+  "Step": "5.C.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1569", 
+  "Technique_Name": "System Services"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "tiny.exe is created on 10.0.0.4", 
+  "Step": "5.C.4", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1570", 
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns tiny.exe", 
+  "Step": "5.C.5", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "tiny.exe loads shellcode from network connection into memory", 
+  "Step": "5.C.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "tiny.exe loads system.management.automation.dll", 
+  "Step": "6.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "PowerShell executes Get-ADComputer", 
+  "Step": "6.A.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "PowerShell executes Get-NetUser", 
+  "Step": "6.A.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1087", 
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Cloud IOC: W32.SuspiciousOperations.ioc\" (Medium) was generated when plink.exe was seen and identified as a possible attempt to tunnel."
+  ], 
+  "Procedure": "tiny.exe downloads plink.exe from 192.168.0.4", 
+  "Step": "7.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "tiny.exe spawns cmd.exe", 
+  "Step": "7.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "plink.exe transmits data to 192.168.0.4 over SSH protocol", 
+  "Step": "7.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Successful Remote Logon Detected\" was generated when user kmitnick logged on to bankdc (10.0.0.4)."
+  ], 
+  "Procedure": "User kmitnick logs on to bankdc (10.0.0.4)", 
+  "Step": "7.A.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"Remote SSH Tunnel Parameters\" (Low) was generated when plink.exe created a RDP session from the localhost over TCP port 3389."
+  ], 
+  "Procedure": "RDP session from the localhost over TCP port 3389", 
+  "Step": "7.A.5", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes qwinsta /server:cfo", 
+  "Step": "7.B.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Successful Remote Logon Detected\" (Threat Detection) was generated when user kmitnick logged on to cfo (10.0.0.5)."
+  ], 
+  "Procedure": "User kmitnick logs on to cfo (10.0.0.5)", 
+  "Step": "7.B.2", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "RDP session from 10.0.0.4 to 10.0.0.5 over TCP port 3389", 
+  "Step": "7.B.3", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"DeepScan: Generic.Exploit.Shellcode\" (Medium ) was generated when scp.exe downloaded Java-Update.exe from 192.168.0.4."
+  ], 
+  "Procedure": "scp.exe downloads Java-Update.exe from 192.168.0.4", 
+  "Step": "7.C.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "dir lists the contents of C:\\Users\\Public", 
+  "Step": "7.C.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1083", 
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe downloads Java-Update.vbs from 192.168.0.4", 
+  "Step": "7.C.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Windows Run Key Persistence\" (Low) was generated when Java-Update subkey was added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run.", 
+    ""
+  ], 
+  "Procedure": "Java-Update subkey is added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", 
+  "Step": "7.C.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1547", 
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"DeepScan: Generic.Exploit.Shellcode\" (Medium) was generated when Java-Update.exe was detected as DeepScan: Generic.Exploit.Shellcode.", 
+    ""
+  ], 
+  "Procedure": "wscript.exe spawns Java-Update.exe", 
+  "Step": "8.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Java-Update.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "8.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Java-Update.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "8.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Java-Update.exe downloads DefenderUpgradeExec.exe from 192.168.0.4", 
+  "Step": "9.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "DefenderUpgradeExec.exe calls the SetWindowsHookEx API", 
+  "Step": "9.A.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1056", 
+  "Technique_Name": "Input Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Java-Update.exe injects into explorer.exe with CreateRemoteThread", 
+  "Step": "9.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "explorer.exe calls the CreateCompatibleBitmap API from Gdi32.dll", 
+  "Step": "9.A.4", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "explorer.exe reads C:\\Users\\jsmith\\AppData\\Local\\Temp\\Klog2.txt over to 192.168.0.4", 
+  "Step": "9.A.5", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1005", 
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe downloads infosMin48.exe from 192.168.0.4", 
+  "Step": "9.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ], 
+  "DetectionText": [
+    "A Technique detection named \"Potential Use of vaulcli.dll for Credential Harvesting\" (Low) was generated when infosMin48.exe loaded vaultcli.dll."
+  ], 
+  "Procedure": "infosMin48.exe calls the VaultEnumerateItems API from vaultcli.dll", 
+  "Step": "9.B.2", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1555", 
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe deletes files from C:\\Users\\jsmith\\AppData\\Local\\Temp\\", 
+  "Step": "9.B.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1070", 
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe downloads tightvnc-2.8.27-gpl-setup-64bit.msi from 192.168.0.4", 
+  "Step": "10.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe downloads vnc-settings.reg from 192.168.0.4", 
+  "Step": "10.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Firewall Rule Added by netsh\" (Low) was generated when netsh.exe added 'Service Host' rule to allow TCP port 5900 inbound."
+  ], 
+  "Procedure": "netsh adds Service Host rule for TCP port 5900", 
+  "Step": "10.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1562", 
+  "Technique_Name": "Impair Defenses"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Windows Run Key Persistence\" (Low ) was generated when tvncontrol subkey was added to HKLM\\Software\\Microsoft\\CurrentVersion\\Run."
+  ], 
+  "Procedure": "msiexec.exe adds the tvncontrol subkey in HKLM\\Software\\Microsoft\\CurrentVersion\\Run", 
+  "Step": "10.A.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1547", 
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Addition of subkeys in HKLM\\Software\\TightVNC\\Server", 
+  "Step": "10.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Deletion of the Java-Update subkey in HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", 
+  "Step": "10.A.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1112", 
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "tvnserver.exe accepts a connection from 192.168.0.4 over TCP port 5900", 
+  "Step": "10.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1219", 
+  "Technique_Name": "Remote Access Software"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "explorer.exe spawns winword.exe when user clicks 2-list.rtf", 
+  "Step": "11.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1204", 
+  "Technique_Name": "User Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "2-list.rtf contains an embedded lnk payload that is dropped to disk", 
+  "Step": "11.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"W32.WinwordLaunchedMSHTA\" (Medium) was generated when winword.exe spawned mshta.exe.", 
+    "A Technique detection named \"Cloud IOC: W32.WinwordLaunchedMSHTA.ioc\" (Medium) was generated when winword.exe spawned mshta.exe."
+  ], 
+  "Procedure": "winword.exe spawns mshta.exe", 
+  "Step": "11.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1218", 
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "mshta.exe executes an embedded VBScript payload", 
+  "Step": "11.A.4", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"JS.Heur.Backdoor\" (Medium) was generated when mshta.exe assembled text embedded within 2-list.rtf into a JS payload."
+  ], 
+  "Procedure": "mshta.exe assembles text embedded within 2-list.rtf into a JS payload", 
+  "Step": "11.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [
+    "Delayed"
+  ], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Cloud IOC: W32.PossibleCWscriptMasquerade.ioc\" (High ) was generated when mshta.exe executed a copy of the legitimate wscript.exe renamed as Adb156.exe."
+  ], 
+  "Procedure": "mshta.exe makes a copy of the legitimate wscript.exe as Adb156.exe", 
+  "Step": "11.A.6", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "Technique_Name": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "winword.exe spawns verclsid.exe and loads VBE7.DLL, VBEUI.DLL, and VBE7INTL.DLL", 
+  "Step": "11.A.7", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1559", 
+  "Technique_Name": "Inter-Process Communication"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Task Created\" was generated when mshta.exe created a scheduled task."
+  ], 
+  "Procedure": "mshta.exe loads taskschd.dll and creates a scheduled task to execute in 5 minutes", 
+  "Step": "11.A.8", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1053", 
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "svchost.exe (-s Schedule) spawns Adb156.exe", 
+  "Step": "12.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1053", 
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe loads scrobj.dll and executes sql-rat.js using Jscript", 
+  "Step": "12.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe transmits data to 192.168.0.6 via MSSQL transactions", 
+  "Step": "12.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_NetworkAdapterConfiguration", 
+  "Step": "12.A.4", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_LogicalDisk", 
+  "Step": "12.A.5", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe downloads stager.ps1 from 192.168.0.6", 
+  "Step": "12.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_Process", 
+  "Step": "13.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe spawns cmd.exe", 
+  "Step": "13.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe executes net view", 
+  "Step": "13.A.3", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1135", 
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_BIOS", 
+  "Step": "13.A.4", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1497", 
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe queries the USERNAME environment variable", 
+  "Step": "13.A.5", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1033", 
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe queries the COMPUTERNAME environment variable", 
+  "Step": "13.A.6", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_ComputerSystem", 
+  "Step": "13.A.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe makes a WMI query for Win32_OperatingSystem", 
+  "Step": "13.A.9", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1082", 
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"Clam.Win.Malware.ScreenCapture.UNOFFICIAL\" (Medium) was generated when adb156.exe created takeScreenshot.ps1.", 
+    ""
+  ], 
+  "Procedure": "Adb156.exe downloads takeScreenshot.ps1 from 192.168.0.6 via MSSQL transactions", 
+  "Step": "13.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe spawns cmd.exe", 
+  "Step": "13.B.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "13.B.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes CopyFromScreen()", 
+  "Step": "13.B.4", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "Adb156.exe reads and uploads image.png to 192.168.0.6 via MSSQL transactions", 
+  "Step": "13.B.5", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "Adb156.exe spawns cmd.exe", 
+  "Step": "14.A.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Heur.BZC.PZQ.Boxter\" (Medium ) was generated when cmd.exe spawned powershell.exe to execute stager.ps1."
+  ], 
+  "Procedure": "cmd.exe spawns powershell.exe", 
+  "Step": "14.A.2", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe decodes an embedded DLL payload", 
+  "Step": "14.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe executes the decoded payload using Invoke-Expression (IEX)", 
+  "Step": "14.A.4", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe loads shellcode from network connection into memory", 
+  "Step": "14.A.5", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1140", 
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "14.A.6", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "14.A.7", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe calls the CreateToolhelp32Snapshot() API", 
+  "Step": "15.A.1", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Gen:Heur.Mimikatz.1\" (Medium) was generated when samcat.exe was detected as Gen:Heur.Mimikatz.1.", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe downloaded samcat.exe from 192.168.0.4."
+  ], 
+  "Procedure": "powershell.exe downloads samcat.exe from 192.168.0.4", 
+  "Step": "15.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads uac-samcats.ps1 from 192.168.0.4", 
+  "Step": "15.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns powershell.exe", 
+  "Step": "15.A.4", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe spawns samcat.exe as a high-integrity process (note: Due to the configuration of the environment, the adversary's process was high by default. This sub-step was evaluated based on the criteria of detecting data related to process integrity level as well as the executed mechanics of the UAC bypass)", 
+  "Step": "15.A.5", 
+  "TacticGroup": "Privilege Escalation", 
+  "Technique": "T1548", 
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"access to lsass.exe by smrs.exe\" (Low) was generated when smrs.exe opened and read lsass.exe."
+  ], 
+  "Procedure": "samcat.exe opens and reads the SAM via LSASS", 
+  "Step": "15.A.6", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1003", 
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "powershell.exe calls the GetIpNetTable() API", 
+  "Step": "15.A.7", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1016", 
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns nslookup.exe, which queries the DC (10.0.1.4) over DNS (port 53)", 
+  "Step": "15.A.8", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1018", 
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe downloaded paexec.exe."
+  ], 
+  "Procedure": "powershell.exe downloads paexec.exe from 192.168.0.4", 
+  "Step": "16.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Interpreter Creates Executable\" (Low) was generated when powershell.exe downloaded hollow.exe."
+  ], 
+  "Procedure": "powershell.exe downloads hollow.exe from 192.168.0.4", 
+  "Step": "16.A.2", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Cloud IOC: W32.SuspiciousOperations.ioc\" (Medium) was generated when cmd.exe spawned paexec.exe."
+  ], 
+  "Procedure": "powershell.exe spawns cmd.exe", 
+  "Step": "16.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Successful Remote Logon Detected\" was generated when user kmitnick logged on to itadmin."
+  ], 
+  "Procedure": "User kmitnick logs on to itadmin (10.0.1.6)", 
+  "Step": "16.A.4", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "SMB session from 10.0.1.5 to 10.0.1.6 over TCP port 135 or 445 with admin shares accessed", 
+  "Step": "16.A.5", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"Generic.Exploit.Metasploit\" (Medium ) was generated when PAExec_Move0.dat and hollow.exe were detected as Metasploit."
+  ], 
+  "Procedure": "Windows service started PAExec-{PID}-HOTELMANAGER.exe, which executes hollow.exe", 
+  "Step": "16.A.6", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1569", 
+  "Technique_Name": "System Services"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "hollow.exe spawns svchost.exe and unmaps its memory image via: NtUnmapViewOfSection", 
+  "Step": "16.A.7", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "svchost.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "16.A.8", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "svchost.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "16.A.9", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "General", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A General detection named \"Gen:Variant.Johnnie\" (Medium ) was generated when strrstr.dll detected as Gen:Variant.Johnnie.", 
+    ""
+  ], 
+  "Procedure": "svchost.exe downloads srrstr.dll from 192.168.0.4 (port 443)", 
+  "Step": "17.A.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "srrstr.dll is not the legitimate Windows System Protection Configuration Library", 
+  "Step": "17.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1036", 
+  "Technique_Name": "Masquerading"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "svchost.exe spawns cmd.exe", 
+  "Step": "17.A.3", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "SystemPropertiesAdvanced.exe executes code in the illegitimate srrstr.dll", 
+  "Step": "17.A.4", 
+  "TacticGroup": "Privilege Escalation", 
+  "Technique": "T1574", 
+  "Technique_Name": "Hijack Execution Flow"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "17.A.5", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "17.A.6", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "svchost.exe injects into explorer.exe with CreateRemoteThread", 
+  "Step": "18.A.1", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "explorer.exe calls the CreateCompatibleBitmap API from Gdi32.dll", 
+  "Step": "18.A.2", 
+  "TacticGroup": "Collection", 
+  "Technique": "T1113", 
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "explorer.exe injects into mstsc.exe with CreateRemoteThread", 
+  "Step": "18.A.3", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "mstsc.exe calls APIs such as GetAsyncKeyState, GetKeyState, or GetKeyboardState", 
+  "Step": "18.A.4", 
+  "TacticGroup": "Credential Access", 
+  "Technique": "T1056", 
+  "Technique_Name": "Input Capture"
+}
+{
+  "Detection": [
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Successful Remote Logon Detected\" was generated when user kmitnick logged on to accounting (10.0.1.7)."
+  ], 
+  "Procedure": "User kmitnick logs on to accounting (10.0.1.7)", 
+  "Step": "19.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1078", 
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "RDP session from 10.0.1.6 to 10.0.1.7 over TCP port 3389", 
+  "Step": "19.A.2", 
+  "TacticGroup": "Lateral Movement", 
+  "Technique": "T1021", 
+  "Technique_Name": "Remote Services"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "itadmin (10.0.1.6) is relaying RDP traffic from attacker infrastructure", 
+  "Step": "19.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1090", 
+  "Technique_Name": "Proxy"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe spawns powershell.exe", 
+  "Step": "19.B.1", 
+  "TacticGroup": "Execution", 
+  "Technique": "T1059", 
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "Technique"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A Technique detection named \"Cloud IOC: W32.PowershellEncodedBuffer.ioc\" (Low ) was generated when powershell.exe executed base64 encoded commands\n."
+  ], 
+  "Procedure": "powershell.exe executes base64 encoded commands", 
+  "Step": "19.B.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1027", 
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads dll329.dll from 192.168.0.4", 
+  "Step": "19.B.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "powershell.exe downloads sdbE376.tmp from 192.168.0.4", 
+  "Step": "19.B.4", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Technique", 
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "A Technique detection named \"Cloud IOC: W32.SdbinstShimming.ioc\" (Medium) was generated when sdbinst.exe installed sdbE376.tmp shim database\n.", 
+    ""
+  ], 
+  "Procedure": "sdbinst.exe installs sdbE376.tmp shim", 
+  "Step": "19.B.5", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1546", 
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "AccountingIQ.exe queries HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\ and loads dll329.dll", 
+  "Step": "20.A.1", 
+  "TacticGroup": "Persistence", 
+  "Technique": "T1546", 
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "AccountingIQ.exe injects into SyncHost.exe with CreateRemoteThread", 
+  "Step": "20.A.2", 
+  "TacticGroup": "Defense Evasion", 
+  "Technique": "T1055", 
+  "Technique_Name": "Process Injection"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "20.A.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1071", 
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol", 
+  "Step": "20.A.4", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1573", 
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "rundll32.exe downloads debug.exe from 192.168.0.4", 
+  "Step": "20.B.1", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "debug.exe calls the CreateToolhelp32Snapshot API", 
+  "Step": "20.B.2", 
+  "TacticGroup": "Discovery", 
+  "Technique": "T1057", 
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Detection": [
+    "Telemetry"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    ""
+  ], 
+  "Procedure": "rundll32.exe downloads 7za.exe from 192.168.0.4", 
+  "Step": "20.B.3", 
+  "TacticGroup": "Command and Control", 
+  "Technique": "T1105", 
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Detection": [
+    "Telemetry", 
+    "General"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "", 
+    "A General detection named \"RunDLL32 Suspicious Child Process\" (Medium) was generated when rundll32.exe spawned 7za.exe."
+  ], 
+  "Procedure": "7za.exe creates C:\\Users\\Public\\log.7z", 
+  "Step": "20.B.4", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1560", 
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Detection": [
+    "None"
+  ], 
+  "DetectionModifiers": [], 
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ], 
+  "Procedure": "rundll32.exe reads and uploads log.7z to 192.168.0.4", 
+  "Step": "20.B.5", 
+  "TacticGroup": "Exfiltration", 
+  "Technique": "T1041", 
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}

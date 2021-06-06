@@ -1,9 +1,9 @@
 <dashboard version="1.1">
-  <label>Main detection types APT29</label>
+  <label>Main detection types Carbanak and FIN7</label>
   <search id="base">
     <query>
-      index=main sourcetype="attackeval:json" source="*APT29*" Detection{}!="" 
-| stats count(eval('Detection{}'=="Technique")) as Technique count(eval('Detection{}'=="Tactic")) as Tactic count(eval('Detection{}'=="General")) as General count(eval('Detection{}'=="MSSP")) as MSSP count(eval('Detection{}'=="Telemetry")) as Telemetry count(eval('Detection{}'=="None")) as None by host| rename host AS vendor</query>
+      index=main sourcetype="attackeval:json" source="*round3*" Detection{}!="" 
+| stats count(eval('Detection{}'=="Technique")) as Technique count(eval('Detection{}'=="Tactic")) as Tactic count(eval('Detection{}'=="General")) as General count(eval('Detection{}'=="Telemetry")) as Telemetry count(eval('Detection{}'=="None")) as None by host| rename host AS vendor</query>
     <earliest>0</earliest>
     <latest>now</latest>
   </search>
@@ -14,7 +14,6 @@
       <ul>
         <li>None</li>
         <li>Telemetry</li>
-        <li>MSSP</li>
         <li>General</li>
         <li>Tactic</li>
         <li>Technique</li>
@@ -32,10 +31,10 @@
 | table vendor,None
 | sort - "None"</query>
         </search>
-        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.axisY.maximumNumber">175</option>
         <option name="charting.chart">bar</option>
         <option name="charting.drilldown">none</option>
-        <option name="height">380</option>
+        <option name="height">580</option>
       </chart>
     </panel>
   </row>
@@ -55,10 +54,10 @@
 | table vendor, Telemetry
 | sort - "Telemetry"</query>
         </search>
-        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.axisY.maximumNumber">175</option>
         <option name="charting.chart">bar</option>
         <option name="charting.drilldown">none</option>
-        <option name="height">380</option>
+        <option name="height">580</option>
       </chart>
     </panel>
   </row>
@@ -67,21 +66,6 @@
       <html>
         <p>Minimally processed data collected by the capability showing that event(s) occurred specific to the behavior under test. (i.e. showing the procedure/command that was executed). Evidence must show definitively that behavior occurred and be related to the execution mechanism (did happen vs may have happened). Evidence must be related to what caused the behavior. There is no evidence of complex logic or an advanced rule leading to the data output, and no labeling occurred other than simple field labeling.</p>
       </html>
-    </panel>
-  </row>
-  <row>
-    <panel>
-      <title>MSSP</title>
-      <chart>
-        <search base="base">
-          <query>| table vendor,MSSP
-| sort - "MSSP"</query>
-        </search>
-        <option name="charting.axisY.maximumNumber">140</option>
-        <option name="charting.chart">bar</option>
-        <option name="charting.drilldown">none</option>
-        <option name="height">380</option>
-      </chart>
     </panel>
   </row>
   <row>
@@ -99,10 +83,10 @@
           <query>| table vendor,General
 | sort - "General"</query>
         </search>
-        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.axisY.maximumNumber">175</option>
         <option name="charting.chart">bar</option>
         <option name="charting.drilldown">none</option>
-        <option name="height">380</option>
+        <option name="height">580</option>
       </chart>
     </panel>
   </row>
@@ -121,10 +105,10 @@
           <query>| table vendor, "Tactic"
 | sort - "Tactic"</query>
         </search>
-        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.axisY.maximumNumber">175</option>
         <option name="charting.chart">bar</option>
         <option name="charting.drilldown">none</option>
-        <option name="height">380</option>
+        <option name="height">580</option>
       </chart>
     </panel>
   </row>
@@ -143,10 +127,10 @@
           <query>| table vendor, "Technique"
 | sort - "Technique"</query>
         </search>
-        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.axisY.maximumNumber">175</option>
         <option name="charting.chart">bar</option>
         <option name="charting.drilldown">none</option>
-        <option name="height">380</option>
+        <option name="height">580</option>
       </chart>
     </panel>
   </row>

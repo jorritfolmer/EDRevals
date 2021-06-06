@@ -1,4 +1,4 @@
-<dashboard>
+<dashboard version="1.1">
   <label>Detection results per step APT3</label>
   <row>
     <panel>

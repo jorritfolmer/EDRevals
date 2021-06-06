@@ -1,4 +1,4 @@
-<dashboard>
+<dashboard version="1.1">
   <label>Detection modifiers APT3</label>
   <search id="base">
     <query>index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 

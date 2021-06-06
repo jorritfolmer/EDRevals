@@ -9,7 +9,7 @@ It shows data and dashboards from the JSON data published in the [MITRE ATTACK e
 
 ## Why does this Splunk app exist?
 
-To make it easier to play with the EDR evaluation results. The JSON files from MITRE weren't that friendly for slicing and dicing in Splunk, so I write a Python script to [transpose them for APT3](https://gist.github.com/jorritfolmer/2a606c9936674ff9e15677185b8cda86) and [APT29](https://gist.github.com/jorritfolmer/c623f8cc2281245714484210813f9ca5) here, and included that data in this app for onboarding in Splunk.
+To make it easier to play with the EDR evaluation results. The JSON files from MITRE weren't that friendly for slicing and dicing in Splunk, so I write a Python script to [transpose them for APT3](https://gist.github.com/jorritfolmer/2a606c9936674ff9e15677185b8cda86), [APT29](https://gist.github.com/jorritfolmer/c623f8cc2281245714484210813f9ca5) and [Carbanak+FIN7](https://gist.github.com/jorritfolmer/98250b6abb14fd320d93cf17201d5eaf), and included that data in this app for onboarding in Splunk.
 
 ## How do I use this app?
 

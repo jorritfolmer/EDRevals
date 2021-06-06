@@ -1,4 +1,4 @@
-<dashboard>
+<dashboard version="1.1">
   <label>Biased barcharts APT3</label>
   <search id="base">
     <query>
