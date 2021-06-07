@@ -5,7 +5,7 @@ This app for Splunk accompanies two blog posts about the MITRE ATTACK Endpoint D
 1. [APT3](https://medium.com/@jorritfolmer/comparing-evaluations-of-endpoint-detection-and-response-edr-solutions-eb6bbcb20fad). 
 2. [APT29](https://medium.com/@jorritfolmer/detecting-apt29-mitre-edr-evaluations-round-2-a8dcf7a3f486)
 
-It shows data and dashboards from the JSON data published in the [MITRE ATTACK evaluations](https://attackevals.mitre.org/)
+It shows data and dashboards from the JSON data published in the [MITRE ATTACK evaluations](https://mitre-engenuity.org/attackevaluations/)
 
 ## Why does this Splunk app exist?
 
@@ -20,7 +20,7 @@ To make it easier to play with the EDR evaluation results. The JSON files from M
 
 ## Example
 
-The opinionated bar chart below shows how many of the APT3 steps were detected by which main detection type. For more information about the main detection types see the [MITRE explanation](https://attackevals.mitre.org/methodology/round1/detection-categories.html)
+The opinionated bar chart below shows how many of the APT3 steps were detected by which main detection type. For more information about the main detection types see the [MITRE explanation](https://attackevals.mitre-engenuity.org/enterprise/APT3/#detection-categories)
 
 ![screenshot](appserver/static/screenshot.png)
 
