@@ -5,9 +5,9 @@
       <title>Operational flow and detections</title>
       <table>
         <search>
-          <query>index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!=""
-| eval OperationalFlow=trim(Step) . " - " . trim(TechniqueName)
-| xyseries OperationalFlow,host,Detection{}
+          <query>index=main sourcetype="attackeval:json" source="*round1*" Detection{}!=""
+| eval OperationalFlow=trim(Substep) . " - " . trim(Technique_Name)
+| xyseries OperationalFlow,Participant_Name,Detection{}
 | sort OperationalFlow</query>
           <earliest>0</earliest>
           <latest></latest>

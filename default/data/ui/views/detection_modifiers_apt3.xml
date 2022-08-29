@@ -1,11 +1,10 @@
 <dashboard version="1.1">
   <label>Detection modifiers APT3</label>
   <search id="base">
-    <query>index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 
-| rex mode=sed field=Detection{} "s/(\s)//g" 
-| rex mode=sed field=Detection{} "s/(SpecificBehavior|GeneralBehavior|Enrichment|IndicatorofCompromise|Telemetry|None)//g" 
-| eval OperationalFlow=trim(Step) . " - " . trim(TechniqueName)
-| stats count(eval(match('Detection{}',"Delayed"))) as "Delayed" count(eval(match('Detection{}',"Configuration"))) as "Configuration change" count(eval(match('Detection{}', "Tainted"))) as "Tainted" by host | rename host AS vendor
+    <query>index=main sourcetype="attackeval:json" source="*round1*" 
+| rex field=DetectionModifiers{} mode=sed "s/ \\(.*$//g" 
+| stats count by Participant_Name,DetectionModifiers{} 
+| xyseries Participant_Name,DetectionModifiers{},count 
     </query>
     <earliest>0</earliest>
     <latest>now</latest>
@@ -15,7 +14,7 @@
       <title>Tainted</title>
       <chart>
         <search base="base">
-          <query>|table vendor,Tainted| sort - Tainted</query>
+          <query>|table Participant_Name,Tainted| sort - Tainted</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>
@@ -25,10 +24,10 @@
   </row>
   <row>
     <panel>
-      <title>Configuration change</title>
+      <title>Configuration Change</title>
       <chart>
         <search base="base">
-          <query>|table vendor,"Configuration change" | sort - "Configuration change"</query>
+          <query>|table Participant_Name,"Configuration Change" | sort - "Configuration Change"</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>
@@ -41,7 +40,7 @@
       <title>Delayed</title>
       <chart>
         <search base="base">
-          <query>|table vendor,Delayed | sort - "Delayed"</query>
+          <query>|table Participant_Name,Delayed | sort - "Delayed"</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>

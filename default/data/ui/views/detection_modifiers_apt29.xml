@@ -1,11 +1,10 @@
 <dashboard version="1.1">
   <label>Detection modifiers APT29</label>
   <search id="base">
-    <query>index=main sourcetype="attackeval:json" source="*APT29*" 
+    <query>index=main sourcetype="attackeval:json" source="*round2*" 
 | rex field=DetectionModifiers{} mode=sed "s/ \\(.*$//g" 
-| stats count by host,DetectionModifiers{} 
-| xyseries host,DetectionModifiers{},count
-| rename host AS vendor
+| stats count by Participant_Name,DetectionModifiers{} 
+| xyseries Participant_Name,DetectionModifiers{},count
     </query>
     <earliest>0</earliest>
     <latest>now</latest>
@@ -15,7 +14,7 @@
       <title>Alert</title>
       <chart>
         <search base="base">
-          <query>|table vendor,Alert| sort - Alert</query>
+          <query>|table Participant_Name,Alert| sort - Alert</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>
@@ -29,7 +28,7 @@
       <title>Correlated</title>
       <chart>
         <search base="base">
-          <query>|table vendor,Correlated| sort - Correlated</query>
+          <query>|table Participant_Name,Correlated| sort - Correlated</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>
@@ -43,7 +42,7 @@
       <title>Configuration change</title>
       <chart>
         <search base="base">
-          <query>|table vendor,"Configuration Change" | sort - "Configuration Change"</query>
+          <query>|table Participant_Name,"Configuration Change" | sort - "Configuration Change"</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>
@@ -57,7 +56,7 @@
       <title>Delayed</title>
       <chart>
         <search base="base">
-          <query>|table vendor,Delayed | sort - "Delayed"</query>
+          <query>|table Participant_Name,Delayed | sort - "Delayed"</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>
@@ -71,7 +70,7 @@
       <title>Host Interrogation</title>
       <chart>
         <search base="base">
-          <query>|table vendor,"Host Interrogation" | sort - "Host Interrogation"</query>
+          <query>|table Participant_Name,"Host Interrogation" | sort - "Host Interrogation"</query>
         </search>
         <option name="charting.axisY.maximumNumber">140</option>
         <option name="charting.chart">bar</option>

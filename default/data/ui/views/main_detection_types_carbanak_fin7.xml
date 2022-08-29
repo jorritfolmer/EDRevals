@@ -3,7 +3,7 @@
   <search id="base">
     <query>
       index=main sourcetype="attackeval:json" source="*round3*" Detection{}!="" 
-| stats count(eval('Detection{}'=="Technique")) as Technique count(eval('Detection{}'=="Tactic")) as Tactic count(eval('Detection{}'=="General")) as General count(eval('Detection{}'=="Telemetry")) as Telemetry count(eval('Detection{}'=="None")) as None by host| rename host AS vendor</query>
+| stats count(eval('Detection{}'=="Technique")) as Technique count(eval('Detection{}'=="Tactic")) as Tactic count(eval('Detection{}'=="General")) as General count(eval('Detection{}'=="Telemetry")) as Telemetry count(eval('Detection{}'=="None")) as None by Participant_Name</query>
     <earliest>0</earliest>
     <latest>now</latest>
   </search>
@@ -28,7 +28,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor,None
+| table Participant_Name,None
 | sort - "None"</query>
         </search>
         <option name="charting.axisY.maximumNumber">175</option>
@@ -51,7 +51,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor, Telemetry
+| table Participant_Name, Telemetry
 | sort - "Telemetry"</query>
         </search>
         <option name="charting.axisY.maximumNumber">175</option>
@@ -80,7 +80,7 @@
       <title>General</title>
       <chart>
         <search base="base">
-          <query>| table vendor,General
+          <query>| table Participant_Name,General
 | sort - "General"</query>
         </search>
         <option name="charting.axisY.maximumNumber">175</option>
@@ -102,7 +102,7 @@
       <title>Tactic</title>
       <chart>
         <search base="base">
-          <query>| table vendor, "Tactic"
+          <query>| table Participant_Name, "Tactic"
 | sort - "Tactic"</query>
         </search>
         <option name="charting.axisY.maximumNumber">175</option>
@@ -124,7 +124,7 @@
       <title>Technique</title>
       <chart>
         <search base="base">
-          <query>| table vendor, "Technique"
+          <query>| table Participant_Name, "Technique"
 | sort - "Technique"</query>
         </search>
         <option name="charting.axisY.maximumNumber">175</option>

@@ -1,0 +1,49 @@
+<dashboard>
+  <label>MITRE tactics with most undetected steps</label>
+  <row>
+    <panel>
+      <chart>
+        <search>
+          <query>index=main sourcetype="attackeval:json" source="*round3*" Detection{}!="N/A" 
+| eval detect_bool=if('Detection{}'="None",0,1)
+| eval TechniqueName=Technique_Name 
+| eval OperationalFlow=trim(Step) . " - " . trim(TechniqueName) 
+| stats values(TacticGroup) as TacticGroup count(eval(detect_bool=0)) as none count(eval(detect_bool=1)) as 1 by OperationalFlow
+| stats median(none) by TacticGroup
+| sort - "median(none)"</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">297</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Only telemetry, no analytics</title>
+      <table>
+        <search>
+          <query>index=main sourcetype="attackeval:json"
+| eval detect_telemetry=if('Detection{}'="Telemetry",1,0)
+| eval detect_count=mvcount(mvdedup('Detection{}'))
+| eval OperationalFlow=trim(Substep) . " - " . trim(Technique_Name) 
+| stats values(TacticGroup) as TacticGroup max(detect_count) as max_detect_count count(eval(detect_telemetry=1)) as telemetry count(eval(detect_telemetry=0)) as non_telemetry by OperationalFlow,Participant_Name
+| stats count(eval(max_detect_count=1 AND telemetry=1)) as telemetry_only by OperationalFlow</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

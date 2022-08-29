@@ -1,0 +1,3465 @@
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the user execution sequence of Resume Viewer.exe with multiple files written and subsequently executed."
+  ],
+  "Footnotes": [
+    "Resume Viewer.exe was audited by Exploit Guard and the vendor stated that the audit events demonstrate that execution would have been prevented if Attack Surface Reduction (ASR) was enabled in blocking mode."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for a low-reputation DLL loaded by a signed executable due to rundll32.exe execution of update.dat.",
+    "Telemetry showed the execution sequence for rundll32.exe running update.dat."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.2",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within a process tree showed the child cmd.exe process running the script pdfhelper.cmd."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.3",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for Resume Viewer.exe writing autoupdate.bat to Debbie's Startup folder to establish persistence."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "DNS requests were observed (no detection showed port 53 specifically)."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry from showed DNS requests to freegoogleadsenseinfo.com (C2 domain)."
+  ],
+  "Footnotes": [
+    "The vendor stated that DNS telemetry is captured but it was not immediately visible in the portal. The vendor made changes to the portal during the test to enable by default the visibility of these events."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.2",
+  "Subtechnique": "T1071.004",
+  "Subtechnique_Name": "Application Layer Protocol: DNS",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.3",
+  "Subtechnique": "T1132.001",
+  "Subtechnique_Name": "Data Encoding: Standard Encoding",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1132",
+  "Technique_Name": "Data Encoding"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration commands that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe executing ipconfig.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe executing arp.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing echo with command-line arguments (tainted by the alert on suspicious sequence of exploration activities from child processes of rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe executing tasklist.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe executing sc.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing net.exe with command-line arguments (tainted by the alert on suspicious sequence of exploration activities from child processes of rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.D.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe running systeminfo.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.E.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe running net.exe with command-line arguments (tainted by the alert on suspicious sequence of exploration activities from child processes of rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.E.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe running net.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.1",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe running net.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.2",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe running net.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.3",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration commands that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe running net.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.G.1",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert occurred due to a sequence of exploration activities that was classified as suspicious.",
+    "Telemetry showed the execution sequence of cmd.exe running net.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.G.2",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe running reg.exe with command-line arguments (tainted by the alert on suspicious sequence of exploration activities from child processes of rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.H.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed rundll32.exe as a medium integrity process as user Debbie and subsequent execution of powershell.exe as a high integrity process as SYSTEM as part of the UAC bypass (tainted by alert on a suspicious PowerShell command-line generated for the svchost.exe invocation of powershell.exe with an encoded script)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.A.1.1",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed svchost.exe executed with the seclogon command-line argument and a subsequent elevated powershell.exe process, indicating token manipulation (tainted by parent alert on a suspicious PowerShell command-line generated for the svchost.exe invocation of powershell.exe with an encoded script)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.A.1.2",
+  "Subtechnique": "T1134.001",
+  "Subtechnique_Name": "Access Token Manipulation: Token Impersonation/Theft",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for process injection.",
+    "The capability enriched data showing powershell.exe injecting into cmd.exe (tainted by alert on a suspicious PowerShell command-line generated for the svchost.exe invocation of powershell.exe with an encoded script)."
+  ],
+  "Footnotes": [
+    "Process Injection attempt was audited by Exploit Guard. Vendor states that the Exploit Guard audit events demonstrate that execution would have been prevented if Export Address Table (EAF) was enabled in blocking mode."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing net.exe with command-line arguments (tainted by the alert on suspicious process injection alert association with rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing net.exe with command-line arguments (tainted by the alert on suspicious process injection alert association with rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing netsh.exe with command-line arguments (tainted by the alert on suspicious process injection alert association with rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing netstat.exe with command-line arguments (tainted by the alert on suspicious process injection alert association with rundll32.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated on credential memory access.",
+    "The capability enriched data showing a svchost.exe process opening lsass.exe with a description that it was accessing credentials (tainted by parent process injection event that occurred from svchost.exe). Exploit Guard audited the process open and credential extraction event."
+  ],
+  "Footnotes": [
+    "Vendor stated the Exploit Guard audit events demonstrate that execution would have been prevented if Attack Surface Reduction (ASR) was enabled in blocking mode. Vendor stated that Credential Guard can also mitigate this attack if enabled."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.1.1",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for process injection into lsass.exe.",
+    "Telemetry showed svchost.exe accessing lsass.exe and dumping credentials (tainted by parent alert on sensitive credential memory read for the first credential dump). Exploit Guard audited process open and credential extraction event."
+  ],
+  "Footnotes": [
+    "Vendor stated the Exploit Guard audit events demonstrate that execution would have been prevented if Attack Surface Reduction (ASR) was enabled in blocking mode."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched data showing a svchost.exe process opening lsass.exe with a description that it was accessing credentials (tainted by parent process injection event that occurred from svchost.exe). Exploit Guard audited the process open and credential extraction event."
+  ],
+  "Footnotes": [
+    "Vendor stated the Exploit Guard audit events demonstrate that execution would have been prevented if Attack Surface Reduction (ASR) was enabled in blocking mode. Vendor stated that Credential Guard can also mitigate this attack if enabled."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.2.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for process injection into lsass.exe. The alert was rolled up under the prior lsass.exe process injection alert and the last activity seen field was updated.",
+    "Telemetry showed svchost.exe accessing lsass.exe and dumping credentials (tainted by parent alert on sensitive credential memory read for the first credential dump). Exploit Guard audited process open and credential extraction event."
+  ],
+  "Footnotes": [
+    "Vendor stated the Exploit Guard audit events demonstrate that execution would have been prevented if Attack Surface Reduction (ASR) was enabled in blocking mode."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.2.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed svchost.exe as a high integrity process from SYSTEM and subsequent cmd.exe process running as user George (tainted by the parent alert on suspicious process injection into lsass.exe). Svchost.exe was executed with seclogon command-line argument indicating token manipulation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1134.001",
+  "Subtechnique_Name": "Access Token Manipulation: Token Impersonation/Theft",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of reg.exe executing with command-line arguments. The telemetry was tainted by the relationship to prior rundll32.exe activity based on process injection alert context."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for rundll32.exe opening a connection to 192.186.0.4 (C2 server) over port 80. The telemetry was tainted by the relationship to the previous alert on unexpected behavior originating from rundll32.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed an execution sequence for rundll32.exe opening a connection to 192.168.0.4 (C2 server) over port 80, and prior activity showed DNS traffic to the same C2 IP address, which could indicate multiband communication. The port 80 telemetry was tainted by the relationship to the previous alert on unexpected behavior originating from rundll32.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1026",
+  "Technique_Name": "Multiband Communication"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for cmd.exe establishing an outbound RDP connection over port 3389 to 10.0.0.5 (Conficker). Logon activity over the last 30 days on Conficker shows George with a logon type 10 RemoteInteractive logon event. Telemetry also showed George logged into Conficker and displayed a movement graph of activity from user account Debbie to George."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry showed data for account Jesse creation after configuration change to enable collection of event ID 4720."
+  ],
+  "Footnotes": [
+    "Visibility of account creation data was verified in retesting at the end of the evaluation after vendor adjusted data collection configuration and visibility of account creation."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.1",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the GUI-based lusrmgr.msc (Local Users and Groups snap-in)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1061",
+  "Technique_Name": "Graphical User Interface"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the lusrmgr.msc (Local Users and Groups snap-in) which displays local account information."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.3",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed cmd.exe writing updater.dll to disk."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated on a low-reputation DLL persisting through a scheduled task.",
+    "Telemetry showed cmd.exe registering the \\\"Resume Viewer Update Checker\\\" scheduled task."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.C.1",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for cmd.exe executing dir with command-line arguments. The telemetry was tainted by a prior alert on rundll32.exe being executed without command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for cmd.exe executing tree.com with command-line arguments. The telemetry was tainted by a prior alert on rundll32.exe being executed without command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated on \\\"Possible keylogging activity\\\" against explorer.exe.",
+    "Telemetry showed events indicating \\\"explorer.exe is reading user keystrokes.\\\""
+  ],
+  "Footnotes": [
+    "The vendor stated that Input Capture telemetry is captured but it was not immediately visible in the user portal. The vendor made changes to the portal during the test to enable the visibility of these events.",
+    "Telemetry also showed cmd.exe injecting into explorer.exe to facilitate the keylogging, but this did not identify input capture specifically so was not counted as a detection."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.C.1.1",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.C.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1010",
+  "Technique_Name": "Application Window Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "The capability enriched an explorer.exe process with ScreenshotTaken."
+  ],
+  "Footnotes": [
+    "The vendor stated that screen capture telemetry is captured but it was not immediately visible in the portal. The vendor made changes to the portal during the test to enable by default the visibility of these events, so this detection is identified as a configuration change."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.D.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The capability enriched the execution sequence for cmd.exe injecting into explorer.exe with the label \\\\\"Inject to process.\\\\\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.D.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "The vendor stated that by default WDATP monitored activities around all the most used documents (doc, xls, ppt pdf, etc) at the time of the evaluation. Subsequently, the vendor made changes to enable the visibility of .vsdx events by default, which is now available in WDATP."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.B.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1039",
+  "Technique_Name": "Data from Network Shared Drive"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.B.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution sequence of cmd.exe executing autoupdate.bat from the Startup folder to start update.dat."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for rundll32.exe executing updater.dll with a parent of svchost.exe running with command-line arguments \\\\\"-k netsvcs -p -s Schedule\\\\\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.A.2",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the new local user account Jesse logging into Conficker."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.B.1.1",
+  "Subtechnique": "T1078.003",
+  "Subtechnique_Name": "Valid Accounts: Local Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a successful connection to Conficker (10.0.0.5) over port 3389 from rundll32.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.B.1.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Specific Behavior",
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated for suspicious PowerShell command-line arguments.",
+    "A Specific Behavior alert was generated for PowerShell script with malicious cmdlets related to Empire.",
+    "A Specific Behavior alert was generated for PowerShell script with suspicious content detected through Antimalware Scan Interface extracted content.",
+    "Telemetry showed explorer.exe running autoupdate.vbs through wscript.exe and subsequent execution of PowerShell script and cmdlets."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe checking an SSL certificate and then communicating to 192.168.0.5 (C2 server) over port 443 (tainted by relationship to alert on PowerShell script with suspicious content). Telemetry within an alert also showed decoded command-line arguments containing port 443."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Indicator of Compromise",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "An Indicator of Compromise alert was generated on the C2 domain.",
+    "Telemetry showed powershell.exe checking an SSL certificate and then communicating to 192.168.0.5 (C2 server) over an encrypted channel (tainted by relationship to alert on PowerShell script with suspicious content). Telemetry within an alert showed decoded command-line arguments to perform HTTPS connection to C2 domain."
+  ],
+  "Footnotes": [
+    "Vendor added detection for evaluation C2 domain using the standard customer-facing custom detection capabilities of the product."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe checking an SSL certificate and then communicating to 192.168.0.5 (C2 server) over an encrypted channel (tainted by relationship to alert on PowerShell script with suspicious content). Telemetry within an alert showed decoded command-line arguments to perform HTTPS connection to C2 domain."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.3",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for powershell.exe executing route.exe with command-line arguments. The telemetry was tainted by previous \\\"Suspicious sequence of exploration activities\\\" and suspicious PowerShell cmdlet alerts."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for powershell.exe executing ipconfig.exe with command-line arguments. The telemetry was tainted by previous \\\"Suspicious sequence of exploration activities\\\" and suspicious PowerShell cmdlet alerts."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for powershell.exe executing whoami.exe with command-line arguments. The telemetry was tainted by previous \\\\\"Suspicious sequence of exploration activities\\\\\" and suspicious PowerShell cmdlet alerts."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution sequence for powershell.exe executing qprocess.exe with command-line arguments. The telemetry was tainted by previous \\\\\"Suspicious sequence of exploration activities\\\\\" and suspicious PowerShell cmdlet alerts."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed the execution sequence for powershell.exe executing net.exe with command-line arguments. The telemetry was tainted by a previous suspicious PowerShell cmdlet alert."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for \\\"A malicious PowerShell Cmdlet was invoked on the machine.\\\"",
+    "Telemetry showed the execution sequence from PowerShell with several activities from the WinEnum cmdlet. The telemetry was tainted by the previous \\\\\"Suspicious sequence of exploration activities\\\\\" alert."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.2",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1201",
+  "Technique_Name": "Password Policy Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.4.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.4.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed invocation of the PowerShell cmdlet Get-SysInfo."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.6.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed invocation of the PowerShell cmdlet Get-HotFix."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.6.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.7",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed invocation of the PowerShell cmdlet Get-Service."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.9.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.9.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.10.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.10.2",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed invocation of the PowerShell cmdlet Get-NetInfo."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.11",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed invocation of the PowerShell cmdlet Get-NetInfo and subsequent execution of netstat.exe with command-line arguments from powershell.exe. The telemetry was tainted by a prior suspicious PowerShell cmdlet alert."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.12",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed the execution sequence for powershell.exe executing net.exe with command-line arguments. The telemetry was tainted by a prior suspicious PowerShell cmdlet alert."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.F.1",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed the execution sequence for powershell.exe executing net.exe with command-line arguments. The telemetry was tainted by a prior suspicious PowerShell cmdlet alert."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.F.2",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed the execution sequence for powershell.exe executing net.exe with command-line arguments. The telemetry was tainted by a prior suspicious PowerShell cmdlet alert."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.G.1",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert called \\\"Reconnaissance using directory services queries\\\" was generated for domain user enumeration.",
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed the execution sequence for powershell.exe executing net.exe with command-line arguments. The telemetry was tainted by a prior suspicious PowerShell cmdlet alert."
+  ],
+  "Footnotes": [
+    "The vendor noted this was an Azure Advanced Threat Protection alert.",
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.G.2",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed execution of net.exe with command-line arguments (tainted by parent PowerShell malicious cmdlet alert)."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed execution of net.exe with command-line arguments (tainted by parent PowerShell malicious cmdlet alert)."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed General Behavior alert was generated for \\\"Suspicious sequence of exploration activities\\\".",
+    "Telemetry showed execution of netstat.exe (tainted by parent PowerShell malicious cmdlet alert)."
+  ],
+  "Footnotes": [
+    "Alert is based on the correlation of a chain of related behaviors across multiple steps."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed execution of reg.exe with command-line arguments (tainted by suspicious sequence of exploration activities alert)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed execution of powershell.exe executing \\\"Invoke-BypassUACTokenManipulation\\\" Empire cmdlet under the context of user Bob with medium integrity level, execution of svchost.exe with seclogon flag to use impersonation service with new high integrity powershell.exe process as SYSTEM, and subsequent context adjustment of powershell.exe to user Bob (tainted by the parent alert for suspicious sequence of exploration activities)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.1",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed network connection to 192.168.0.5 (C2 server) over port 8080 as well as decoded PowerShell making a connection over port 8080 with a HTTP request to download wdbypass payload. (tainted by alert on suspicious PowerShell command-line arguments)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed a decoded PowerShell script invoked that created a web request to the C2 server with related data showing the connection was made (tainted by alert on suspicious PowerShell command-line arguments)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.3",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed a connection to 192.168.0.5 (C2 server) on port 8080 was made (tainted by alert on suspicious PowerShell command-line arguments)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated on keylogging activity in powershell.exe.",
+    "Telemetry showed powershell.exe making API calls consistent with keylogger behavior. Telemetry also showed execution of Get-Keystrokes Empire PowerShell cmdlet (tainted by alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [
+    "Vendor stated that Input Capture telemetry is captured but it was not immediately visible in the portal. Vendor made changes to the portal during the test to enable by default the visibility of these events."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.A.1.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Collection",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1010",
+  "Technique_Name": "Application Window Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.B.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated based on brute force attempt by accessing remote SMB shares with different accounts.",
+    "Telemetry showed repeated logon attempts via net.exe with command-line arguments indicative of password spraying (tainted by parent alert on PowerShell script with suspicious content). Telemetry also showed failed authorization attempts due to bad passwords as indicated by a fallback request over WebDAV to port 80 on the C2 server, but did not indicate the two failed access attempts on Morris and Conficker that were due to the accounts having insufficient access on the systems."
+  ],
+  "Footnotes": [
+    "The alert spans multiple login attempts."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.A.1.1",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated based on brute force attempt by accessing remote SMB shares with different accounts.",
+    "Telemetry showed repeated logon attempts to ADMIN$ via net.exe with command-line arguments (tainted by parent alert on PowerShell script with suspicious content). Telemetry also showed failed authorization attempts due to bad passwords as indicated by a fallback request over WebDAV to port 80 on the C2 server, but did not indicate the two failed access attempts on Morris and Conficker that were due to the accounts having insufficient access on the systems."
+  ],
+  "Footnotes": [
+    "The alert spans multiple login attempts."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.A.1.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments to connect using the valid credentials of user Kmitnick (tainted by parent alert on PowerShell script with suspicious content). Telemetry showed Kmitnick login event on 10.0.0.5 (Conficker) and that 10.0.1.5 (CodeRed) accessed resources on 10.0.0.5 (Conficker)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.1",
+  "Subtechnique": "T1078.003",
+  "Subtechnique_Name": "Valid Accounts: Local Accounts",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A delayed Specific Behavior alert was generated based on brute force attempt by accessing remote SMB shares with different accounts.",
+    "Telemetry showed a logon attempt via net.exe with command-line arguments targeting ADMIN$ using valid credentials for user Kmitnick (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [
+    "The alert spans multiple login attempts."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated based on brute force attempt by accessing remote SMB shares with different accounts.",
+    "Telemetry showed repeated logon attempts via net.exe with command-line arguments indicative of password spraying, eventually resulting in a successful logon (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [
+    "The alert spans multiple login attempts."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.3",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed net.exe with command-line arguments (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1070.005",
+  "Subtechnique_Name": "Indicator Removal on Host: Network Share Connection Removal",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments targeting C$ using valid credentials for user Kmitnick (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.D.1.1",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments targeting C$ on 10.0.0.4 (Creeper) using valid credentials for user Kmitnick (tainted by parent alert on PowerShell script with suspicious content). Telemetry also showed that the logon event for Kmitnick on Creeper was successful."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.D.1.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe creating autoupdate.vbs (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.E.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing autoupdate.vbs via wscript.exe as user Kmitnick. The execution generated three new PowerShell related alerts for the initial execution sequence of Empire that tainted this event, but were not counted as separate detections for this technique."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.F.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed creation of update.vbs on 10.0.0.4 (Creeper) and the remote file copy action from 10.0.1.5 (CodeRed) (the remote file copy event on CodeRed was tainted by parent PowerShell alerts)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.G.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry from CodeRed showed sc.exe command remotely querying services on Creeper (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.H.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for the suspicious service registration of AdobeUpdater.",
+    "Telemetry from CodeRed showed sc.exe execution to remotely create the AdobeUpdater service with a binPath set to run cmd.exe with an argument to execute update.vbs on Creeper (tainted by parent alert on PowerShell script with suspicious content). Telemetry from Creeper shows the registry keys that were changed to add the new service"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.I.1.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry from CodeRed showed sc.exe service creation command for the AdobeUpdater service with a binPath set to run update.vbs with cmd.exe on startup on Creeper (tainted by parent alert on PowerShell script with suspicious content). Telemetry also showed the sc.exe command to set the service description, but a screenshot was not available. An analyst can use this information to determine AdobeUpdater is masquerading."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.I.1.2",
+  "Subtechnique": "T1036.004",
+  "Subtechnique_Name": "Masquerading: Masquerade Task or Service",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry from CodeRed showed sc.exe remote service query on Creeper for the AdobeUpdater service (tainted by parent alert on PowerShell script with suspicious content)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.J.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.K.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for a successful AdobeUpdater remote service execution attempt on Creeper.",
+    "Telemetry from CodeRed showed the sc.exe remote service start to execute the AdobeUpdater service on Creeper (tainted by parent alert on PowerShell script with suspicious content). Telemetry from Creeper showed the execution sequence of Empire and command and control connections."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.L.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed reg.exe executing with command-line arguments indicating a check to see if terminal services was enabled (tainted by prior alert on suspicious PowerShell command-line)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.A.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed reg.exe executing with command-line arguments (tainted by prior alert on suspicious PowerShell command line)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed takeown.exe execution to change the file permissions on magnify.exe (tainted by prior alert on suspicious PowerShell command-line)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.B.1",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed icacls.exe execution to change permissions on magnify.exe granting discretionary access to SYSTEM (tainted by prior alert on suspicious PowerShell command-line)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for overwrite of magnify.exe indicating a sticky keys binary hijack for persistence was detected.",
+    "Telemetry showed powershell.exe overwriting magnify.exe with the new file containing the same hash for cmd.exe. Reputation metadata confirms magnify.exe is cmd.exe under the file names observed."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1546.008",
+  "Subtechnique_Name": "Event Triggered Execution: Accessibility Features",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the decoded PowerShell script that was executed to recursively search for .vsdx files on Conficker's remote file share."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "Vendor states that by default WDATP monitors activities around all the most used documents (doc, xls, ppt pdf, etc) at the time of test."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.B.1.1",
+  "Subtechnique": "T1074.002",
+  "Subtechnique_Name": "Data Staged: Remote Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "Vendor states that by default WDATP monitors activities around all the most used documents (doc, xls, ppt pdf, etc) at the time of test."
+  ],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.B.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1039",
+  "Technique_Name": "Data from Network Shared Drive"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed file creation of recycler.exe on CodeRed. Binary reputation and metadata for recycler.exe shows hash and publisher signature as win.rar GmbH indicating the file is actually the WinRAR utility."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.A.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe creating recycler.exe file (tainted by alert on PowerShell script with a suspicious command-line was generated by numerous scripts)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed execution sequence for recycler.exe with WinRAR command-line arguments, including the -hp flag, for data encryption and compression (tainted by alert on PowerShell script with a suspicious command-line was generated by numerous scripts)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed execution sequence for recycler.exe with WinRAR command-line arguments, including the -hp flag, for data encryption and compression (tainted by alert on PowerShell script with a suspicious command-line was generated by numerous scripts)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed execution sequence for recycler.exe with RAR command-line arguments, including the -hp flag, for data encryption and compression indicating it was actually WinRAR masquerading as a different file (tainted by alert on PowerShell script with a suspicious command-line was generated by numerous scripts)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed execution sequence for ftp.exe with command-line arguments including ftp.txt (tainted by alert on PowerShell script with a suspicious command-line was generated by numerous scripts). Telemetry also showed connections to 192.168.0.4 (C2 server) on ports 20 and 21 for the FTP connection."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.D.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.D.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated on a successful sticky keys binary hijack because magnify.exe was executing as cmd.exe.",
+    "Telemetry showed execution of magnify.exe from utilman.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.A.1.1",
+  "Subtechnique": "T1546.008",
+  "Subtechnique_Name": "Event Triggered Execution: Accessibility Features",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed creation of a terminal services session on Creeper from CodeRed with corresponding logon by Kmitnick."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.A.1.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed whoami.exe executing from magnify.exe (tainted by sticky keys binary hijack alert)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Microsoft",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}

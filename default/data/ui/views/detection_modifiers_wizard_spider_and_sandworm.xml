@@ -1,0 +1,68 @@
+<dashboard version="1.1">
+  <label>Detection modifiers Wizard Spider and Sandworm</label>
+  <search id="base">
+    <query>index=main sourcetype="attackeval:json" source="*round4*" 
+| stats count by host,DetectionModifiers{} 
+| xyseries host,DetectionModifiers{},count
+| rename host AS vendor
+    </query>
+    <earliest>0</earliest>
+    <latest>now</latest>
+  </search>
+  <row>
+    <panel>
+      <title>Configuration change (Detection Logic)</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,"Configuration Change (Detection Logic)" | sort - "Configuration Change (Detection Logic)"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Configuration change (Data Sources)</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,"Configuration Change (Data Sources)" | sort - "Configuration Change (Data Sources)"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Configuration change (UX)</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,"Configuration Change (UX)" | sort - "Configuration Change (UX)"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Delayed</title>
+      <chart>
+        <search base="base">
+          <query>|table vendor,Delayed | sort - "Delayed"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">140</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

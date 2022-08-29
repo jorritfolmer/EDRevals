@@ -1,0 +1,28 @@
+<dashboard version="1.1">
+  <label>Detection results per step Wizard Spider and Sandworm</label>
+  <row>
+    <panel>
+      <title>Operational flow and detections</title>
+      <table>
+        <search>
+          <query>index=main sourcetype="attackeval:json" source="*round4*"
+| eval TechniqueName=Technique_Name
+| eval OperationalFlow=trim(Substep) . " - " . trim(Technique_Name)
+| xyseries OperationalFlow,Participant_Name,Detection{}
+| sort OperationalFlow</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

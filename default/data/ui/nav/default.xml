@@ -4,16 +4,19 @@
 	<view name="main_detection_types_apt3" />
 	<view name="main_detection_types_apt29" />
 	<view name="main_detection_types_carbanak_fin7" />
+  	<view name="main_detection_types_wizard_spider_and_sandwork" />
   </collection>
   <collection label="Detection modifiers">
   	<view name="detection_modifiers_apt3" />
   	<view name="detection_modifiers_apt29" />
   	<view name="detection_modifiers_carbanak_fin7" />
+   	<view name="detection_modifiers_wizard_spider_and_sandworm" />
   </collection>
   <collection label="Detection results per step">
   	<view name="detection_results_per_step_apt3" />
   	<view name="detection_results_per_step_apt29" />
   	<view name="detection_results_per_step_carbanak_fin7" />
+   	<view name="detection_results_per_step_wizard_spider_and_sandworm" />
   </collection>
   <collection label="Biased barcharts">
   	<view name="bias_ahead" />

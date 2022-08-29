@@ -2,12 +2,11 @@
   <label>Biased barcharts APT3</label>
   <search id="base">
     <query>
-      index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 
-| stats count(eval(match('Detection{}',"Specific"))) as "Specific Behaviour" count(eval(match('Detection{}',"General"))) as "General Behaviour" count(eval(match('Detection{}', "Enrichment"))) as "Enrichment" count(eval(match('Detection{}', "Indicator"))) as "IOC" count(eval(match('Detection{}', "Telemetry"))) as "Telemetry" count(eval(match('Detection{}', "None"))) as "None" by host 
+      index=main sourcetype="attackeval:json" source="*round1*" Detection{}!="" 
+| stats count(eval(match('Detection{}',"Specific"))) as "Specific Behaviour" count(eval(match('Detection{}',"General"))) as "General Behaviour" count(eval(match('Detection{}', "Enrichment"))) as "Enrichment" count(eval(match('Detection{}', "Indicator"))) as "IOC" count(eval(match('Detection{}', "Telemetry"))) as "Telemetry" count(eval(match('Detection{}', "None"))) as "None" by Participant_Name 
 | addtotals fieldname=noise Telemetry IOC Enrichment 
 | addtotals fieldname=signal "Specific Behaviour" "General Behaviour"
 | eval signalnoise=round((signal/noise),2)
-| rename host AS vendor
     </query>
     <earliest>0</earliest>
     <latest>now</latest>
@@ -18,7 +17,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor,noise
+| table Participant_Name,noise
 | sort - noise</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -62,7 +61,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor,signalnoise
+| table Participant_Name,signalnoise
 | sort - signalnoise</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>

@@ -2,8 +2,8 @@
   <label>Main detection types APT3</label>
   <search id="base">
     <query>
-      index=main sourcetype="attackeval:json" source="*round1*.log" Detection{}!="" 
-| stats count(eval(match('Detection{}',"Specific"))) as "Specific behaviour" count(eval(match('Detection{}',"General"))) as "General behaviour" count(eval(match('Detection{}', "Enrichment"))) as "Enrichment" count(eval(match('Detection{}', "Indicator"))) as "IOC" count(eval(match('Detection{}', "Telemetry"))) as "Telemetry" count(eval(match('Detection{}', "None"))) as "None" by host | rename host AS vendor</query>
+      index=main sourcetype="attackeval:json" source="*round1*" Detection{}!="" 
+| stats count(eval(match('Detection{}',"Specific"))) as "Specific behaviour" count(eval(match('Detection{}',"General"))) as "General behaviour" count(eval(match('Detection{}', "Enrichment"))) as "Enrichment" count(eval(match('Detection{}', "Indicator"))) as "IOC" count(eval(match('Detection{}', "Telemetry"))) as "Telemetry" count(eval(match('Detection{}', "None"))) as "None" by Participant_Name</query>
     <earliest>0</earliest>
     <latest>now</latest>
   </search>
@@ -29,7 +29,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor,None
+| table Participant_Name,None
 | sort - "None"</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -74,7 +74,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor, Telemetry
+| table Participant_Name, Telemetry
 | sort - "Telemetry"</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -126,7 +126,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor,Enrichment
+| table Participant_Name,Enrichment
 | sort - "Enrichment"</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -178,7 +178,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor,IOC
+| table Participant_Name,IOC
 | sort - "IOC"</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -230,7 +230,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor, "General behaviour"
+| table Participant_Name, "General behaviour"
 | sort - "General behaviour"</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -282,7 +282,7 @@
       <chart>
         <search base="base">
           <query>
-| table vendor, "Specific behaviour"
+| table Participant_Name, "Specific behaviour"
 | sort - "Specific behaviour"</query>
         </search>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>

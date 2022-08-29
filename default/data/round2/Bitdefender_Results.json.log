@@ -1,0 +1,3701 @@
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (high severity) for Antimalware was generated for explorer.exe executing rcs.3aka3.doc.",
+    "Telemetry showed explorer.exe executing rcs.3aka3.doc.",
+    "A General alert detection (low severity) was generated for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The rcs.3aka3.doc process spawning from explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"RLOCharacterProcessCreate\" was generated due to a a file being executed with the RTLO character in its name, hiding its extension."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence of the right-to-left override character (U+202E) in the rcs.3aka.doc process OR the original filename (cod.3aka.scr)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1036.002",
+  "Subtechnique_Name": "Masquerading: Right-to-Left Override",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the rcs.3aka3.doc process connecting to 192.168.0.5 on TCP port 1234."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Established network channel over port 1234",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1095",
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.4",
+  "Subtechnique": "T1573.001",
+  "Subtechnique_Name": "Encrypted Channel: Symmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe spawning from rcs.3aka3.doc. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "cmd.exe spawning from the rcs.3aka3.doc process",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe spawning from cmd.exe. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A General alert detection (yellow indicator) was generated for powershell.exe being identified as suspicious. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe spawning from cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem.",
+    "A Technique alert detection (yellow indicator) was generated for PowerShell enumerating files and directories using environment variables. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed file reads of C:\\Users\\Pam\\*. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe compressing via Compress-Archive.",
+    "A Technique alert detection (orange indicator) was generated for PowerShell being used to created a compressed archive. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Compress-Archive",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.4",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file creation of Draft.zip. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the file draft.zip",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.5",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed file read event for Draft.zip and an existing C2 channel (192.168.0.5 over port 1234). The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The rcs.3aka3.doc process reading the file draft.zip while connected to the C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc creating monkey.png. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The rcs.3aka3.doc process creating the file monkey.png",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique detection called \"PowershellImgObfuscation\" was generated due to a payload being loaded from an image via PowerShell.",
+    "Telemetry showed PowerShell extracting and executing the code embedded within monkey.png."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that a PowerShell payload was within monkey.png",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.2",
+  "Subtechnique": "T1027.003",
+  "Subtechnique_Name": "Obfuscated Files or Information: Steganography",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecution Registry Value. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for Bypass User Account Control was generated for sdclt.exe being executed with a higher integrity level than its parent process. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A General alert detection (red indicator) was generated for powershell.exe being identified as suspicious. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "Telemetry showed control.exe spawning a powershell.exe tagged as High Integrity level and possessing elevated process access privileges."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "High integrity powershell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe connecting to 192.168.0.5 on port 443. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Established network channel over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed an SSL network connection to 192.168.0.5 on port 443."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that the network data sent over the C2 channel is HTTPS",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.4",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed a SSL connection to to 192.168.0.5 on port 443."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.5",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the deletion of the command subkey."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Deletion of of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of the ZIP by PowerShell. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the file SysinternalsSuite.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed a new powershell.exe spawning from powershell.exe.  The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe spawning from powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell writing the files that were decompressed from the ZIP. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A General alert detection (red indicator) was generated for PowerShell writing unknown executable files. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Expand-Archive",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection for \"powershellprocessdiscovery\" was generated due to powershell.exe executing Get-Process.",
+    "Telemetry showed powershell.exe executing Get-Process."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection was generated for an unusual file write in the user directory. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A General alert detection was generated for the SDelete process being identified as suspicious. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and subsequently writing to the file. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "sdelete64.exe deleting the file rcs.3aka3.doc",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "sdelete64.exe deleting the file draft.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "sdelete64.exe deleting the file SysinternalsSuite.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing $env:TEMP",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing $env:USERNAME",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing $env:COMPUTERNAME",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing $env:USERDOMAIN",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing $PID",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Gwmi Win32_OperatingSystem",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Configuration Change (Detections)",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique detection (yellow indicator) was generated for Windows Management Instrumentation being used for AV discovery. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "Telemetry showed powershell.exe executing Get-WmiObject... -Class AntiVirusProduct."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-WmiObject ... -Class AntiVirusProduct",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.7",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-WmiObject ... -Class FireWallProduct",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.8",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the NetUserGetGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.9",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for PowerShell loading the NetApi module. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The NetUserGetGroups API function loaded into powershell.exe from Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.10",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the NetUserGetLocalGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.11",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for PowerShell loading the NetApi module. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The NetUserGetLocalGroups API function loaded into powershelle.exe from Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.12",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"A New Service Has Been Created\" was generated due to PowerShell creating the new service javamtsup."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the Javamtsup service",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.A.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called Startup Item was generated due to hostui.lnk being written to the Startup folder. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "Telemetry showed the file write of hostui.lnk in the Startup folder. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the file hostui.lnk in the Startup folder",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed accesschk.exe reading the Chrome database file for credentials. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "accesschk.exe reading files within %APPDATALOCAL%\\Google\\chrome\\user data\\default\\",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "accesschk.exe executing the CryptUnprotectedData API",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed accesschk.exe is not a signed Microsoft binary which can be used to verify it is not the legitimate Sysinternals tool. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that accesschk.exe is not the legitimate Sysinternals tool",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.3",
+  "Subtechnique": "T1036.005",
+  "Subtechnique_Name": "Masquerading: Match Legitimate Name or Location",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed file write event for a $RandomFileName.pfx file by powershell.exe. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A Technique alert detection called \"privatekeyread\" was generated due to the $RandomFileName.pfx file being accessed by an uncommon process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating a certificate file exported from the system",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.B.1",
+  "Subtechnique": "T1552.004",
+  "Subtechnique_Name": "Unsecured Credentials: Private Keys",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) was generated due to process injection into lsass.exe. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A Technique alert detection for Credential Dumping was generated for injection into Lsass.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe injecting into lsass.exe OR lsass.exe reading Registry keys under HKLM:\\SAM\\SAM\\Domains\\Account\\Users\\",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing CopyFromScreen from System.Drawing.dll.",
+    "A Technique alert detection (orange indicator) was generated for PowerShell being used to take a screenshot. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the CopyFromScreen function from System.Drawing.dll",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) called \"ClipboardAction\" was generated due to a process collecting Windows clipboard data. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "Telemetry showed powershell.exe executing Get-Clipboard."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-Clipboard",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetAsyncKeyState API."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the GetAsyncKeyState API",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.3",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed Powershell.exe reading files from C:\\Users\\pam\\Downloads.",
+    "A Technique alert detection called PowerShell Read Document was generated for powershell.exe process reading file contents."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe reading files in C:\\Users\\pam\\Downloads\\",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write event for OfficeSupplies.7z. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A Technique alert detection for Data Compressed was generated due to PowerShell loading a module capable of zipping files."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the file OfficeSupplies.7z",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Compress-7Zip with the password argument used for encryption",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.3",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert",
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed an event for PowerShell reading OfficeSupplies.7z as well as an active connection to a remote adversary WebDav network share (192.168.0.4).",
+    "A Technique alert detection was generated for a compressed file being transferred over the network.",
+    "A General alert detection was generated for a network connection to remote WebDav network share."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell executing Copy-Item pointing to an attack-controlled WebDav network share (192.168.0.4:80)",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.4",
+  "Subtechnique": "T1048.003",
+  "Subtechnique_Name": "Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe establishing a connection identified as LDAP over port 389 to NewYork (10.0.0.4)."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe making LDAP queries over port 389 to the Domain Controller (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"remotepowershellsession\" was generated for WSMProvHost Process Started that could indicate a remote PowerShell command has been executed.",
+    "Telemetry showed a connection to Scranton (10.0.1.4) over port 5985. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable.",
+    "A Technique alert detection called \"powershellinvokedwinrm\" was generated for Windows Remote Management Service Invoked by PowerShell script."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process.",
+    "A Technique alert detection (red indicator) was generated for the execution of a PowerShell process discovery command. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) for Antimalware was generated identifying the resource download as malware.",
+    "Telemetry showed the HTTP GET request for python.exe.",
+    "A Technique alert detection (red indicator) was generated for a suspicious file being written/accesses through the SMB protocol. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The file python.exe created on Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for python.exe being identified as a packed payload."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that the file python.exe is packed",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.2",
+  "Subtechnique": "T1027.002",
+  "Subtechnique_Name": "Obfuscated Files or Information: Software Packing",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Successful logon as user Pam on Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for PsExec64.exe writing a file to a remote admin share through the SMB protocol.",
+    "A Technique alert detection for Windows Admin Shares was generated for PSExec using credentials to execute a remote command."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "SMB session to Scranton (10.0.1.4) over TCP port 445/135 OR evidence of usage of a Windows share",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection called \"PSExecLateralMovement\" was generated for unusual markers of PSExec being used for lateral movement.",
+    "Telemetry showed PSEXESVC.exe with command-line arguments to execute python.exe. The detection was correlated to a parent alert on rcs.3aka3.doc for the execution of a rogue unusual executable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "python.exe spawned by PSEXESVC.exe",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.3",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an executable file write event for python.exe creating rar.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "python.exe creating the file rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed Executable File Write event for python.exe creating sdelete64.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "python.exe creating the file sdelete64.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetery showed python.exe executing powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe spawning from python.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem.",
+    "A Technique alert detection was generated for PowerShell enumerating files and directories using environment variables."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the file write of working.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the file working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.5",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments.",
+    "A Technique alert detection called \"Data Encrypted T1022\" was generated due to powershell.exe executing rar.exe with command-line arguments indicative of encryption."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing rar.exe with the -a parameter for a password to use for encryption",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.6",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments.",
+    "A Technique alert detection called \"Data Compressed T1002\" was generated due to powershell.exe executing rar.exe with command-line arguments indicative of compression."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.7",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe reading working.zip and an existing C2 channel (192.168.0.4 over port 8443)."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "python.exe reading the file working.zip while connected to the C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete rar.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "sdelete64.exe deleting the file rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Desktop\\working.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "sdelete64.exe deleting the file \\Desktop\\working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Roaming\\working.zip.",
+    "A General alert detection called \"Unusual File Written in User Directory\" was generated when sdelete64.exe with command-line arguments was used to delete Roaming\\working.zip"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "sdelete64.exe deleting the file \\AppData\\Roaming\\working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "cmd.exe deleting the file sdelete64.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "javamtsup.exe spawning from services.exe",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that the file hostui.lnk (which executes hostui.bat as a byproduct) was executed from the Startup Folder",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for a process created with CreateProcessWithToken."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "hostui.exe executing the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for a process created with CreateProcessWithToken.",
+    "A Technique alert detection (orange indicator) was generated for PowerShell being identified as having fake parent process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "hostui.exe manipulating the token of powershell.exe via the CreateProcessWithToken API OR powershell.exe executing with the stolen token of explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.3",
+  "Subtechnique": "T1134.002",
+  "Subtechnique_Name": "Access Token Manipulation: Create Process with Token",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed explorer.exe spawning powershell.exe.",
+    "A General alert detection (red indicator) was generated identifying the powershell.exe process as malware."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe spawning from explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the schemas ADS with Get-Content and IEX."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the schemas ADS via Get-Content and IEX",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.2",
+  "Subtechnique": "T1564.004",
+  "Subtechnique_Name": "Hide Artifacts: NTFS File Attributes",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1564",
+  "Technique_Name": "Hide Artifacts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi queries for Win32_BIOS.",
+    "A Technique alert detection was generated for getting the BIOS version via Windows Management Instrumentation."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_BIOS",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.3",
+  "Subtechnique": "T1497.001",
+  "Subtechnique_Name": "Virtualization/Sandbox Evasion: System Checks",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1497",
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi queries for Win32_BIOS and Win32_ComputerSystem.",
+    "A Technique alert detection (red indicator) was generated for execution of a WMI system discovery command.",
+    "A Technique alert detection (red indicator) was generated for getting the BIOS version via Windows Management Instrumentation."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject gwmi queries for Win32_BIOS and Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_PnPEntity.",
+    "A Technique alert detection (red indicator) was generated for getting the plug and play devices via Windows Management Instrumentation."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_PnPEntity",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "Technique_Name": "Peripheral Device Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for the execution of a WMI system discovery command.",
+    "Telemetry showed the PowerShell gwmi query for Win32_ComputerSystem."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_ComputerSystem.",
+    "A Technique alert detection (red indicator) was generated for the execution of a WMI system discovery command."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.7",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for the execution of a process discovery command via Windows Management Instrumentation.",
+    "Telemetry showed the PowerShell gwmi query for Win32_Process."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_Process",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-Item for the current path."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing (Get-Item -Path \".\\\" -Verbose).FullName",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.9",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the certutil.exe process and corresponding file write of the kxwn.lock payload.",
+    "A General alert detection (yellow indicator) was generated for the execution of the certutil.exe process, which was identified as suspicious.",
+    "A Technique alert detection (yellow indicator) was generated for cerutil.exe decoding a payload."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "certutil.exe decoding kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.10",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"RegSigStartup\" was generated for Registry Run Keys / Startup Folder persistence.",
+    "A Technique alert detection (red indicator) was generated for a suspicious process writing a Startup item Registry key.",
+    "A Technique detection was generated showing Registry write event of the Webcache subkey by powershell.exe, identified as a Startup or Autorun.",
+    "Telemetry showed powershell.exe adding Run key persistence into the Registry."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Addition of the Webcache subkey in HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.11",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe spawned from a PowerShell stager.",
+    "A Technique alert detection (red indicator) was generated for powershell.exe launched with the encoded command parameter.",
+    "A Technique alert detection (red indicator) was generated for powershell.exe executed with a suspicious large command line, which led to the powershell.exe process being identified as malware."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe spawning from from the schemas ADS (powershell.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.12",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to the C2 (192.168.0.4) over port 443."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Established network channel over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.13",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making an network connection to C2 (192.168.0.4) over port 443, which was identified as using the SSL protocol."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Established network channel over the HTTPS protocol",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.14",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making an network connection to C2 (192.168.0.4) over port 443, which was identified as using the SSL protocol."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.15",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell enumeration of System32."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing (gci ((gci env:windir).Value + '\\system32')",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed script block with commands to timestomp kxwn.lock."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe modifying the creation, last access, and last write times of kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.2",
+  "Subtechnique": "T1070.006",
+  "Subtechnique_Name": "Indicator Removal on Host: Timestomp",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell gwmi query for AntiVirusProduct.",
+    "A Technique alert detection (red indicator) called \"WMIAntiVirusDiscovery\" was generated due to PowerShell gwmi query for AntiVirusProduct. The alert was correlated to a parent alert identifying the powershell.exe process as malware."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for AntiVirusProduct",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.B.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed script block with registry query for installed software."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed scriptblock with registry query for installed software."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the GetComputerNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the NetWkstaGetInfo API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the GetUserNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"findprocess\" was generated due to PowerShell querying the list of running processes. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection was generated for the execution of a PowerShell process discovery command."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the CreateToolhelp32Snapshot API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecute Registry value. The telemetry was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Tactic alert detection (red indicator) was generated for the setting of a Registry key used by User Account Control (UAC). The alert was correlated to a parent alert identifying the powershell.exe process as malware."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed control.exe spawning a powershell.exe tagged as High Integrity level and possessing elevated process access privileges.",
+    "A Technique alert detection for \"Bypass User Account Control\" was generated for a suspicious process elevation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "High integrity powrshell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the deletion of the Registry value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Deletion of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated for a local process created using WMI. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert was generated for the creation of a new WMI class. The alert was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection was generated for PowerShell executed using WMI. The alert was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection (red indicator) was generated for a WMI action using a custom provider. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "Telemetry showed WmiPrvSE.exe executing powershell.exe."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "WMI Process (WmiPrvSE.exe) executing powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "Technique_Name": "Windows Management Instrumentation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique alert was generated for the execution of a PowerShell process discovery command.",
+    "Telemetry showed PowerShell executing Get-Process."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for powershell.exe writing a binary in a suspicious location. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "Telemetry showed a HTTP GET request over port 8080 to download m.exe. Telemetry also showed the file write event for m.exe into the System32 folder. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique detection was generated for a resource being downloaded via HTTP."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe downloading and/or the file write of m.exe",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identifying powershell.exe executing m.exe as Mimikatz malware. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A General alert detection (red indicator) was generated for m.exe loading a credential related DLL, identified as a possible attempt to dump credentials. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection (red indicator) was generated for a process memory read. The detection was correlated to a parent alert identifying the powershell.exe process as malware."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "m.exe injecting into lsass.exe to dump credentials",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.4",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Set-WmiInstance",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reading encoded content from the WMI class."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Get-WmiInstance",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing $env:UserName",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the creation of the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription.",
+    "A Technique alert detection was generated due to the creation of a new WMI consumer. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection was generated due to the creation of a new WMI filter. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection was generated due to the creation of a new WMI subscription. The detection was correlated to a parent alert identifying the powershell.exe process as malware."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe making LDAP queries over port 389 via functions from System.DirectoryServices.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing the ConvertSidToStringSid API function."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the ConvertSidToStringSid API",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reflectively loading Advapi32.dll inorder to execute the ConvertSidToStringSid API function."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the ConvertSidToStringSid API function by loading Advapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "A Technique alert detection (red indicator) was generated on NewYork (10.0.0.4) for a remote PowerShell session based on the identification of the WinRM process (wsmprovhost.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Network connection to NewYork (10.0.0.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Successful logon as user MScott on NewYork (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection was generated for PowerShell writing a file to an uncommon location.",
+    "Telemetry showed a file write event for m.exe (identified as Mimikatz by the file metadata) in the System32 directory."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "File write of m.exe by the WinRM process (wsmprovhost.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Technique",
+    "Technique",
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identifying m.exe as the Mimikatz malware. The detection was correlated to a parent alert identifying a remote PowerShell session to NewYork (10.0.0.4).",
+    "A Technique alert detection was generated for injection into the lsass.exe process.",
+    "A Technique alert detection (red indicator) called  \"ReadProcessMemoryCritical\" was generated for m.exe reading memory from a critical process. The alert was correlated to a parent alert identifying a remote PowerShell session to NewYork (10.0.0.4).",
+    "A General alert detection (red indicator) was generated for injection into a critical system process.",
+    "A General alert detection (red indicator) was generated for a m.exe (Mimikatz) loading a credentials-related DLL (samlib.dll), identified as a possible attempt to dump credentials. The detection was correlated to a parent alert identifying a remote PowerShell session to NewYork (10.0.0.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "m.exe injecting into lsass.exe to dump credentials",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.2",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed outlook.exe spawning from svchost.exe, which is indicative of programmatic access to Outlook emails."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "outlook.exe spawning from svchost.exe or powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.A.1",
+  "Subtechnique": "T1114.001",
+  "Subtechnique_Name": "Email Collection: Local Email Collection",
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "Technique_Name": "Email Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe reading the file MITRE-ATTACK-EVALS.HTML",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection called \"PowerShell Suspicious Write\" was generated due to a PowerShell file write to an uncommon location.",
+    "Telemetry showed the file create event for MITRE-ATTACK-EVALS.HTML."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe creating the file \\WindowsParentalControlMigration\\MITRE-ATTACK-EVALS.HTML",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for Powershell creating a compressed archive.",
+    "Telemetry showed PowerShell compressing collection via ZipFile.CreateFromDirectory .NET method."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing the ZipFile.CreateFromDirectory .NET method",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell appending the GIF file header to the compressed file."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Set-Content",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (orange indicator) was generated for an attempt to connect to a remote share via net.exe. The detection was correlated to a parent alert identifying the powershell.exe process as malware.",
+    "Telemetry showed net.exe with command-line arguments to connect to a OneDrive URL as well as net.exe subsequently making a network connection to public IPs over port 443. The detection was correlated to a parent alert identifying the powershell.exe process as malware."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "net.exe with command-line arguments then making a network connection to a public IP over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1102",
+  "Technique_Name": "Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Copy-Item to exfiltrate data to a previously mapped OneDrive account."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Copy-Item pointing to drive mapped to an attack-controlled OneDrive account",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.2",
+  "Subtechnique": "T1567.002",
+  "Subtechnique_Name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1567",
+  "Technique_Name": "Exfiltration Over Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for \"rundll32uncommonload\" due to rundll32.exe executing kxwn.lock.",
+    "Telemetry showed rundll32.exe executing kxwn.lock."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "rundll32.exe executing kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.1",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection called \"executepowershellthroughwmi\" was generated due to PowerShell being executed by WMI.",
+    "Telemetry showed wmiprvse.exe executing the PowerShell stager."
+  ],
+  "Footnotes": [
+    "The logic for this detection was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "The WMI process (wmiprvse.exe) executing powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for powershell.exe launched with the encoded command parameter.",
+    "A General alert detection (red indicator) was generated for powershell.exe due to \"Suspicious Large Command Line\".",
+    "A General alert detection (red indicator) was generated for the execution of a suspicious user process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "SYSTEM-level powershell.exe spawned from the powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Invoke-Mimikatz to create and inject a golden ticket into the current session.",
+    "A General alert detection (red indicator) was generated for a credential related module loaded by an unusual process. The detection was correlated to a parent alert for powershell.exe executing with suspicious large command line.",
+    "A Technique alert detection (red indicator) was generated for the use of a golden ticket. The detection was correlated to a parent alert for powershell.exe executing with suspicious large command line."
+  ],
+  "Footnotes": [
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change.",
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view.",
+    "PowerShell script block logging was enabled after the start of the evaluation so the detection is identified as a Detection Configuration Change."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "powershell.exe executing Invoke-Mimikatz with command-line arguments to create a golden ticket",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.1",
+  "Subtechnique": "T1550.003",
+  "Subtechnique_Name": "Use Alternate Authentication Material: Pass the Ticket",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1550",
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for the WSMProvHost process on the remote host Scranton (10.0.1.4), which is indicative of the execution of a remote PowerShell command.",
+    "A Technique alert detection was generated for the opening of a WinRM connection. The alert showed an outbound network connection to remote host Scranton (10.0.1.4) over port 5985.",
+    "Telemetry showed PowerShell with an open network connection to remote host Scranton (10.0.1.4) over port 5985."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert was generated for the net.exe process being used to create a new user.",
+    "A Technique alert detection was generated for local account creation using net.exe.",
+    "Telemetry showed wsmprovhost.exe spawning net.exe with the command-line arguments to add the new user Toby."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Bitdefender",
+  "Procedure": "net.exe adding the user Toby",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.3",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}

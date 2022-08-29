@@ -4,8 +4,10 @@ This app for Splunk accompanies two blog posts about the MITRE ATTACK Endpoint D
 
 1. [APT3](https://medium.com/@jorritfolmer/comparing-evaluations-of-endpoint-detection-and-response-edr-solutions-eb6bbcb20fad). 
 2. [APT29](https://medium.com/@jorritfolmer/detecting-apt29-mitre-edr-evaluations-round-2-a8dcf7a3f486)
+3. [Carbanak+FIN7](https://medium.com/@jorritfolmer/carbanak-fin7-mitre-edr-evaluations-round-3-3b48a2619887)
+4. Wizard Spider + Sandworm
 
-It shows data and dashboards from the JSON data published in the [MITRE ATTACK evaluations](https://mitre-engenuity.org/attackevaluations/)
+It shows data and dashboards from the JSON data published in the [MITRE ATTACK evaluations](https://attackevals.mitre-engenuity.org/enterprise)
 
 ## Why does this Splunk app exist?
 

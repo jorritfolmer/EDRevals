@@ -1,0 +1,144 @@
+<dashboard version="1.1">
+  <label>Main detection types Wizard Spider and Sandworm</label>
+  <search id="base">
+    <query>
+      index=main sourcetype="attackeval:json" source="*round4*" Detection{}!="" 
+| stats count(eval('Detection{}'=="Technique")) as Technique count(eval('Detection{}'=="Tactic")) as Tactic count(eval('Detection{}'=="General")) as General count(eval('Detection{}'=="Telemetry")) as Telemetry count(eval('Detection{}'=="None")) as None by Participant_Name</query>
+    <earliest>0</earliest>
+    <latest>now</latest>
+  </search>
+  <row>
+    <panel>
+      <html>
+      <h1>Detection types</h1>
+      <ul>
+        <li>None</li>
+        <li>Telemetry</li>
+        <li>General</li>
+        <li>Tactic</li>
+        <li>Technique</li>
+      </ul>
+      See <a href="https://attackevals.mitre.org/methodology/round1/detection-categories.html">Detection categories</a> on the MITRE webpage
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>None</title>
+      <chart>
+        <search base="base">
+          <query>
+| table Participant_Name,None
+| sort - "None"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">175</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>No data available that was automatically collected, processed, and was made available within the capability related to the behavior under test. If data is available that is not directly relevant to the procedure tested, this will be categorized as “None.” In these cases, a vendor may receive a categorization of “None” with additional notes and screenshots about that data.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Telemetry</title>
+      <chart>
+        <search base="base">
+          <query>
+| table Participant_Name, Telemetry
+| sort - "Telemetry"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">175</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>Minimally processed data collected by the capability showing that event(s) occurred specific to the behavior under test. (i.e. showing the procedure/command that was executed). Evidence must show definitively that behavior occurred and be related to the execution mechanism (did happen vs may have happened). Evidence must be related to what caused the behavior. There is no evidence of complex logic or an advanced rule leading to the data output, and no labeling occurred other than simple field labeling.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>Data is presented from a managed security service provider (MSSP) or monitoring service based on human analysis and indication of an incident occurring. MSSP are inherently delayed due to the manual analysis necessary and will be marked as delayed to remain consistent with other delayed detections.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>General</title>
+      <chart>
+        <search base="base">
+          <query>| table Participant_Name,General
+| sort - "General"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">175</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>Processed data specifying that malicious/abnormal event(s) occurred, with relation to the behavior under test. (i.e. cmd.exe /c copy cmd.exe sethc.exe, is abnormal/malicious activity or an identifier stating that "suspicious activity occurred". No or limited details are provided as to why the action was performed (tactic), or details for how the action was performed (technique).</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Tactic</title>
+      <chart>
+        <search base="base">
+          <query>| table Participant_Name, "Tactic"
+| sort - "Tactic"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">175</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>Processed data specifying ATT&amp;CK Tactic or equivalent level of enrichment to the data collected by the capability. Gives the analyst information on the potential intent of the activity, or helps answer the question "why this would be done" (i.e. Persistence was set up or there was a sequence of Discovery commands).</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Technique</title>
+      <chart>
+        <search base="base">
+          <query>| table Participant_Name, "Technique"
+| sort - "Technique"</query>
+        </search>
+        <option name="charting.axisY.maximumNumber">175</option>
+        <option name="charting.chart">bar</option>
+        <option name="charting.drilldown">none</option>
+        <option name="height">580</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>Processed data specifying ATT&amp;CK Technique or equivalent level of enrichment to the data collected by the capability. Gives the analyst information on how the action was performed, or helps answer the question "what was done" (i.e. Accessibility Features or Credential Dumping).</p>
+      </html>
+    </panel>
+  </row>
+</dashboard>

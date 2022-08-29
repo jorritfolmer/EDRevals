@@ -1,0 +1,3448 @@
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed explorer.exe executing rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The rcs.3aka3.doc process spawning from explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the original filename cod.3aka.scr.",
+    "An MSSP detection for Masqurading contained evidence that showed the original file name cod.3aka3.scr."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence of the right-to-left override character (U+202E) in the rcs.3aka.doc process OR the original filename (cod.3aka.scr)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1036.002",
+  "Subtechnique_Name": "Masquerading: Right-to-Left Override",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc connecting to 192.168.0.5 on TCP port 1234.",
+    "A Technique detection called \"T1043: Commonly Used Port\" showed rcs.3aka3.doc connecting to 192.168.0.5 on TCP port 1234."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Established network channel over port 1234",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1095",
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.4",
+  "Subtechnique": "T1573.001",
+  "Subtechnique_Name": "Encrypted Channel: Symmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc spawning from cmd.exe.",
+    "A Technique alert detection (red indicator) called \"Command-Line Interface\" was generated due to cmd.exe spawning from rcs.3aka3.doc. The detection was correlated to a parent alert for rcs.3aka3.doc spawning explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "cmd.exe spawning from the rcs.3aka3.doc process",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) called \"PowerShell process created\" was generated due to powershell.exe spawning from cmd.exe.",
+    "Telemetry showed powershell.exe spawning from cmd.exe. The telemetry was correlated to a parent alert for rcs.3aka3.doc spawning cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe spawning from cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of powershell.exe executing ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of powershell.exe executing ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Tactic",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Tactic detection for \"T1119 Possible Data Collection (file reads)\" was generated on file reads of C:\\Users\\Pam\\*.",
+    "Telemetry showed Powershell.exe reading files from C:\\Users\\pam\\Downloads."
+  ],
+  "Footnotes": [
+    "Configuration changed to monitor Pam's user directory.",
+    "Configuration changed to monitor Pam's user directory."
+  ],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of powershell.exe compressing via Compress-Archive."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Compress-Archive",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.4",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the creation of Draft.Zip.",
+    "An MSSP detection contained evidence of the creation of Draft.Zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the file draft.zip",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.5",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed file read event for Draft.zip and an existing C2 channel (192.168.0.5 over TCP port 1234)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The rcs.3aka3.doc process reading the file draft.zip while connected to the C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc creating monkey.png.",
+    "An MSSP detection occurred containing evidence of rcs.3aka3.doc creating the monkey.png."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The rcs.3aka3.doc process creating the file monkey.png",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell extracting and executing the code embedded within monkey.png.",
+    "An MSSP detection for Obfuscated PowerShell occurred containing evidence of the PowerShell script contained within monkey.png."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that a PowerShell payload was within monkey.png",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.2",
+  "Subtechnique": "T1027.003",
+  "Subtechnique_Name": "Obfuscated Files or Information: Steganography",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecute Registry Value.",
+    "An MSSP detection for Component Object Model Hijacking contained evidence of the DelegateExecute subkey added to the Registry."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"Bypass User Account Control\" was generated due to PowerShell spawning from control.exe.",
+    "Telemetry showed control.exe creating a high integrity powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "High integrity powershell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called Commonly Used Port was generated due to powershell.exe connecting to 192.168.0.5 on TCP port 443.",
+    "Telemetry showed powershell.exe connecting to 192.168.0.5 on TCP port 443. The event is correlated to a parent alert on PowerShell Invoke Expression Launched."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Established network channel over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that the network data sent over the C2 channel is HTTPS",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.4",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.5",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the deletion of the command subkey."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Deletion of of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of the ZIP by PowerShell. The event is correlated to a parent alert on Bypass User Account Control.",
+    "A General detection was generated for \"File archive created\" due to PowerShell creating a compressed archive. The event is correlated to a parent alert on Bypass User Account Control."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the file SysinternalsSuite.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed a new powershell.exe spawning from powershell.exe. The event was correlated to a parent detection on \"Bypass User Account Control\".",
+    "A Technique alert detection (yellow indicator) called \"PowerShell\" was generated due to powershell.exe spawning a new powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe spawning from powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell writing the files that were decompressed from the ZIP.  The event was correlated to a parent detection on \"Bypass User Account Control\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Expand-Archive",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated due to the use of SDelete to delete rcs.3aka3.doc.",
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The event was correlated to a parent detection on \"Bypass User Account Control\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "sdelete64.exe deleting the file rcs.3aka3.doc",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The event was correlated to a parent detection on \"Bypass User Account Control\".",
+    "A Technique alert detection (red indicator) was generated due to the use of SDelete to delete rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "sdelete64.exe deleting the file draft.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events. The event was correlated to a parent detection on \"Bypass User Account Control\".",
+    "A Technique alert detection (red indicator) was generated due to the use of SDelete to delete SysinternalsSuite.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "sdelete64.exe deleting the file SysinternalsSuite.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing $env:TEMP",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing $env:USERNAME",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing $env:COMPUTERNAME",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing $env:USERDOMAIN",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing $PID",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Gwmi Win32_OperatingSystem",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-WmiObject ... -Class AntiVirusProduct",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.7",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-WmiObject ... -Class FireWallProduct",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.8",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the NetUserGetGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.9",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The NetUserGetGroups API function loaded into powershell.exe from Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.10",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the NetUserGetLocalGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.11",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The NetUserGetLocalGroups API function loaded into powershelle.exe from Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.12",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (green indicator) called New Service was generated due to the creation of the javamtsup service.",
+    "Telemetry showed a registry event and service creation of javamtsup."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the Javamtsup service",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.A.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called \"Registry Run Keys or Startup Folder\" was generated due to the creation of hostui.lnk in the Startup folder.",
+    "Telemetry showed the creation of hostui.lnk in the Startup folder."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the file hostui.lnk in the Startup folder",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed accesschk.exe copying Chrome's credential database file. The event was correlated to a parent detection on \"Bypass User Account Control\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "accesschk.exe reading files within %APPDATALOCAL%\\Google\\chrome\\user data\\default\\",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Credential Dumping\" contained evidence of accesschk.exe dumping credentials."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "accesschk.exe executing the CryptUnprotectedData API",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed hash of accesschk.exe which can be used to verify it is not the legitimate Sysinternals tool."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that accesschk.exe is not the legitimate Sysinternals tool",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.3",
+  "Subtechnique": "T1036.005",
+  "Subtechnique_Name": "Masquerading: Match Legitimate Name or Location",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed a file creation event for the $RandomFileName.pfx file by powershell.exe. The event was correlated to a parent detection on \"Bypass User Account Control\".",
+    "A Technique alert detection (yellow indicator) called \"T1145: Private Keys\" was generated due to a file create event for the $RandomFileName.pfx file by powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating a certificate file exported from the system",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.B.1",
+  "Subtechnique": "T1552.004",
+  "Subtechnique_Name": "Unsecured Credentials: Private Keys",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique detection called \"Credential Theft\" was generated due to lsass.exe reading SAM Registry keys.",
+    "Telemetry showed lsass.exe reading SAM Registry keys."
+  ],
+  "Footnotes": [
+    "Lsass.exe Registry read event exclusion was removed from the configuration. The exclusion is in place because it's noisy.",
+    "Lsass.exe Registry read event exclusion was removed from the configuration. The exclusion is in place because it's noisy."
+  ],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe injecting into lsass.exe OR lsass.exe reading Registry keys under HKLM:\\SAM\\SAM\\Domains\\Account\\Users\\",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "A Technique detection called Screen Capture was generated due to the load of System.Drawing.dll.",
+    "Telemetry showed powershell.exe loading the System.Drawing.dll."
+  ],
+  "Footnotes": [
+    "Configuration changed to look for System.Drawing.dll loads.",
+    "Configuration changed to look for System.Drawing.dll loads."
+  ],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the CopyFromScreen function from System.Drawing.dll",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-Clipboard",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the GetAsyncKeyState API",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.3",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed Powershell.exe reading files from C:\\Users\\pam\\Downloads."
+  ],
+  "Footnotes": [
+    "Configuration changed to monitor Pam's user directory."
+  ],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe reading files in C:\\Users\\pam\\Downloads\\",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the file creation event for OfficeSupplies.7z.",
+    "A Technique alert detection for Data Compressed was generated due to the file creation event for OfficeSupplies.7z."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the file OfficeSupplies.7z",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Compress-7Zip with the password argument used for encryption",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.3",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PoweShell creating OfficeSupplies.7z on a remote adversary WebDav network share (192.168.0.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell executing Copy-Item pointing to an attack-controlled WebDav network share (192.168.0.4:80)",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.4",
+  "Subtechnique": "T1048.003",
+  "Subtechnique_Name": "Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe establishing a connection to NewYork (10.0.0.4) over TCP port 389."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe making LDAP queries over port 389 to the Domain Controller (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called Windows Remote Management was generated due to the connection to Scranton (10.0.1.4) over TCP port 5985.",
+    "Telemetry showed HTTP connections to remote host Scranton (10.0.1.4) over TCP port 5985."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed a file create event of python.exe.",
+    "A General alert detection (skull indicator) called \"hiddenShare.admin\" was generated due to the file creation of python.exe in an admin share."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The file python.exe created on Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that the file python.exe is packed",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.2",
+  "Subtechnique": "T1027.002",
+  "Subtechnique_Name": "Obfuscated Files or Information: Software Packing",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of Pam successfully logging on to Scranton (10.0.1.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Successful logon as user Pam on Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an SMB session from Nashua (10.0.1.6) to Scranton (10.0.1.4) over TCP port 135.",
+    "A Technique detection called \"Windows Admin Shares\" was generated due to access of a remote admin share."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "SMB session to Scranton (10.0.1.4) over TCP port 445/135 OR evidence of usage of a Windows share",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe spawned by PSEXESVC.exe. The event was correlated to a parent General detection for a suspicious process.",
+    "A Tactic detection was generated due to PsExec tool detected process created labeled \"Lateral Movement with Remote Execution.\" The event was correlated to a parent detection for \"Bypass User Account Control\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "python.exe spawned by PSEXESVC.exe",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.3",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a file create event for python.exe creating rar.exe downloaded from 192.164.0.4 port 8443."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "python.exe creating the file rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed File Create event for python.exe creating sdelete64.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "python.exe creating the file sdelete64.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe executing powershell.exe. The event was correlated to a parent detection on \"Bypass User Account Control\".",
+    "A Technique alert detection (yellow indicator) called PowerShell was generated due to python.exe spawning powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe spawning from python.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detections)",
+    "Correlated",
+    "Configuration Change (Detections)"
+  ],
+  "DetectionText": [
+    "Telemetry showed file reads by powershell.exe in Pam's user directory. The event was correlated to parent alert on New Windows Service Created.",
+    "A Tactic detection for \"T1119 Possible Data Collection (file reads)\" was generated on file reads of C:\\Users\\Pam\\*."
+  ],
+  "Footnotes": [
+    "Configuration changed to monitor Pam's user directory.",
+    "Configuration changed to monitor Pam's user directory."
+  ],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a File Create event for powershell.exe creating working.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the file working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.5",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique detection called \"T1022 Data Encrypted\" was generated when rar.exe created working.zip.",
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The event was correlated to parent alert on New Windows Service Created."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing rar.exe with the -a parameter for a password to use for encryption",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.6",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique detection called \"T1002 Data Compressed\" was generated when rar.exe created working.zip.",
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The event was correlated to parent alert on New Windows Service Created."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.7",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of python.exe reading working.zip with established network connection to TCP port 8443."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "python.exe reading the file working.zip while connected to the C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete rar.exe. The event was correlated to parent alert on New Windows Service Created.",
+    "A Technnique alert detection (red indicator) called \"Sdelete Tool Ran\" was generated when sdelete64.exe with command-line arguments was used to delete rar.exe.",
+    "An MSSP detection contained evidence of the deletion of Rar.exe by SDelete."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "sdelete64.exe deleting the file rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Desktop\\working.zip. The event was correlated to parent alert on New Windows Service Created.",
+    "A Technnique alert detection (red indicator) called \"Sdelete Tool Ran\" was generated when sdelete64.exe with command-line arguments was used to delete Desktop\\working.zip.",
+    "An MSSP detection contained evidence of the deletion of working.zip by SDelete."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "sdelete64.exe deleting the file \\Desktop\\working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technnique alert detection (red indicator) called \"Sdelete Tool Ran\" was generated when sdelete64.exe with command-line arguments was used to delete rar.exe.",
+    "An MSSP detection contained evidence of the deletion of working.zip by SDelete.",
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Roaming\\working.zip. The event was correlated to parent alert on New Windows Service Created."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "sdelete64.exe deleting the file \\AppData\\Roaming\\working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe deleting sdelete64.exe and file deletion event. The event was correlated to parent alert on New Windows Service Created."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "cmd.exe deleting the file sdelete64.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "javamtsup.exe spawning from services.exe",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that the file hostui.lnk (which executes hostui.bat as a byproduct) was executed from the Startup Folder",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "hostui.exe executing the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "hostui.exe manipulating the token of powershell.exe via the CreateProcessWithToken API OR powershell.exe executing with the stolen token of explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.3",
+  "Subtechnique": "T1134.002",
+  "Subtechnique_Name": "Access Token Manipulation: Create Process with Token",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed explorer.exe executing powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe spawning from explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"NTFS File Attributes\" was generated due to PowerShell executing the schemas ADS.",
+    "Telemetry showed powershell.exe executing the schemas ADS with Get-Content and IEX."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the schemas ADS via Get-Content and IEX",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.2",
+  "Subtechnique": "T1564.004",
+  "Subtechnique_Name": "Hide Artifacts: NTFS File Attributes",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1564",
+  "Technique_Name": "Hide Artifacts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_BIOS",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.3",
+  "Subtechnique": "T1497.001",
+  "Subtechnique_Name": "Virtualization/Sandbox Evasion: System Checks",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1497",
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject gwmi queries for Win32_BIOS and Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_PnPEntity",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "Technique_Name": "Peripheral Device Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.7",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of PowerShell executing a gwmi query for Win32_Process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_Process",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing (Get-Item -Path \".\\\" -Verbose).FullName",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.9",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) called \"Deobfuscate/Decode Files or Information (Certutil executed with suspicious commands)\" was generated for certutil decoding the payload with command-line arguments.",
+    "Telemetry showed the certutil.exe process and corresponding file write of the kxwn.lock payload."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "certutil.exe decoding kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.10",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (green indicator) called \"Registry Run Keys / Startup Folder\" was generated due to Run key persistence added into the Registry",
+    "Telemetry showed powershell.exe adding Run key persistence into the Registry"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Addition of the Webcache subkey in HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.11",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) called \"PowerShell with Invoke Expression Launched\" was generated due to the PowerShell stager executing (IEX) from schemas.",
+    "Telemetry showed powershell.exe spawned from a PowerShell stager."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe spawning from from the schemas ADS (powershell.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.12",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called \"Commonly Used Port (Outbound connection established)\" was generated due to PowerShell making network connection to C2 (192.168.0.4) over TCP port 443.",
+    "Telemetry showed powershell.exe making a network connection to the C2 (192.168.0.4) over TCP port 443.",
+    "A General alert detection (orange indicator) called \"Powershell: established network connections\" was generated due to PowerShell making network connection to C2 (192.168.0.4) over TCP port 443."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Established network channel over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.13",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Established network channel over the HTTPS protocol",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.14",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.15",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing (gci ((gci env:windir).Value + '\\system32')",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for evidence of file timestamp manipulation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe modifying the creation, last access, and last write times of kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.2",
+  "Subtechnique": "T1070.006",
+  "Subtechnique_Name": "Indicator Removal on Host: Timestomp",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred containing evidence of security software discovery attempts."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for AntiVirusProduct",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.B.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the GetComputerNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the execution of PowerShell calling the NetWkstaGetInfo API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the NetWkstaGetInfo API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the execution of the GetUserNameEx API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the GetUserNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the CreateToolhelp32Snapshot API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecute Registry value.",
+    "A Tactic alert detection (green indicator) called \"T1088: User Account Control Bypass (\\Folder\\shell\\open\\command registry key)\" was generated for the setting of a Registry key used by User Account Control (UAC)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (green indicator) called \"User Account Control Bypass\" was generated due to the PowerShell callback spawned from control.exe. The event was correlated to a parent General detection for a suspicious process",
+    "Telemetry showed a new High Integrity PowerShell callback spawned from control.exe (spawned from sdclt.exe). The event was correlated to a parent General detection for a suspicious process"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "High integrity powrshell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection called \"Registry key deleted\" was generated due to the deletion of the Registry value.",
+    "Telemetry showed the deletion of the Registry value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Deletion of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed wmiprvse.exe executing powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "WMI Process (WmiPrvSE.exe) executing powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "Technique_Name": "Windows Management Instrumentation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the creation of m.exe in the System32 folder.",
+    "Telemetry showed the file create event for m.exe into the System32 folder. The event was correlated to a parent detection on \"PowerShell with Encoded Command Launched.\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe downloading and/or the file write of m.exe",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for a \"Malicious file executed\" for the execution of m.exe.",
+    "An MSSP detection contained evidence of the execution of m.exe with Mimikatz arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "m.exe injecting into lsass.exe to dump credentials",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.4",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of PowerShell executing Set-WmiInstance to write encoded content to Win32_AuditCode."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Set-WmiInstance",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Get-WmiInstance",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing $env:UserName",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for WMI event subscription being used for a persistence mechanism."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell making a network connection over port 389 to the domain controller NewYork (10.0.0.4). The event was correlated to a parent detection on \"PowerShell with Execution Bypass Command Launched.\"",
+    "An MSSP detection occurred for suspicious activity indicative of remote discovery attempts."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe making LDAP queries over port 389 via functions from System.DirectoryServices.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection contained evidence of the execution of the ConvertSidToStringSid API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the ConvertSidToStringSid API",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Configuration Change (Detections)",
+    "Correlated",
+    "Alert",
+    "Configuration Change (Detections)",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reflectively loading Advapi32.dll inorder to execute the ConvertSidToStringSid API function. The event was correlated to a parent detection on \"PowerShell with Encoded Command Launched.\"",
+    "A Technique alert detection (green indicator) called \"Execution through API (DLL Load)\" was generated for PowerShell reflectively loading Advapi32.dll inorder to execute the ConvertSidToStringSid API function. The event was correlated to a parent detection on \"PowerShell with Encoded Command Launched.\"",
+    "An MSSP detection contained evidence of the load of the ConvertSidToStringSid API."
+  ],
+  "Footnotes": [
+    "Configuration changed to add monitoring of specific API.",
+    "Configuration changed to add monitoring of specific API."
+  ],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the ConvertSidToStringSid API function by loading Advapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985.  The event was correlated to a parent detection on \"PowerShell with Execution Bypass Command Launched.\"",
+    "A Technique detection called \"Windows Remote Management wsman in HTTP Request\" was generated for powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985. The event was correlated to a parent detection on \"PowerShell with Execution Bypass Command Launched.\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Network connection to NewYork (10.0.0.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for the successful logon on NewYork (10.0.0.4) as user mscott."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Successful logon as user MScott on NewYork (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) for a malicious file was generated for the file create of m.exe in the System32 directory by wsmprovhost.exe.",
+    "Telemetry showed the file create of m.exe in the System32 directory by wsmprovhost.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "File write of m.exe by the WinRM process (wsmprovhost.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) called \"Malicious File Executed\" was generated for m.exe with command-line arguments indicative of Mimikatz credential dumping.",
+    "A General alert detection (red indicator) called \"Remote Process Compromise\" was generated for m.exe with command-line arguments indicative of Mimikatz credential dumping."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "m.exe injecting into lsass.exe to dump credentials",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.2",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed outlook.exe spawning from svchost.exe, which is indicative of programmatic access to Outlook emails.",
+    "A Technique alert detection (yellow indicator) called \"Email Collection\" was generated due to PowerShell copying the HTML file. The event was correlated to a parent detection on \"Bypass User Account Control.\"",
+    "An MSSP detection occurred containing evidence of email collection."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "outlook.exe spawning from svchost.exe or powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.A.1",
+  "Subtechnique": "T1114.001",
+  "Subtechnique_Name": "Email Collection: Local Email Collection",
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "Technique_Name": "Email Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe reading the file MITRE-ATTACK-EVALS.HTML",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) called \"Email Collection (email file copy)\" was generated for the file copy MITRE-ATTACK-EVALS.HTML. The event was correlated to a parent detection on \"Bypass User Account Control.\"",
+    "Telemetry showed the file create event for MITRE-ATTACK-EVALS.HTML. The event was correlated to a parent detection on \"Bypass User Account Control.\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe creating the file \\WindowsParentalControlMigration\\MITRE-ATTACK-EVALS.HTML",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing the ZipFile.CreateFromDirectory .NET method",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Set-Content",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (orange indicator) was generated for an outbound connection network operation over a commonly used port. The event was correlated to a parent detection on \"Bypass User Account Control.\"",
+    "Telemetry showed net.exe with command-line arguments to connect to a OneDrive URL as well as net.exe subsequently making a network connection to public IPs over port 443. The event was correlated to a parent detection on \"Bypass User Account Control.\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "net.exe with command-line arguments then making a network connection to a public IP over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1102",
+  "Technique_Name": "Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the creation of the exfiltrated data within the mapped OneDrive directory. The event was correlated to a parent detection for \"Bypass User Account Control.\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Copy-Item pointing to drive mapped to an attack-controlled OneDrive account",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.2",
+  "Subtechnique": "T1567.002",
+  "Subtechnique_Name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1567",
+  "Technique_Name": "Exfiltration Over Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for rundll32.exe executing kxwn.lock."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "rundll32.exe executing kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.1",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "The WMI process (wmiprvse.exe) executing powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "SYSTEM-level powershell.exe spawned from the powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection occurred for evidence of pass the ticket."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "powershell.exe executing Invoke-Mimikatz with command-line arguments to create a golden ticket",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.1",
+  "Subtechnique": "T1550.003",
+  "Subtechnique_Name": "Use Alternate Authentication Material: Pass the Ticket",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1550",
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called \"Windows Remote Management\"  was generated for PowerShell with an open network connection to the remote host Scranton (10.0.1.4) over port 5985.",
+    "Telemetry showed PowerShell with an open network connection to the remote host Scranton (10.0.1.4) over port 5985.",
+    "A Tactic alert detection (orange indicator) called \"Powershell: established network connections\" was generated for PowerShell with an open network connection to the remote host Scranton (10.0.1.4) over port 5985."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) called \"Create Account (Net Use Command)\" was generated for net.exe with the command-line arguments to add the new user Toby.",
+    "Telemetry showed wsmprovhost.exe spawning net.exe with the command-line arguments to add the new user Toby."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "GoSecure",
+  "Procedure": "net.exe adding the user Toby",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.3",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}

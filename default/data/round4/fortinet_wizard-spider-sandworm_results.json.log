@@ -1,0 +1,2879 @@
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "explorer.exe executes winword.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "winword.exe loads VBEUI.DLL, executes code via AutoOpen()",
+  "ScreenshotDatasources": [
+    "Module: Module Load",
+    "Module: Module Load"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "winword.exe downloads C:\\Users\\Public\\adb.txt",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "winword.exe executes cmd.exe to execute adb.vbs",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.4",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "adb.vbs is obfuscated",
+  "ScreenshotDatasources": [
+    "File: File Access",
+    "File: File Metadata",
+    "File: File Access",
+    "Process: Process Creation"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "adb.vbs executes powershell.exe via Win32_Process",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Script: Script Execution",
+    "Script: Script Execution",
+    "Script: Script Execution"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "Technique_Name": "Windows Management Instrumentation"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "WmiPrvSE.exe spawns powershell.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.7",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe downloads adb.dll",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "Network Traffic: Network Connection Creation"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes adb.dll",
+  "ScreenshotDatasources": [
+    "Module: Module Load",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.9",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe connects to 192.168.0.4 over protocol HTTP",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Connection Creation",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.10",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe connects to 192.168.0.4 over AES-encrypted protocol HTTP",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.11",
+  "Subtechnique": "T1573.001",
+  "Subtechnique_Name": "Encrypted Channel: Symmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe adds the blbdigital Registry Run key using RegSetValueExA()",
+  "ScreenshotDatasources": [
+    "Windows Registry: Windows Registry Key Modification"
+  ],
+  "Step": "2. Emotet Persistence",
+  "Substep": "2.A.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes RtlGetVersion(), GetNativeSystemInfo(), and RtlGetNtProductType()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution",
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "3. Emotet Host Discovery and Credential Collection",
+  "Substep": "3.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes CreateToolhelp32Snapshot()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "3. Emotet Host Discovery and Credential Collection",
+  "Substep": "3.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe downloads Outlook.dll",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "3. Emotet Host Discovery and Credential Collection",
+  "Substep": "3.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe spawns cmd.exe then powershell.exe to search Outlook for password strings",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "3. Emotet Host Discovery and Credential Collection",
+  "Substep": "3.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe spawns cmd.exe then powershell.exe to read SenderEmailAddress values from Outlook",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "3. Emotet Host Discovery and Credential Collection",
+  "Substep": "3.A.5",
+  "Subtechnique": "T1114.001",
+  "Subtechnique_Name": "Email Collection: Local Email Collection",
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "Technique_Name": "Email Collection"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Adversary connects to 10.0.0.8 using protocol RDP (port 3389)",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Network Traffic: Network Connection Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "4. Move Laterally & Deploy TrickBot",
+  "Substep": "4.A.1",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User bill successfully authenticates into 10.0.0.8",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "4. Move Laterally & Deploy TrickBot",
+  "Substep": "4.A.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe downloads the file uxtheme.exe",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "File: File Access",
+    "File: File Creation"
+  ],
+  "Step": "4. Move Laterally & Deploy TrickBot",
+  "Substep": "4.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "uxtheme.exe connects to 192.168.0.4 over protocol HTTP",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Connection Creation",
+    "Network Traffic: Network Traffic Content",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "4. Move Laterally & Deploy TrickBot",
+  "Substep": "4.A.4",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "uxtheme.exe connects to 192.168.0.4 over protocol HTTP on port 447",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Connection Creation",
+    "Network Traffic: Network Traffic Content",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "4. Move Laterally & Deploy TrickBot",
+  "Substep": "4.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1571",
+  "Technique_Name": "Non-Standard Port"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes systeminfo",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes sc query",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes net user",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.3",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes net user /domain",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.4",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes ipconfig",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes netstat",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes net /config",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes nltest /domain_trusts /all_trusts",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1482",
+  "Technique_Name": "Domain Trust Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Tactic",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes whoami",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "5. TrickBot Discovery",
+  "Substep": "5.A.9",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "uxtheme.exe downloads  the file rubeus.exe",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "6. Kerberoast the DC",
+  "Substep": "6.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes rubeus.exe kerberoast /domain:oz.local",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "6. Kerberoast the DC",
+  "Substep": "6.A.2",
+  "Subtechnique": "T1558.003",
+  "Subtechnique_Name": "Steal or Forge Kerberos Tickets: Kerberoasting",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1558",
+  "Technique_Name": "Steal or Forge Kerberos Tickets"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Adversary connects to 10.0.0.4 using protocol RDP (port 3389)",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Network Traffic: Network Connection Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "7. Lateral Movement to DC",
+  "Substep": "7.A.1",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User vfleming successfully authenticates into 10.0.0.4",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Logon Session: Logon Session Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "7. Lateral Movement to DC",
+  "Substep": "7.A.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe downloads the file uxtheme.exe",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "7. Lateral Movement to DC",
+  "Substep": "7.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe adds the Userinit Registry key using Set-ItemProperty",
+  "ScreenshotDatasources": [
+    "Windows Registry: Windows Registry Key Modification",
+    "Windows Registry: Windows Registry Key Modification"
+  ],
+  "Step": "7. Lateral Movement to DC",
+  "Substep": "7.A.4",
+  "Subtechnique": "T1547.004",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Winlogon Helper DLL",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe executes adfind.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "7. Lateral Movement to DC",
+  "Substep": "7.A.5",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes vssadmin.exe to create a copy of C:",
+  "ScreenshotDatasources": [
+    "File: File Access",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "8. Dump Active Directory Database",
+  "Substep": "8.A.1",
+  "Subtechnique": "T1003.003",
+  "Subtechnique_Name": "OS Credential Dumping: NTDS",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes reg.exe to save HKLM\\SYSTEM",
+  "ScreenshotDatasources": [
+    "Windows Registry: Windows Registry Key Access",
+    "Windows Registry: Windows Registry Key Access"
+  ],
+  "Step": "8. Dump Active Directory Database",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe downloads kill.bat",
+  "ScreenshotDatasources": [
+    "File: File Creation"
+  ],
+  "Step": "9. Ryuk Inhibit System Recovery",
+  "Substep": "9.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe stops various services via net stop, sc config, and taskkill",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "9. Ryuk Inhibit System Recovery",
+  "Substep": "9.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Impact",
+  "Technique": "T1489",
+  "Technique_Name": "Service Stop"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.Exe executes icacls.exe to modify permissions on C: and Z:",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "9. Ryuk Inhibit System Recovery",
+  "Substep": "9.A.3",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe downloads window.bat",
+  "ScreenshotDatasources": [
+    "File: File Creation"
+  ],
+  "Step": "9. Ryuk Inhibit System Recovery",
+  "Substep": "9.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [
+    "During execution of the Evaluation, no relevant system backup files were present/enabled in the environment though the CMD commands to delete them was executed. The detection method(s) exhibited are subsequently scoped."
+  ],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe deletes system backups via vssadmin and del",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "9. Ryuk Inhibit System Recovery",
+  "Substep": "9.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Impact",
+  "Technique": "T1490",
+  "Technique_Name": "Inhibit System Recovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe downloads C:\\Users\\Public\\ryuk.exe",
+  "ScreenshotDatasources": [
+    "File: File Creation"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [
+    "During execution of the Evaluation, there were no resulting changes to the token of ryuk.exe, though the AdjustTokenPrivileges() API function was executed, since the target SE_PRIVILEGE_ENABLED privilege was already enabled in the process token. The detection method(s) exhibited are subsequently scoped."
+  ],
+  "Participant_Name": "Fortinet",
+  "Procedure": "ryuk.exe adjusts its token to include SE_PRIVILEGE_ENABLED via AdjustTokenPrivileges()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "ryuk.exe executes CreateToolhelp32Snapshot()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "ryuk.exe injects into notepad.exe via WriteProcessMemory() and CreateRemoteThread()",
+  "ScreenshotDatasources": [
+    "Process: Process Modification",
+    "Process: Process Modification",
+    "Process: Process Modification",
+    "Process: Process Modification"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.4",
+  "Subtechnique": "T1055.002",
+  "Subtechnique_Name": "Process Injection: Portable Executable Injection",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "ryuk.exe enumerates drives via GetLogicalDriveStrings() and GetDriveType()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "ryuk.exe enumerates files via FindFirstFile() and FindNextFile()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "notepad.exe encrypts various files using AES + RSA",
+  "ScreenshotDatasources": [
+    "File: File Modification"
+  ],
+  "Step": "10. Ryuk Encryption for Impact",
+  "Substep": "10.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Impact",
+  "Technique": "T1486",
+  "Technique_Name": "Data Encrypted for Impact"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User fherbert successfully authenticates into 10.0.1.5",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Adversary connects to 10.0.1.5 using SCP (port 22)",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Persistence",
+  "Technique": "T1133",
+  "Technique_Name": "External Remote Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Webshell payload (/tmp/search.php) is dropped to disk on 10.0.1.5",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Webshell payload (search.php) is copied to /var/www/html then connected to over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.4",
+  "Subtechnique": "T1505.003",
+  "Subtechnique_Name": "Server Software Component:\u00a0Web Shell",
+  "TacticGroup": "Persistence",
+  "Technique": "T1505",
+  "Technique_Name": "Server Software Component"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "A shell is executed",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.1",
+  "Subtechnique": "T1059.004",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Unix Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Shell executes whoami",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Shell executes uname -a",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Shell executes ls -lsahR",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Shell executes cat to read /etc/passwd",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.5",
+  "Subtechnique": "T1003.008",
+  "Subtechnique_Name": "OS Credential Dumping: /etc/passwd and /etc/shadow",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "/var/www/html/centreon_module_linux_app64 is dropped to disk on 10.0.1.5",
+  "ScreenshotDatasources": [],
+  "Step": "13. Upload and Execute Exaramel",
+  "Substep": "13.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "SUID binary /bin/backup is executed as root",
+  "ScreenshotDatasources": [],
+  "Step": "13. Upload and Execute Exaramel",
+  "Substep": "13.A.2",
+  "Subtechnique": "T1548.001",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Setuid and Setgid",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "centreon_module_linux_app64 connects to 192.168.0.4 over protocol HTTPS",
+  "ScreenshotDatasources": [],
+  "Step": "13. Upload and Execute Exaramel",
+  "Substep": "13.A.3",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "centreon_module_linux_app64 connects to 192.168.0.4 over encrypted protocol HTTPS",
+  "ScreenshotDatasources": [],
+  "Step": "13. Upload and Execute Exaramel",
+  "Substep": "13.A.4",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "centreon_module_linux_app64 connects to 192.168.0.4 over protocol HTTPS on port 8443",
+  "ScreenshotDatasources": [],
+  "Step": "13. Upload and Execute Exaramel",
+  "Substep": "13.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1571",
+  "Technique_Name": "Non-Standard Port"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "centreon_module_linux_app64 spawns crontab to create a new job",
+  "ScreenshotDatasources": [],
+  "Step": "14. Exaramel Linux Persistence",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1053.003",
+  "Subtechnique_Name": "Scheduled Task/Job: Cron",
+  "TacticGroup": "Persistence",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "centreon_module_linux_app64 writes to /etc/systemd/system/syslogd.service",
+  "ScreenshotDatasources": [],
+  "Step": "14. Exaramel Linux Persistence",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1543.002",
+  "Subtechnique_Name": "Create or Modify System Process: Systemd Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User root executes cat to read /etc/shadow",
+  "ScreenshotDatasources": [],
+  "Step": "14. Exaramel Linux Persistence",
+  "Substep": "14.A.3",
+  "Subtechnique": "T1003.008",
+  "Subtechnique_Name": "OS Credential Dumping: /etc/passwd and /etc/shadow",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User root executes cat to read /home/fherbert/.bash_history",
+  "ScreenshotDatasources": [],
+  "Step": "14. Exaramel Linux Persistence",
+  "Substep": "14.A.4",
+  "Subtechnique": "T1552.003",
+  "Subtechnique_Name": "Unsecured Credentials: Bash History",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Datasources": [],
+  "Detection": [
+    "N/A"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "centreon_module_linux_app64 accesses /home/fherbert/.ssh/id_rsa and /home/fherbert/.ssh/id_rsa.pub",
+  "ScreenshotDatasources": [],
+  "Step": "14. Exaramel Linux Persistence",
+  "Substep": "14.A.5",
+  "Subtechnique": "T1552.004",
+  "Subtechnique_Name": "Unsecured Credentials: Private Keys",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User fherbert successfully authenticates into 10.0.1.7 via SMB",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Connection to 10.0.1.7 over protocol SMB",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Traffic Flow",
+    "File: File Creation",
+    "Network Traffic: Network Traffic Flow",
+    "File: File Creation"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "C:\\Windows\\wsmprovav.exe is written to disk on 10.0.1.7",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "File: File Creation"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "A service binary is written to disk in C:\\Windows\\on 10.0.1.7",
+  "ScreenshotDatasources": [
+    "File: File Creation"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "New service Windows Check AV is created",
+  "ScreenshotDatasources": [
+    "Service: Service Creation"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.5",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "SecurityHealth Registry Run key is added using reg.exe",
+  "ScreenshotDatasources": [
+    "Windows Registry: Windows Registry Key Modification"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.7",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Service binary in C:\\Windows\\ is executed",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.6",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Rundll32.exe executes wsmprovav.dll",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Module: Module Load",
+    "Module: Module Load"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.8",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Rundll32 connects to 192.168.0.4 over protocol HTTPS",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Connection Creation",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.9",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Tactic"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Rundll32 connects to 192.168.0.4 over encrypted protocol HTTPS",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Connection Creation",
+    "Network Traffic: Network Traffic Content",
+    "Network Traffic: Network Traffic Content"
+  ],
+  "Step": "15. Move Laterally to Windows",
+  "Substep": "15.A.10",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes user.Current()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "16. Windows Discovery",
+  "Substep": "16.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe queries HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion for various subkeys",
+  "ScreenshotDatasources": [],
+  "Step": "16. Windows Discovery",
+  "Substep": "16.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe lists files in C:\\",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "16. Windows Discovery",
+  "Substep": "16.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes cmd.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "16. Windows Discovery",
+  "Substep": "16.A.4",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "cmd.exe executes netstat.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "16. Windows Discovery",
+  "Substep": "16.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe creates the file oradump.exe",
+  "ScreenshotDatasources": [
+    "File: File Creation"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "oradump.exe reads passwords from local browsers DBs",
+  "ScreenshotDatasources": [
+    "File: File Access",
+    "File: File Access"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe creates the file mslog.exe",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "File: File Creation"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "mslog.exe executes SetWindowsHookEx() and GetKeyState() to collect keystrokes",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.4",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe RC4 encrypts data from mslog.txt",
+  "ScreenshotDatasources": [
+    "File: File Access"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe posts data from mslog.txt to 192.168.0.4 over HTTPS",
+  "ScreenshotDatasources": [
+    "Network Traffic: Network Traffic Flow",
+    "File: File Access"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over C2 Channel"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes dsquery.exe via cmd.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe deletes oradump.exe, mslog.exe, and mslog.txt via cmd.exe",
+  "ScreenshotDatasources": [
+    "File: File Deletion",
+    "File: File Deletion",
+    "File: File Deletion"
+  ],
+  "Step": "17. Credential Dumping",
+  "Substep": "17.A.8",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "User patreides successfully authenticates into 10.0.1.4",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "18. Pivot to DC",
+  "Substep": "18.A.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Adversary connects to 10.0.1.4 using RDP (port 3389)",
+  "ScreenshotDatasources": [
+    "Logon Session: Logon Session Creation",
+    "Logon Session: Logon Session Creation"
+  ],
+  "Step": "18. Pivot to DC",
+  "Substep": "18.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe is executed",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "18. Pivot to DC",
+  "Substep": "18.A.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe downloads perfc.dat via copy",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "Script: Script Execution"
+  ],
+  "Step": "18. Pivot to DC",
+  "Substep": "18.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes perfc.dat",
+  "ScreenshotDatasources": [
+    "Module: Module Load"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.1",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "schtask.exe creates Restart task",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.2",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Persistence",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes GetIpNetTable()",
+  "ScreenshotDatasources": [
+    "Module: Module Load",
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Data Sources)"
+  ],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe executes CredEnumerateW()",
+  "ScreenshotDatasources": [
+    "Process: OS API Execution",
+    "Process: OS API Execution"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Tactic",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (Detection Logic)"
+  ],
+  "DetectionText": [
+    null,
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "C:\\Windows\\perfc.dat is written to disk on 10.0.1.8",
+  "ScreenshotDatasources": [
+    "File: File Creation",
+    "File: File Creation"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Remote WMI is used to execute rundll32.exe on 10.0.1.8",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.6",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "rundll32.exe encrypts various files using AES",
+  "ScreenshotDatasources": [
+    "File: File Access",
+    "File: File Access",
+    "File: File Access"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Impact",
+  "Technique": "T1486",
+  "Technique_Name": "Data Encrypted for Impact"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "Event logs are cleared via wevtutil.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "Process: Process Creation",
+    "File: File Modification"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.8",
+  "Subtechnique": "T1070.001",
+  "Subtechnique_Name": "Indicator Removal on Host: Clear Windows Event Logs",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "USN change journal is cleared using fsutil.exe",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.9",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "schtask.exe executes Restart task",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Process: Process Creation"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.10",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Persistence",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "wizard-spider-sandworm",
+  "Capability_Requirements": [],
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    null
+  ],
+  "Footnotes": [],
+  "Participant_Name": "Fortinet",
+  "Procedure": "powershell.exe reboots the hosts via Restart-Computer",
+  "ScreenshotDatasources": [
+    "Process: Process Creation",
+    "Script: Script Execution"
+  ],
+  "Step": "19. Deploy NotPetya",
+  "Substep": "19.A.11",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Impact",
+  "Technique": "T1529",
+  "Technique_Name": "System Shutdown/Reboot"
+}

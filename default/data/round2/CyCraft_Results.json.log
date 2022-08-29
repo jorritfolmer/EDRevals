@@ -1,0 +1,3600 @@
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) including \"User Execution\" was generated when explorer.exe executed rcs.3aka3.doc.",
+    "An MSSP detection including \"User Execution\" was received that included a description of rcs.3aka3.doc and its execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The rcs.3aka3.doc process spawning from explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple severity) was generated for rcs.3aka.doc, identified as an EXE.",
+    "An MSSP detection was received that included details of the file rcs.3aka3.doc and identified it as an EXE."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence of the right-to-left override character (U+202E) in the rcs.3aka.doc process OR the original filename (cod.3aka.scr)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1036.002",
+  "Subtechnique_Name": "Masquerading: Right-to-Left Override",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the rcs.3aka.doc connected to 192.168.0.5 on TCP port 1234.",
+    "An MSSP detection for \"Uncommonly Used Port\" was received that included a description of rcs.3aka3.doc and explained that it established a network connection to 192.168.0.5:1234."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Established network channel over port 1234",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1095",
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.4",
+  "Subtechnique": "T1573.001",
+  "Subtechnique_Name": "Encrypted Channel: Symmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for was received that included a description of rcs.3aka3.doc spawning cmd.exe interactively.",
+    "A Tactic alert detection (yellow indicator) for \"Execution\" was generated for cmd.exe spawning from rcs.3aka3.doc. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "cmd.exe spawning from the rcs.3aka3.doc process",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"Powershell\" was generated when cmd.exe spawned powershell.exe. The alert was correlated to a parent alert for User Execution of rcs.3aka3.doc.",
+    "An MSSP detection for \"PowerShell\" was received that included a description of PowerShell execution and an explanation of the commands executed through it."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe spawning from cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"File and Directory Discovery\" was received that included an explanation of the PowerShell script used to collect certain file types on host Nashua (10.0.1.6).",
+    "A General alert detection (purple indicator) was generated for powershell.exe executing Get-ChildItem. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection was received that included an explanation of the PowerShell script used to collect certain file types on host Nashua (10.0.1.6).",
+    "A General alert detection (purple indicator) showed powershell.exe executing Get-ChildItem. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (purple indicator) was generated for powershell.exe executing Compress-Archive. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc.",
+    "An MSSP detection for \"Data Compressed\" was received that included an explanation of the PowerShell script used to collect certain file types on host Nashua (10.0.1.6) and then archive them as DRAFT.ZIP."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Compress-Archive",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.4",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the file draft.zip",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.5",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The rcs.3aka3.doc process reading the file draft.zip while connected to the C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The rcs.3aka3.doc process creating the file monkey.png",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (purple indicator) was generated for PowerShell extracting and executing the code embedded within monkey.png. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc.",
+    "An MSSP detection for \"Obfuscated Files or Information\" occurred containing evidence of the PowerShell script contained within monkey.png."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that a PowerShell payload was within monkey.png",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.2",
+  "Subtechnique": "T1027.003",
+  "Subtechnique_Name": "Obfuscated Files or Information: Steganography",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for the addition of the DelegateExecute Registry Value.",
+    "An MSSP detection for \"Component Object Model Hijacking\" was received that included a PowerShell script and explained that it was used to modify a COM component to delegate execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"Bypass UAC\" was generated when sdclt.exe was executed in a high integrity context by cmd.exe. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc.",
+    "A Tactic alert detection (yellow indicator) was generated for an unprivileged process executing another program with SYSTEM permissions.",
+    "An MSSP detection for \"Bypass User Account Control\" was received that explained that cmd.exe (medium integrity) executed sdclt.exe (high integrity) to facilitate a UAC bypass resulting in execution of powershell.exe (High Integrity)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "High integrity powershell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert (red indicator) was generated for powershell.exe execution, which included connecting to 192.168.0.5 on TCP 443. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Established network channel over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that the network data sent over the C2 channel is HTTPS",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.4",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.5",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Modify Registry\" was received that included a PowerShell script and explained that it was used to delete previously created registry keys.",
+    "A General alert detection (blue indicator) was generated for the PowerShell command to remove DelegateExecute Registry Value. The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Deletion of of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the file SysinternalsSuite.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Tactic alert detection (yellow indicator) was generated for a new powershell.exe spawning from powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe spawning from powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection was occurred containing evidence of powershell.exe decompressing SysinternalsSuite.zip via Expand-Archive.",
+    "A General alert detection (blue indicator) was generated due to powershell.exe decompressing the ZIP via Expand-Archive. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Expand-Archive",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated due to powershell.exe executing Get-Process. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated due to sdelete64.exe deleting rcs.3aka3.doc. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "sdelete64.exe deleting the file rcs.3aka3.doc",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) was generated due to sdelete64.exe deleting Draft.Zip. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "sdelete64.exe deleting the file draft.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"File Deletion\" was received that included a PowerShell script and explained that it was used to execute sdelete64.exe to delete SysInternalsSuite.zip.",
+    "A Technique alert detection (yellow indicator) was generated due to sdelete64.exe deleting  SysinternalsSuite.zip. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "sdelete64.exe deleting the file SysinternalsSuite.zip",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"File and Directory Discovery\" was received that included a PowerShell script and explained that it was used to obtain the current directory."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing $env:TEMP",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"System Owner/User Discovery\" was received that included a PowerShell script and explained that it was used to obtain the current user name."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing $env:USERNAME",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"System Information Discovery\" was received that included a PowerShell script and explained that it was used to obtain the current computer name."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing $env:COMPUTERNAME",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"System Owner/User Discovery\" was received that included a PowerShell script and explained that it was used to obtain the current environment information."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing $env:USERDOMAIN",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Process Discovery\" was received that included a PowerShell script and explained that it was used to obtain the current environment information."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing $PID",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"System Information Discovery\" was received that included a PowerShell script and explained that it was used to obtain the OS system information."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Gwmi Win32_OperatingSystem",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Security Software Discovery\" was received that included a PowerShell script and explained that it was used to detect the installed anti-virus product."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-WmiObject ... -Class AntiVirusProduct",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.7",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Security Software Discovery\" was received that included a PowerShell script and explained that it was used to detect the installed firewall product."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-WmiObject ... -Class FireWallProduct",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.8",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Permission Groups Discovery\" was received that included a PowerShell script and explained that it was used the Invoke-NetUserGetGroups command to search for domain groups through Win32 API calls."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the NetUserGetGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.9",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Permission Groups Discovery\" was received that included a PowerShell script and explained that it was used to search for domain groups through Win32 API calls."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The NetUserGetGroups API function loaded into powershell.exe from Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.10",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Permission Groups Discovery\" was received that included a PowerShell script and explained that it was used the Invoke-NetUserGetLocalGroups command to search for local groups through Win32 API calls."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the NetUserGetLocalGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.11",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Permission Groups Discovery\" was received that included a PowerShell script and explained that it was used the Invoke-NetUserGetLocalGroups command to search for local groups through Win32 API calls."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The NetUserGetLocalGroups API function loaded into powershelle.exe from Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.12",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (orange indicator) showed a Registry event for the creation of javamtsup service.",
+    "An MSSP detection for \"New Service\" was received that included events and analysis related to registration and execution of the javamtsup service."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the Javamtsup service",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.A.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (green indicator) for \"Registry Run Keys / Startup Folder\" was generated due to hostui.lnk being written to the Startup folder.",
+    "An MSSP detection for \"Registry Run Keys / Startup Folder\" was received that included a Registry Created event for addition of hostui.lnk to the Startup folder. Additional analysis was received that included a PowerShell script and explained that it used the Invoke-Persistence command to create a LNK file in the Startup folder."
+  ],
+  "Footnotes": [
+    "MSSP analysis that was performed on Windows Event Logs (Event ID 4104, PowerShell ScriptBlock Logs) would have been requested during a normal engagement when CyCraft MDR received insufficient information for analysis of adversary activity."
+  ],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the file hostui.lnk in the Startup folder",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "accesschk.exe reading files within %APPDATALOCAL%\\Google\\chrome\\user data\\default\\",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "accesschk.exe executing the CryptUnprotectedData API",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Masquerading\" was received that included an execution event for accesschk.exe and explained that the file was masquerading as a legitimate SysInternals tool. Additional data was received that included details of the file accesscheck.exe such as the hash, company name, and signer."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that accesschk.exe is not the legitimate Sysinternals tool",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.3",
+  "Subtechnique": "T1036.005",
+  "Subtechnique_Name": "Masquerading: Match Legitimate Name or Location",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating a certificate file exported from the system",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.B.1",
+  "Subtechnique": "T1552.004",
+  "Subtechnique_Name": "Unsecured Credentials: Private Keys",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"Credential Dumping\" was generated when powershell.exe attempted to read the lsass.exe process memory. The event was correlated to a parent Technique detection for User Execution on rcs.3aka3.doc.",
+    "An MSSP detection for \"Credential Dumping\" was received that described PowerShell dumping credentials from LSASS process memory."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe injecting into lsass.exe OR lsass.exe reading Registry keys under HKLM:\\SAM\\SAM\\Domains\\Account\\Users\\",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Screen Capture\" occurred containing evidence of screen capture.",
+    "A General alert detection (red indicator) was generated for suspicious threat activity for PowerShell calling CopyFromScreen."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the CopyFromScreen function from System.Drawing.dll",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for powershell.exe executing Get-Clipboard. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc.",
+    "An MSSP detection occurred containing evidence of a PowerShell script used to gather information from the clipboard."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-Clipboard",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection for Threat Activity (red indicator) was generated for PowerShell calling the GetAsyncKeyState API.",
+    "An MSSP detection for \"Input Capture\" occurred containing evidence of key logging."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the GetAsyncKeyState API",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.3",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe reading files in C:\\Users\\pam\\Downloads\\",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the file OfficeSupplies.7z",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (orange indicator) was generated due to powershell.exe executing Compress-7Zip with arguments for encryption. The detection was correlated to a parent alert for User Execution of rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Compress-7Zip with the password argument used for encryption",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.3",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) was generated due to rundll32.exe executing the API Call DavSetCookie in daclnt.dll to map a share using WebDav."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell executing Copy-Item pointing to an attack-controlled WebDav network share (192.168.0.4:80)",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.4",
+  "Subtechnique": "T1048.003",
+  "Subtechnique_Name": "Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Remote System Discovery\" was received that explained that the Ad-Search PowerShell command was used to discover remote systems in the domain."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe making LDAP queries over port 389 to the Domain Controller (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) for \"PowerShell\" was generated due to powershell.exe using Invoke-Command to remotely execute Get-Process on host Scranton (10.0.1.4). The event was correlated to a parent Technique detection for User Execution of rcs.3aka3.doc.",
+    "An MSSP detection for \"Process Discovery\" was received that included a PowerShell script and explained that it was used to execute Get-Process on host Scranton (10.0.1.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) for \"File Creation\" for the file create event of python.exe.",
+    "A General alert detection (orange indicator) for \"Remote Access\" was generated for the file copy of python.exe from host Nashua (10.0.1.6) to host Scranton (10.0.1.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The file python.exe created on Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"Software Packing\" was generated for the file creation event for python.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that the file python.exe is packed",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.2",
+  "Subtechnique": "T1027.002",
+  "Subtechnique_Name": "Obfuscated Files or Information: Software Packing",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Valid Accounts\" was received that showed execution of PSExec64.exe using Pam's valid credentials.",
+    "A Technique alert detection (orange indicator) was generated showed a valid logon on Scranton (10.0.1.4) as user Pam."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Successful logon as user Pam on Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for \"Remote Accessed.\""
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "SMB session to Scranton (10.0.1.4) over TCP port 445/135 OR evidence of usage of a Windows share",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Service Execution\" was generated for the execution of python.exe by PSEXECSVC.exe on host Scranton (10.0.1.4) as SYSTEM.",
+    "An MSSP detection for \"Service Execution\" occurred containing evidence of PSEXESVC.exe executing python.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "python.exe spawned by PSEXESVC.exe",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.3",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "python.exe creating the file rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "python.exe creating the file sdelete64.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"PowerShell\" was generated when python.exe spawned powershell.exe. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe.",
+    "An MSSP detection for \"PowerShell\" was received that showed execution of powershell.exe by python.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe spawning from python.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for powershell.exe executing Get-ChildItem. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for powershell.exe executing Get-ChildItem. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing (Get-)ChildItem",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the file working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.5",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"T1022 Data Encrypted\" was generated when rar.exe was used to create an encrypted zip archive. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing rar.exe with the -a parameter for a password to use for encryption",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.6",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"T1002 Data Compressed\" was generated due to powershell.exe executing rar.exe with command-line arguments indicative of compression.  The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe.",
+    "An MSSP detection for \"Data Compressed\" was received that showed execution of rar.exe by powershell.exe and explained that it was used to compress data for exfiltration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.7",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "python.exe reading the file working.zip while connected to the C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"File Deletion T1107\" was generated when sdelete64.exe with command-line arguments was used to delete rar.exe. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe.",
+    "An MSSP detection for \"File Deletion\" was received that described the adversary using sdelete64.exe to remove evidence of exfiltration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "sdelete64.exe deleting the file rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"File Deletion T1107\" was generated when sdelete64.exe with command-line arguments was used to delete Desktop\\working.zip. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe.",
+    "An MSSP detection for \"File Deletion\" was received that described the adversary using sdelete64.exe to remove evidence of exfiltration, including C:\\Users\\pam\\Desktop\\working.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "sdelete64.exe deleting the file \\Desktop\\working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) for \"File Deletion T1107\" was generated when sdelete64.exe with command-line arguments was used to delete Roaming\\working.zip. The event was correlated to a parent Technique detection for Service Execution of python.exe by PSEXECSVC.exe.",
+    "An MSSP detection for \"File Deletion\" was received that described the adversary using sdelete64.exe to remove evidence of exfiltration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "sdelete64.exe deleting the file \\AppData\\Roaming\\working.zip",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "cmd.exe deleting the file sdelete64.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Service Execution\" was generated when services.exe spawned javamtsup.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "javamtsup.exe spawning from services.exe",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that the file hostui.lnk (which executes hostui.bat as a byproduct) was executed from the Startup Folder",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "hostui.exe executing the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Access Token Manipulation\" was generated when hostui.exe created a powershell.exe process with the CreateProcessWithToken WinAPI function."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "hostui.exe manipulating the token of powershell.exe via the CreateProcessWithToken API OR powershell.exe executing with the stolen token of explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.3",
+  "Subtechnique": "T1134.002",
+  "Subtechnique_Name": "Access Token Manipulation: Create Process with Token",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) for \"User Execution\" was generated when the .lnk file was executed.",
+    "A General alert detection (blue indicator) was generated identifying explorer.exe executing powershell.exe as threat activity.",
+    "An MSSP detection for \"User Execution\" was received that described the user executing 37486-the-shocking-truth-about-election-rigging-in-america.rtf.lnk to launch powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe spawning from explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated identifying powershell.exe executing the schemas ADS with Get-Content and IEX as threat activity.",
+    "An MSSP detection for \"NTFS File Attributes\" was received that described a PowerShell script reading another script from the schemas Alternate Data Stream in 2016_United_States_presidential_election_-_Wikipedia.html and executing it via IEX.",
+    "A Technique alert detection (yellow indicator) was generated NTFS File Attributes for 2016_UNITED_STATES_PRESEDENTIAL_ELECTION_-_WIKIPEDIA.HTML:SCHEMAS."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the schemas ADS via Get-Content and IEX",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.2",
+  "Subtechnique": "T1564.004",
+  "Subtechnique_Name": "Hide Artifacts: NTFS File Attributes",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1564",
+  "Technique_Name": "Hide Artifacts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Virtualization/Sandbox Evasion\" was generated for the PowerShell gwmi query for Win32_BIOS.",
+    "An MSSP detection for \"Virtualization/Sandbox Evasion\" was received that included a PowerShell script and explained that it was used to check for virtualization."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_BIOS",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.3",
+  "Subtechnique": "T1497.001",
+  "Subtechnique_Name": "Virtualization/Sandbox Evasion: System Checks",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1497",
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identifying the PowerShell gwmi query for Win32_BIOS as threat activity.",
+    "An MSSP detection for \"System Information Discovery\" was received that included a PowerShell script and explained that it was used to query Win32_ComputerSystem via WMI.",
+    "A General alert detection (red indicator) was generated identifying the PowerShell gwmi queries for Win32_ComputerSystem as threat activity."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject gwmi queries for Win32_BIOS and Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identifying a PowerShell gwmi query for Win32_PnPEntity as threat activity.",
+    "An MSSP detection for \"Peripheral Device Discovery\" was received that included a PowerShell script and explained that it was used to query Win32_PnPEntity via WMI."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_PnPEntity",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "Technique_Name": "Peripheral Device Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identying a PowerShell gwmi query for Win32_ComputerSystem as threat activity.",
+    "An MSSP detection for \"System Owner/User Discovery\" was received that included a PowerShell script and explained that it was used to query Win32_ComputerSystem via WMI."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identying a PowerShell gwmi query for Win32_ComputerSystem as threat activity.",
+    "An MSSP detection for \"System Network Configuration Discovery\" was received that included a PowerShell script and explained that it was used to query Win32_ComputerSystem via WMI."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.7",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Process Discovery\" was generated for a PowerShell gwmi query for Win32_Process.",
+    "An MSSP detection for \"Process Discovery\" was received that included a PowerShell script and explained that it was used to query Win32_Process via WMI."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for Win32_Process",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for PowerShell executing Get-Item for the current path.",
+    "An MSSP detection for \"Process Discovery\" was received that included a PowerShell script and explained that it was used to to obtain the current path."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing (Get-Item -Path \".\\\" -Verbose).FullName",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.9",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (purple indicator) was generated identifying the execution of certutil.exe with command-line parameters for decoding the payload as threat activity.",
+    "An MSSP detection for was received that described the adversary executing certutil.exe to decode a base64 blob into the payload kxwn.lock."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "certutil.exe decoding kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.10",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Registry Run Keys / Startup Folder\" was received that included a PowerShell script and explained that it was used to establish Registry Run Key persistence.",
+    "A Technique alert detection (red indicator) for \"Registry Run Keys / Startup Folder\" was generated for a Registry Creation event associated with establishing Registry Run Key persistence."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Addition of the Webcache subkey in HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.11",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection was received that included a PowerShell script and explained that it was used to download and execute another script via IEX.",
+    "A Technique alert detection (red indicator) for \"PowerShell\" was generated for powershell.exe spawned from a PowerShell stager."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe spawning from from the schemas ADS (powershell.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.12",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was received that included a PowerShell script and explained that it was used to download and execute another script from 192.168.0.4 over port 443."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Established network channel over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.13",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Established network channel over the HTTPS protocol",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.14",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Evidence that the network data sent over the C2 channel is encrypted",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.15",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Tactic alert detection for Discovery (blue icon) was genereated due to PowerShell enumeration of System32."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing (gci ((gci env:windir).Value + '\\system32')",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple icon) for \"Timestomp\" was generated when the kxwn.lock was created with falsified creation, last access, and last write times.",
+    "An MSSP detection for \"Timestomp\" occured that noted modified timestamp of kxwn.lock."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe modifying the creation, last access, and last write times of kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.2",
+  "Subtechnique": "T1070.006",
+  "Subtechnique_Name": "Indicator Removal on Host: Timestomp",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red icon) for \"Security Software Discovery\" was generated due to powershell.exe loading a custom script that contained code to detect installed antivirus products.",
+    "An MSSP detection for \"Security Software Discovery\" was received that included PowerShell gwmi query for AntiVirusProduct"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Get-WmiObject query for AntiVirusProduct",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.B.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Processing)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for the script block with registry query for installed software. The event was correlated to a previous detection for \"Security Software Discovery.\"",
+    "An MSSP detection for \"Query Registry\" was received that included a PowerShell script and explained that it was used to detect installed software."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for the scriptblock with registry query for installed software. The event was correlated to a previous detection for \"Security Software Discovery.\"",
+    "An MSSP detection for \"Query Registry\" was received that included a PowerShell script and explained that it was used to detect installed software."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated due to the execution of the comp function.",
+    "An MSSP detection for \"System Information Discovery\" occurred containing evidence of PowerShell calling the GetComputerNameEx API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the GetComputerNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Processing)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for PowerShell calling the NetWkstaGetInfo API. The detection was correlated to a parent alert for Threat Activity.",
+    "An MSSP detection for \"System Network Configuration Discovery\" was received that included a PowerShell script and explained that it was used to obtain the domain name."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the NetWkstaGetInfo API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection was generated for powershell.exe executing the script which contained GetUserNameEx API function. The event was correlated to a parent Technique detection for PowerShell.",
+    "An MSSP detection for \"System Owner/User Discovery\" was received that included a PowerShell script and explained that it was used enumerate users."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the GetUserNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for PowerShell calling the CreateToolhelp32Snapshot API. The detection was correlated to a parent alert for Threat Activity.",
+    "An MSSP detection for \"Process Discovery\" occurred with evidence of a PowerShell script used to enumerate processes."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the CreateToolhelp32Snapshot API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for powershell.exe loading code that creates the DelegateExecute Registry key."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (yellow indicator) was generated showing a new High Integrity PowerShell callback spawned from control.exe.",
+    "An MSSP detection for \"Bypass User Account Control\" was received that included a PowerShell script and explained that it was used to bypass UAC."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "High integrity powrshell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was received that included a PowerShell script and explained that it was used to clean the Registry after a UAC Bypass."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Deletion of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Windows Management Instrumentation\" was received that included a PowerShell script and explained that it was used to set up execution of Mimikatz.",
+    "A Technique alert detection (red indicator) called \"Execution\" with \"T1047 Windows Management Instrumentation\" label was generated for WmiPrvSE.exe executing powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "WMI Process (WmiPrvSE.exe) executing powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "Technique_Name": "Windows Management Instrumentation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Process Discovery\" was generated for PowerShell executing Get-Process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-Process",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (purple indicator) was generated identifying the PowerShell command to download m.exe as threat activity.",
+    "A General alert detection (purple indicator) was generated showed the file write event for m.exe into the System32 folder."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe downloading and/or the file write of m.exe",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) of \"Credential Dumping\" was generated for dumping credentials/keys from Lsass process memory",
+    "A Technique alert detection (red indicator) of \"Credential Dumping\" was generated for command-line arguments indicative of Mimikatz credential dumping.",
+    "An MSSP detection for \"Credential Dumping\" was received that described the adversary executing m.exe to access LSASS process memory."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "m.exe injecting into lsass.exe to dump credentials",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.4",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated showing PowerShell writing encoded content into the WMI class.",
+    "An MSSP detection for \"Obfuscated Files or Information\" was received that included a PowerShell script and explained that it was used to write the Mimikatz payload to Win32_AuditCode."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Set-WmiInstance",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for PowerShell reading encoded content from the WMI class.",
+    "An MSSP detection for \"Obfuscated Files or Information\" was received that included a PowerShell script and explained that it was used to write the Mimikatz payload to Win32_AuditCode."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Get-WmiInstance",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.6",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated when powershell.exe ran the script, which obtained the name of the current user."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing $env:UserName",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Windows Management Instrumentation Event Subscription\" was occurred containing evidence of a PowerShell script and explained that it was used establish persistence.",
+    "A Technique alert detection (red alert icon) for \"Windows Management Instrumentation Event Subscription\" was generated due to the WindowsParentalControlMigration event filter creation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for powershell.exe executing the Get-NetDomainController command.",
+    "An MSSP detection for \"Remote System Discovery\" was received that included a PowerShell script and explained that it was used to discover a remote system."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe making LDAP queries over port 389 via functions from System.DirectoryServices.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) for threat activity was generated for PowerShell executing the ConvertSidToStringSid API function.",
+    "An MSSP detection for \"System Owner/User Discovery\" was received that included a PowerShell script and explained that it was used to obtain the domain SID from the current user's SID."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the ConvertSidToStringSid API",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for the PowerShell script which contained ConvertSidToStringSid API function being loaded.",
+    "An MSSP detection for \"Execution through API\" was received that included a PowerShell script and explained that it was used to execute the ConvertSidToStringSid API function from Advapi32.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the ConvertSidToStringSid API function by loading Advapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) for threat activity was generated for powershell.exe executing the Invoke-WinRMSession command.",
+    "An MSSP detection for \"Windows Remote Management\" was received that included a PowerShell command and explained that it was used to create a WinRM session to host Scranton (10.0.1.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Network connection to NewYork (10.0.0.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicator) was generated for the successful logon event  on NewYork (10.0.0.4) as user MScott.",
+    "An MSSP detection for \"Valid Accounts\" was received that described the adversary establishing a WinRM session with MScott's credentials."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Successful logon as user MScott on NewYork (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (purple indicator) for File Movement was generated indicating that m.exe was moved from host Utica (10.0.1.5) to host NewYork (10.0.0.4).",
+    "An MSSP detection for \"Remote File Copy\" was received that described the adversary moving m.exe from host Utica (10.0.1.5) to host NewYork (10.0.0.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "File write of m.exe by the WinRM process (wsmprovhost.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Credential Dumping\" was generated for m.exe with command-line arguments indicative of Mimikatz credential dumping.",
+    "A General alert detection (yellow indicator) was generated identifying m.exe as threat activity.",
+    "An MSSP detection for \"Credential Dumping\" was received that described the adversary remotely executing m.exe to dump the krbtgt hash."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "m.exe injecting into lsass.exe to dump credentials",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.2",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red indicator) for \"Email Collection\" was generated when powershell.exe loaded an Outlook DLL.",
+    "An MSSP detection for \"Email Collection\" was received that included a PowerShell script and explained that it was used to obtain the collect emails."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "outlook.exe spawning from svchost.exe or powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.A.1",
+  "Subtechnique": "T1114.001",
+  "Subtechnique_Name": "Email Collection: Local Email Collection",
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "Technique_Name": "Email Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe reading the file MITRE-ATTACK-EVALS.HTML",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe creating the file \\WindowsParentalControlMigration\\MITRE-ATTACK-EVALS.HTML",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for the PowerShell script which included compressing collection via the ZipFile.CreateFromDirectory .NET method.",
+    "An MSSP detection occurred containing evidence of data compression."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing the ZipFile.CreateFromDirectory .NET method",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated for the PowerShell script, which included PowerShell appending the GIF file header to the compressed file.",
+    "An MSSP detection for \"Obfuscated Files or Information\" occurred containing evidence PowerShell was used to add noisy data (GIF89) to an archive."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Set-Content",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection for \"Web Service\" was received that described the adversary mapping OneDrive as a network device and exfiltrating data to it."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "net.exe with command-line arguments then making a network connection to a public IP over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1102",
+  "Technique_Name": "Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated identifying PowerShell executing Copy-Item as threat activity.",
+    "An MSSP detection for \"Exfiltration Over Alternative Protocol\" was received that described the adversary mapping OneDrive as a network device and exfiltrating data to it."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Copy-Item pointing to drive mapped to an attack-controlled OneDrive account",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.2",
+  "Subtechnique": "T1567.002",
+  "Subtechnique_Name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1567",
+  "Technique_Name": "Exfiltration Over Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated for rundll32.exe executing kxwn.lock.",
+    "An MSSP detection for \"Rundll32\" described rundll32.exe executing kxwn.lock, triggered by Registry Run Keys / Startup Folder persistence."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "rundll32.exe executing kxwn.lock",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.1",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (red alert icon) for \"Windows Management Instrumentation Event Subscription\" was generated for wmiprvse.exe executing the PowerShell stager.",
+    "An MSSP detection for \"Windows Management Instrumentation Event Subscription\" was received that described the triggering of a WMI Event Subscription upon logon of user Oscar in order to execute powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "The WMI process (wmiprvse.exe) executing powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (yellow indicatorl) for \"Powershell\" was generated due to  a SYSTEM-level powershell.exe spawning from wmiprvse.exe.",
+    "An MSSP detection for \"PowerShell\" was received that described execution of powershell.exe triggered by a WMI Event Subscription."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "SYSTEM-level powershell.exe spawned from the powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (red indicator) was generated identifying PowerShell executing Invoke-Mimikatz as threat activity.",
+    "A Technique alert detection (yellow indicator) called of \"Pass the Ticket\" was generated when the user MScott forged a suspicious Kerberos ticket with the domain krbtgt.",
+    "An MSSP detection for \"Pass the Ticket\" was received that described the adversary using Mimikatz to forge a golden ticket."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "powershell.exe executing Invoke-Mimikatz with command-line arguments to create a golden ticket",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.1",
+  "Subtechnique": "T1550.003",
+  "Subtechnique_Name": "Use Alternate Authentication Material: Pass the Ticket",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1550",
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A General alert detection (blue indicator) was generated identifying PowerShell executing the Enter-PSSession cmdlet to open a network connection to the remote host Scranton (10.0.1.4) as threat activity.",
+    "A General alert detection (orange indicator) for execution and tagged with \"Windows Remote Management\" was generated when net.exe was executed remotely on Scranton by wsmprovhost.exe.",
+    "An MSSP detection for \"Windows Remote Management\" was received that described the adversary using a golden ticket to establish a WinRM session to Scranton (10.0.1.4)"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (orange indicator) for \"Account Operation\" was generated for the addition of the new user Toby.",
+    "An MSSP detection for \"Create Account\" was received that described the attacker creating a new account on host Scranton (10.0.1.4) for persistence.",
+    "A Technique alert detection (orange indicator) for \"Create Account\" was generated for net.exe with the command-line arguments to add the new user Toby. The detection was correlated to a parent alert for creation of a Windows Remote Management session."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "CyCraft",
+  "Procedure": "net.exe adding the user Toby",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.3",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}

@@ -1,0 +1,3427 @@
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed that Resume Viewer.exe was executed by Explorer.exe by user Debbie."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Specific Behavior alerts were generated based on suspicious indicators that a \\\"Loaded non-DLL and non-CPL file with specified parameters via rundll32.\\\" The alerts were tagged with the correct ATT&CK Tactic (Defense Evasion, Execution) and Technique (Rundll32).",
+    "Telemetry showed cmd.exe executing update.dat via rundll32.exe. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.2",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed pdfhelper.cmd being executed by cmd.exe. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.3",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for \\\"An exe/bat/lnk/dll file has been copied or renamed in the Windows Startup Folder\\\" for persistence based on pdfhelper.cmd. The alert was tagged with the correct ATT&CK Tactic (Persistence) and Technique (Registry Run Keys / Start Folder)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.2",
+  "Subtechnique": "T1071.004",
+  "Subtechnique_Name": "Application Layer Protocol: DNS",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.3",
+  "Subtechnique": "T1132.001",
+  "Subtechnique_Name": "Data Encoding: Standard Encoding",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1132",
+  "Technique_Name": "Data Encoding"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched ipconfig.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Network Configuration Discovery) and a suspicious indicator that the ipconfig utility displayed configuration information.",
+    "Telemetry showed cmd.exe executing ipconfig.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched the arp.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Network Configuration Discovery) and a suspicious indicator that the contents of the local ARP cache table was viewed.",
+    "Telemetry showed cmd.exe executing arp.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched the cmd.exe echo command with the correct ATT&CK Tactic (Discovery) and Technique (System Owner/User Discovery) and a suspicious indicator that the command tried to identify the user on the system.",
+    "Telemetry showed cmd.exe executing the echo command. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [
+    "Though not visible in the image, MITRE confirmed that the relevant command was visible within the trace detection's process tree."
+  ],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched tasklist.exe with the correct ATT&CK Tactic (Discovery) and a related Technique (System Service Discovery) and a suspicious indicator that the process discovered running Windows services and/or processes.",
+    "Telemetry showed cmd.exe executing tasklist.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [
+    "Though not visible in the image, MITRE confirmed that the relevant command was visible within the trace detection's process tree."
+  ],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.C.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched sc.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that a Windows service was manipulated via sc.exe/net.exe tool.",
+    "Telemetry showed cmd.exe executing sc.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [
+    "Though not visible in the image, MITRE confirmed that the relevant command was visible within the trace detection's process tree."
+  ],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that Windows service was manipulated via sc.exe/net.exe tool.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.D.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched systeminfo.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Information Discovery) and a suspicious indicator that system configuration info was queried.",
+    "Telemetry showed cmd.exe executing systeminfo.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [
+    "Though not visible in the image, MITRE confirmed that the relevant command was visible within the trace detection's process tree."
+  ],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.E.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Information Discovery) and a suspicious indicator that system configuration info was queried.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.E.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and a suspicious indicator that information of users/groups was obtained.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.1",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and a suspicious indicator that information of users/groups was obtained.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.2",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Techniques (Permission Groups Discovery) and a suspicious indicator that information of users/groups was obtained.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.3",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and a related Technique (System Owner/User Discovery) and a suspicious indicator that information of users/groups was obtained.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.G.1",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and a related Technique (System Owner/User Discovery) and a suspicious indicator that information of users/groups was obtained.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.G.2",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched reg.exe with the correct ATT&CK Tactic (Discovery).",
+    "The capability enriched reg.exe with the correct ATT&CK Tactic (Discovery) and Technique (Query Registry) and a suspicious indicator that the Registry was queried via execution of the reg.exe utility.",
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments. The telemetry was tainted by a trace detection on Resume Viewer.exe."
+  ],
+  "Footnotes": [
+    "Though not visible in the image, MITRE confirmed that the relevant command was visible within the trace detection's process tree."
+  ],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.H.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for a possible UAC bypass. The alert was tagged with the correct ATT&CK Technique (Bypass User Account Control) and Tactics (Defense Evasion, Privilege Escalation)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.A.1.1",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "Telemetry showed svchost.exe, with the seclogon command-line argument as well as a New Credentials logon event for user Debbie, indicating token manipulation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.A.1.2",
+  "Subtechnique": "T1134.001",
+  "Subtechnique_Name": "Access Token Manipulation: Token Impersonation/Theft",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for a process injection from PowerShell into cmd.exe based on both connecting to a named pipe. The alert was tagged with the correct ATT&CK Technique (Process Injection) and Tactics (Defense Evasion, Privilege Escalation)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct Tactic (Discovery) and Technique (Remote System Discovery) and a suspicious indicator that the net utility obtained information about domain computers and controllers.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct Tactic (Discovery) and Technique (Remote System Discovery) and a suspicious indicator that the net utility obtained information about domain computers and controllers.",
+    "Telemetry showed cmd.exe executing net.exe with command-line arguments. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched netsh.exe with the correct Tactic (Discovery) and Technique (System Network Configuration Discovery) and a suspicious indicator that the netsh utility manipulated firewall rules.",
+    "Telemetry showed cmd.exe executing netsh.exe with command-line arguments. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched netstat.exe with the correct Tactic (Discovery) and Technique (System Network Connections Discovery) and a suspicious indicator that network statistics and TCP/IP connections were gathered.",
+    "Telemetry showed cmd.exe executing netstat.exe with command-line arguments. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.1.1",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.2.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.2.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a change in user execution context from Debbie to George between processes, which is indicative of token manipulation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1134.001",
+  "Subtechnique_Name": "Access Token Manipulation: Token Impersonation/Theft",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A General Behavior alert was generated indicating that reg.exe command-line arguments contains signs of malicious usage such as encoded content or interacting with Registry keys.",
+    "The capability enriched reg.exe with the correct ATT&CK Tactic (Discovery) and Technique (Query Registry) and a suspicious indicator that the Registry was queried via execution of the reg.exe utility.",
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The capability enriched rundll32.exe (the process that made the network connection) with the correct ATT&CK Tactic (Command and Control) and the Technique (Commonly Used Port).",
+    "Telemetry showed connections over TCP port 80 to freegoogleadsenseinfo.com (C2 domain)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed network connections over TCP port 80 and that winhttp.dll module was loaded into the same process (PID 6276) that made the network connection, which an analyst could use to determine HTTP was used."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1026",
+  "Technique_Name": "Multiband Communication"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The capability enriched rundll32.exe (the process that made the network connection) with the correct ATT&CK Tactic (Lateral Movement) and the Technique (Remote Desktop Protocol).",
+    "Telemetry showed a connection to 10.0.0.5 (Conficker) over TCP port 3389."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the creation of the user Jesse."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.1",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed mmc.exe, the Microsoft Management Console, executing the GUI-based lusrmgr.msc (Local Users and Groups snap-in)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1061",
+  "Technique_Name": "Graphical User Interface"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed mmc.exe, the Microsoft Management Console, executing the lusrmgr.msc (Local Users and Groups snap-in) which displays local account information."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.3",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for a new dynamic library created in the Windows system (System32) folder.",
+    "A Specific Behavior alert was generated for a new PE file created in the Windows system (System32) folder."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for a task being created that runs an executable (via rundll32) under system rights at Windows logon. The alert was tagged with the correct ATT&CK Tactics (Execution, Persistence, Privilege Escalation) and Technique (Scheduled Task).",
+    "Telemetry showed cmd.exe creating the \\\"Resume Viewer Update Checker\\\" scheduled task via schtasks.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.C.1",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched cmd.exe executing the dir command with the correct ATT&CK Tactic (Discovery) and Technique (File and Directory Discovery).",
+    "Telemetry showed cmd.exe executing the dir command. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched cmd.exe executing the tree.exe with the correct ATT&CK Tactic (Discovery) and Technique (File and Directory Discovery).",
+    "Telemetry showed cmd.exe executing tree.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.C.1.1",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.C.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1010",
+  "Technique_Name": "Application Window Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.D.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for code injection into explorer.exe. The alert was tagged with the correct ATT&CK Tactics (Defense Evasion, Privilege Escalation) and Technique (Process Injection) and was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.D.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.B.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1039",
+  "Technique_Name": "Data from Network Shared Drive"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.B.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing autoupdate.bat from the Startup folder, then update.dat via rundll32.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed rundll32.exe executing updater.dll with a parent of svchost.exe running with command-line arguments \\\"-k netsvcs -p -s Schedule\\\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.A.2",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a remote interactive logon for Jesse to Conficker (10.0.0.5)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.B.1.1",
+  "Subtechnique": "T1078.003",
+  "Subtechnique_Name": "Valid Accounts: Local Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched the rundll32.exe that made the network connection with the correct ATT&CK Tactic (Lateral Movement) and Technique (Remote Desktop Protocol).",
+    "Telemetry showed a remote interactive logon for Jesse to Conficker (10.0.0.5) as well as a connection to 10.0.0.5 (Conficker) over port 3389 from rundll32.exe. The telemetry was tainted by a trace detection on rundll32.exe"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.B.1.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Specific Behavior",
+    "Specific Behavior",
+    "Specific Behavior",
+    "Enrichment",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for decoding and running encoded scripting sources from another process (wscript.exe). The alert was tagged with correct ATT&CK Tactic (Defense Evasion, Execution) and Techniques (PowerShell).",
+    "A Specific Behavior alert was generated for PowerShell commands being executed from another process (wscript.exe). The alert was tagged with correct ATT&CK Tactic (Execution) and Techniques (PowerShell).",
+    "A Specific Behavior alert was generated for PowerShell execution with a very long command line. The alert was tagged with correct ATT&CK Tactics (Defense Evasion, Execution) and Techniques (Scripting, PowerShell).",
+    "A Specific Behavior alert was generated for the VBScript interpreter launching a suspicious PowerShell process. The alert was tagged with the correct ATT&CK Tactics (Defense Evasion, Execution) and Techniques (Scripting, PowerShell).",
+    "The capability enriched powershell.exe with the correct ATT&CK Tactic (Execution) and Techniques (PowerShell) and a suspicious indicator that a PowerShell command was executed.",
+    "The capability enriched wscript.exe with the correct ATT&CK Tactics (Defense Evasion, Execution) and Techniques (Scripting, PowerShell) and a suspicious indicator that the VBScript interpreter was executed.",
+    "Telemetry showed wscript.exe (executing autoupdate.vbs) then spawning powershell.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for PowerShell sending and receiving information through port 443. The alert was tagged with the correct ATT&CK Tactic (Command and Control) and Technique (Commonly Used Port).",
+    "The capability enriched powershell.exe with the correct ATT&CK Tactic (Command and Control) and Technique (Commonly Used Port) and a suspicious indicator that powershell.exe accessed a known TCP port.",
+    "Telemetry showed port 443 network connections to www.freegoogleadsenseinfo.com (C2 domain). The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.3",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched route.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Network Configuration Discovery) and a suspicious indicator that routing tables were viewed or manipulated.",
+    "Telemetry showed powershell.exe executing route.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched ipconfig.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Network Configuration Discovery).",
+    "Telemetry showed powershell.exe executing ipconfig.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched whomai.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Owner / User Discovery) and a suspicious indicator that the name of the logged user was discovered.",
+    "Telemetry showed powershell.exe executing whoami.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched qprocess.exe with the correct ATT&CK Tactic (Discovery) and a related Technique (Process Discovery) and a suspicious indicator that QPROCESS was used to check active processes.",
+    "The capability enriched qprocess.exe with the correct ATT&CK Tactic (Discovery) and a suspicious indicator that software running on a system was queried.",
+    "Telemetry showed powershell.exe executing qprocess.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A General Behavior alert was generated for net or sc command executed through PowerShell. The alert was tagged with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery).",
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that Windows services were manipulated via sc.exe/net.exe.",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.D.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell script (.ps1) being written to the temp folder, indicating the execution of a PowerShell script."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.2",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1201",
+  "Technique_Name": "Password Policy Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.4.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.4.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.5",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.6.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.6.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.7",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.8",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.9.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.9.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.10.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.10.2",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.11",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing netstat.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.12",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (Permissions Group Discovery) and a suspicious indicator that the net utility was used to obtain information of domain admins.",
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (Permissions Group Discovery) and a suspicious indicator that the net utility was used to obtain information of user groups.",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.F.1",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (Permissions Group Discovery) and a suspicious indicator that the net utility was used to obtain information of user groups.",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.F.2",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and a related Technique (System Owner/User Discovery) and a suspicious indicator that the net utility was used to obtain information of user groups.",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.G.1",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery).",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.G.2",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched net.exe with the correct ATT&CK Tactic (Discovery) and Technique (Remote System Discovery) and a suspicious indicator that the net utility obtained information of domain computers and controllers.",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on wscript.exe"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched netstat.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Network Connections Discovery) and a suspicious indicator that the network protocol statistics were gathered.",
+    "Telemetry showed powershell.exe executing netstat.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.B.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched reg.exe with the correct ATT&CK Tactic (Discovery) and Technique (Query Registry) and a suspicious indicator that reg.exe utility queried the Registry.",
+    "Telemetry showed powershell.exe executing reg.exe. The telemetry was tainted by a trace detection on wscript.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for a possible UAC bypass. The alert was tagged with the correct ATT&CK Technique (Bypass User Account Control) and Tactics (Defense Evasion, Privilege Escalation).",
+    "Telemetry showed an integrity level change from medium (2) to high (3) for powershell.exe, which is indicative of bypass UAC."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.1",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.3",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a network connection to 192.168.0.5 (C2 server) over TCP port 8080."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.4",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.A.1.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Collection",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1010",
+  "Technique_Name": "Application Window Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.B.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for powershell.exe performing a potential brute force password hack via the net utility.",
+    "Telemetry showed powershell.exe executing repeated logon attempts via net.exe. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.A.1.1",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing repeated logon attempts targeting ADMIN$ via net.exe. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.A.1.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed a logon attempt via net.exe with command-line arguments to login using the valid credentials of user Kmitnick. The telemetry was tainted by a trace detection on powershell.exe. Telemetry also showed a login event on Conficker (10.0.0.5) for user Kmitnick."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.1",
+  "Subtechnique": "T1078.003",
+  "Subtechnique_Name": "Valid Accounts: Local Accounts",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for the net utility executed to authenticate to a remote admin share with valid accounts. The alert was tagged with the correct ATT&CK Tactic (Lateral Movement) and Technique (Windows Admin Shares).",
+    "Telemetry showed a logon attempt via net.exe to ADMIN$ with command-line arguments to login using the valid credentials of user Kmitnick. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for powershell.exe performing a potential brute force password hack via the net utility.",
+    "Telemetry showed a logon attempt via net.exe with command-line arguments to login using the valid credentials of user Kmitnick. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.3",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for the net utility removing a shared connection via PowerShell. The alert was tagged with the correct ATT&CK Tactic (Defense Evasion) and Technique (Network Share Connection Removal).",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1070.005",
+  "Subtechnique_Name": "Indicator Removal on Host: Network Share Connection Removal",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for the net utility executed to authenticate to a remote admin share with valid accounts. The alert was tagged with the correct ATT&CK Tactic (Lateral Movement) and Technique (Windows Admin Shares).",
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.D.1.1",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing net.exe. The telemetry was tainted by a trace detection on powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.D.1.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The capability enriched powershell.exe with the correct ATT&CK Tactic (Command and Control) and Technique (Remote File Copy) and a suspicious indicator that a file was copied to a remote computer via PowerShell.",
+    "Telemetry showed the creation of autoupdate.vbs on Code Red (10.0.1.5)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.E.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The capability enriched wscript.exe executing autoupdate.vbs with the correct ATT&CK Tactic (Execution) and Technique (Command Line Interface).",
+    "Telemetry showed cmd.exe executing autoupdate.vbs as user Kmitnick."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.F.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The capability enriched powershell.exe with the correct ATT&CK Tactic (Command and Control) and Technique (Remote File Copy) and a suspicious indicator that a file was copied to a remote computer via PowerShell.",
+    "Telemetry showed the creation of update.vbs on Creeper (10.0.0.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.G.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched sc.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that a Windows service was manipulated via sc.exe/net.exe tool.",
+    "Telemetry showed powershell.exe executing sc.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.H.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched sc.exe with a relevant ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that a Windows service was manipulated via sc.exe/net.exe tool.",
+    "Telemetry showed that a new service was added. Telemetry also showed powershell.exe executing sc.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.I.1.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing sc.exe with command-line arguments, to create and configure the AdobeUpdater service, that an analyst could use to determine the service is masquerading. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.I.1.2",
+  "Subtechnique": "T1036.004",
+  "Subtechnique_Name": "Masquerading: Masquerade Task or Service",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched sc.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that the configuration of a system service was queried.",
+    "Telemetry showed powershell.exe executing sc.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.J.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.K.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched sc.exe with a relevant ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that a Windows service was manipulated via sc.exe/net.exe tool.",
+    "Telemetry showed powershell.exe executing sc.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.L.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched reg.exe with the correct ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that Registry was queried for remote services RDP.",
+    "The capability enriched the powershell.exe that executed reg.exe with the ATT&CK Tactic (Discovery) and Technique (System Service Discovery) and a suspicious indicator that PowerShell queried terminal services Registry.",
+    "Telemetry showed reg.exe executing with command-line arguments. The telemetry was tainted by a parent cmd.exe alert."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.A.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched reg.exe with the correct ATT&CK Tactic (Discovery) and Technique (Query Registry) and a suspicious indicator that the reg.exe utility queried the Registry.",
+    "Telemetry showed powershell.exe executing reg.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched takeown.exe with a suspicious indicator that the takeown command was executed to obtain ownership of a file or directory.",
+    "Telemetry showed powershell.exe executing takeown.exe. The telemetry was tainted by a trace detection on cmd.exe.."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.B.1",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched icacls.exe with a suspicious indicator that full access permissions were given to certain users.",
+    "Telemetry showed powershell.exe executing icacls.exe. The telemetry was tainted by a trace detection on cmd.exe.."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "General Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General Behavior alert was generated for powershell.exe altering the attributes of an executable file under the Windows system folder.",
+    "Telemetry showed a file modification event for Magnifier.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1546.008",
+  "Subtechnique_Name": "Event Triggered Execution: Accessibility Features",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.A.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for PowerShell creating a file in the Recycle Bin. The alert was tagged with the correct ATT&CK Tactic (Collection) and Technique (Data Staged).",
+    "Telemetry showed creation of the .vsdx file in the Recycle Bin. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.B.1.1",
+  "Subtechnique": "T1074.002",
+  "Subtechnique_Name": "Data Staged: Remote Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.B.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Collection",
+  "Technique": "T1039",
+  "Technique_Name": "Data from Network Shared Drive"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the MD5/SHA256 hash value of recycler.exe when it was written to disk, which an analyst could use to determine recycler.exe was actually WinRAR."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.A.1.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed file creation event for recycler.exe"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.A.1.2",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. Telemetry also showed the creation of old.rar as the output of recycler.exe running. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. Telemetry also showed the creation of old.rar as the output of recycler.exe running. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. Telemetry also showed the creation of old.rar as the output of recycler.exe running. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.3",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched powershell.exe executing ftp.exe with the correct ATT&CK Tactic (Exfiltration) and Technique (Exfiltration over Alternative Protocol) and a suspicious indicator that a connection was made to a remove server via the ftp protocol.",
+    "Telemetry showed powershell.exe executing ftp.exe, which made an outbound FTP connection to 192.168.0.4 (C2 server) on TCP port 21. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.C.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.D.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Enrichment",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "The capability enriched PowerShell deleting recylcer.exe with the correct ATT&CK Tactic (Defense Evasion) and Technique (File Deletion) and a suspicious indicator that an executable file was deleted from the system root folder.",
+    "Telemetry showed file deletion event for recycler.exe. The telemetry was tainted by a trace detection on cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.D.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for the command prompt tool executed by masquerading an accessibility tool. The alert was tagged with the correct ATT&CK Tactics (Persistence, Privilege Escalation) and Technique (Accessibility Features).",
+    "Telemetry showed magnify.exe (original name identified as cmd.exe) executing from utilman.exe. The telemetry was tainted by a trace detection on magnify.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.A.1.1",
+  "Subtechnique": "T1546.008",
+  "Subtechnique_Name": "Event Triggered Execution: Accessibility Features",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.A.1.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": "",
+  "Datasources": [],
+  "Detection": [
+    "Specific Behavior",
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Tainted"
+  ],
+  "DetectionText": [
+    "A Specific Behavior alert was generated for the whoami command was executed through a masqueraded tool (magnify.exe).",
+    "Telemetry showed magnify.exe (original name identified as cmd.exe) executing whoami.exe. The telemetry was tainted by a trace detection on magnify.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "McAfee",
+  "Procedure": "",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.B.1",
+  "Subtechnique": "",
+  "Subtechnique_Name": "",
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
