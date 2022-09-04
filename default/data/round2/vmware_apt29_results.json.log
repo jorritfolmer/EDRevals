@@ -1,0 +1,3793 @@
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The rcs.3aka3.doc process spawning from explorer.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed explorer.exe executing rcs.3aka3.doc.",
+    "A General alert detection (blue indicator) was generated for rcs.3aka3.doc being tagged as suspicious.",
+    "An MSSP detection for the execution of the malicious document rcs.3aka3.doc file."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking Suspect Malware from executing."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "User Pam executed payload rcs.3aka3.doc",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence of the right-to-left override character (U+202E) in the rcs.3aka.doc process OR the original filename (cod.3aka.scr)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed that the file was a .scr binary, and that the filename included the unicode character for RTLO."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Used unicode right-to-left override (RTLO) character to obfuscate file name rcs.3aka3.doc (originally cod.3aka.scr)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1036.002",
+  "Subtechnique_Name": "Masquerading: Right-to-Left Override",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over port 1234",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the rcs.3aka3.doc process connecting to 192.168.0.5 over TCP port 1234.",
+    "An MSSP detection was generated for rcs.3aka3.doc connecting to 192.168.0.5."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking Office Documents making network connections."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Established C2 channel (192.168.0.5) via rcs.3aka3.doc payload over TCP port 1234",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1095",
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is encrypted",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Used RC4 stream cipher to encrypt C2 (192.168.0.5) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.4",
+  "Subtechnique": "T1573.001",
+  "Subtechnique_Name": "Encrypted Channel: Symmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe spawning from the rcs.3aka3.doc process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe spawning from rcs.3aka3.doc. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for cmd.exe spawning from rcs.3aka3.doc."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking Office documents or untrusted applications spawning command interpreters."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Spawned interactive cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from cmd.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showing powershell.exe spawning from cmd.exe. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A General alert detection (red indicator) was generated for \"AMSI - Abnormal Fileless command-line length being executed.\" The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for cmd.exe spawning powershell.exe."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking Office documents or untrusted applications spawning command interpreters."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Spawned interactive powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for the use of ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Searched filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for the use of ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Compress-Archive",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe compressing via Compress-Archive. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) called \"Data Compressed via Command Interpreter for Staging\" was generated for a file modification with the .zip extension. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Compressed and stored files into ZIP (Draft.zip) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.4",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file draft.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed file creation of Draft.zip. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated referencing the creation of Draft.zip for later exfiltration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Staged files for exfiltration into ZIP (Draft.zip) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.5",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The rcs.3aka3.doc process reading the file draft.zip while connected to the C2 channel",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Read and downloaded ZIP (Draft.zip) over C2 channel (192.168.0.5 over TCP port 1234)",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The rcs.3aka3.doc process creating the file monkey.png",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc creating monkey.png. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dropped stage 2 payload (monkey.png) to disk",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that a PowerShell payload was within monkey.png",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell extracting and executing the code embedded within monkey.png. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A General alert detection was generated for the execution of the PowerShell executing a fileless script or command. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Embedded PowerShell payload in monkey.png using steganography",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.2",
+  "Subtechnique": "T1027.003",
+  "Subtechnique_Name": "Obfuscated Files or Information: Steganography",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the Registry modifications of the DelegateExecute Registry value. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for the Registry Modification of the command subkey."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "High integrity powershell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed control.exe creating a high integrity powershell.exe. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Tactic alert detection was generated for \"Privilege Escalation\" based on suspicious PowerShell behavior.",
+    "An MSSP detection was generated for the use of sdclt.exe as a high privilege process, which called control.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed elevated PowerShell payload",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over port 443",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe connecting to 192.168.0.5 on TCP port 443. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking powershell making network connections."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Established C2 channel (192.168.0.5) via PowerShell payload over TCP port 443",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is HTTPS",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Used HTTPS to transport C2 (192.168.0.5) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.4",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is encrypted",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.5) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.5",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Deletion of of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the deletion of the command subkey. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file SysinternalsSuite.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of the ZIP by PowerShell. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) was generated for \"Sysinternals Tools Downloaded via Command Interpreter.\" The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dropped additional tools (SysinternalsSuite.zip) to disk over C2 channel (192.168.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed a new powershell.exe spawning from powershell.exe. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking Powershell or untrusted applications spawning command interpreters."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Spawned interactive powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Expand-Archive",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell decompressing the ZIP via Expand-Archive as well as the subsequent file writes. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A General alert detection (yellow indicator) for powershell.exe fileless script or command was generated for \"code_drop\" and \"detected_pup_app\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Decompressed ZIP (SysinternalsSuite.zip) file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated current running processes using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file rcs.3aka3.doc",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments and subsequently writing to and deleting the file. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) called \"File Deletion - sdelete execution\" was generated due to Sdelete64.exe deleting rcs.3aka3.doc. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) for secure delete of sensitive data was generated due to Sdelete64.exe deleting rcs.3aka3.doc. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted rcs.3aka3.doc on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file draft.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments and subsequently writing to and deleting the file. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) called \"File Deletion - sdelete execution\"  was generated due to Sdelete64.exe deleting Draft.zip. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) for secure delete of sensitive data was generated due to Sdelete64.exe deleting Draft.Zip. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted Draft.zip on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file SysinternalsSuite.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments and subsequently writing to and deleting the file. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) called \"File Deletion - sdelete execution\" was generated due to Sdelete64.exe deleting SysinternalsSuite.zip. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) for secure delete of sensitive data was generated due to Sdelete64.exe deleting SysinternalsSuite.zip. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for the of SysinternalsSuite.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted SysinternalsSuite.zip on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:TEMP",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated user's temporary directory path using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:USERNAME",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the current username using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:COMPUTERNAME",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the computer hostname using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:USERDOMAIN",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the current domain name using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $PID",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the current process ID using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Gwmi Win32_OperatingSystem",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the OS version using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-WmiObject ... -Class AntiVirusProduct",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated anti-virus software using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.7",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-WmiObject ... -Class FireWallProduct",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated firewall software using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.8",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the NetUserGetGroups API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated user's domain group membership via the NetUserGetGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.9",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The NetUserGetGroups API function loaded into powershell.exe from Netapi32.dll",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.10",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the NetUserGetLocalGroups API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated user's local group membership via the NetUserGetLocalGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.11",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The NetUserGetLocalGroups API function loaded into powershelle.exe from Netapi32.dll",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.12",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the Javamtsup service",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Created a new service (javamtsup) that executes a service binary (javamtsup.exe) at system startup",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.A.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file hostui.lnk in the Startup folder",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of hostui.lnk in the Startup folder. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection called \"Persistence - PowerShell Startup Folder\" was generated due to hostui.lnk being written to the Startup folder. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Created a LNK file (hostui.lnk) in the Startup folder that executes on login",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "accesschk.exe reading files within %APPDATALOCAL%\\Google\\chrome\\user data\\default\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "The vendor states that this activity would have been blocked. "
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Read the Chrome SQL database file to extract encrypted credentials",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "accesschk.exe executing the CryptUnprotectedData API",
+  "Datasources": [],
+  "Detection": [
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "An MSSP detection was generated for the execution of accesschk.exe to dump passwords."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed the CryptUnprotectedData API call to decrypt Chrome passwords",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that accesschk.exe is not the legitimate Sysinternals tool",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed accesschk.exe is not a signed Microsoft binary with hash values provided. This can be used to verify it is not the legitimate Sysinternals tool.",
+    "A General alert detection (red indicator) was generated for a \"PUP or Potentially Unwanted Program (PUP: ChromePassRecovery)\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Masqueraded a Chrome password dump tool as accesscheck.exe, a legitimate Sysinternals tool",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.3",
+  "Subtechnique": "T1036.005",
+  "Subtechnique_Name": "Masquerading: Match Legitimate Name or Location",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating a certificate file exported from the system",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed file create event for a $RandomFileName.pfx file by powershell.exe. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A General alert detection (red indicator) was generated for \"PFX Extraction via PowerShell\" on filemod of the $RandomFileName.pfx file. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated for a file create event of $RandomFileName.pfx file by powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Exported a local certificate to a PFX file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.B.1",
+  "Subtechnique": "T1552.004",
+  "Subtechnique_Name": "Unsecured Credentials: Private Keys",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe injecting into lsass.exe OR lsass.exe reading Registry keys under HKLM:\\SAM\\SAM\\Domains\\Account\\Users\\",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe opening a handle to a lsass.exe thread. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dumped password hashes from the Windows Registry by injecting a malicious DLL into Lsass.exe",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the CopyFromScreen function from System.Drawing.dll",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing CopyFromScreen from System.Drawing.dll. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator)  called \"Screen Capture using Powershell\" was generated for a powershell.exe modload for gdiplus.dll. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection was generated containing evidence of PowerShell capturing screenshots."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Captured and saved screenshots using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Clipboard",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Clipboard. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Technique alert detection (red indicator) called \"AMSI - Clipboard Monitoring\" was generated for fileless_scriptload of Get-Clipboard. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection occurred containing evidence of PowerShell capturing clipboard data."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Captured clipboard contents using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the GetAsyncKeyState API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetAsyncKeyState API. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "An MSSP detection occurred containing evidence of key logging."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Captured user keystrokes using the GetAsyncKeyState API",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.3",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading files in C:\\Users\\pam\\Downloads\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Read data in the user's Downloads directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file OfficeSupplies.7z",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file creation event for OfficeSupplies.7z. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Compressed data from the user's Downloads directory into a ZIP file (OfficeSupplies.7z) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Compress-7Zip with the password argument used for encryption",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Encrypted data from the user's Downloads directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.3",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell executing Copy-Item pointing to an attack-controlled WebDav network share (192.168.0.4:80)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell creating OfficeSupplies.7z on a remote adversary WebDav network share (192.168.0.4). The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Exfiltrated collection (OfficeSupplies.7z) to WebDAV network share using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.4",
+  "Subtechnique": "T1048.003",
+  "Subtechnique_Name": "Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe making LDAP queries over port 389 to the Domain Controller (10.0.0.4)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe establishing a connection to NewYork (10.0.0.4) over TCP port 389. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated remote systems using LDAP queries",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "Tactic",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed network connection to remote host Scranton (10.0.1.4) over port TCP 5985. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A General alert detection (red indicator) was generated for suspicious fileless execution not originating from PowerShell.",
+    "A Technique alert detection (red indicator) was generated for \"Powershell or WinRM remoting activity\" based on wsmprovhost.exe.",
+    "A Tactic alert detection called \"Remote Services\" was generated for the use of powershell.exe with a destination port 5985. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious.",
+    "A Tactic alert detection called \"Remote powershell activity\" was generated for the use of powershell.exe with a destination port 5985. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Established WinRM connection to remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process. The detection was correlated to a parent alert for Powershell or WinRM remoting activity."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated processes on remote host Scranton (10.0.1.4) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The file python.exe created on Scranton (10.0.1.4)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the filemod event for the creation of python.exe on the remote host Scranton (10.0.1.4). Telemetry also showed the file write from the local host. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Copied python.exe payload from a WebDAV share (192.168.0.4) to remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the file python.exe is packed",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "python.exe payload was packed with UPX",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.2",
+  "Subtechnique": "T1027.002",
+  "Subtechnique_Name": "Obfuscated Files or Information: Software Packing",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Successful logon as user Pam on Scranton (10.0.1.4)",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Logged on to remote host Scranton (10.0.1.4) using valid credentials for user Pam",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "SMB session to Scranton (10.0.1.4) over TCP port 445/135 OR evidence of usage of a Windows share",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed an SMB session from Nashua (10.0.1.6) to Scranton (10.0.1.4) over TCP port 135. The detection was correlated to a parent alert identifying rcs.3aka3.doc as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Established SMB session to remote host Scranton's (10.0.1.4) IPC$ share using PsExec",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe spawned by PSEXESVC.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe spawned by PSEXESVC.exe",
+    "A Technique alert detection (red indicator) called \"T1035 & T1077 - Service Execution - psexec - target\" was generated due to a process running remotely with PsExec."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed python.exe using PSExec",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.3",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe creating the file rar.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file create event for rar.exe by python.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dropped rar.exe to disk on remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe creating the file sdelete64.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file create event for sdelete64.exe by python.exe.  The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dropped sdelete.exe to disk on remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from python.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe executing powershell.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A General alert detection (red indicator) was generated for the execution of a abnormal fileless command-line length. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Spawned interactive powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Searched filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing ChildItem. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file working.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed a filemod event for powershell.exe creating working.zip. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Staged files for exfiltration into ZIP (working.zip in AppData directory) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.5",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing rar.exe with the -a parameter for a password to use for encryption",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Encrypted staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.6",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing rar.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A Technique alert detection (red indicator) called \"Data Compressed via Command Interpreter for Staging\" was generated due to powershell.exe executing rar.exe creating a filemod event for working.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Compressed staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.7",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe reading the file working.zip while connected to the C2 channel",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Read and downloaded ZIP (working.zip on Desktop) over C2 channel (192.168.0.5 over TCP port 8443)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file rar.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete rar.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A General alert detection (red indicator) for potential malware was generated for cmd.exe running multiple commands on behalf of python.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A Technique alert detection (red indicator) for secure delete of sensitive data was generated due to Sdelete64.exe deleting Rar.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A Technique alert detection (red indicator) called File Deletion was generated when sdelete64.exe with command-line arguments was used to delete Rar.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted rar.exe on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file \\Desktop\\working.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Desktop\\working.zip. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A General alert detection (red indicator) for potential malware was generated for cmd.exe running multiple commands on behalf of python.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A Technique alert detection (red indicator) for secure delete of sensitive data was generated due to Sdelete64.exe deleting Desktop\\working.zip. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A Technique alert detection (red indicator) called File Deletion was generated when sdelete64.exe with command-line arguments was used to delete Desktop\\working.zip. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted working.zip (from Desktop) on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file \\AppData\\Roaming\\working.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Roaming\\working.zip. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A General alert detection (red indicator) for potential malware was generated for cmd.exe running multiple commands on behalf of python.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted working.zip (from AppData directory) on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe deleting the file sdelete64.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe deleting sdelete64.exe and filemod(delete) event. The detection was correlated to a parent alert on psexesvc.exe for service execution.",
+    "A General alert detection (red indicator) for potential malware was generated for cmd.exe running multiple commands on behalf of python.exe. The detection was correlated to a parent alert on psexesvc.exe for service execution."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Deleted SDelete on disk using cmd.exe del command",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "javamtsup.exe spawning from services.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed rundll32.exe with a parent process of javamtsup.exe (identified as being spawned from services.exe)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed persistent service (javamtsup) on system startup",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the file hostui.lnk (which executes hostui.bat as a byproduct) was executed from the Startup Folder",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed LNK payload (hostui.lnk) in Startup Folder on user login",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "hostui.exe executing the CreateProcessWithToken API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed PowerShell payload via the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "hostui.exe manipulating the token of powershell.exe via the CreateProcessWithToken API OR powershell.exe executing with the stolen token of explorer.exe",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Manipulated the token of the PowerShell payload via the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.3",
+  "Subtechnique": "T1134.002",
+  "Subtechnique_Name": "Access Token Manipulation: Create Process with Token",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from explorer.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed explorer.exe spawning powershell.exe.",
+    "A General alert detection (red indicator) was generated for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "User Oscar executed payload 37486-the-shocking-truth-about-election-rigging-in-america.rtf.lnk",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the schemas ADS via Get-Content and IEX",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the schemas ADS with Get-Content and IEX.",
+    "A General alert detection (red indicator) was generated for the use of PowerShell executing with Invoke-Expression."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed an alternate data stream (ADS) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.2",
+  "Subtechnique": "T1564.004",
+  "Subtechnique_Name": "Hide Artifacts: NTFS File Attributes",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1564",
+  "Technique_Name": "Hide Artifacts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_BIOS",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_BIOS."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Checked that the BIOS version and serial number are not associated with VirtualBox or VMware using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.3",
+  "Subtechnique": "T1497.001",
+  "Subtechnique_Name": "Virtualization/Sandbox Evasion: System Checks",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1497",
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject gwmi queries for Win32_BIOS and Win32_ComputerSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi queries for Win32_BIOS and Win32_ComputerSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated computer manufacturer, model, and version information using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_PnPEntity",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_PnPEntity."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated devices/adapters to check for presence of VirtualBox driver(s) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "Technique_Name": "Peripheral Device Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_ComputerSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Checked that the username is not related to admin or a generic value (ex: user) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_ComputerSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Checked that the computer is joined to a domain using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_Process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Checked that processes such as procexp.exe, taskmgr.exe, or wireshark.exe are not running using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-Item -Path \".\\\" -Verbose).FullName",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-Item for the current path."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Checked that the payload is not inside a folder path that contains \"sample\" or is the length of a hash value using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.9",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "certutil.exe decoding kxwn.lock",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the certutil.exe process and corresponding file write of the kxwn.lock payload.",
+    "A General alert detection (red indicator) was generated for a executable file found in memory.",
+    "A Technique alert detection (red indicator) for \"Deobfuscate/Decode Files or Information - certuil\" was generated for the use of certutil.exe decoding a payload.",
+    "A Technique alert detection (red indicator) for \"Deobfuscate/Decode Files or Information\" was generated for the use of certutil.exe decoding a payload.",
+    "An MSSP detection for was received that described the adversary executing certutil.exe to decode a base64 blob into the payload kxwn.lock."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Decoded an embedded DLL payload to disk using certutil.exe",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.10",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of the Webcache subkey in HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe adding Run key persistence into the Registry.",
+    "A Technique alert detection (red indicator) for Registry Run Keys was generated based on powershell.exe modifying the Run key."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Established Registry Run key persistence using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.11",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from from the schemas ADS (powershell.exe)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe spawned from a PowerShell stager.",
+    "A Technique alert detection (red indicator) was generated for powershell.exe executing encoded instructions.",
+    "A Technique alert detection (red indicator) was generated for PowerShell executing hidden, encoded commands."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed PowerShell stager payload",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.12",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over port 443",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to the C2 (192.168.0.4) over TCP port 443.",
+    "A General alert detection (red indicator) was generated for .NET attempting to make suspicious network connections."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking powershell making network connections."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Established C2 channel (192.168.0.4) via PowerShell payload over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.13",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over the HTTPS protocol",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Used HTTPS to transport C2 (192.168.0.4) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.14",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is encrypted",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.4) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.15",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (gci ((gci env:windir).Value + '\\system32')",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell enumeration of System32. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the System32 directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe modifying the creation, last access, and last write times of kxwn.lock",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed script block with commands to timestomp kxwn.lock as well as the execution of the timestomp function against the kxwn.lock file. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe.",
+    "An MSSP detection occurred containing evidence of PowerShell modifying filesystem access and write times of the kxwn.lock file."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Modified the time attributes of the kxwn.lock persistence payload using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.2",
+  "Subtechnique": "T1070.006",
+  "Subtechnique_Name": "Indicator Removal on Host: Timestomp",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for AntiVirusProduct",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell gwmi query for AntiVirusProduct. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated registered AV products using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.B.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed script block with registry query for installed software. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe.",
+    "An MSSP detection occurred containing evidence of PowerShell querying the registry."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated installed software via the Registry (Wow6432 Uninstall key) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed script block with registry query for installed software. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe.",
+    "An MSSP detection occurred containing evidence of PowerShell querying the registry."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated installed software via the Registry (Uninstall key) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the GetComputerNameEx API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetComputerNameEx API. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the computer name using the GetComputerNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the NetWkstaGetInfo API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the NetWkstaGetInfo API. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the domain name using the NetWkstaGetInfo API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the GetUserNameEx API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetUserNameEx API. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the current username using the GetUserNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the CreateToolhelp32Snapshot API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the CreateToolhelp32Snapshot API. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated running processes using the CreateToolhelp32Snapshot API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.D.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the addition of the DelegateExecute Registry value. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe.",
+    "An MSSP detection occurred containing evidence of the addition of the DelegateExecute Registry value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "High integrity powrshell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "Tactic",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection was generated for bypassing UAC with sdclt.exe.",
+    "A Tactic alert detection was generated for supicious privilege escalation process behavior by PowerShell.",
+    "An MSSP detection occurred containing evidence of PowerShell elevating privileges via a UAC bypass using sdclt.exe and control.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed elevated PowerShell payload",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Deletion of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the deletion of the Registry value. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe.",
+    "An MSSP detection occurred containing evidence of the deletion of the DelegateExecute Registry value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "WMI Process (WmiPrvSE.exe) executing powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed WmiPrvSe.exe executing powershell.exe.",
+    "A General alert detection (red indicator) for Privilege Escalation was generated for suspicious PowerShell behavior.",
+    "A Technique alert detection (red indicator) for Windows Management Instrumentation was generated for WmiPrvSE.exe executing powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Created and executed a WMI class using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "Technique_Name": "Windows Management Instrumentation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-Process.",
+    "A Technique alert detection (orange indicator) was generated for PowerShell enumerating processes. The detection was correlated to a parent alert for Windows Management Instrumentation."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated and tracked PowerShell processes using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloading and/or the file write of m.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "General",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell command to download m.exe. Telemetry also showed the file create event for m.exe into the System32 folder. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A General alert detection (red indicator) was generated for PowerShell with network connections spawned by WMI. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A General alert detection (red indicator) was generated for .Net attempting suspicious network connections. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A General alert detection (red indicator) was generated for powershell.exe executing a fileless script or command."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Downloaded and dropped Mimikatz (m.exe) to disk",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "m.exe injecting into lsass.exe to dump credentials",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed m.exe opening lsass.exe with OpenProcess. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A General alert detection (red indicator) was generated for powershell.exe executing a fileless script or command.",
+    "A Technique alert detection (red indicator) for \"Credential Dumping\" was generated for command-line arguments indicative of Mimikatz credential dumping. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "An MSSP detection occurred containing evidence of PowerShell executing Mimikatz to obtain login credentials."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking powershell from executing untrusted applications or blocking PUP applications from executing. Credential dumping can be blocked by preventing untrusted applications from reading the memory of other processes."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Dumped plaintext credentials using Mimikatz (m.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.4",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Set-WmiInstance",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell writing encoded content into the WMI class. The detection was correlated to a parent alert for Windows Management Instrumentation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Encoded and wrote Mimikatz output to a WMI class property using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-WmiInstance",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reading encoded content from the WMI class. The detection was correlated to a parent alert for Windows Management Instrumentation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Read and decoded Mimikatz output from a WMI class property using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:UserName",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell script block executing $env:UserName. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated logged on users using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe.",
+    "A Technique alert detection (red indicator) was generated for PowerShell establishing WMI event subscription persistence.",
+    "An MSSP detection occurred containing evidence of PowerShell establishing WMI event subscription persistence."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Established WMI event subscription persistence using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe making LDAP queries over port 389 via functions from System.DirectoryServices.dll",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to the domain controller NewYork (10.0.0.4) over TCP port 389 and a modload for System.DirectoryServices.dll. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the domain controller host NewYork (10.0.0.4) using LDAP queries",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the ConvertSidToStringSid API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing the ConvertSidToStringSid API function. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Enumerated the domain SID (from current user SID) using the ConvertSidToStringSid API",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the ConvertSidToStringSid API function by loading Advapi32.dll",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reflectively loading Advapi32.dll inorder to execute the ConvertSidToStringSid API function. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed the ConvertSidToStringSid API call by reflectively loading Advapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Network connection to NewYork (10.0.0.4) over port 5985",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe.",
+    "A Technique alert detection (red indicator) was generated on NewYork (10.0.0.4) for a remote PowerShell session based on the identification of the WinRM process (wsmprovhost.exe).",
+    "A Tactic alert detection (yellow indicator) was generated for powershell.exe accessing the network. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Established a WinRM connection to the domain controller host NewYork (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Successful logon as user MScott on NewYork (10.0.0.4)",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Logged on to the domain controller host NewYork (10.0.0.4) using valid credentials for user MScott",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "File write of m.exe by the WinRM process (wsmprovhost.exe)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed a filemod for the creation of m.exe in the System32 directory by wsmprovhost.exe.",
+    "A Technique alert detection (red indicator) was generated for a code drop of m.exe (identified as Mimikatz by the file metadata)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dropped Mimikatz (m.exe) to disk on the domain controller host NewYork (10.0.0.4) over a WinRM connection",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "m.exe injecting into lsass.exe to dump credentials",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Correlated",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed m.exe opening lsass.exe with OpenProcess. The detection was correlated to a parent alert for a code drop of m.exe.",
+    "A General detection was generated for process injection by m.exe. The detection was correlated to a parent alert for a code drop of m.exe.",
+    "A Technique alert detection (red indicator) for \"Credential Dumping\" was generated for command-line arguments indicative of Mimikatz credential dumping."
+  ],
+  "Footnotes": [
+    "According to the vendor, the VMware Carbon Black Cloud could be configured to prevent this activity by implementing rules blocking PUP applications from executing. Credential dumping can be prevented by implementing rules blocking untrusted applications reading the memory of another process."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Dumped the KRBTGT hash on the domain controller host NewYork (10.0.0.4) using Mimikatz (m.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.2",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "outlook.exe spawning from svchost.exe or powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed outlook.exe spawning from svchost.exe, which is indicative of programmatic access to Outlook emails. The detection was correlated to a parent alert for the execution of powershell.exe from explorer.exe.",
+    "A General alert detection (red indicator) called \"Suspicious loading of Outlook .NET assembly\"  was generated for powershell.exe interacting with an Outlook DLL.",
+    "A Technique alert detection (red indicator) called \"Fileless Reconnaissance of Outlook Folder data\"  was generated for powershell.exe interacting with Outlook.",
+    "An MSSP detection occurred containing evidence of PowerShell collecting emails."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Dumped messages from the local Outlook inbox using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "Technique_Name": "Email Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading the file MITRE-ATTACK-EVALS.HTML",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Read and collected a local file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file \\WindowsParentalControlMigration\\MITRE-ATTACK-EVALS.HTML",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file create event for MITRE-ATTACK-EVALS.HTML. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe.",
+    "An MSSP detection occurred containing evidence of PowerShell staging a collected file into a directory."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Staged collected file into directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the ZipFile.CreateFromDirectory .NET method",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell compressing collection via the ZipFile.CreateFromDirectory .NET method. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe.",
+    "An MSSP detection occurred containing evidence of PowerShell compressed a staging directory."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Compressed a staging directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Set-Content",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell appending the GIF file header to the compressed file. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Prepended the GIF file header to a compressed staging file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "net.exe with command-line arguments then making a network connection to a public IP over port 443",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Correlated"
+  ],
+  "DetectionText": [
+    "Telemetry showed net.exe with command-line arguments to connect to a OneDrive URL as well as net.exe subsequently making a network connection to public IPs over port 443. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe.",
+    "A General alert detection was generated for net.exe making network connections. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Mapped a network drive to an online OneDrive account using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1102",
+  "Technique_Name": "Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Copy-Item pointing to drive mapped to an attack-controlled OneDrive account",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Copy-Item to exfiltrate data to a OneDrive account, along with the creation of the exfiltrated data within the OneDrive. The detection was correlated to a parent alert for bypassing UAC with sdclt.exe.",
+    "An MSSP detection occurred containing evidence of PowerShell executing Copy-Item to exfiltrate data to a previously mapped OneDrive account."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Exfiltrated staged collection to an online OneDrive account using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.2",
+  "Subtechnique": "T1567.002",
+  "Subtechnique_Name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1567",
+  "Technique_Name": "Exfiltration Over Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executing kxwn.lock",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed rundll32.exe executing kxwn.lock.",
+    "An MSSP detection occurred containing evidence of rundll32.exe executing kxwn.lock."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed Run key persistence payload on user login using RunDll32",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.1",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The WMI process (wmiprvse.exe) executing powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed wmiprvse.exe executing the PowerShell stager.",
+    "A General alert detection was generated for PowerShell having an unusual parent.",
+    "A Technique alert detection (red indicator) was generated for Windows Management Instrumentation based on wmiprvse.exe executing PowerShell stager.",
+    "A Technique alert detection (red indicator) was generated for a PowerShell with network connections launched by WMI."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed WMI persistence on user login",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "SYSTEM-level powershell.exe spawned from the powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe spawning from wmiprvse.exe with SYSTEM-level integrity.",
+    "A General alert detection was generated for a hidden PowerShell with an Unusual Parent.",
+    "A Technique alert detection (red indicator) was generated for PowerShell executing hidden, encoded commands."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed PowerShell payload from WMI event subscription persistence",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Invoke-Mimikatz with command-line arguments to create a golden ticket",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the contents of the Invoke-Mimikatz script along with PowerShell executing Invoke-Mimikatz to create and inject a golden ticket into the current session. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A General alert detection (red indicator) was generated for a Credential Theft Application Running.",
+    "A General alert detection (red indicator) was generated for PowerShell running Mimikatz.",
+    "An MSSP detection occurred containing evidence of PowerShell executing Invoke-Mimikatz to create and inject a golden ticket into the current session."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Created Kerberos Golden Ticket using Invoke-Mimikatz",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.1",
+  "Subtechnique": "T1550.003",
+  "Subtechnique_Name": "Use Alternate Authentication Material: Pass the Ticket",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1550",
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Tactic",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing the Enter-PSSession cmdlet to open a network connection to the remote host Scranton (10.0.1.4). The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A Technique alert detection (red indicator) called \"Powershell or WinRM remoting activity\" was generated for a powershell WinRM session on the remote host Scranton (10.0.1.4).",
+    "A Tactic alert detection (red indicator) called for remote PowerShell activity was generated for a PowerShell WinRM session.",
+    "An MSSP detection occurred containing evidence of PowerShell create a WinRM session to remote host Scranton (10.0.1.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Established a WinRM connection to the remote host Scranton (10.0.1.4) using the Golden Ticket as credentials",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "net.exe adding the user Toby",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Correlated",
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell command to add the new User Toby to the remote host Scranton (10.0.1.4). Telemetry also subsequently showed wsmprovhost.exe spawning net.exe with the command-line arguments. The detection was correlated to a parent alert for Windows Management Instrumentation.",
+    "A General alert detection (red indicator) was generated for a process spawned from PowerShell remoting (WinRM).",
+    "A Technique alert detection (red indicator) was generated for the creation of a local user with Net.",
+    "An MSSP detection occurred containing evidence of PowerShell adding new user to the remote host Scranton (10.0.1.4) using net.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Added a new user to the remote host Scranton (10.0.1.4) using net.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.3",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}

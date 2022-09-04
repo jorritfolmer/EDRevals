@@ -1,0 +1,3695 @@
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The rcs.3aka3.doc process spawning from explorer.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed explorer.exe executing rcs.3aka3.doc.",
+    "A General alert detection was generated identifying rcs.3aka3.doc as malware.",
+    "An MSSP detection for \"process spawning with an uncommon file extension\" occurred containing evidence of explorer.exe executing rcs.3aka3.doc."
+  ],
+  "Footnotes": [
+    "According to the vendor, this would have been prevented due to rcs.3aka3.doc being identified as malware."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "User Pam executed payload rcs.3aka3.doc",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence of the right-to-left override character (U+202E) in the rcs.3aka.doc process OR the original filename (cod.3aka.scr)",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection  (low severity) called \"Process Without Common Executable Extension\" was generated when an executable file ran without a valid signature created a process.",
+    "A MSSP detection for \"Process Without Common Executable Extension\" occurred containing evidence of an executable file ran without a valid signature creating a process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Used unicode right-to-left override (RTLO) character to obfuscate file name rcs.3aka3.doc (originally cod.3aka.scr)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1036.002",
+  "Subtechnique_Name": "Masquerading: Right-to-Left Override",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over port 1234",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the rcs.3aka3.doc process connecting to 192.168.0.5 on TCP port 1234.",
+    "A Tactic alert detection (low severity) called \"Unsigned Application Network Beaconing\" was generated when the rcs.3aka3.doc process made a network connection.",
+    "An MSSP detection for \"Unsigned Application Network Beaconing\" occurred containing evidence of rcs.3aka3.doc process connecting to C2(192.168.0.5) on port 1234."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Established C2 channel (192.168.0.5) via rcs.3aka3.doc payload over TCP port 1234",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1095",
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is encrypted",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Used RC4 stream cipher to encrypt C2 (192.168.0.5) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.4",
+  "Subtechnique": "T1573.001",
+  "Subtechnique_Name": "Encrypted Channel: Symmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe spawning from the rcs.3aka3.doc process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed cmd.exe spawning from rcs.3aka3.doc.",
+    "A MSSP detection occurred containing evidence of cmd.exe spawning from rcs.3aka3.doc."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Spawned interactive cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from cmd.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe spawning from cmd.exe.",
+    "A Tactic alert detection (info severity) called \"Win_User_Execution_MITRET1204\" was generated due to a process targeting an *.exe filename."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Spawned interactive powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing ChildItem.",
+    "An MSSP detection for \"Win_AutomatedCollection_DirScanART_MITRET1119\" occurred containing evidence of powershell.exe executing Get-ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Searched filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-ChildItem.",
+    "A Technique alert detection (high severity) called \"Win_AutomatedCollection_DirScanART_MITRET1119\" was generated due to powershell.exe executing Get-ChildItem.",
+    "An MSSP detection for \"Win_AutomatedCollection_DirScanART_MITRET1119\" occurred containing evidence of powershell.exe executing Get-ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Compress-Archive",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Compress-Archive.",
+    "A Technique alert detection (high severity) called \"Win_Data_Compressed_ART_MITRET1002\"  was generated due to PowerShell payload containing \"Compress-Archive\" and \"-DestinationPath\"."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Compressed and stored files into ZIP (Draft.zip) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.4",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file draft.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed file creation of Draft.zip."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Staged files for exfiltration into ZIP (Draft.zip) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.A.5",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The rcs.3aka3.doc process reading the file draft.zip while connected to the C2 channel",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Read and downloaded ZIP (Draft.zip) over C2 channel (192.168.0.5 over TCP port 1234)",
+  "ScreenshotDatasources": [],
+  "Step": "2. Collection and Exfiltration",
+  "Substep": "2.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The rcs.3aka3.doc process creating the file monkey.png",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed rcs.3aka3.doc creating monkey.png."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Dropped stage 2 payload (monkey.png) to disk",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that a PowerShell payload was within monkey.png",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell extracting and executing the code embedded within monkey.png."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Embedded PowerShell payload in monkey.png using steganography",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.A.2",
+  "Subtechnique": "T1027.003",
+  "Subtechnique_Name": "Obfuscated Files or Information: Steganography",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a PowerShell command to add the DelegateExecute Registry Value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "High integrity powershell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed elevated PowerShell payload",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over port 443",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe connecting to 192.168.0.5 on TCP 443.",
+    "A General alert detection (info severity) called \"Powershell Network Connections\" was generated for PowerShell making a network connection to 192.168.0.5 over port 443."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Established C2 channel (192.168.0.5) via PowerShell payload over TCP port 443",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is HTTPS",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Used HTTPS to transport C2 (192.168.0.5) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.4",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is encrypted",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.5) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.B.5",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Deletion of of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell command to remove the DelegateExecute Registry Value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking",
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Stealth Toolkit",
+  "Substep": "3.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file SysinternalsSuite.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the file write of the ZIP by PowerShell."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Dropped additional tools (SysinternalsSuite.zip) to disk over C2 channel (192.168.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a new powershell.exe spawning from powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Spawned interactive powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Expand-Archive",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell decompressing the ZIP via Expand-Archive and corresponding file writes"
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Decompressed ZIP (SysinternalsSuite.zip) file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process.",
+    "A Technique alert detection (low severity) called \"Win_GetSystemProcess_Powershell-MITRET1057\" was generated due to powershell.exe executing Get-Process."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated current running processes using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file rcs.3aka3.doc",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events.",
+    "A Technique alert detection (medium severity) called \"Sdelete Usage\" was generated due to sdelete64.exe deleting cod.3aka3.scr.",
+    "A MSSP detection for \"Evading Detection\" occurred containing evidence of sdelete64.exe deleting files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted rcs.3aka3.doc on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file draft.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events.",
+    "A Technique alert detection (medium severity) called \"Sdelete Usage\" was generated due to sdelete64.exe deleting Draft.Zip.",
+    "A MSSP detection for \"Evading Detection\" occurred containing evidence of sdelete64.exe deleting files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted Draft.zip on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file SysinternalsSuite.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete.exe running with command-line arguments to delete the file and the subsequent file rename and delete events.",
+    "A Technique alert detection (medium severity) called \"Sdelete Usage\" was generated due to sdelete64.exe deleting SysinternalsSuite.zip.",
+    "A MSSP detection for \"Evading Detection\" occurred containing evidence of sdelete64.exe deleting files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted SysinternalsSuite.zip on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.B.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:TEMP",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:TEMP.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using $env:TEMP."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated user's temporary directory path using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:USERNAME",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:USERNAME.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using $env:USERNAME."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the current username using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:COMPUTERNAME",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:COMPUTERNAME.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using $env:COMPUTERNAME."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the computer hostname using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:USERDOMAIN",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $env:USERDOMAIN.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using $env:USERDOMAIN."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the current domain name using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $PID",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $PID.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using $PID."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the current process ID using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Gwmi Win32_OperatingSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Gwmi Win32_OperatingSystem.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using Gwmi Win32_OperatingSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the OS version using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-WmiObject ... -Class AntiVirusProduct",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing $Gwmi WmiObject ... -Class AntiVirusProduct.",
+    "A Technique alert detection (high severity) called \"Win_SecSoftwareEnum_Powershell_MITRETT1063\" was generated when powershell.exe called Get-WMIObject with AntiVirusProduct.",
+    "A Technique alert detection (medium severity) called \"Win_WMI_SecProduct_Enum_NonSYS_MITRET1063\" was generated when a WMI query targeted AntiVirusProduct.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using Get-WMIObject with AntiVirusProduct. An alert for \"Win_SecSoftwareEnum_Powershell_MITRETT1063\" was shown."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated anti-virus software using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.7",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-WmiObject ... -Class FireWallProduct",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-WmiObject targeting FireWallProduct.",
+    "A MSSP detection for \"Environment Enumeration\" occurred containing evidence of \"Invoke-Discovery\" function definition using Get-WmiObject targeting FireWallProduct."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated firewall software using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.8",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the NetUserGetGroups API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated user's domain group membership via the NetUserGetGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.9",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The NetUserGetGroups API function loaded into powershell.exe from Netapi32.dll",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.10",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the NetUserGetLocalGroups API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated user's local group membership via the NetUserGetLocalGroups API",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.11",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The NetUserGetLocalGroups API function loaded into powershelle.exe from Netapi32.dll",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed API call by reflectively loading Netapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "4. Clean Up and Reconnaissance",
+  "Substep": "4.C.12",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the Javamtsup service",
+  "Datasources": [],
+  "Detection": [
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "A Technique alert detection (high severity) called \"Win_Powershell_NewService_MITRET1050\" was generated due to PowerShell creating the new service javamtsup.",
+    "An MSSP detection for \"Persistence Mechanisms\" occurred containing evidence of javamtsup service launching C:\\Windows\\System32\\javamtsup.exe and New-Service cmdlet usage."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Created a new service (javamtsup) that executes a service binary (javamtsup.exe) at system startup",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.A.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Persistence",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file hostui.lnk in the Startup folder",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed the file write of hostui.lnk in the Startup folder.",
+    "A Technique alert detection (info severity) called \"Win_Persist__MITRET1060\" was generated due to hostui.lnk being written to the Startup folder.",
+    "An MSSP detection for \"Persistence Mechanisms\" occurred containing evidence of hostui.lnk creation in Startup folder with persistence alert."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Created a LNK file (hostui.lnk) in the Startup folder that executes on login",
+  "ScreenshotDatasources": [],
+  "Step": "5. Establish Persistence",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "accesschk.exe reading files within %APPDATALOCAL%\\Google\\chrome\\user data\\default\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Read the Chrome SQL database file to extract encrypted credentials",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "accesschk.exe executing the CryptUnprotectedData API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed the CryptUnprotectedData API call to decrypt Chrome passwords",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that accesschk.exe is not the legitimate Sysinternals tool",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed accesschk.exe is not a signed Microsoft binary with hash value provided. This can be used to verify it is not the legitimate Sysinternals tool."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Masqueraded a Chrome password dump tool as accesscheck.exe, a legitimate Sysinternals tool",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.A.3",
+  "Subtechnique": "T1036.005",
+  "Subtechnique_Name": "Masquerading: Match Legitimate Name or Location",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating a certificate file exported from the system",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed file create event for a $RandomFileName.pfx file by powershell.exe.",
+    "A Technique alert detection (medium severity) called \"Win_PrivateKey_Modification_MITRET1145\"  was generated when the new $RandomFileName.pfx file was created."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Exported a local certificate to a PFX file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.B.1",
+  "Subtechnique": "T1552.004",
+  "Subtechnique_Name": "Unsecured Credentials: Private Keys",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe injecting into lsass.exe OR lsass.exe reading Registry keys under HKLM:\\SAM\\SAM\\Domains\\Account\\Users\\",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe injecting a malicious payload into lsass.exe.",
+    "A Technique alert detection (high severity) called \"Win_lsass_Injection_MITRET1003\" was generated when powershell.exe targeted and injected into lsass.exe."
+  ],
+  "Footnotes": [
+    "According to the vendor, this  behavior would have been blocked.",
+    "According to the vendor, this  behavior would have been blocked."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Dumped password hashes from the Windows Registry by injecting a malicious DLL into Lsass.exe",
+  "ScreenshotDatasources": [],
+  "Step": "6. Credential Access",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the CopyFromScreen function from System.Drawing.dll",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing CopyFromScreen from System.Drawing.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Captured and saved screenshots using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Clipboard",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Clipboard.",
+    "A Technique alert detection (high severity) called \"Win_Clipboard_Execution_MITRET1115\" was generated due to a PowerShell payload containing Get-Clipboard."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Captured clipboard contents using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the GetAsyncKeyState API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetAsyncKeyState API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Captured user keystrokes using the GetAsyncKeyState API",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.A.3",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading files in C:\\Users\\pam\\Downloads\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Read data in the user's Downloads directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file OfficeSupplies.7z",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the file write event for OfficeSupplies.7z."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Compressed data from the user's Downloads directory into a ZIP file (OfficeSupplies.7z) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Compress-7Zip with the password argument used for encryption",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Compress-7Zip with arguments for encryption."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Encrypted data from the user's Downloads directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.3",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell executing Copy-Item pointing to an attack-controlled WebDav network share (192.168.0.4:80)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PoweShell Copy-Item to a remote adversary WebDav network share (192.168.0.4).",
+    "A General alert detection (info severity) was generated for Powershell making a network connection."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Exfiltrated collection (OfficeSupplies.7z) to WebDAV network share using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "7. Collection and Exfiltration",
+  "Substep": "7.B.4",
+  "Subtechnique": "T1048.003",
+  "Subtechnique_Name": "Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe making LDAP queries over port 389 to the Domain Controller (10.0.0.4)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe establishing a connection to NewYork (10.0.0.4) over port 389.",
+    "A General alert detection (info severity) was generated for Powershell making a network connection."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated remote systems using LDAP queries",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed network connection to remote host Scranton (10.0.1.4) over port 5985.",
+    "An MSSP detection for \"Lateral Movement\" occurred containing evidence of Invoke-WinRMSession with a \"Win_WinRM_Invoke-Command_MITRET1028\" alert."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Established WinRM connection to remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-Process.",
+    "A Technique alert detection (low severity) called \"Win_GetSystemProcess_Powershell_MITRET1057\"  was generated due to a PowerShell payload containing Get-Process."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated processes on remote host Scranton (10.0.1.4) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The file python.exe created on Scranton (10.0.1.4)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Processing)"
+  ],
+  "DetectionText": [
+    "Telemetry showed a file write event of python.exe.",
+    "A General alert detection was generated identifying python.exe as malware. Detection incurred a delay due to file being uploaded for sandbox analysis."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Copied python.exe payload from a WebDAV share (192.168.0.4) to remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the file python.exe is packed",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Processing)"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe was packed via static analysis. Detection incurred a delay due to file being uploaded for sandbox analysis."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "python.exe payload was packed with UPX",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.B.2",
+  "Subtechnique": "T1027.002",
+  "Subtechnique_Name": "Obfuscated Files or Information: Software Packing",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Successful logon as user Pam on Scranton (10.0.1.4)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a valid logon on Scranton (10.0.1.4) as user Pam."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Logged on to remote host Scranton (10.0.1.4) using valid credentials for user Pam",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "SMB session to Scranton (10.0.1.4) over TCP port 445/135 OR evidence of usage of a Windows share",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed a SMB session from Nashua (10.0.1.6) to Scranton (10.0.1.4) over TCP port 135.",
+    "A General alert detection (info severity) called \"Win_Network_CommonPorts_MitreT1043\" was generated due to Nashua (10.0.1.6) to Scranton (10.0.1.4) over TCP port 135.",
+    "A Technique alert detection (low severity) called \"Win_NetDrive_DataInteraction_MITRET1039\" was generated due to a PowerShell targeting a network drive."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Established SMB session to remote host Scranton's (10.0.1.4) IPC$ share using PsExec",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe spawned by PSEXESVC.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed python.exe spawned by PSEXESVC.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed python.exe using PSExec",
+  "ScreenshotDatasources": [],
+  "Step": "8. Expand Access",
+  "Substep": "8.C.3",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe creating the file rar.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a file create event for python.exe creating rar.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Dropped rar.exe to disk on remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe creating the file sdelete64.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed File Create event for python.exe creating sdelete64.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Dropped sdelete.exe to disk on remote host Scranton (10.0.1.4)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from python.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed python.exe executing powershell.exe.",
+    "A Tactic alert detection (info severity) called \"Win_User_Execution_MITRET1204\" was generated due to a process targeting an *.exe filename."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Spawned interactive powershell.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-ChildItem.",
+    "A MSSP detection for \"Win_AutomatedCollection_DirScanART_MITRET1119\" occurred containing evidence of powershell.exe executing Get-ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Searched filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-)ChildItem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing Get-ChildItem.",
+    "A Technique alert detection (high severity) called \"Win_AutomatedCollection_DirScanART_MITRET1119\" , was generated due to powershell.exe executing Get-ChildItem.",
+    "A MSSP detection for \"Win_AutomatedCollection_DirScanART_MITRET1119\" occurred containing evidence of powershell.exe executing Get-ChildItem."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Scripted search of filesystem for document and media files using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1119",
+  "Technique_Name": "Automated Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading files in C:\\Users\\Pam\\",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Recursively collected files found in C:\\Users\\Pam\\ using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file working.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed a File Write event for powershell.exe creating working.zip.",
+    "A General alert detection (medium severity) called \"Win_FileExtensions_LocalSystemCollection_NonSys_MITRET1005\"  was generated for file activity involving draft.zip."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Staged files for exfiltration into ZIP (working.zip in AppData directory) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.5",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing rar.exe with the -a parameter for a password to use for encryption",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments.",
+    "A General alert detection (low severity) called \"One-Liner ML Module\" was generated when machine learning determined the command was suspicious.",
+    "A Technique alert detection (info severity) called \"Win_Data_Encryption_MITRET1022\" was generated when rar.exe used \"-hp\" command-line arguments."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Encrypted staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.6",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing rar.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing rar.exe with command-line arguments.",
+    "A General alert detection (low severity) called \"One-Liner ML Module\" was generated when machine learning determined the command was suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Compressed staged ZIP (working.zip in AppData directory) into working.zip (on Desktop) using rar.exe",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.7",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "python.exe reading the file working.zip while connected to the C2 channel",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Read and downloaded ZIP (working.zip on Desktop) over C2 channel (192.168.0.5 over TCP port 8443)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.B.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file rar.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete rar.exe.",
+    "A Technique alert detection (medium severity) called \"Sdelete Usage\" was generated when sdelete64.exe with command-line arguments was used to delete rar.exe.",
+    "A MSSP detection for \"Evading Detection\" occurred containing evidence of sdelete64.exe deleting files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted rar.exe on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file \\Desktop\\working.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Desktop\\working.zip.",
+    "A Technique alert detection (medium severity) called \"Sdelete Usage\" was generated when sdelete64.exe with command-line arguments was used to delete Desktop\\working.zip.",
+    "A MSSP detection for \"Evading Detection\" occurred containing evidence of sdelete64.exe deleting files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted working.zip (from Desktop) on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "sdelete64.exe deleting the file \\AppData\\Roaming\\working.zip",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed sdelete64.exe with command-line arguments to delete Roaming\\working.zip.",
+    "A MSSP detection for \"Evading Detection\" occurred containing evidence of sdelete64.exe deleting files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted working.zip (from AppData directory) on disk using SDelete",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe deleting the file sdelete64.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a DeleteOnClose event for cmd.exe removing sdelete64.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Deleted SDelete on disk using cmd.exe del command",
+  "ScreenshotDatasources": [],
+  "Step": "9. Clean Up, Collection, and Exfiltration",
+  "Substep": "9.C.4",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "javamtsup.exe spawning from services.exe",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed persistent service (javamtsup) on system startup",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the file hostui.lnk (which executes hostui.bat as a byproduct) was executed from the Startup Folder",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed LNK payload (hostui.lnk) in Startup Folder on user login",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "hostui.exe executing the CreateProcessWithToken API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed PowerShell payload via the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "hostui.exe manipulating the token of powershell.exe via the CreateProcessWithToken API OR powershell.exe executing with the stolen token of explorer.exe",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Manipulated the token of the PowerShell payload via the CreateProcessWithToken API",
+  "ScreenshotDatasources": [],
+  "Step": "10. Persistence Execution",
+  "Substep": "10.B.3",
+  "Subtechnique": "T1134.002",
+  "Subtechnique_Name": "Access Token Manipulation: Create Process with Token",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from explorer.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed explorer.exe executing powershell.exe.",
+    "A Technique alert detection (high severity) called \"Fileless Powershell Malware\" was generated due to PowerShell invoking a script in a temporary directory."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "User Oscar executed payload 37486-the-shocking-truth-about-election-rigging-in-america.rtf.lnk",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the schemas ADS via Get-Content and IEX",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe executing the schemas ADS with Get-Content and IEX.",
+    "A General alert detection (high severity) called \"Fileless Powershell Malware\" was generated due to PowerShell executing a paylaod with IEX and Get-Content."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed an alternate data stream (ADS) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.2",
+  "Subtechnique": "T1564.004",
+  "Subtechnique_Name": "Hide Artifacts: NTFS File Attributes",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1564",
+  "Technique_Name": "Hide Artifacts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_BIOS",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_BIOS.",
+    "A Tactic alert detection (medium severity) for a WMI query operation via PowerShell was generated for a PowerShell gwmi query for Win32_BIOS."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Checked that the BIOS version and serial number are not associated with VirtualBox or VMware using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.3",
+  "Subtechnique": "T1497.001",
+  "Subtechnique_Name": "Virtualization/Sandbox Evasion: System Checks",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1497",
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject gwmi queries for Win32_BIOS and Win32_ComputerSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi queries for Win32_BIOS and Win32_ComputerSystem.",
+    "A Tactic alert detection (medium severity) for WMI query operations via PowerShell was generated for a PowerShell gwmi query for Win32_BIOS.",
+    "A Tactic alert detection (medium severity) for WMI query operations via PowerShell was generated for a PowerShell gwmi query for Win32_ComputerSystem."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated computer manufacturer, model, and version information using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_PnPEntity",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_PnPEntity.",
+    "A Tactic alert detection (medium severity) for WMI query operations via PowerShell."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated devices/adapters to check for presence of VirtualBox driver(s) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1120",
+  "Technique_Name": "Peripheral Device Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_ComputerSystem.",
+    "A Tactic alert detection (medium severity) for a suspicious WMI query operation was generated for a WMI operation via PowerShell."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Checked that the username is not related to admin or a generic value (ex: user) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_ComputerSystem",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe gwmi query for Win32_ComputerSystem.",
+    "A Tactic alert detection (medium severity) for a suspicious WMI query operation was generated for a WMI operation via PowerShell."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Checked that the computer is joined to a domain using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for Win32_Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Tactic"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell gwmi query for Win32_Process.",
+    "A Tactic alert detection (medium severity) for a suspicious WMI query operation was generated for a WMI operation via PowerShell."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Checked that processes such as procexp.exe, taskmgr.exe, or wireshark.exe are not running using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (Get-Item -Path \".\\\" -Verbose).FullName",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-Item for the current path."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Checked that the payload is not inside a folder path that contains \"sample\" or is the length of a hash value using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.9",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "certutil.exe decoding kxwn.lock",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the certutil.exe process and corresponding file write of the kxwn.lock payload.",
+    "A Technique alert detection (medium severity) called \"Win_Certutil_Deobfuscation-DecodeFilesOrInformation_MITRET1140\" was generated when certutil.exe decoded the payload with command-line arguments."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Decoded an embedded DLL payload to disk using certutil.exe",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.10",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of the Webcache subkey in HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe adding Run key persistence into the Registry",
+    "A Technique alert detection (info severity) called \"Win_Persist_MITRET1060\" was generated when Webcache subkey was added to the Registry Run key."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Established Registry Run key persistence using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.11",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawning from from the schemas ADS (powershell.exe)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe spawned from a PowerShell stager.",
+    "A Technique alert detection (medium severity) called \"Win_Powershell_Base64_MITRE1027\" was generated on PowerShell usage of base64 encoding or decoding."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed PowerShell stager payload",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.12",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over port 443",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to the C2 (192.168.0.4) over port 443.",
+    "A Technique alert detection (info severity) called \"Win_Network_CommonPorts_MITRET1043\"  was generated when powershell.exe made a network connection to C2 (192.168.0.4) over port 443."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Established C2 channel (192.168.0.4) via PowerShell payload over port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.13",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Established network channel over the HTTPS protocol",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Used HTTPS to transport C2 (192.168.0.4) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.14",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Evidence that the network data sent over the C2 channel is encrypted",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Used HTTPS to encrypt C2 (192.168.0.4) traffic",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.15",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing (gci ((gci env:windir).Value + '\\system32')",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell enumeration of System32:(gci ((gci env:windir).Value + '\\system32').",
+    "A Technique alert detection (high severity) called \"Win_AutomatedCollection_DirScanART_MITRET1119\" (high severity; red indicator), was generated due to powershell.exe executing Get-ChildItem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the System32 directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe modifying the creation, last access, and last write times of kxwn.lock",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed script block with commands to timestomp kxwn.lock.",
+    "An MSSP detection for \"Evading Detection\" occurred containing evidence of \"timestomp\" function definition."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Modified the time attributes of the kxwn.lock persistence payload using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.A.2",
+  "Subtechnique": "T1070.006",
+  "Subtechnique_Name": "Indicator Removal on Host: Timestomp",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Get-WmiObject query for AntiVirusProduct",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell gwmi query for AntiVirusProduct.",
+    "A Technique alert detection (medium severity) called \"Win_WMI_SecProduct_Enum_NonSYS_MITRET1063\" was generated due to PowerShell gwmi query for AntiVirusProduct."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated registered AV products using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.B.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed script block with registry query for installed software."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated installed software via the Registry (Wow6432 Uninstall key) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing a Registry query for HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed script block with registry query for installed software."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated installed software via the Registry (Uninstall key) using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Fortify Access",
+  "Substep": "12.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the GetComputerNameEx API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the GetComputerNameEx API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the computer name using the GetComputerNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the NetWkstaGetInfo API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell calling the NetWkstaGetInfo API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the domain name using the NetWkstaGetInfo API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the GetUserNameEx API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell script block log function definition of \"user\" containing the GetUserNameEx API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the current username using the GetUserNameEx API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the CreateToolhelp32Snapshot API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (UX)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell script block log function definition of \"pslist\" containing the CreateToolhelp32Snapshot API."
+  ],
+  "Footnotes": [
+    "A UX Configuration Change was made to update PowerShell script block logging truncation length. "
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated running processes using the CreateToolhelp32Snapshot API",
+  "ScreenshotDatasources": [],
+  "Step": "13. Reconnaissance",
+  "Substep": "13.D.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of the DelegateExecute subkey in HKCU\\Software\\Classes\\Folder\\shell\\open\\command",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell script block to add the DelegateExecute subkey into the Registry."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Modified the Registry to enable COM hijacking of sdclt.exe using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1546.015",
+  "Subtechnique_Name": "Event Triggered Execution: Component Object Model Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "High integrity powrshell.exe spawning from control.exe (spawned from sdclt.exe)",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed elevated PowerShell payload",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Deletion of the HKCU\\Software\\Classes\\Folder\\shell\\Open\\command subkey",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell command to delete the Registry value."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Modified the Registry to remove artifacts of COM hijacking using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "WMI Process (WmiPrvSE.exe) executing powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed WmiPrvSE.exe executing powershell.exe.",
+    "A General alert detection (medium severity) called \"GUARD: Unusual Powershell Parent Process\" was generated on powershell.exe with parent process WmiPrvSE.exe."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Created and executed a WMI class using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1047",
+  "Technique_Name": "Windows Management Instrumentation"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-Process",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Get-Process.",
+    "A Technique alert detection (low severity) called \"Win_GetSystemProcess_Powershell_MITRET1057\" was generated due to powershell.exe executing Get-Process."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated and tracked PowerShell processes using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloading and/or the file write of m.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the PowerShell command to download m.exe. Telemetry also showed the file create event for m.exe into the System32 folder."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Downloaded and dropped Mimikatz (m.exe) to disk",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "m.exe injecting into lsass.exe to dump credentials",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (medium severity) called \"Win_Process_Dump_MITRET1005\" was generated based on the detection of the dumping of process memory.",
+    "A Technique alert detection (high severity) called \"GUARD: Possible Mimikatz\" was generated when command-line arguments contained \"sekurlsa\"."
+  ],
+  "Footnotes": [
+    "According to the vendor, this would have been prevented due to sekurlsa usage."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Dumped plaintext credentials using Mimikatz (m.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.4",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Set-WmiInstance",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell writing encoded content to the WMI class.",
+    "A Technique alert detection (medium severity) called \"Win_Powershell_Base64_MITRE1027\" was generated due to PowerShell encoding base64 information."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Encoded and wrote Mimikatz output to a WMI class property using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Get-WmiInstance",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell reading encoded content from the WMI class."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Read and decoded Mimikatz output from a WMI class property using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "14. Elevation & Credential Access",
+  "Substep": "14.B.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing $env:UserName",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell script block executing $env:UserName."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated logged on users using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the WindowsParentalControlMigration WMI filter, consumer, and binding created in root/subscription.",
+    "A Technique alert detection (high severity) called \"Win_WMI_EventSubscription_Persistence_MITRET1084\" was generated due to WMI operations subscribing to an event."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Established WMI event subscription persistence using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "15. Establish Persistence",
+  "Substep": "15.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe making LDAP queries over port 389 via functions from System.DirectoryServices.dll",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the domain controller host NewYork (10.0.0.4) using LDAP queries",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the ConvertSidToStringSid API",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (UX)",
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reflectively loading Advapi32.dll in order to execute the ConvertSidToStringSid API function.",
+    "A Technique alert detection (high severity) called \"Win_Domain_SidToUser_MITRET1082\" was generated when PowerShell accessed SID."
+  ],
+  "Footnotes": [
+    "A UX Configuration Change was made to update PowerShell script block logging truncation length. "
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Enumerated the domain SID (from current user SID) using the ConvertSidToStringSid API",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the ConvertSidToStringSid API function by loading Advapi32.dll",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change (UX)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell reflectively loading Advapi32.dll in order to execute the ConvertSidToStringSid API function."
+  ],
+  "Footnotes": [
+    "A UX Configuration Change was made to update PowerShell script block logging truncation length. "
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed the ConvertSidToStringSid API call by reflectively loading Advapi32.dll",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Network connection to NewYork (10.0.0.4) over port 5985",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed powershell.exe making a network connection to remote host NewYork (10.0.0.4) over port 5985.",
+    "A General alert detection (medium severity) called \"Win_WinRM_Invoke-Command_MITRET1028\"  was generated for the PowerShell Invoke-Command WinRM cmdlet.",
+    "An MSSP detection for \"Lateral Movement\" occurred containing evidence of Invoke-WinRMSession with a \"Win_WinRM_Invoke-Command_MITRET1028\" alert."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Established a WinRM connection to the domain controller host NewYork (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Successful logon as user MScott on NewYork (10.0.0.4)",
+  "Datasources": [],
+  "Detection": [
+    "None",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Delayed (Manual)",
+    "Host Interrogation",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure.",
+    "An MSSP detection for \"Lateral Movement\" occurred containing evidence of logon for user MScott on NewYork through additional analysis."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Logged on to the domain controller host NewYork (10.0.0.4) using valid credentials for user MScott",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.C.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "File write of m.exe by the WinRM process (wsmprovhost.exe)",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a file create event for m.exe in the System32 directory."
+  ],
+  "Footnotes": [
+    "According to the vendor, this would have been prevented due to m.exe being identified as malware."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Dropped Mimikatz (m.exe) to disk on the domain controller host NewYork (10.0.0.4) over a WinRM connection",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "m.exe injecting into lsass.exe to dump credentials",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed m.exe injecting a thread into lsass.exe.",
+    "A General alert detection was generated identifying an exploit attempt when m.exe attempted to create a remote thread.",
+    "A Technique alert detection (high severity) called \"GUARD: Possible Mimikatz\" was generated for m.exe with command-line arguments indicative of Mimikatz credential dumping.",
+    "An MSSP detection for \"Data Theft and Exfiltration\" occurred containing evidence of \"lsadump\" with command-line arguments identified as Possible Mimikatz usage."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Dumped the KRBTGT hash on the domain controller host NewYork (10.0.0.4) using Mimikatz (m.exe)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.D.2",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "outlook.exe spawning from svchost.exe or powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed outlook.exe spawning from svchost.exe, which is indicative of programmatic access to Outlook emails.",
+    "A Technique alert detection (high severity) called \"Win_Email_Collection_Subfolders_MitreT1114\"  was generated due to the executed PowerShell script containing \"Outlook.Application.\"",
+    "A MSSP detection for \"Data Theft and Exfiltration\" occurred containing evidence of email collection via PowerShell."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Dumped messages from the local Outlook inbox using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1114",
+  "Technique_Name": "Email Collection"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe reading the file MITRE-ATTACK-EVALS.HTML",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Read and collected a local file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe creating the file \\WindowsParentalControlMigration\\MITRE-ATTACK-EVALS.HTML",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the file create event for MITRE-ATTACK-EVALS.HTML."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Staged collected file into directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1074.001",
+  "Subtechnique_Name": "Data Staged: Local Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing the ZipFile.CreateFromDirectory .NET method",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell compressing collection via the ZipFile.CreateFromDirectory .NET method.",
+    "A Technique alert detection (low severity) called \"GUARD: Common File Archive Exfiltration Staging\"  was generated due to the zip archive creation.",
+    "An MSSP detection for \"Data Theft and Exfiltration\" occurred containing evidence of zip archive creation."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Compressed a staging directory using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Set-Content",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed PowerShell appending the GIF file header to the compressed file."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Prepended the GIF file header to a compressed staging file using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "17. Collection",
+  "Substep": "17.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "net.exe with command-line arguments then making a network connection to a public IP over port 443",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed net.exe with command-line arguments to connect to a OneDrive URL as well as net.exe subsequently making a network connection to public IPs over port 443.",
+    "A General alert detection (low severity) called \"One-Liner ML Module\" was generated for a suspicious use of a scripting engine.",
+    "An MSSP detection for \"Data Theft and Exfiltration\" occurred containing evidence of \"One-Liner ML Module\" that identified details of mapping a OneDrive URL to the Y: drive."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Mapped a network drive to an online OneDrive account using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1102",
+  "Technique_Name": "Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Copy-Item pointing to drive mapped to an attack-controlled OneDrive account",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "MSSP"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Delayed (Manual)"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Copy-Item to exfiltrate data to a previously mapped OneDrive account.",
+    "A General alert detection (medium severity) called \"Win_CopyOperation_MITRET1074\" was generated for PowerShell copying files.",
+    "An MSSP detection for \"Data Theft and Exfiltration\" occurred containing evidence of Copy-Item to the Y drive."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Exfiltrated staged collection to an online OneDrive account using PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "18. Exfiltration",
+  "Substep": "18.A.2",
+  "Subtechnique": "T1567.002",
+  "Subtechnique_Name": "Exfiltration Over Web Service: Exfiltration to Cloud Storage",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1567",
+  "Technique_Name": "Exfiltration Over Web Service"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executing kxwn.lock",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed rundll32.exe executing kxwn.lock.",
+    "A Technique alert detection (low severity) called \"Win_Rundll32_Usage_MitreT1085\" was generated due to Rundll32 executing a DLL."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed Run key persistence payload on user login using RunDll32",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.1",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "The WMI process (wmiprvse.exe) executing powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed wmiprvse.exe executing the PowerShell stager.",
+    "A General detection was generated for PowerShell having an unusual parent."
+  ],
+  "Footnotes": [
+    "Though no image was captured, MITRE confirmed that the vendor has the capability to show available telemetry in a separate view."
+  ],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed WMI persistence on user login",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.2",
+  "Subtechnique": "T1546.003",
+  "Subtechnique_Name": "Event Triggered Execution: Windows Management Instrumentation Event Subscription",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "SYSTEM-level powershell.exe spawned from the powershell.exe",
+  "Datasources": [],
+  "Detection": [
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert",
+    "Alert"
+  ],
+  "DetectionText": [
+    "A General alert detection (medium severity) called \"Unusual PowerShell Parent Processes\" was generated for wmiprvse.exe spawning powershell.exe.",
+    "A Technique alert detection (medium severity) called \"Win_Powershell_Base64_MITRET1027\" was generated for PowerShell decoding base64 information."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Executed PowerShell payload from WMI event subscription persistence",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.A.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executing Invoke-Mimikatz with command-line arguments to create a golden ticket",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell executing Invoke-Mimikatz to create and inject a golden ticket into the current session.",
+    "A General alert detection (medium severity) called \"Win_Mimikatz_Empire_MITRET1003\" was generated for PowerShell using Empire."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Created Kerberos Golden Ticket using Invoke-Mimikatz",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.1",
+  "Subtechnique": "T1550.003",
+  "Subtechnique_Name": "Use Alternate Authentication Material: Pass the Ticket",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1550",
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "Network connection to Scranton (10.0.1.4) over port 5985",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed PowerShell execution of Enter-PSSession and the corresponding powershell.exe network connection to remote host Scranton (10.0.1.4) over port 5985.",
+    "A Technique alert detection (medium severity) called \"Win_WinRM_Invoke-Command_MitreT1028\" was generated when PowerShell executed a command on the remote host Scranton (10.0.1.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Established a WinRM connection to the remote host Scranton (10.0.1.4) using the Golden Ticket as credentials",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.2",
+  "Subtechnique": "T1021.006",
+  "Subtechnique_Name": "Remote Services: Windows Remote Management",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt29",
+  "Capability_Requirements": [],
+  "Criteria": "net.exe adding the user Toby",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Alert"
+  ],
+  "DetectionText": [
+    "Telemetry showed the PowerShell command to add the new User Toby to the remote host Scranton (10.0.1.4).",
+    "A Technique alert detection (high severity) called \"Win_CreateAccount_Mitre1136\" was generated for the addition of the new user Toby based on Windows Event ID 4720."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "cylance",
+  "Procedure": "Added a new user to the remote host Scranton (10.0.1.4) using net.exe",
+  "ScreenshotDatasources": [],
+  "Step": "20. Persistence Execution",
+  "Substep": "20.B.3",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}

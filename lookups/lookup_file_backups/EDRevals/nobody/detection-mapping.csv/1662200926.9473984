@@ -1,0 +1,9 @@
+Detection,Detection_Type
+None,0 None
+Telemetry,1 Telemetry
+Indicator of Compromise,2 General
+Enrichment,1 Telemetry
+General Behavior,3 Tactic
+Tactic,3 Tactic
+Specific Behavior,4 Technique
+Technique,4 Technique

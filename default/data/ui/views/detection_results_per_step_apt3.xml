@@ -2,8 +2,56 @@
   <label>Detection results per step APT3</label>
   <row>
     <panel>
-      <title>Operational flow and detections</title>
       <table>
+        <title>Aggregated results per Step for Analytic detections</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" apt3
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| rex field=Step "(?&lt;Step&gt;\d+)\." 
+| eval Step=substr("0", 0, max(2-len(Step), 0)) . Step 
+| stats count(eval(Detection_Type="2 Analytic")) as count_Analytic count(eval(Detection_Type="1 Telemetry")) as count_Telemetry count(eval(Detection_Type="0 None")) as count_None by Participant_Name,Step,Adversary 
+| sort Adversary,Participant_Name,Step 
+| search Adversary=apt3 
+| xyseries Participant_Name,Step,count_Analytic
+| addtotals row=t col=f
+| sort - Total
+| fields - Total</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="count">12</option>
+        <option name="dataOverlayMode">heatmap</option>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Aggregated results per Substep</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" apt3
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| sort 0 Adversary,Participant_Name,Step,Substep 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| stats count(eval(Detection_Type="2 Analytic")) as count_Analytic count(eval(Detection_Type="1 Telemetry")) as count_Telemetry count(eval(Detection_Type="0 None")) as count_None by Step,Substep,Procedure 
+| sort 0 Adversary,Step,Substep</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Details per Substep</title>
         <search>
           <query>index=main sourcetype="attackeval:json" source="*round1*" Detection{}!=""
 | eval OperationalFlow=trim(Substep) . " - " . trim(Technique_Name)
@@ -13,11 +61,10 @@
           <latest></latest>
           <sampleRatio>1</sampleRatio>
         </search>
-        <option name="count">100</option>
+        <option name="count">10</option>
         <option name="dataOverlayMode">none</option>
         <option name="drilldown">none</option>
         <option name="percentagesRow">false</option>
-        <option name="refresh.display">progressbar</option>
         <option name="rowNumbers">false</option>
         <option name="totalsRow">false</option>
         <option name="wrap">true</option>

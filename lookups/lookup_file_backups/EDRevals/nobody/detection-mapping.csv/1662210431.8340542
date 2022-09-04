@@ -1,0 +1,11 @@
+Detection,Detection_Type,Detection_Type_Coarse
+MSSP,0 None,0 None
+None,0 None,0 None
+Telemetry,1 Telemetry,1 Telemetry
+Indicator of Compromise,2 General,2 Analytic
+General,2 General,2 Analytic
+Enrichment,1 Telemetry,1 Telemetry
+General Behavior,3 Tactic,2 Analytic
+Tactic,3 Tactic,2 Analytic
+Specific Behavior,4 Technique,2 Analytic
+Technique,4 Technique,2 Analytic

@@ -1,0 +1,3434 @@
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed Resume Viewer.exe running along with its children.",
+    "A General Behavior alert was generated indicating that the user Debbie executed Resume Viewer.exe. This alert had a severity score of 51/100 and was based upon \\\"Newly Executed Applications\\\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Legitimate user Debbie clicked and executed malicious self-extracting archive (Resume Viewer.exe) on 10.0.1.6 (Nimda)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.1",
+  "Subtechnique": "T1204.002",
+  "Subtechnique_Name": "User Execution: Malicious File",
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed the Resume Viewer.exe execution sequence and rundll32.exe executing.",
+    "The capability enriched the rundll32.exe execution with the correct ATT&CK Technique (T1085, which corresponds to the Rundll32 Technique)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) launched a DLL payload (update.dat) using Rundll32",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.2",
+  "Subtechnique": "T1218.011",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Rundll32",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing the pdfhelper.cmd script.",
+    "The capability enriched the cmd.exe execution with the correct ATT&CK Technique (T1064 - Scripting)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Previously executed self-extracting archive (Resume Viewer.exe) launched an embedded batch file (pdfhelper.cmd)",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.A.1.3",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed filemods indicating the creation and file write of autoupdate.bat to the Startup folder.",
+    "The capability enriched cmd.exe with the correct ATT&CK Technique (T1060 - Registry Run Keys/Start Folder)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) moved a separate batch file (autoupdate.bat) to the Startup folder",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.B.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a network connection over UDP port 53."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel established using port 53",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel established using DNS traffic to freegoogleadsenseinfo.com",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.2",
+  "Subtechnique": "T1071.004",
+  "Subtechnique_Name": "Application Layer Protocol: DNS",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel established using both NetBIOS and base64 encoding",
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Compromise",
+  "Substep": "1.C.1.3",
+  "Subtechnique": "T1132.001",
+  "Subtechnique_Name": "Data Encoding: Standard Encoding",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1132",
+  "Technique_Name": "Data Encoding"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing ipconfig.exe with command-line arguments.",
+    "The capability enriched ipconfig.exe with the correct ATT&CK Technique (T1016 - System Network Configuration Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'ipconfig -all' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing arp.exe with command-line arguments.",
+    "The capability enriched arp.exe with a related ATT&CK Technique (T1018 - Remote System Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'arp -a' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing echo with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'echo' via cmd to enumerate specific environment variables",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing tasklist.exe with command-line arguments.",
+    "The capability enriched tasklist.exe with the correct ATT&CK Technique (T1057 - Process Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'tasklist -v' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing sc.exe with command-line arguments.",
+    "The capability enriched sc.exe with the correct ATT&CK Technique (System Service Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'sc query' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.D.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (System Service Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net start' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.D.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing systeminfo.exe.",
+    "The capability enriched systeminfo.exe with the correct ATT&CK Technique (System Information Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'systeminfo' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.E.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (System Information Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net config workstation' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.E.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (Permission Groups Discovery) as well as the tag Administrator Enumeration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net localgroup administrators' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.1",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (Permission Groups Discovery) as well as the tag Administrator Enumeration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net localgroup administrators -domain' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.2",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (Permission Groups Discovery) as well as the tag Administrator Enumeration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net group \\\"Domain Admins\\\" -domain' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.F.3",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (Account Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net user -domain' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.G.1",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (Account Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net user george -domain' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.G.2",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing reg.exe with command-line arguments.",
+    "The capability enriched reg.exe with the correct ATT&CK Technique (T1012 - Query Registry)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to enumerate a specific Registry key",
+  "ScreenshotDatasources": [],
+  "Step": "2. Initial Discovery",
+  "Substep": "2.H.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to elevate process integrity level",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.A.1.1",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed svchost.exe, with the seclogon command-line argument, performing activity related to token manipulation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to modify current process token",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.A.1.2",
+  "Subtechnique": "T1134.001",
+  "Subtechnique_Name": "Access Token Manipulation: Token Impersonation/Theft",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed \\\"crossproc\\\" events indicative of Process Injection into cmd.exe.",
+    "A Specific Behavior alert was generated that was mapped to correct ATT&CK Technique (Process Injection)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in process injection capability executed to inject callback into cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "3. Privilege Escalation",
+  "Substep": "3.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with a related ATT&CK technique (Account Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net group \\\"Domain Controllers\\\" -domain' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with a related ATT&CK technique (Account Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'net group \\\"Domain Computers\\\" -domain' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing netsh.exe with command-line arguments.",
+    "The capability enriched netsh.exe with a related ATT&CK technique (T1063 - Security Software Discovery) and a tag for Potential Windows Firewall Rule Recon."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'netsh advfirewall show allprofiles' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing netstat.exe with command-line arguments.",
+    "The capability enriched netstat.exe with the correct ATT&CK technique (System Network Connections Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'netstat -ano' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "4. Discovery for Lateral Movement",
+  "Substep": "4.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an open handle to a thread into lsass.exe, which is indicative of process injection for credential dumping.",
+    "A Specific Behavior alert was generated showing the correct ATT&CK Technique (Credential Dumping)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in Mimikatz credential dump capability executed",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.1.1",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an open handle to a thread into lsass.exe, which is indicative of process injection."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Credential dump capability involved process injection into lsass",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed an open handle to a thread into lsass.exe, which is indicative of process injection for credential dumping."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in hash dump capability executed",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.2.1",
+  "Subtechnique": "T1003.002",
+  "Subtechnique_Name": "OS Credential Dumping: Security Account Manager",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a new thread and open handle into lsass.exe, which is indicative of process injection for credential dumping.",
+    "A Specific Behavior alert was generated showing the correct ATT&CK Technique (Credential Dumping)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Hash dump capability involved process injection into lsass.exe",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.A.2.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a change in user execution context from Debbie to George between parent and child processes, which is indicative of token manipulation."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in token theft capability executed to change user context to George",
+  "ScreenshotDatasources": [],
+  "Step": "5. Credential Access",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1134.001",
+  "Subtechnique_Name": "Access Token Manipulation: Token Impersonation/Theft",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1134",
+  "Technique_Name": "Access Token Manipulation"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing reg.exe with command-line arguments.",
+    "The capability enriched reg.exe with the correct ATT&CK Technique (T1012 - Query Registry)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to remotely enumerate a specific Registry key on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed network connections over TCP port 80 to 192.168.0.4 (C2 server).",
+    "The capability enriched the network connections from rundll32.exe with the correct ATT&CK Technique (T1043 - Commonly Used Port)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel modified to use port 80",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed network connections over TCP port 80 as well as a modload showing winhttp.dll was loaded, which an analyst could use to determine HTTP was used."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel modified to use HTTP traffic to freegoogleadsenseinfo.com",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed separate network connections over port TCP port 80 and UDP port 53, which could indicate multiband communication."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel modified to split communications between both HTTP and DNS",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.B.1.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1026",
+  "Technique_Name": "Multiband Communication"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a connection to 10.0.0.5 (Conficker) over TCP port 3389 as well as rdpclip.exe executing.",
+    "The capability enriched the rdpclip.exe events with the correct ATT&CK Technique (Remote Desktop Protocol)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: C2 channel modified to proxy RDP connection to Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "6. Lateral Movement",
+  "Substep": "6.C.1",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry showed Registry modification events related to the creation of the user account Jesse.",
+    "The capability enriched lsass.exe with the tag \\\\\"Create Accounts using GUI\\\\\"."
+  ],
+  "Footnotes": [
+    "The enrichment was added as a configuration change during the action and was not part of the original set of detections when the evaluation started."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Added user Jesse to Conficker (10.0.0.5) through RDP connection",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.1",
+  "Subtechnique": "T1136.001",
+  "Subtechnique_Name": "Create Account: Local Account",
+  "TacticGroup": "Persistence",
+  "Technique": "T1136",
+  "Technique_Name": "Create Account"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the GUI-based lusrmgr.msc (Local Users and Groups snap-in)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility used to add new user through RDP connection",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1061",
+  "Technique_Name": "Graphical User Interface"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed execution of mmc.exe, the Microsoft Management Console, spawning the lusrmgr.msc (Local Users and Groups snap-in) which displays local account information."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility displayed user account information",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.A.1.3",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed file modification events indicating updater.dll being created and written to disk."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in upload capability executed to write a DLL payload (updater.dll) to disk on Nimda (10.0.1.6)",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the process tree containing schtasks.exe as well as the full command-line arguments.",
+    "A Specific Behavior alert was generated mapped to the correct ATT&CK Technique (T1053 - Scheduled Task)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'schtasks' via cmd to create scheduled task that executes a DLL payload (updater.dll)",
+  "ScreenshotDatasources": [],
+  "Step": "7. Persistence",
+  "Substep": "7.C.1",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing dir with command-line arguments.",
+    "The capability enriched cmd.exe with the correct ATT&CK Technique (T1083 - File and Directory Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'dir -s -b \\\"\\\\conficker\\wormshare\\\"' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed cmd.exe executing tree.com with command-line arguments.",
+    "The capability enriched tree.com with the correct ATT&CK Technique (T1083 - File and Directory Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'tree \\\"C:\\Users\\debbie\\\"' via cmd",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "The vendor indicated that CB Defense sees applicable API calls, but that product was not included in the evaluation."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in keylogging capability executed to capture keystrokes of user Debbie",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.C.1.1",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Collection",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Keylogging capability included residual enumeration of application windows",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.C.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1010",
+  "Technique_Name": "Application Window Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in screen capture capability executed to capture screenshot of current window of user Debbie",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.D.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a cross-process \\\"open handle\\\" event into explorer.exe, which could be indicative of process injection."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Screen capture capability involved process injection into explorer.exe",
+  "ScreenshotDatasources": [],
+  "Step": "8. Collection",
+  "Substep": "8.D.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: 'ls' (List) via Win32 APIs to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Built-in download capability executed to a collect file (Shockwave_rackb_diagram.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.B.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1039",
+  "Technique_Name": "Data from Network Shared Drive"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Cobalt Strike: Download capability exfiltrated data through existing C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "9. Exfiltration",
+  "Substep": "9.B.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed cmd.exe executing autoupdate.bat from the Startup folder."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Batch file (autoupdate.bat) previously written to Startup folder executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (update.dat) using Rundll32",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.A.1",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed rundll32.exe executing updater.dll with a parent of svchost.exe running with command-line arguments \\\\\"-k netsvcs -p -s Schedule\\\\\"."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Scheduled task executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (updater.dll) using Rundll32",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.A.2",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed rdpclip.exe execution by the user Jesse on the destination system of the RDP connection.",
+    "The capability enriched rdpclip.exe with the correct ATT&CK Technique (Remote Desktop Protocol)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "RDP connection to Conficker (10.0.0.5) authenticated using previously added user Jesse",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.B.1.1",
+  "Subtechnique": "T1078.003",
+  "Subtechnique_Name": "Valid Accounts: Local Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed rdpclip.exe execution by the user Jesse on the destination system of the RDP connection.",
+    "The capability enriched rdpclip.exe with the correct ATT&CK Technique (Remote Desktop Protocol)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "RDP connection made to Conficker (10.0.0.5) as part of execution of persistence mechanism",
+  "ScreenshotDatasources": [],
+  "Step": "10. Execution of Persistence",
+  "Substep": "10.B.1.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment",
+    "Specific Behavior",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry of a process tree showed powershell.exe execution, including full command-line arguments.",
+    "The capability enriched wscript.exe and powershell.exe with the correct ATT&CK Techniques (T1063 - Scripting, T1086 - Powershell).",
+    "A Specific Behavior Alert was generated indicating that powershell.exe was a suspicious child process of wscript.exe.",
+    "A Specific Behavior alert was generated indicating that powershell.exe was executed with encoded command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Legitimate user Bob clicked and executed malicious VBScript (autoupdate.vbs) on 10.0.1.5 (CodeRed)",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.A.1",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed network connections, including over TCP port 443 to www.freegoogleadsenseinfo.com (C2 domain).",
+    "The capability enriched backgroundtaskhost.exe and powershell.exe with the correct ATT&CK Technique (T1043 - Commonly Used Port)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: C2 channel established using port 443",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed modload events importing dynamic libraries usually used for HTTP and SSL communication (e.g. winhttp.dll), followed by a CRL check to a CA, indicating that HTTPS was likely used."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: C2 channel established using HTTPS traffic to freegoogleadsenseinfo.com",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed modload events importing dynamic libraries usually used for HTTP and SSL communication (e.g. winhttp.dll), followed by a CRL check to a CA, indicating that HTTPS was likely used."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Encrypted C2 channel established using HTTPS",
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Compromise",
+  "Substep": "11.B.1.3",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing route.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'route print' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing ipconfig.exe with command-line arguments.",
+    "The capability enriched ipconfig.exe with the correct ATT&CK Technique (T1049 - System Network Configuration Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'ipconfig -all' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing whoami.exe with command-line arguments.",
+    "The capability enriched whoami.exe with the correct ATT&CK Technique (T1033 - System Owner/User Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'whoami -all -fo list' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing qprocess.exe with command-line arguments.",
+    "The capability enriched qprocess.exe with the correct ATT&CK Technique (Process Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'qprocess *' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net start' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.D.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed process execution of powershell.exe. The powershell.exe process loaded several non-default dynamically loaded libraries that may indicate the functionality may be used by the PowerShell script."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in WinEnum module executed to programmatically execute a series of enumeration techniques",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of user information",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of AD group memberships",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.2",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of password policy information",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1201",
+  "Technique_Name": "Password Policy Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of recently opened files",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.4.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of interesting files",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.4.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of clipboard contents",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1115",
+  "Technique_Name": "Clipboard Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of system information",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.6.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of Windows update information",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.6.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of system information via a Registry query",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of services",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of available shares",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.9.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of mapped network drives",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.9.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of AV solutions",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.10.1",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of firewall rules",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.10.2",
+  "Subtechnique": "T1518.001",
+  "Subtechnique_Name": "Software Discovery: Security Software Discovery",
+  "TacticGroup": "Discovery",
+  "Technique": "T1518",
+  "Technique_Name": "Software Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of network adapters",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.11",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed netstat.exe executing with command-line arguments.",
+    "The capability enriched netstat.exe with the correct ATT&CK Technique (System Network Connections Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: WinEnum module included enumeration of established network connections",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.E.1.12",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net group \\\"Domain Admins\\\" -domain' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.F.1",
+  "Subtechnique": "T1069.002",
+  "Subtechnique_Name": "Permission Groups Discovery: Domain Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with the correct ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'Net Localgroup Administrators' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.F.2",
+  "Subtechnique": "T1069.001",
+  "Subtechnique_Name": "Permission Groups Discovery: Local Groups",
+  "TacticGroup": "Discovery",
+  "Technique": "T1069",
+  "Technique_Name": "Permission Groups Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with a related ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net user' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.G.1",
+  "Subtechnique": "T1087.001",
+  "Subtechnique_Name": "Account Discovery: Local Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed powershell.exe executing net.exe with command-line arguments.",
+    "The capability enriched net.exe with a related ATT&CK Technique (T1069 - Permission Groups Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net user -domain' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "12. Initial Discovery",
+  "Substep": "12.G.2",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing net.exe with command-line arguments.",
+    "The capability enriched net.exe with a related ATT&CK Technique (Account Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net group \\\"Domain Computers\\\" -domain' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The vendor demonstrated to MITRE that the capability can provide telemetry of net.exe, but no screenshot was captured for this procedure.",
+    "The capability enriched net.exe with a related ATT&CK Technique (Account Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net use' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing netstat.exe with command-line arguments.",
+    "The capability enriched net.exe data with the correct ATT&CK Technique (T1049 - System Network Connections Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'netstat -ano' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1049",
+  "Technique_Name": "System Network Connections Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing reg.exe with command-line arguments.",
+    "The capability enriched reg.exe data with the correct ATT&CK Technique (Query Registry)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire:'reg query' via PowerShell to enumerate a specific Registry key",
+  "ScreenshotDatasources": [],
+  "Step": "13. Discovery for Lateral Movement",
+  "Substep": "13.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in UAC bypass token duplication module executed to launch new callback with elevated process integrity level",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.1",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "The vendor demonstrated to MITRE that the capability can provide telemetry of network connections and file modifications indicating a Remote File Copy, but no screenshot was captured for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: UAC bypass module downloaded and wrote a new Empire stager (wdbypass) to disk",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over HTTP",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.3",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed network connection to 192.168.0.5 (C2 server) over TCP port 8080."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over port 8080",
+  "ScreenshotDatasources": [],
+  "Step": "14. Privilege Escalation",
+  "Substep": "14.A.1.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1043",
+  "Technique_Name": "Commonly Used Port"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed modloads associated with the execution of a keylogger.",
+    "The capability enriched the events with a tag titled \\\\\"PowerShell Input Capture -keylogger\\\\\" based on known modloads that could be potentially abused to provide keylogger functionality."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in keylogging module executed to capture keystrokes of user Bob",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.A.1.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Collection",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in keylogging module included residual enumeration of application windows",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.A.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1010",
+  "Technique_Name": "Application Window Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'get-content' via PowerShell to collect sensitive file (it_tasks.txt) from a network shared drive (Wormshare) on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "15. Credential Access",
+  "Substep": "15.B.1",
+  "Subtechnique": "T1552.001",
+  "Subtechnique_Name": "Unsecured Credentials: Credentials in Files",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1552",
+  "Technique_Name": "Unsecured Credentials"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe and command-line arguments indicative of password spraying.",
+    "The capability enriched individual net.exe events with tagging titled \\\\\"Credential Access using Admin Shares - Failed Attempts\\\\\"."
+  ],
+  "Footnotes": [
+    "The capability was modified after the start of the evaluation enabling enrichment to appear, so the detection is identified as a configuration change."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net use' via PowerShell to brute force password spraying authentication attempts to Morris (10.0.1.4) and Nimda (10.0.1.6) targeting credentials of usersKmitnick, Bob, and Frieda",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.A.1.1",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe targeting ADMIN$.",
+    "Specific Behavior alerts titled \\\"Windows Admin Shares - Lateral Movement\\\" were generated for credential accesses specifically targeting admin shares."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Brute force password spraying attempts targeted Windows admin shares on Morris (10.0.1.4) and Nimda (10.0.1.6)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.A.1.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing a successful logon via net.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Conficker (10.0.0.5) using credentials of user Kmitnick",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.1",
+  "Subtechnique": "T1078.003",
+  "Subtechnique_Name": "Valid Accounts: Local Accounts",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe targeting ADMIN$, eventually resulting in a successful logon.",
+    "Specific Behavior alerts were generated mapped to the correct ATT&CK Technique (T1077 - Windows Admin Shares) and Tactic (Lateral Movement) for successful logons."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Successful authentication targeted Windows admin share on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry showed a process tree containing repeated logon attempts via net.exe and command-line arguments indicative of password spraying, eventually resulting in a successful logon.",
+    "The capability enriched individual net.exe events with tagging titled \\\\\"Credential Access using Admin Shares - Failed Attempts\\\\\" for failures as well as a related ATT&CK Technique (T1077 - Windows Admin Shares) and Tactic (Lateral Movement) for successful logons."
+  ],
+  "Footnotes": [
+    "The capability was modified after the start of the evaluation enabling enrichment to appear, so the detection is identified as a configuration change."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Successful authentication to Conficker (10.0.0.5) using credentials of user Kmitnick as a result of the brute force password spraying",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.B.1.3",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing net.exe and command-line arguments.",
+    "A Specific Behavior alert was generated indicating that a connected network share was removed."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net use -delete' via PowerShell",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.C.1",
+  "Subtechnique": "T1070.005",
+  "Subtechnique_Name": "Indicator Removal on Host: Network Share Connection Removal",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing a logon attempt via net.exe and command-line arguments  targeting C$ using valid account credentials.",
+    "Specific Behavior alerts were generated mapped to the correct ATT&CK Technique (T1077 - Windows Admin Shares) and Tactic (Lateral Movement) for successful logons."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Successful authentication targeted Windows admin shares on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.D.1.1",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree containing a logon attempt via net.exe and command-line arguments using valid account credentials."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Creeper (10.0.0.4) using credentials of user Kmitnick",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.D.1.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Initial Access",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed filemods showing the creation and writing to autoupdate.vbs."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in upload module executed to write malicious VBScript (autoupdate.vbs) to disk on CodeRed (10.0.1.5)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.E.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree with cmd.exe execution and associated user context change.",
+    "The capability enriched cmd.exe event data with the correct ATT&CK Technique (T1059 - Command-Line Interface)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in runas module executed to launch malicious VBScript (autoupdate.vbs) as user Kmitnick",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.F.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed filemods showing the creation and writing to update.vbs on remote host 10.0.0.4 (Creeper)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in move capability executed to write malicious VBScript (update.vbs) to disk on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.G.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to remotely query services on Creeper. Telemetry also showed module loads and a network connection to Creeper (10.0.0.4).",
+    "The capability enriched the sc.exe execution with the correct ATT&CK Technique (System Service Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'sc query' via PowerShell to remotely enumerate services on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.H.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to create a new AdobeUpdater service containing a binPath pointed to cmd.exe with arguments to execute update.vbs.",
+    "A Specific Behavior alert was generated for sc.exe execution to create the AdobeUpdater service with the correct ATT&CK Technique (New Service)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'sc create' via PowerShell to remotely create a service on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.I.1.1",
+  "Subtechnique": "T1543.003",
+  "Subtechnique_Name": "Create or Modify System Process: Windows Service",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1543",
+  "Technique_Name": "Create or Modify System Process"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process trees showed execution of sc.exe with command-line arguments to create the AdobeUpdater service with binPath pointed to cmd.exe with arguments to execute update.vbs and a suspicious service description, which indicates masquerading."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'sc description' via PowerShell to remotely disguise a service on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.I.1.2",
+  "Subtechnique": "T1036.004",
+  "Subtechnique_Name": "Masquerading: Masquerade Task or Service",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to query the AdobeUpdater service on Creeper.",
+    "The capability enriched sc.exe execution with the correct ATT&CK Technique (System Service Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'sc qc' via PowerShell to remotely enumerate a specific service on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.J.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'type' via PowerShell to remotely enumerate a specific file (update.vbs) on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.K.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of sc.exe with command-line arguments to start the AdobeUpdater service on Creeper."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'sc start' via PowerShell to remotely launch a specific service on Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "16. Lateral Movement",
+  "Substep": "16.L.1",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed reg.exe executing with command-line arguments to check if terminal services were enabled."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key associated with terminal services",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.A.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1007",
+  "Technique_Name": "System Service Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed reg.exe executing with command-line arguments.",
+    "The capability enriched reg.exe with the correct ATT&CK Technique (T1012 - Query Registry)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.A.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of takeown.exe with command-line arguments on magnify.exe.",
+    "The capability enriched the execution of takeown.exe with \\\\\"Permission modifications\\\\\"."
+  ],
+  "Footnotes": [
+    "The enrichment was added as a configuration change during the action and was not part of the original set of detections when the evaluation started."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'takeown' via PowerShell to obtain ownership of magnify.exe",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.B.1",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [
+    "Configuration Change"
+  ],
+  "DetectionText": [
+    "Telemetry within the process tree showed execution of icacls.exe with command-line arguments on magnify.exe.",
+    "The capability enriched the execution of icacls.exe with \\\\\"Permission modifications\\\\\"."
+  ],
+  "Footnotes": [
+    "The enrichment was added as a configuration change during the action and was not part of the original set of detections when the evaluation started."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'icacls' via PowerShell to modify the DACL for magnify.exe",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.B.2",
+  "Subtechnique": "T1222.001",
+  "Subtechnique_Name": "File and Directory Permissions Modification: Windows File and Directory Permissions Modification",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1222",
+  "Technique_Name": "File and Directory Permissions Modification"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed filemod events overwriting magnify.exe in the system directory.",
+    "A Specific Behavior alert was generated for powershell.exe with a severity score of 51/100 when magnify.exe was replaced. The alert was also mapped to the correct ATT&CK Technique (T1015 - Accessibility Features)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'copy' via PowerShell to overwrite magnify.exe with cmd.exe",
+  "ScreenshotDatasources": [],
+  "Step": "17. Persistence",
+  "Substep": "17.C.1",
+  "Subtechnique": "T1546.008",
+  "Subtechnique_Name": "Event Triggered Execution: Accessibility Features",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'Get-ChildItem' via PowerShell to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed filemod events for the creation and write the .vsdx in the Recycle Bin.",
+    "A Specific Behavior alert was generated with a severity score of 60/100 and was correctly mapped to correct ATT&CK Technique (T1074 - Data Staged)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'copy' via PowerShell staged a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5) in the Recycle Bin (C:\\$Recycle.Bin) on CodeRed (10.0.1.5)",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.B.1.1",
+  "Subtechnique": "T1074.002",
+  "Subtechnique_Name": "Data Staged: Remote Data Staging",
+  "TacticGroup": "Collection",
+  "Technique": "T1074",
+  "Technique_Name": "Data Staged"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [
+    "Telemetry was available for the write file of the .vsdx file into the Recycle Bin, but no data was available that indicated it came from a network shared drive."
+  ],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'copy' via PowerShell collected a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)",
+  "ScreenshotDatasources": [],
+  "Step": "18. Collection",
+  "Substep": "18.B.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1039",
+  "Technique_Name": "Data from Network Shared Drive"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the creation of recycler.exe. Binary metadata on recycler.exe indicated it was masquerading and had a digital signature and file metadata that matched the WinRAR utility."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: File dropped to disk is a renamed copy of the WinRAR binary",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.A.1.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the creation of recycler.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Built-in upload module executed to write binary (recycler.exe) to disk on CodeRed (10.0.1.5)",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.A.1.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive. Telemetry also showed the creation of old.rar as the output of recycler.exe running.",
+    "The capability enriched recycler.exe with the correct ATT&CK Technique (1002 - Data Compressed)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Executed binary (recycler.exe) created compressed archive (old.rar) of previously collected file",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.1",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive.",
+    "The capability enriched recycler.exe with the correct ATT&CK Technique (1022 - Data Encrypted)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Executed binary (recycler.exe) created encrypted archive (old.rar) of previously collected file",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.2",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Collection",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the execution of recycler.exe with command-line arguments indicating it was WinRAR and file compression and encryption was used to create an encrypted archive.",
+    "A Specific Behavior alert was generated on execution of recycler.exe indicating it was WinRAR and was masquerading as a renamed process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Executed binary (recycler.exe) is a renamed copy of the WinRAR binary",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.B.1.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed a process tree for ftp.exe being executed with command-line arguments including ftp.txt.",
+    "The capability enriched ftp.exe with the correct ATT&CK Technique (Exfil Over Alternate Protocol)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: Sequence of 'echo' commands via PowerShell to populate commands in text file (ftp.txt), which is then executed by FTP to exfil data through network connection separate of existing C2 channel",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1048",
+  "Technique_Name": "Exfiltration Over Alternative Protocol"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the deletion of old.rar."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'del C:\\\\\"$\\\"Recycle.bin\\old.rar'",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.D.1",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry showed the deletion of recycler.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Empire: 'del recycler.exe'",
+  "ScreenshotDatasources": [],
+  "Step": "19. Exfiltration",
+  "Substep": "19.D.2",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "General Behavior",
+    "General Behavior",
+    "Specific Behavior"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree that showed magnify.exe executing from utilman.exe.",
+    "A General Behavior alert was generated named \\\"Execution of cmd from non-standard path\\\" with a 60/100 severity score.",
+    "A General Behavior alert was generated named \\\"Suspicious renamed cmd process\\\" with a 72/100 severity score.",
+    "A Specific Behavior alert was generated on execution of magnify.exe named \\\"Suspicious screen magnifier process\\\" with a 76/100 severity score."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "magnifer.exe previously overwritten by cmd.exe launched through RDP connection made to Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.A.1.1",
+  "Subtechnique": "T1546.008",
+  "Subtechnique_Name": "Event Triggered Execution: Accessibility Features",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": "",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "RDP connection made to Creeper (10.0.0.4) as part of execution of persistence mechanism",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.A.1.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "apt3",
+  "Capability_Requirements": [],
+  "Criteria": null,
+  "Datasources": [],
+  "Detection": [
+    "Telemetry",
+    "Enrichment"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Telemetry within the process tree showed magnify.exe executing whoami.exe.",
+    "The capability enriched whoami.exe with the correct ATT&CK Technique (T1033 - System Owner/User Discovery)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "vmware",
+  "Procedure": "Executed 'whoami' via cmd persistence mechanism through RDP connection made to Creeper (10.0.0.4)",
+  "ScreenshotDatasources": [],
+  "Step": "20. Execution of Persistence",
+  "Substep": "20.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}

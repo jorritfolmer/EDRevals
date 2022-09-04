@@ -1,6 +1,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "explorer.exe executes winword.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -10,8 +11,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "explorer.exe executes winword.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -28,6 +29,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "winword.exe loads VBEUI.DLL, executes code via AutoOpen()",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -37,8 +39,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "winword.exe loads VBEUI.DLL, executes code via AutoOpen()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Module: Module Load",
     "Module: Module Load",
@@ -55,6 +57,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "winword.exe downloads C:\\Users\\Public\\adb.txt",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -64,8 +67,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "winword.exe downloads C:\\Users\\Public\\adb.txt",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Creation",
@@ -85,6 +88,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "winword.exe executes cmd.exe to execute adb.vbs",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -94,8 +98,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "winword.exe executes cmd.exe to execute adb.vbs",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -112,6 +116,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "adb.vbs is obfuscated",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -121,8 +126,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "adb.vbs is obfuscated",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Metadata",
     "File: File Metadata",
@@ -142,6 +147,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "adb.vbs executes powershell.exe via Win32_Process",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -151,8 +157,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "adb.vbs executes powershell.exe via Win32_Process",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Command: Command Execution",
     "Command: Command Execution"
@@ -168,6 +174,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "WmiPrvSE.exe spawns powershell.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -177,8 +184,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "WmiPrvSE.exe spawns powershell.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -197,6 +204,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads adb.dll",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -206,8 +214,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe downloads adb.dll",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Creation"
@@ -223,6 +231,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes adb.dll",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -232,8 +241,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes adb.dll",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -249,6 +258,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe connects to 192.168.0.4 over protocol HTTP",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -258,8 +268,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe connects to 192.168.0.4 over protocol HTTP",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Connection Creation",
@@ -278,6 +288,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe connects to 192.168.0.4 over AES-encrypted protocol HTTP",
   "Datasources": [],
   "Detection": [
     "None"
@@ -287,8 +298,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe connects to 192.168.0.4 over AES-encrypted protocol HTTP",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.A.11",
@@ -301,6 +312,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe adds the blbdigital Registry Run key using RegSetValueExA()",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -310,8 +322,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe adds the blbdigital Registry Run key using RegSetValueExA()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Windows Registry: Windows Registry Key Modification",
     "Windows Registry: Windows Registry Key Modification",
@@ -328,6 +340,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes RtlGetVersion(), GetNativeSystemInfo(), and RtlGetNtProductType()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -337,8 +350,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes RtlGetVersion(), GetNativeSystemInfo(), and RtlGetNtProductType()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "3. Emotet Host Discovery and Credential Collection",
   "Substep": "3.A.1",
@@ -351,6 +364,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes CreateToolhelp32Snapshot()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -360,8 +374,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes CreateToolhelp32Snapshot()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "3. Emotet Host Discovery and Credential Collection",
   "Substep": "3.A.2",
@@ -374,6 +388,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe downloads Outlook.dll",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -383,8 +398,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe downloads Outlook.dll",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Creation"
@@ -400,6 +415,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe spawns cmd.exe then powershell.exe to search Outlook for password strings",
   "Datasources": [],
   "Detection": [
     "General"
@@ -409,8 +425,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe spawns cmd.exe then powershell.exe to search Outlook for password strings",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -425,6 +441,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe spawns cmd.exe then powershell.exe to read SenderEmailAddress values from Outlook",
   "Datasources": [],
   "Detection": [
     "General"
@@ -434,8 +451,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe spawns cmd.exe then powershell.exe to read SenderEmailAddress values from Outlook",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Script: Script Execution",
     "Script: Script Execution"
@@ -451,6 +468,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Adversary connects to 10.0.0.8 using protocol RDP (port 3389)",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -460,8 +478,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Adversary connects to 10.0.0.8 using protocol RDP (port 3389)",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation"
   ],
@@ -476,6 +494,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "User bill successfully authenticates into 10.0.0.8",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -485,8 +504,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User bill successfully authenticates into 10.0.0.8",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Logon Session: Logon Session Creation",
     "Logon Session: Logon Session Creation"
@@ -502,6 +521,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe downloads the file uxtheme.exe",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -511,8 +531,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe downloads the file uxtheme.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation"
   ],
@@ -527,6 +547,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "uxtheme.exe connects to 192.168.0.4 over protocol HTTP",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -536,8 +557,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "uxtheme.exe connects to 192.168.0.4 over protocol HTTP",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Traffic Content",
@@ -555,6 +576,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "uxtheme.exe connects to 192.168.0.4 over protocol HTTP on port 447",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -564,8 +586,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "uxtheme.exe connects to 192.168.0.4 over protocol HTTP on port 447",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Traffic Content",
@@ -582,6 +604,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes systeminfo",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -591,8 +614,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes systeminfo",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -608,6 +631,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes sc query",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -617,8 +641,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes sc query",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -634,6 +658,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes net user",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -643,8 +668,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes net user",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -662,6 +687,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes net user /domain",
   "Datasources": [],
   "Detection": [
     "General"
@@ -671,8 +697,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes net user /domain",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -689,6 +715,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes ipconfig",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -698,8 +725,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes ipconfig",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -715,6 +742,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes netstat",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -724,8 +752,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes netstat",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -741,6 +769,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes net /config",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -750,8 +779,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes net /config",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -767,6 +796,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes nltest /domain_trusts /all_trusts",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -776,8 +806,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes nltest /domain_trusts /all_trusts",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -793,6 +823,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes whoami",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -802,8 +833,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes whoami",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -819,6 +850,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "uxtheme.exe downloads  the file rubeus.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -828,8 +860,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "uxtheme.exe downloads  the file rubeus.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Creation"
@@ -845,6 +877,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes rubeus.exe kerberoast /domain:oz.local",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -854,8 +887,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes rubeus.exe kerberoast /domain:oz.local",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -870,6 +903,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Adversary connects to 10.0.0.4 using protocol RDP (port 3389)",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -879,8 +913,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Adversary connects to 10.0.0.4 using protocol RDP (port 3389)",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Connection Creation",
@@ -897,6 +931,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "User vfleming successfully authenticates into 10.0.0.4",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -906,8 +941,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User vfleming successfully authenticates into 10.0.0.4",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Logon Session: Logon Session Creation",
     "Logon Session: Logon Session Creation"
@@ -923,6 +958,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads the file uxtheme.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -932,8 +968,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe downloads the file uxtheme.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation"
   ],
@@ -948,6 +984,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe adds the Userinit Registry key using Set-ItemProperty",
   "Datasources": [],
   "Detection": [
     "General"
@@ -957,8 +994,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe adds the Userinit Registry key using Set-ItemProperty",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Script: Script Execution",
     "Windows Registry: Windows Registry Key Modification"
@@ -974,6 +1011,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe executes adfind.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -983,8 +1021,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe executes adfind.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -999,6 +1037,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes vssadmin.exe to create a copy of C:",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1008,8 +1047,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes vssadmin.exe to create a copy of C:",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -1025,6 +1064,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes reg.exe to save HKLM\\SYSTEM",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -1034,8 +1074,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes reg.exe to save HKLM\\SYSTEM",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -1051,6 +1091,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe downloads kill.bat",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1060,8 +1101,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe downloads kill.bat",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Creation"
@@ -1077,6 +1118,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe stops various services via net stop, sc config, and taskkill",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1086,8 +1128,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe stops various services via net stop, sc config, and taskkill",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -1107,6 +1149,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.Exe executes icacls.exe to modify permissions on C: and Z:",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1116,8 +1159,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.Exe executes icacls.exe to modify permissions on C: and Z:",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -1135,6 +1178,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe downloads window.bat",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1146,8 +1190,8 @@
   "Footnotes": [
     "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of  a \"cmd.exe created window.bat\"\u00a0event description for this sub-step during the Evaluation process."
   ],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe downloads window.bat",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation"
   ],
@@ -1162,6 +1206,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe deletes system backups via vssadmin and del",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1173,8 +1218,8 @@
   "Footnotes": [
     "During execution of the Evaluation, no relevant system backup files were present/enabled in the environment though the CMD commands to delete them was executed. The detection method(s) exhibited are subsequently scoped."
   ],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe deletes system backups via vssadmin and del",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation",
@@ -1191,6 +1236,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe downloads C:\\Users\\Public\\ryuk.exe",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1202,8 +1248,8 @@
   "Footnotes": [
     "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of a \"cmd.exe created ryuk.exe\" event description for this sub-step during the Evaluation process."
   ],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe downloads C:\\Users\\Public\\ryuk.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "Process: Process Metadata"
@@ -1219,6 +1265,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "ryuk.exe adjusts its token to include SE_PRIVILEGE_ENABLED via AdjustTokenPrivileges()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1230,8 +1277,8 @@
   "Footnotes": [
     "During execution of the Evaluation, there were no resulting changes to the token of ryuk.exe, though the AdjustTokenPrivileges() API function was executed, since the target SE_PRIVILEGE_ENABLED privilege was already enabled in the process token. The detection method(s) exhibited are subsequently scoped."
   ],
-  "Participant_Name": "Symantec",
-  "Procedure": "ryuk.exe adjusts its token to include SE_PRIVILEGE_ENABLED via AdjustTokenPrivileges()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "10. Ryuk Encryption for Impact",
   "Substep": "10.A.2",
@@ -1244,6 +1291,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "ryuk.exe executes CreateToolhelp32Snapshot()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1253,8 +1301,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "ryuk.exe executes CreateToolhelp32Snapshot()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "10. Ryuk Encryption for Impact",
   "Substep": "10.A.3",
@@ -1267,6 +1315,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "ryuk.exe injects into notepad.exe via WriteProcessMemory() and CreateRemoteThread()",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1276,8 +1325,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "ryuk.exe injects into notepad.exe via WriteProcessMemory() and CreateRemoteThread()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Modification",
     "Process: Process Modification",
@@ -1294,6 +1343,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "ryuk.exe enumerates drives via GetLogicalDriveStrings() and GetDriveType()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1303,8 +1353,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "ryuk.exe enumerates drives via GetLogicalDriveStrings() and GetDriveType()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "10. Ryuk Encryption for Impact",
   "Substep": "10.A.5",
@@ -1317,6 +1367,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "ryuk.exe enumerates files via FindFirstFile() and FindNextFile()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1326,8 +1377,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "ryuk.exe enumerates files via FindFirstFile() and FindNextFile()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "10. Ryuk Encryption for Impact",
   "Substep": "10.A.6",
@@ -1340,6 +1391,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "notepad.exe encrypts various files using AES + RSA",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1351,8 +1403,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "notepad.exe encrypts various files using AES + RSA",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Modification",
     "Module: Module Load",
@@ -1372,6 +1424,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "User fherbert successfully authenticates into 10.0.1.5",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1381,8 +1434,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User fherbert successfully authenticates into 10.0.1.5",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Logon Session: Logon Session Creation"
   ],
@@ -1399,6 +1452,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Adversary connects to 10.0.1.5 using SCP (port 22)",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1408,8 +1462,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Adversary connects to 10.0.1.5 using SCP (port 22)",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Network Traffic: Network Connection Creation"
@@ -1427,6 +1481,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Webshell payload (/tmp/search.php) is dropped to disk on 10.0.1.5",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1436,8 +1491,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Webshell payload (/tmp/search.php) is dropped to disk on 10.0.1.5",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "Network Traffic: Network Connection Creation"
@@ -1455,6 +1510,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Webshell payload (search.php) is copied to /var/www/html then connected to over port 443",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1464,8 +1520,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Webshell payload (search.php) is copied to /var/www/html then connected to over port 443",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Modification"
   ],
@@ -1482,6 +1538,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "A shell is executed",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1491,8 +1548,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "A shell is executed",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1509,6 +1566,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Shell executes whoami",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -1518,8 +1576,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Shell executes whoami",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1536,6 +1594,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Shell executes uname -a",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1545,8 +1604,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Shell executes uname -a",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1563,6 +1622,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Shell executes ls -lsahR",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1572,8 +1632,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Shell executes ls -lsahR",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1590,6 +1650,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "Shell executes cat to read /etc/passwd",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1599,8 +1660,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Shell executes cat to read /etc/passwd",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Access",
     "File: File Access"
@@ -1618,6 +1679,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "/var/www/html/centreon_module_linux_app64 is dropped to disk on 10.0.1.5",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1627,8 +1689,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "/var/www/html/centreon_module_linux_app64 is dropped to disk on 10.0.1.5",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1645,6 +1707,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "SUID binary /bin/backup is executed as root",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1654,8 +1717,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "SUID binary /bin/backup is executed as root",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1672,6 +1735,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "centreon_module_linux_app64 connects to 192.168.0.4 over protocol HTTPS",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1681,8 +1745,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "centreon_module_linux_app64 connects to 192.168.0.4 over protocol HTTPS",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "13. Upload and Execute Exaramel",
   "Substep": "13.A.3",
@@ -1697,6 +1761,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "centreon_module_linux_app64 connects to 192.168.0.4 over encrypted protocol HTTPS",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1706,8 +1771,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "centreon_module_linux_app64 connects to 192.168.0.4 over encrypted protocol HTTPS",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "13. Upload and Execute Exaramel",
   "Substep": "13.A.4",
@@ -1722,6 +1787,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "centreon_module_linux_app64 connects to 192.168.0.4 over protocol HTTPS on port 8443",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1731,8 +1797,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "centreon_module_linux_app64 connects to 192.168.0.4 over protocol HTTPS on port 8443",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Connection Creation"
@@ -1750,6 +1816,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "centreon_module_linux_app64 spawns crontab to create a new job",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1759,8 +1826,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "centreon_module_linux_app64 spawns crontab to create a new job",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Modification",
     "Process: Process Creation"
@@ -1778,6 +1845,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "centreon_module_linux_app64 writes to /etc/systemd/system/syslogd.service",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1787,8 +1855,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "centreon_module_linux_app64 writes to /etc/systemd/system/syslogd.service",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Creation"
@@ -1806,6 +1874,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "User root executes cat to read /etc/shadow",
   "Datasources": [],
   "Detection": [
     "General",
@@ -1819,8 +1888,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User root executes cat to read /etc/shadow",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Access",
     "Process: Process Creation",
@@ -1841,6 +1910,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "User root executes cat to read /home/fherbert/.bash_history",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1850,8 +1920,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User root executes cat to read /home/fherbert/.bash_history",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -1868,6 +1938,7 @@
   "Capability_Requirements": [
     "Linux Capability"
   ],
+  "Criteria": "centreon_module_linux_app64 accesses /home/fherbert/.ssh/id_rsa and /home/fherbert/.ssh/id_rsa.pub",
   "Datasources": [],
   "Detection": [
     "None",
@@ -1881,8 +1952,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "centreon_module_linux_app64 accesses /home/fherbert/.ssh/id_rsa and /home/fherbert/.ssh/id_rsa.pub",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Access",
     "File: File Access",
@@ -1900,6 +1971,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "User fherbert successfully authenticates into 10.0.1.7 via SMB",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1909,8 +1981,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User fherbert successfully authenticates into 10.0.1.7 via SMB",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Logon Session: Logon Session Creation",
     "Logon Session: Logon Session Creation"
@@ -1926,6 +1998,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Connection to 10.0.1.7 over protocol SMB",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1935,8 +2008,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Connection to 10.0.1.7 over protocol SMB",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Share: Network Share Access",
     "Network Traffic: Network Connection Creation",
@@ -1954,6 +2027,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "C:\\Windows\\wsmprovav.exe is written to disk on 10.0.1.7",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -1963,8 +2037,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "C:\\Windows\\wsmprovav.exe is written to disk on 10.0.1.7",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Traffic Flow",
     "File: File Creation",
@@ -1982,6 +2056,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "A service binary is written to disk in C:\\Windows\\on 10.0.1.7",
   "Datasources": [],
   "Detection": [
     "General"
@@ -1991,8 +2066,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "A service binary is written to disk in C:\\Windows\\on 10.0.1.7",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "File: File Metadata",
@@ -2011,6 +2086,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "New service Windows Check AV is created",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2020,8 +2096,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "New service Windows Check AV is created",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Windows Registry: Windows Registry Key Modification"
   ],
@@ -2036,6 +2112,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "SecurityHealth Registry Run key is added using reg.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2045,8 +2122,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "SecurityHealth Registry Run key is added using reg.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Windows Registry: Windows Registry Key Modification"
@@ -2062,6 +2139,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Service binary in C:\\Windows\\ is executed",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2071,8 +2149,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Service binary in C:\\Windows\\ is executed",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -2087,6 +2165,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Rundll32.exe executes wsmprovav.dll",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2096,8 +2175,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Rundll32.exe executes wsmprovav.dll",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -2112,6 +2191,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Rundll32 connects to 192.168.0.4 over protocol HTTPS",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2121,8 +2201,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Rundll32 connects to 192.168.0.4 over protocol HTTPS",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Traffic Content",
     "Network Traffic: Network Connection Creation"
@@ -2138,6 +2218,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Rundll32 connects to 192.168.0.4 over encrypted protocol HTTPS",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2147,8 +2228,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Rundll32 connects to 192.168.0.4 over encrypted protocol HTTPS",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Traffic Content"
@@ -2164,6 +2245,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes user.Current()",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2175,8 +2257,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes user.Current()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Module: Module Load",
     "Command: Command Execution"
@@ -2192,6 +2274,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe queries HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion for various subkeys",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2201,8 +2284,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe queries HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion for various subkeys",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "16. Windows Discovery",
   "Substep": "16.A.2",
@@ -2215,6 +2298,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe lists files in C:\\",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2224,8 +2308,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe lists files in C:\\",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "16. Windows Discovery",
   "Substep": "16.A.3",
@@ -2238,6 +2322,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes cmd.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2247,8 +2332,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes cmd.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -2263,6 +2348,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes netstat.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2272,8 +2358,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "cmd.exe executes netstat.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -2289,6 +2375,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe creates the file oradump.exe",
   "Datasources": [],
   "Detection": [
     "General"
@@ -2300,8 +2387,8 @@
   "Footnotes": [
     "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of a \"rundll32.exe created oradump.exe\" event description for this sub-step during the Evaluation process."
   ],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe creates the file oradump.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation"
   ],
@@ -2316,6 +2403,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "oradump.exe reads passwords from local browsers DBs",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2325,8 +2413,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "oradump.exe reads passwords from local browsers DBs",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "17. Credential Dumping",
   "Substep": "17.A.2",
@@ -2339,6 +2427,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe creates the file mslog.exe",
   "Datasources": [],
   "Detection": [
     "General"
@@ -2350,8 +2439,8 @@
   "Footnotes": [
     "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of a \"rundll32.exe created mslog.exe\" event description for this sub-step during the Evaluation process."
   ],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe creates the file mslog.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation"
   ],
@@ -2366,6 +2455,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "mslog.exe executes SetWindowsHookEx() and GetKeyState() to collect keystrokes",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2375,8 +2465,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "mslog.exe executes SetWindowsHookEx() and GetKeyState() to collect keystrokes",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [],
   "Step": "17. Credential Dumping",
   "Substep": "17.A.4",
@@ -2389,6 +2479,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe RC4 encrypts data from mslog.txt",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2400,8 +2491,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe RC4 encrypts data from mslog.txt",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Module: Module Load",
     "Module: Module Load"
@@ -2417,6 +2508,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe posts data from mslog.txt to 192.168.0.4 over HTTPS",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2426,8 +2518,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe posts data from mslog.txt to 192.168.0.4 over HTTPS",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation"
   ],
@@ -2442,6 +2534,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes dsquery.exe via cmd.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2451,8 +2544,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes dsquery.exe via cmd.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -2468,6 +2561,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe deletes oradump.exe, mslog.exe, and mslog.txt via cmd.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2477,8 +2571,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe deletes oradump.exe, mslog.exe, and mslog.txt via cmd.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Deletion",
     "File: File Deletion"
@@ -2494,6 +2588,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "User patreides successfully authenticates into 10.0.1.4",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2503,8 +2598,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "User patreides successfully authenticates into 10.0.1.4",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Logon Session: Logon Session Creation",
     "Logon Session: Logon Session Creation"
@@ -2520,6 +2615,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Adversary connects to 10.0.1.4 using RDP (port 3389)",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2529,8 +2625,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Adversary connects to 10.0.1.4 using RDP (port 3389)",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Network Traffic: Network Connection Creation",
     "Network Traffic: Network Connection Creation"
@@ -2546,6 +2642,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe is executed",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -2555,8 +2652,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe is executed",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Metadata",
     "Process: Process Metadata"
@@ -2572,6 +2669,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads perfc.dat via copy",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -2581,8 +2679,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe downloads perfc.dat via copy",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Metadata",
     "File: File Creation"
@@ -2598,6 +2696,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes perfc.dat",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2607,8 +2706,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes perfc.dat",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Metadata"
   ],
@@ -2623,6 +2722,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "schtask.exe creates Restart task",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2632,8 +2732,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "schtask.exe creates Restart task",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Metadata",
     "Process: Process Metadata",
@@ -2650,6 +2750,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes GetIpNetTable()",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2661,8 +2762,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes GetIpNetTable()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Module: Module Load",
     "Module: Module Load"
@@ -2678,6 +2779,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe executes CredEnumerateW()",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -2687,8 +2789,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe executes CredEnumerateW()",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Command: Command Execution",
     "Process: Process Metadata"
@@ -2704,6 +2806,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "C:\\Windows\\perfc.dat is written to disk on 10.0.1.8",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -2713,8 +2816,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "C:\\Windows\\perfc.dat is written to disk on 10.0.1.8",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Creation",
     "Network Traffic: Network Connection Creation"
@@ -2730,6 +2833,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Remote WMI is used to execute rundll32.exe on 10.0.1.8",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -2739,8 +2843,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Remote WMI is used to execute rundll32.exe on 10.0.1.8",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Command: Command Execution",
     "Process: Process Metadata"
@@ -2756,6 +2860,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "rundll32.exe encrypts various files using AES",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2767,8 +2872,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "rundll32.exe encrypts various files using AES",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "File: File Modification",
     "Process: Process Metadata",
@@ -2788,6 +2893,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "Event logs are cleared via wevtutil.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2797,8 +2903,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "Event logs are cleared via wevtutil.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Metadata",
     "Process: Process Creation",
@@ -2816,6 +2922,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "USN change journal is cleared using fsutil.exe",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2825,8 +2932,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "USN change journal is cleared using fsutil.exe",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation",
     "Process: Process Creation"
@@ -2842,6 +2949,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "schtask.exe executes Restart task",
   "Datasources": [],
   "Detection": [
     "Technique"
@@ -2851,8 +2959,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "schtask.exe executes Restart task",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Process: Process Creation"
   ],
@@ -2867,6 +2975,7 @@
 {
   "Adversary": "wizard-spider-sandworm",
   "Capability_Requirements": [],
+  "Criteria": "powershell.exe reboots the hosts via Restart-Computer",
   "Datasources": [],
   "Detection": [
     "Tactic"
@@ -2876,8 +2985,8 @@
     null
   ],
   "Footnotes": [],
-  "Participant_Name": "Symantec",
-  "Procedure": "powershell.exe reboots the hosts via Restart-Computer",
+  "Participant_Name": "symantec",
+  "Procedure": "",
   "ScreenshotDatasources": [
     "Command: Command Execution",
     "Process: Process Metadata",

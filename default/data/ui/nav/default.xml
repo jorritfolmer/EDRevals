@@ -18,8 +18,7 @@
   	<view name="detection_results_per_step_carbanak_fin7" />
    	<view name="detection_results_per_step_wizard_spider_and_sandworm" />
   </collection>
-  <collection label="Biased barcharts">
-  	<view name="bias_ahead" />
-  </collection>
+  <view name="tactic_groups" default="true" />
+  <view name="data_sources" default="true" />
   <view name="search" />
 </nav>

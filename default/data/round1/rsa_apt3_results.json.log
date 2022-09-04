@@ -1,6 +1,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -10,8 +11,8 @@
     "Telemetry showed execution of Resume Viewer.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Legitimate user Debbie clicked and executed malicious self-extracting archive (Resume Viewer.exe) on 10.0.1.6 (Nimda)",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.A.1.1",
@@ -24,6 +25,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -33,8 +35,8 @@
     "Telemetry showed cmd.exe launching rundll32.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) launched a DLL payload (update.dat) using Rundll32",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.A.1.2",
@@ -47,6 +49,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -56,8 +59,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Previously executed self-extracting archive (Resume Viewer.exe) launched an embedded batch file (pdfhelper.cmd)",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.A.1.3",
@@ -70,6 +73,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -79,8 +83,8 @@
     "Telemetry showed a cmd.exe \\\"rename to executable\\\" event for autoupdate.bat in the Startup folder."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Previously executed batch file (pdfhelper.cmd) moved a separate batch file (autoupdate.bat) to the Startup folder",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.B.1",
@@ -93,6 +97,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -102,8 +107,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel established using port 53",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.C.1.1",
@@ -116,6 +121,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -125,8 +131,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel established using DNS traffic to freegoogleadsenseinfo.com",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.C.1.2",
@@ -139,6 +145,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -148,8 +155,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel established using both NetBIOS and base64 encoding",
   "ScreenshotDatasources": [],
   "Step": "1. Initial Compromise",
   "Substep": "1.C.1.3",
@@ -162,6 +169,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -171,8 +179,8 @@
     "Telemetry showed cmd.exe executing ipconfig.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'ipconfig -all' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.A.1",
@@ -185,6 +193,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -194,8 +203,8 @@
     "Telemetry showed cmd.exe executing arp.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'arp -a' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.A.2",
@@ -208,6 +217,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -217,8 +227,8 @@
     "Telemetry showed cmd.exe executing echo with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'echo' via cmd to enumerate specific environment variables",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.B.1",
@@ -231,6 +241,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -240,8 +251,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.C.1",
@@ -254,6 +265,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -263,8 +275,8 @@
     "Telemetry showed cmd.exe executing tasklist.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'tasklist -v' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.C.2",
@@ -277,6 +289,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -286,8 +299,8 @@
     "Telemetry showed cmd.exe executing sc.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'sc query' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.D.1",
@@ -300,6 +313,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -309,8 +323,8 @@
     "Telemetry showed cmd.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net start' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.D.2",
@@ -323,6 +337,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -332,8 +347,8 @@
     "Telemetry showed cmd.exe executing systeminfo.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'systeminfo' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.E.1",
@@ -346,6 +361,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -355,8 +371,8 @@
     "Telemetry showed cmd.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net config workstation' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.E.2",
@@ -369,6 +385,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -378,8 +395,8 @@
     "Telemetry showed cmd.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net localgroup administrators' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.F.1",
@@ -392,6 +409,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -401,8 +419,8 @@
     "Telemetry showed cmd.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net localgroup administrators -domain' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.F.2",
@@ -415,6 +433,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry",
@@ -426,8 +445,8 @@
     "An \\\"IIOC\\\" module called \\\"Enumerates domain administrators\\\" was generated and provided enrichment."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net group \\\"Domain Admins\\\" -domain' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.F.3",
@@ -440,6 +459,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -449,8 +469,8 @@
     "Telemetry showed cmd.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net user -domain' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.G.1",
@@ -463,6 +483,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -472,8 +493,8 @@
     "Telemetry showed cmd.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net user george -domain' via cmd",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.G.2",
@@ -486,6 +507,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -495,8 +517,8 @@
     "Telemetry showed cmd.exe executing reg.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to enumerate a specific Registry key",
   "ScreenshotDatasources": [],
   "Step": "2. Initial Discovery",
   "Substep": "2.H.1",
@@ -509,6 +531,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -518,8 +541,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to elevate process integrity level",
   "ScreenshotDatasources": [],
   "Step": "3. Privilege Escalation",
   "Substep": "3.A.1.1",
@@ -532,6 +555,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -541,8 +565,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in UAC bypass token duplication capability executed to modify current process token",
   "ScreenshotDatasources": [],
   "Step": "3. Privilege Escalation",
   "Substep": "3.A.1.2",
@@ -555,6 +579,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -564,8 +589,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs",
   "ScreenshotDatasources": [],
   "Step": "3. Privilege Escalation",
   "Substep": "3.B.1",
@@ -578,6 +603,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -587,8 +613,8 @@
     "Telemetry showed powershell.exe creating a remote thread into cmd.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in process injection capability executed to inject callback into cmd.exe",
   "ScreenshotDatasources": [],
   "Step": "3. Privilege Escalation",
   "Substep": "3.C.1",
@@ -601,6 +627,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -610,8 +637,8 @@
     "Telemetry showed cmd.exe running net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net group \\\"Domain Controllers\\\" -domain' via cmd",
   "ScreenshotDatasources": [],
   "Step": "4. Discovery for Lateral Movement",
   "Substep": "4.A.1",
@@ -624,6 +651,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -633,8 +661,8 @@
     "Telemetry showed cmd.exe running net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'net group \\\"Domain Computers\\\" -domain' via cmd",
   "ScreenshotDatasources": [],
   "Step": "4. Discovery for Lateral Movement",
   "Substep": "4.A.2",
@@ -647,6 +675,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -656,8 +685,8 @@
     "Telemetry showed cmd.exe running netsh.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'netsh advfirewall show allprofiles' via cmd",
   "ScreenshotDatasources": [],
   "Step": "4. Discovery for Lateral Movement",
   "Substep": "4.B.1",
@@ -670,6 +699,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -679,8 +709,8 @@
     "Telemetry showed cmd.exe running netstat.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'netstat -ano' via cmd",
   "ScreenshotDatasources": [],
   "Step": "4. Discovery for Lateral Movement",
   "Substep": "4.C.1",
@@ -693,6 +723,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -702,8 +733,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in Mimikatz credential dump capability executed",
   "ScreenshotDatasources": [],
   "Step": "5. Credential Access",
   "Substep": "5.A.1.1",
@@ -716,6 +747,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -725,8 +757,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Credential dump capability involved process injection into lsass",
   "ScreenshotDatasources": [],
   "Step": "5. Credential Access",
   "Substep": "5.A.1.2",
@@ -739,6 +771,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -748,8 +781,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in hash dump capability executed",
   "ScreenshotDatasources": [],
   "Step": "5. Credential Access",
   "Substep": "5.A.2.1",
@@ -762,6 +795,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -771,8 +805,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Hash dump capability involved process injection into lsass.exe",
   "ScreenshotDatasources": [],
   "Step": "5. Credential Access",
   "Substep": "5.A.2.2",
@@ -785,6 +819,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -794,8 +829,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in token theft capability executed to change user context to George",
   "ScreenshotDatasources": [],
   "Step": "5. Credential Access",
   "Substep": "5.B.1",
@@ -808,6 +843,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -817,8 +853,8 @@
     "Telemetry showed cmd.exe executing reg.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'reg query' via cmd to remotely enumerate a specific Registry key on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "6. Lateral Movement",
   "Substep": "6.A.1",
@@ -831,6 +867,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -840,8 +877,8 @@
     "Telemetry showed connections over TCP port 80 to freegoogleadsenseinfo.com (C2 domain)."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel modified to use port 80",
   "ScreenshotDatasources": [],
   "Step": "6. Lateral Movement",
   "Substep": "6.B.1.1",
@@ -854,6 +891,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -863,8 +901,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel modified to use HTTP traffic to freegoogleadsenseinfo.com",
   "ScreenshotDatasources": [],
   "Step": "6. Lateral Movement",
   "Substep": "6.B.1.2",
@@ -877,6 +915,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -886,8 +925,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel modified to split communications between both HTTP and DNS",
   "ScreenshotDatasources": [],
   "Step": "6. Lateral Movement",
   "Substep": "6.B.1.3",
@@ -900,6 +939,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -909,8 +949,8 @@
     "Telemetry showed cmd.exe connecting to 10.0.0.5 (Conficker) over port 3389."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: C2 channel modified to proxy RDP connection to Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "6. Lateral Movement",
   "Substep": "6.C.1",
@@ -923,6 +963,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -932,8 +973,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Added user Jesse to Conficker (10.0.0.5) through RDP connection",
   "ScreenshotDatasources": [],
   "Step": "7. Persistence",
   "Substep": "7.A.1.1",
@@ -946,6 +987,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -955,8 +997,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility used to add new user through RDP connection",
   "ScreenshotDatasources": [],
   "Step": "7. Persistence",
   "Substep": "7.A.1.2",
@@ -969,6 +1011,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -978,8 +1021,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Microsoft Management Console (Local Users and Groups snap-in) GUI utility displayed user account information",
   "ScreenshotDatasources": [],
   "Step": "7. Persistence",
   "Substep": "7.A.1.3",
@@ -992,6 +1035,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1001,8 +1045,8 @@
     "Telemetry showed file write of updater.dll."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in upload capability executed to write a DLL payload (updater.dll) to disk on Nimda (10.0.1.6)",
   "ScreenshotDatasources": [],
   "Step": "7. Persistence",
   "Substep": "7.B.1",
@@ -1015,6 +1059,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1024,8 +1069,8 @@
     "Telemetry showed the execution of schtasks.exe as well as the full command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'schtasks' via cmd to create scheduled task that executes a DLL payload (updater.dll)",
   "ScreenshotDatasources": [],
   "Step": "7. Persistence",
   "Substep": "7.C.1",
@@ -1038,6 +1083,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1047,8 +1093,8 @@
     "Telemetry showed cmd.exe executing dir with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'dir -s -b \\\"\\\\conficker\\wormshare\\\"' via cmd",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.A.1",
@@ -1061,6 +1107,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1070,8 +1117,8 @@
     "Telemetry showed cmd.exe executing tree with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'tree \\\"C:\\Users\\debbie\\\"' via cmd",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.A.2",
@@ -1084,6 +1131,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1093,8 +1141,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'ps' (Process status) via Win32 APIs",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.B.1",
@@ -1107,6 +1155,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1116,8 +1165,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in keylogging capability executed to capture keystrokes of user Debbie",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.C.1.1",
@@ -1130,6 +1179,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1139,8 +1189,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Keylogging capability included residual enumeration of application windows",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.C.1.2",
@@ -1153,6 +1203,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1162,8 +1213,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in screen capture capability executed to capture screenshot of current window of user Debbie",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.D.1.1",
@@ -1176,6 +1227,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1185,8 +1237,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Screen capture capability involved process injection into explorer.exe",
   "ScreenshotDatasources": [],
   "Step": "8. Collection",
   "Substep": "8.D.1.2",
@@ -1199,6 +1251,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1208,8 +1261,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: 'ls' (List) via Win32 APIs to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "9. Exfiltration",
   "Substep": "9.A.1",
@@ -1222,6 +1275,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1231,8 +1285,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Built-in download capability executed to a collect file (Shockwave_rackb_diagram.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "9. Exfiltration",
   "Substep": "9.B.1.1",
@@ -1245,6 +1299,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1254,8 +1309,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Cobalt Strike: Download capability exfiltrated data through existing C2 channel",
   "ScreenshotDatasources": [],
   "Step": "9. Exfiltration",
   "Substep": "9.B.1.2",
@@ -1268,6 +1323,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1277,8 +1333,8 @@
     "Telemetry showed cmd.exe executing autoupdate.bat from the Startup folder."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Batch file (autoupdate.bat) previously written to Startup folder executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (update.dat) using Rundll32",
   "ScreenshotDatasources": [],
   "Step": "10. Execution of Persistence",
   "Substep": "10.A.1",
@@ -1291,6 +1347,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1300,8 +1357,8 @@
     "Telemetry showed rundll32.exe executing updater.dll."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Scheduled task executed when user Debbie logs on to Nimda (10.0.1.6), launching a DLL payload (updater.dll) using Rundll32",
   "ScreenshotDatasources": [],
   "Step": "10. Execution of Persistence",
   "Substep": "10.A.2",
@@ -1314,6 +1371,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1323,8 +1381,8 @@
     "Telemetry showed \\\\\"unregmp2.exe /FirstLogon\\\\\" (associated with user logon) as well as the user name \\\\\"Jesse J\\\\\" within Machine Properties."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "RDP connection to Conficker (10.0.0.5) authenticated using previously added user Jesse",
   "ScreenshotDatasources": [],
   "Step": "10. Execution of Persistence",
   "Substep": "10.B.1.1",
@@ -1337,6 +1395,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1346,8 +1405,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "RDP connection made to Conficker (10.0.0.5) as part of execution of persistence mechanism",
   "ScreenshotDatasources": [],
   "Step": "10. Execution of Persistence",
   "Substep": "10.B.1.2",
@@ -1360,6 +1419,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1371,8 +1431,8 @@
   "Footnotes": [
     "Vendor says launch command-line argument truncation resulted in PowerShell not being able to be decoded."
   ],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Legitimate user Bob clicked and executed malicious VBScript (autoupdate.vbs) on 10.0.1.5 (CodeRed)",
   "ScreenshotDatasources": [],
   "Step": "11. Initial Compromise",
   "Substep": "11.A.1",
@@ -1385,6 +1445,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1394,8 +1455,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: C2 channel established using port 443",
   "ScreenshotDatasources": [],
   "Step": "11. Initial Compromise",
   "Substep": "11.B.1.1",
@@ -1408,6 +1469,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1417,8 +1479,8 @@
     "Telemetry showed powershell.exe making a connection over port 443 to freegoogleadsenseinfo.com (C2 domain)."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: C2 channel established using HTTPS traffic to freegoogleadsenseinfo.com",
   "ScreenshotDatasources": [],
   "Step": "11. Initial Compromise",
   "Substep": "11.B.1.2",
@@ -1431,6 +1493,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -1440,8 +1503,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Encrypted C2 channel established using HTTPS",
   "ScreenshotDatasources": [],
   "Step": "11. Initial Compromise",
   "Substep": "11.B.1.3",
@@ -1454,6 +1517,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1463,8 +1527,8 @@
     "Telemetry showed powershell.exe executing route.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'route print' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.A.1",
@@ -1477,6 +1541,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1486,8 +1551,8 @@
     "Telemetry showed powershell.exe executing ipconfig.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'ipconfig -all' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.A.2",
@@ -1500,6 +1565,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1509,8 +1575,8 @@
     "Telemetry showed powershell.exe executing whoami.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'whoami -all -fo list' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.B.1",
@@ -1523,6 +1589,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1532,8 +1599,8 @@
     "Telemetry showed powershell.exe executing qprocess.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'qprocess *' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.C.1",
@@ -1546,6 +1613,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1555,8 +1623,8 @@
     "Telemetry showed powershell.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net start' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.D.1",
@@ -1569,6 +1637,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1578,8 +1647,8 @@
     "Telemetry showed PowerShell running and a PowerShell script being written to disk that coincided with the execution of WinEnum."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in WinEnum module executed to programmatically execute a series of enumeration techniques",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1",
@@ -1592,6 +1661,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1601,8 +1671,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of user information",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.1",
@@ -1615,6 +1685,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1624,8 +1695,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of AD group memberships",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.2",
@@ -1638,6 +1709,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1647,8 +1719,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of password policy information",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.3",
@@ -1661,6 +1733,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1670,8 +1743,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of recently opened files",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.4.1",
@@ -1684,6 +1757,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1693,8 +1767,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of interesting files",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.4.2",
@@ -1707,6 +1781,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1716,8 +1791,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of clipboard contents",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.5",
@@ -1730,6 +1805,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1739,8 +1815,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of system information",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.6.1",
@@ -1753,6 +1829,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1762,8 +1839,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of Windows update information",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.6.2",
@@ -1776,6 +1853,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1785,8 +1863,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of system information via a Registry query",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.7",
@@ -1799,6 +1877,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1808,8 +1887,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of services",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.8",
@@ -1822,6 +1901,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1831,8 +1911,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of available shares",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.9.1",
@@ -1845,6 +1925,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1854,8 +1935,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of mapped network drives",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.9.2",
@@ -1868,6 +1949,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1877,8 +1959,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of AV solutions",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.10.1",
@@ -1891,6 +1973,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1900,8 +1983,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of firewall rules",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.10.2",
@@ -1914,6 +1997,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -1923,8 +2007,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of network adapters",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.11",
@@ -1937,6 +2021,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1946,8 +2031,8 @@
     "Telemetry showed powershell.exe executing netstat.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: WinEnum module included enumeration of established network connections",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.E.1.12",
@@ -1960,6 +2045,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1969,8 +2055,8 @@
     "Telemetry showed powershell.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net group \\\"Domain Admins\\\" -domain' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.F.1",
@@ -1983,6 +2069,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -1992,8 +2079,8 @@
     "Telemetry showed powershell.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'Net Localgroup Administrators' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.F.2",
@@ -2006,6 +2093,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2015,8 +2103,8 @@
     "Telemetry showed powershell.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net user' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.G.1",
@@ -2029,6 +2117,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2038,8 +2127,8 @@
     "Telemetry showed powershell.exe executing net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net user -domain' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "12. Initial Discovery",
   "Substep": "12.G.2",
@@ -2052,6 +2141,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2061,8 +2151,8 @@
     "Telemetry showed execution of net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net group \\\"Domain Computers\\\" -domain' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "13. Discovery for Lateral Movement",
   "Substep": "13.A.1",
@@ -2075,6 +2165,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2084,8 +2175,8 @@
     "Telemetry showed execution of net.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net use' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "13. Discovery for Lateral Movement",
   "Substep": "13.B.1",
@@ -2098,6 +2189,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -2107,8 +2199,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'netstat -ano' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "13. Discovery for Lateral Movement",
   "Substep": "13.B.2",
@@ -2121,6 +2213,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2130,8 +2223,8 @@
     "Telemetry showed execution of reg.exe with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire:'reg query' via PowerShell to enumerate a specific Registry key",
   "ScreenshotDatasources": [],
   "Step": "13. Discovery for Lateral Movement",
   "Substep": "13.C.1",
@@ -2144,6 +2237,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2153,8 +2247,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in UAC bypass token duplication module executed to launch new callback with elevated process integrity level",
   "ScreenshotDatasources": [],
   "Step": "14. Privilege Escalation",
   "Substep": "14.A.1.1",
@@ -2167,6 +2261,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2176,8 +2271,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: UAC bypass module downloaded and wrote a new Empire stager (wdbypass) to disk",
   "ScreenshotDatasources": [],
   "Step": "14. Privilege Escalation",
   "Substep": "14.A.1.2",
@@ -2190,6 +2285,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2199,8 +2295,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over HTTP",
   "ScreenshotDatasources": [],
   "Step": "14. Privilege Escalation",
   "Substep": "14.A.1.3",
@@ -2213,6 +2309,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2222,8 +2319,8 @@
     "Telemetry showed network connection to 192.168.0.5 (C2 server) over port 8080. Though it does not count as a detection, telemetry also showed an encoded PowerShell command that could be decoded outside the capability to show the IEX command used to download the file (wdbypass) over HTTP port 8080."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: UAC bypass module downloaded a new Empire stager (wdbypass) over port 8080",
   "ScreenshotDatasources": [],
   "Step": "14. Privilege Escalation",
   "Substep": "14.A.1.4",
@@ -2236,6 +2333,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2245,8 +2343,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in keylogging module executed to capture keystrokes of user Bob",
   "ScreenshotDatasources": [],
   "Step": "15. Credential Access",
   "Substep": "15.A.1.1",
@@ -2259,6 +2357,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2268,8 +2367,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in keylogging module included residual enumeration of application windows",
   "ScreenshotDatasources": [],
   "Step": "15. Credential Access",
   "Substep": "15.A.1.2",
@@ -2282,6 +2381,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -2291,8 +2391,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'get-content' via PowerShell to collect sensitive file (it_tasks.txt) from a network shared drive (Wormshare) on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "15. Credential Access",
   "Substep": "15.B.1",
@@ -2305,6 +2405,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2314,8 +2415,8 @@
     "Telemetry showed repeated logon attempts via net.exe and command-line arguments indicative of password spraying."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net use' via PowerShell to brute force password spraying authentication attempts to Morris (10.0.1.4) and Nimda (10.0.1.6) targeting credentials of usersKmitnick, Bob, and Frieda",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.A.1.1",
@@ -2328,6 +2429,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2337,8 +2439,8 @@
     "Telemetry showed repeated logon attempts targeting ADMIN$ via net.exe and command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Brute force password spraying attempts targeted Windows admin shares on Morris (10.0.1.4) and Nimda (10.0.1.6)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.A.1.2",
@@ -2351,6 +2453,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2360,8 +2463,8 @@
     "Telemetry showed a logon attempt via net.exe and command-line arguments using valid credentials of user Kmitnick."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Conficker (10.0.0.5) using credentials of user Kmitnick",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.B.1.1",
@@ -2374,6 +2477,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2383,8 +2487,8 @@
     "Telemetry showed a logon attempt via net.exe and command-line arguments targeting ADMIN$ via net.exe and command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Successful authentication targeted Windows admin share on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.B.1.2",
@@ -2397,6 +2501,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2406,8 +2511,8 @@
     "Telemetry showed repeated logon attempts via net.exe and command-line arguments indicative of password spraying, eventually resulting in a successful logon."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Successful authentication to Conficker (10.0.0.5) using credentials of user Kmitnick as a result of the brute force password spraying",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.B.1.3",
@@ -2420,6 +2525,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2429,8 +2535,8 @@
     "Telemetry showed net.exe execution and command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net use -delete' via PowerShell",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.C.1",
@@ -2443,6 +2549,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2452,8 +2559,8 @@
     "Telemetry showed a logon attempt via net.exe and command-line arguments targeting C$ via net.exe and command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Successful authentication targeted Windows admin shares on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.D.1.1",
@@ -2466,6 +2573,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2475,8 +2583,8 @@
     "Telemetry showed a process tree containing a logon attempt via net.exe and command-line arguments using valid credentials of user Kmitnick."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'net use' via PowerShell to successfully authenticate to Creeper (10.0.0.4) using credentials of user Kmitnick",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.D.1.2",
@@ -2489,6 +2597,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2498,8 +2607,8 @@
     "Telemetry showed file write of autoupdate.vbs."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in upload module executed to write malicious VBScript (autoupdate.vbs) to disk on CodeRed (10.0.1.5)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.E.1",
@@ -2512,6 +2621,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2521,8 +2631,8 @@
     "Telemetry showed cmd.exe executing autoupdate.vbs via wscript.exe as user Kmitnick"
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in runas module executed to launch malicious VBScript (autoupdate.vbs) as user Kmitnick",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.F.1",
@@ -2535,6 +2645,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -2544,8 +2655,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in move capability executed to write malicious VBScript (update.vbs) to disk on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.G.1",
@@ -2558,6 +2669,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2567,8 +2679,8 @@
     "Telemetry showed execution of sc.exe to query services on 10.0.0.4 (Creeper)."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'sc query' via PowerShell to remotely enumerate services on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.H.1",
@@ -2581,6 +2693,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2590,8 +2703,8 @@
     "Telemetry showed execution of sc.exe to create a new service called AdobeUpdater with a binPath set to run cmd.exe and execute update.vbs."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'sc create' via PowerShell to remotely create a service on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.I.1.1",
@@ -2604,6 +2717,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2613,8 +2727,8 @@
     "Telemetry showed execution of sc.exe to create a new service called AdobeUpdater with a binPath set to run cmd.exe and execute update.vbs as well as set the service description. An analyst can use this information to determine the service is masquerading."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'sc description' via PowerShell to remotely disguise a service on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.I.1.2",
@@ -2627,6 +2741,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2636,8 +2751,8 @@
     "Telemetry showed execution of sc.exe to query for the AdobeUpdater service on 10.0.0.4 (Creeper)."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'sc qc' via PowerShell to remotely enumerate a specific service on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.J.1",
@@ -2650,6 +2765,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -2659,8 +2775,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'type' via PowerShell to remotely enumerate a specific file (update.vbs) on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.K.1",
@@ -2673,6 +2789,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2682,8 +2799,8 @@
     "Telemetry showed execution of sc.exe to start the AdobeUpdater service on 10.0.0.4 (Creeper). Telemetry on Creeper showed the execution of cmd.exe to run update.vbs."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'sc start' via PowerShell to remotely launch a specific service on Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "16. Lateral Movement",
   "Substep": "16.L.1",
@@ -2696,6 +2813,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2705,8 +2823,8 @@
     "Telemetry showed reg.exe executing with command-line arguments indicating a check to see if terminal services was enabled."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key associated with terminal services",
   "ScreenshotDatasources": [],
   "Step": "17. Persistence",
   "Substep": "17.A.1.1",
@@ -2719,6 +2837,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2728,8 +2847,8 @@
     "Telemetry showed reg.exe executing with command-line arguments."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'reg query' via PowerShell to enumerate a specific Registry key",
   "ScreenshotDatasources": [],
   "Step": "17. Persistence",
   "Substep": "17.A.1.2",
@@ -2742,6 +2861,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2751,8 +2871,8 @@
     "Telemetry showed takeown.exe execution to change the file permissions on magnify.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'takeown' via PowerShell to obtain ownership of magnify.exe",
   "ScreenshotDatasources": [],
   "Step": "17. Persistence",
   "Substep": "17.B.1",
@@ -2765,6 +2885,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2774,8 +2895,8 @@
     "Telemetry showed icacls.exe execution to change permissions on magnify.exe granting discretionary access to SYSTEM."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'icacls' via PowerShell to modify the DACL for magnify.exe",
   "ScreenshotDatasources": [],
   "Step": "17. Persistence",
   "Substep": "17.B.2",
@@ -2788,6 +2909,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2797,8 +2919,8 @@
     "Telemetry showed a file write event on magnify.exe in the system directory. A search for \\\"cmd\\\" on CodeRed shows the hash value of magnify.exe matches cmd.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'copy' via PowerShell to overwrite magnify.exe with cmd.exe",
   "ScreenshotDatasources": [],
   "Step": "17. Persistence",
   "Substep": "17.C.1",
@@ -2811,6 +2933,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -2820,8 +2943,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'Get-ChildItem' via PowerShell to enumerate a network shared drive (Wormshare) on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "18. Collection",
   "Substep": "18.A.1",
@@ -2834,6 +2957,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2843,8 +2967,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'copy' via PowerShell staged a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5) in the Recycle Bin (C:\\$Recycle.Bin) on CodeRed (10.0.1.5)",
   "ScreenshotDatasources": [],
   "Step": "18. Collection",
   "Substep": "18.B.1.1",
@@ -2857,6 +2981,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2866,8 +2991,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'copy' via PowerShell collected a file (Shockwave_network.vsdx) from a network shared drive (Wormshare) on Conficker (10.0.0.5)",
   "ScreenshotDatasources": [],
   "Step": "18. Collection",
   "Substep": "18.B.1.2",
@@ -2880,6 +3005,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -2891,8 +3017,8 @@
   "Footnotes": [
     "Telemetry later identified recycler.exe as WinRAR during execution, no detections identified it as WinRAR upon file copy."
   ],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: File dropped to disk is a renamed copy of the WinRAR binary",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.A.1.1",
@@ -2905,6 +3031,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2914,8 +3041,8 @@
     "Telemetry showed a write file event for recycler.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Built-in upload module executed to write binary (recycler.exe) to disk on CodeRed (10.0.1.5)",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.A.1.2",
@@ -2928,6 +3055,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2939,8 +3067,8 @@
   "Footnotes": [
     "Vendor stated alert logic exists for many files being accessed in a short period of time, which was not triggered in the evaluation because only one file was accessed."
   ],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Executed binary (recycler.exe) created compressed archive (old.rar) of previously collected file",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.B.1.1",
@@ -2953,6 +3081,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2964,8 +3093,8 @@
   "Footnotes": [
     "Vendor stated alert logic exists for many files being accessed in a short period of time, which was not triggered in the evaluation because only one file was accessed."
   ],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Executed binary (recycler.exe) created encrypted archive (old.rar) of previously collected file",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.B.1.2",
@@ -2978,6 +3107,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -2990,8 +3120,8 @@
     "Vendor stated alert logic exists for many files being accessed in a short period of time, which was not triggered in the evaluation because only one file was accessed.",
     "Vendor stated file hash is also available that could be used with sources like Virustotal to identify the binary. YARA is also supported and rules could be created to identify WinRAR."
   ],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Executed binary (recycler.exe) is a renamed copy of the WinRAR binary",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.B.1.3",
@@ -3004,6 +3134,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -3013,8 +3144,8 @@
     "Telemetry showed the execution of ftp.exe with command-line arguments, including ftp.txt, for exfiltration. The contents of ftp.txt was not seen."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: Sequence of 'echo' commands via PowerShell to populate commands in text file (ftp.txt), which is then executed by FTP to exfil data through network connection separate of existing C2 channel",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.C.1",
@@ -3027,6 +3158,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -3038,8 +3170,8 @@
   "Footnotes": [
     "The master file table on 10.0.1.5 (CodeRed) was\u00a0inspected through the capability to look for deleted files, showing old.rar."
   ],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'del C:\\\\\"$\\\"Recycle.bin\\old.rar'",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.D.1",
@@ -3052,6 +3184,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "None"
@@ -3061,8 +3194,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Empire: 'del recycler.exe'",
   "ScreenshotDatasources": [],
   "Step": "19. Exfiltration",
   "Substep": "19.D.2",
@@ -3075,6 +3208,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -3084,8 +3218,8 @@
     "Telemetry showed execution of magnify.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "magnifer.exe previously overwritten by cmd.exe launched through RDP connection made to Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "20. Execution of Persistence",
   "Substep": "20.A.1.1",
@@ -3098,6 +3232,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": "",
   "Datasources": [],
   "Detection": [
     "None"
@@ -3107,8 +3242,8 @@
     "Minimum detection criteria was not met for this procedure."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": "",
+  "Participant_Name": "rsa",
+  "Procedure": "RDP connection made to Creeper (10.0.0.4) as part of execution of persistence mechanism",
   "ScreenshotDatasources": [],
   "Step": "20. Execution of Persistence",
   "Substep": "20.A.1.2",
@@ -3121,6 +3256,7 @@
 {
   "Adversary": "apt3",
   "Capability_Requirements": [],
+  "Criteria": null,
   "Datasources": [],
   "Detection": [
     "Telemetry"
@@ -3130,8 +3266,8 @@
     "Telemetry showed execution of whoami.exe."
   ],
   "Footnotes": [],
-  "Participant_Name": "RSA",
-  "Procedure": null,
+  "Participant_Name": "rsa",
+  "Procedure": "Executed 'whoami' via cmd persistence mechanism through RDP connection made to Creeper (10.0.0.4)",
   "ScreenshotDatasources": [],
   "Step": "20. Execution of Persistence",
   "Substep": "20.B.1",

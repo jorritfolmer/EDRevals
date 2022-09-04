@@ -2,15 +2,17 @@
   <label>Progress between rounds</label>
   <row>
     <panel>
-      <title>Telemetry</title>
       <chart>
+        <title>Analytic</title>
         <search>
-          <query>index=main sourcetype="attackeval:json"
-| rex field=source "round(?&lt;round&gt;\d)"
-| stats dc(Substep) as total count(eval('Detection{}'="Telemetry")) as telemetry by Participant_Name,round
-| eval perc1=round((telemetry/total)*100)
-| fields - total telemetry
-| xyseries Participant_Name,round,perc1</query>
+          <query>index=main sourcetype="attackeval:json" 
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| stats dc(Substep) as total count(eval(Detection_Type=="2 Analytic")) as Analytic by Participant_Name,Adversary 
+| eval perc=round((Analytic/total)*100) 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary
+| xyseries Participant_Name Adversary,perc</query>
           <earliest>0</earliest>
           <latest></latest>
           <sampleRatio>1</sampleRatio>
@@ -30,7 +32,7 @@
         <option name="charting.axisY2.abbreviation">none</option>
         <option name="charting.axisY2.enabled">0</option>
         <option name="charting.axisY2.scale">inherit</option>
-        <option name="charting.chart">area</option>
+        <option name="charting.chart">column</option>
         <option name="charting.chart.bubbleMaximumSize">50</option>
         <option name="charting.chart.bubbleMinimumSize">10</option>
         <option name="charting.chart.bubbleSizeBy">area</option>
@@ -42,7 +44,7 @@
         <option name="charting.drilldown">none</option>
         <option name="charting.layout.splitSeries">0</option>
         <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
-        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisEnd</option>
         <option name="charting.legend.mode">standard</option>
         <option name="charting.legend.placement">none</option>
         <option name="charting.lineWidth">2</option>
@@ -56,15 +58,17 @@
   </row>
   <row>
     <panel>
-      <title>Analytics</title>
       <chart>
+        <title>Telemetry</title>
         <search>
-          <query>index=main sourcetype="attackeval:json"
-| rex field=source "round(?&lt;round&gt;\d)"
-| stats dc(Substep) as total count(eval('Detection{}'="General" OR 'Detection{}'="Tactic" OR 'Detection{}'="Technique" OR 'Detection{}'="Indicator of Compromise" OR 'Detection{}'="General Behavior" OR 'Detection{}'="Specific Behavior" OR 'Detection{}'="MSSP")) as analytic by Participant_Name,round
-| eval perc2=round((analytic/total)*100)
-| fields - total analytic
-| xyseries Participant_Name,round,perc2</query>
+          <query>index=main sourcetype="attackeval:json" 
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| stats dc(Substep) as total count(eval(Detection_Type=="1 Telemetry")) as Analytic by Participant_Name,Adversary 
+| eval perc=round((Analytic/total)*100) 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary
+| xyseries Participant_Name Adversary,perc</query>
           <earliest>0</earliest>
           <latest></latest>
           <sampleRatio>1</sampleRatio>
@@ -81,7 +85,7 @@
         <option name="charting.axisY2.abbreviation">none</option>
         <option name="charting.axisY2.enabled">0</option>
         <option name="charting.axisY2.scale">inherit</option>
-        <option name="charting.chart">area</option>
+        <option name="charting.chart">column</option>
         <option name="charting.chart.bubbleMaximumSize">50</option>
         <option name="charting.chart.bubbleMinimumSize">10</option>
         <option name="charting.chart.bubbleSizeBy">area</option>
@@ -93,7 +97,7 @@
         <option name="charting.drilldown">none</option>
         <option name="charting.layout.splitSeries">0</option>
         <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
-        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisEnd</option>
         <option name="charting.legend.mode">standard</option>
         <option name="charting.legend.placement">none</option>
         <option name="charting.lineWidth">2</option>

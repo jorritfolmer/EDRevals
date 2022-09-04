@@ -1,0 +1,98 @@
+<dashboard>
+  <label>Data sources</label>
+  <row>
+    <panel>
+      <table>
+        <title>Total steps detected using Datasource per TacticGroup</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" carbanak-fin7 
+| eval Datasources=trim(coalesce(mvdedup('Datasources{}'),mvdedup('ScreenshotDatasources{}'))) 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart limit=0 count over Datasources  by TacticGroup
+| addtotals row=t col=f
+| sort - Total</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Distinct number of datasources per Participant and TacticGroup (Carbanak + FIN7)</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" carbanak-fin7 
+| rex field=Step "(?&lt;Step&gt;\d+)\." 
+| eval Step=substr("0", 0, max(2-len(Step), 0)) . Step 
+| stats dc(Datasources{}) as dc_datasources by Participant_Name,Step 
+| xyseries Participant_Name,Step,dc_datasources
+| addtotals row=t col=f 
+| sort - Total
+| fields - Total</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="count">29</option>
+        <option name="dataOverlayMode">heatmap</option>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Wizard Spider + Sandworm</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" "wizard-spider-sandworm" 
+| eval Datasources=trim(coalesce(mvdedup('Datasources{}'),mvdedup('ScreenshotDatasources{}'))) 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart limit=0 count over Datasources  by TacticGroup
+| addtotals row=t col=f
+| sort - Total</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">10</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Distinct number of datasources per Participant and TacticGroup (Wizard Spider + Sandworm)</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" wizard-spider-sandworm
+| eval Datasources=trim(coalesce(mvdedup('Datasources{}'),mvdedup('ScreenshotDatasources{}'))) 
+| rex field=Step "(?&lt;Step&gt;\d+)\." 
+| eval Step=substr("0", 0, max(2-len(Step), 0)) . Step 
+| stats dc(Datasources) as dc_datasources by Participant_Name,Step 
+| xyseries Participant_Name,Step,dc_datasources
+| addtotals row=t col=f 
+| sort - Total
+| fields - Total</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">heatmap</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

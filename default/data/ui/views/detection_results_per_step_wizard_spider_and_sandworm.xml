@@ -2,19 +2,68 @@
   <label>Detection results per step Wizard Spider and Sandworm</label>
   <row>
     <panel>
-      <title>Operational flow and detections</title>
       <table>
+        <title>Aggregated results per Step for Analytic detections</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" wizard-spider-sandworm
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| rex field=Step "(?&lt;Step&gt;\d+)\." 
+| eval Step=substr("0", 0, max(2-len(Step), 0)) . Step 
+| stats count(eval(Detection_Type="2 Analytic")) as count_Analytic count(eval(Detection_Type="1 Telemetry")) as count_Telemetry count(eval(Detection_Type="0 None")) as count_None by Participant_Name,Step,Adversary 
+| sort Adversary,Participant_Name,Step 
+| search Adversary=wizard-spider-sandworm 
+| xyseries Participant_Name,Step,count_Analytic
+| addtotals row=t col=f
+| sort - Total
+| fields - Total</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="count">30</option>
+        <option name="dataOverlayMode">heatmap</option>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Aggregated results per Substep</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" wizard-spider-sandworm
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| sort 0 Adversary,Participant_Name,Step,Substep 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| stats count(eval(Detection_Type="2 Analytic")) as count_Analytic count(eval(Detection_Type="1 Telemetry")) as count_Telemetry count(eval(Detection_Type="0 None")) as count_None by Step,Substep,Criteria 
+| sort 0 Adversary,Step,Substep</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Details per Substep</title>
         <search>
           <query>index=main sourcetype="attackeval:json" source="*round4*"
 | eval TechniqueName=Technique_Name
-| eval OperationalFlow=trim(Substep) . " - " . trim(Technique_Name)
+| eval OperationalFlow=trim(Substep) . " - " . trim(Criteria)
 | xyseries OperationalFlow,Participant_Name,Detection{}
 | sort OperationalFlow</query>
           <earliest>0</earliest>
           <latest></latest>
           <sampleRatio>1</sampleRatio>
         </search>
-        <option name="count">100</option>
+        <option name="count">10</option>
         <option name="dataOverlayMode">none</option>
         <option name="drilldown">none</option>
         <option name="percentagesRow">false</option>

@@ -1,0 +1,49 @@
+<dashboard>
+  <label>Participants</label>
+  <row>
+    <panel>
+      <table>
+        <title>Participant matrix</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" 
+| stats count AS presence by Participant_Name,Adversary 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order AS Adversary 
+| eval presence="yes" 
+| xyseries Participant_Name,Adversary,presence</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+    <panel>
+      <table>
+        <title>Dropped out</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" 
+| stats count AS presence by Participant_Name,Adversary 
+| eval presence="yes" 
+| xyseries Participant_Name,Adversary,presence 
+| fillnull value="n"
+| untable Participant_Name,Adversary,presence
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| sort Participant_Name,-sort_order
+| streamstats window=2 first(presence) as next_presence by Participant_Name
+| search presence="yes" next_presence="n"
+| rename Adversary AS "Last appeared in"
+| table Participant_Name,"Last appeared in"
+| sort "Last appeared in"</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="drilldown">none</option>
+      </table>
+    </panel>
+  </row>
+</dashboard>

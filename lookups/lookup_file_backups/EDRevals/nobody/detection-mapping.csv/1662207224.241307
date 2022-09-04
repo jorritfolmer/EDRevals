@@ -1,0 +1,10 @@
+Detection,Detection_Type,Detection_Type_Coarse
+None,0 None,
+Telemetry,1 Telemetry,A Telemetry
+IndicatorofCompromise,2 General,B Analytic
+General,2 General,B Analytic
+Enrichment,1 Telemetry,A Telemetry
+GeneralBehavior,3 Tactic,B Analytic
+Tactic,3 Tactic,B Analytic
+SpecificBehavior,4 Technique,B Analytic
+Technique,4 Technique,B Analytic

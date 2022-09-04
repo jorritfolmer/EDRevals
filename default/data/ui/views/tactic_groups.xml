@@ -1,0 +1,321 @@
+<dashboard>
+  <label>Tactic Groups</label>
+  <row>
+    <panel>
+      <chart>
+        <title>Number of Substeps per TacticGroup and Adversary</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| chart dc(Substep) as Substeps over TacticGroup by Adversary 
+| sort TacticGroup</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">collapsed</option>
+        <option name="charting.axisTitleY.visibility">collapsed</option>
+        <option name="charting.axisTitleY2.visibility">collapsed</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">none</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="height">680</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">1</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>APT3</title>
+      <chart>
+        <title>% DetectionType coverage by TacticGroup</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" apt3 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt3",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt29",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Initial Access", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="wizard-spider-sandworm",Detection_Type_Coarse="absent" ] 
+| search Adversary=apt3 
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart count over TacticGroup by Detection_Type</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked100</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>APT29</title>
+      <chart>
+        <title>% DetectionType coverage by TacticGroup</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" apt29
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt3",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt29",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Initial Access", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="wizard-spider-sandworm",Detection_Type_Coarse="absent" ] 
+| search Adversary=apt29 
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart count over TacticGroup by Detection_Type</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked100</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Carbanak + FIN7</title>
+      <chart>
+        <title>% DetectionType coverage by TacticGroup</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" carbanak-fin7 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt3",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt29",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Initial Access", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="wizard-spider-sandworm",Detection_Type_Coarse="absent" ] 
+| search Adversary=carbanak-fin7 
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart count over TacticGroup by Detection_Type</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked100</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Wizard Spider + Sandworm</title>
+      <chart>
+        <title>% DetectionType coverage by TacticGroup</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" wizard-spider-sandworm 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt3",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="apt29",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Initial Access", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Impact", Adversary="carbanak-fin7",Detection_Type_Coarse="absent" ] 
+| append 
+    [| makeresults 
+    | eval TacticGroup="Initial Access", Adversary="wizard-spider-sandworm",Detection_Type_Coarse="absent" ] 
+| search Adversary=wizard-spider-sandworm
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart count over TacticGroup by Detection_Type</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">stacked100</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

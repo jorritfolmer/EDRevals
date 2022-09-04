@@ -1,0 +1,5368 @@
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "explorer.exe spawns winword.exe when user clicks 1-list.rtf",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "winword.exe loads VBE7.DLL",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring",
+    "Process Monitoring",
+    "DLL Monitoring",
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Possible Abusive Module Load\" (Informational) was generated when winword.exe loaded VBE7.DLL.",
+    "A Technique detection named \"Office process loads scripting related DLLs \" (Informational) was generated when winword.exe loaded VBE7.DLL."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.2",
+  "Subtechnique": "T1559.001",
+  "Subtechnique_Name": "Inter-Process Communication: Component Object Model",
+  "TacticGroup": "Execution",
+  "Technique": "T1559",
+  "Technique_Name": "Inter-Process Communication"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe executes unprotected.vbe",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Sandbox",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Malware\" was generated when unprotected.vbe was detected as malware.",
+    "A Technique detection named \"Scripting engine reads script from suspicious folder\" (Low) was generated when wscript.exe executed unprotected.vbe from the TEMP folder."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.3",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "unprotected.vbe is an encoded file",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Sandbox"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"YARA Malware Signature\" was generated when unprotected.vbe was identified as an encoded file."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe decodes content and creates starter.vbs",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "File Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Deobfuscation Attempt\" (Medium) was generated when wscript.exe executed commands that can be used to deobfuscate commands or files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe decodes content and creates TransBaseOdbcDriver.js",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"YARA Malware Signature\" (High) was generated when TransBaseOdbcDriver.js was detected as malware.",
+    "A Technique detection named \"Deobfuscation attempt\" (Medium) was generated when wscript.exe decoded and created TransBaseOdbcDriver.js."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe executes starter.vbs",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Sandbox"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"YARA Malware Signature\" (High) was generated when wscript.exe executed starter.vbs which was detected as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.7",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Windows Command Shell\" (Low) was generated when wscript.exe spawned cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.8",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "cmd.exe spawns wscript.exe to execute TransBaseOdbcDriver.js",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious JavaScript file detected\" (High) was generated when cmd.exe spawns wscript.exe to execute TransBaseOdbcDriver.js, which was detected as suspicious."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.9",
+  "Subtechnique": "T1059.007",
+  "Subtechnique_Name": "Command and Scripting Interpreter: JavaScript/JScript",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Application Layer Protocol: Web Protocols (T1071.001)\" was generated when wscript.exe connected to 192.168.0.4 over HTTPS."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.10",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"HTTPS Traffic via Direct IP\" was generated when wscript.exe connected to 192.168.0.4 over HTTPS."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "1. Initial Breach",
+  "Substep": "1.A.11",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe makes WMI queries for Win32_Processor &  Win32_OperatingSystem",
+  "Datasources": [
+    "Process Monitoring",
+    "WMI Objects",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"System Information Discovery\" (Informational) was generated when wscript.exe made WMI queries for Win32_Processor & Win32_OperatingSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe makes a WMI query for Win32_Process",
+  "Datasources": [
+    "Process Monitoring",
+    "WMI Objects",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Remote Process Discovery\" (Informational) was generated when wscript.exe made a WMI query for Win32_Process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe downloads screenshot__.ps1 from 192.168.0.4",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.B.2",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "cmd.exe spawns powershell.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Commandline Process Created a Shell Process\" (Low) was generated when cmd.exe spawned powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.B.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe executes CopyFromScreen()",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Windows Event Logs",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"PowerShell Screenshot Taken\" (High) was generated when powershell took a screenshot."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "wscript.exe reads and uploads screenshot__.png to 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "2. Target Assessment",
+  "Substep": "2.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "wscript.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed",
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A Technique detection named \"Cmd.exe Execution\" (Informational) was generated when wscript.exe spawned cmd.exe.",
+    "A Technique detection named \"Scripting Engine Spawns cmd.exe\" (Informational) was generated when wscript.exe spawned cmd.exe."
+  ],
+  "Footnotes": [
+    "Marked as delayed due to data being uploaded to cloud for further analysis",
+    "Marked as delayed due to data being uploaded to cloud for further analysis"
+  ],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.A.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "cmd.exe spawns reg.exe to add a value under HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Office Script Dropper\" (High) was generated when reg.exe was spawned in a process tree started by winword.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Value added to Registry is base64 encoded",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Registry"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "wscript.exe downloads LanCradDriver.ps1 from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Remote File Opertaion\" (Low) was generated when wscript.exe downloaded LanCradDriver.ps1 from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "wscript.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.2",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe spawns powershell.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Non-powershell Process Launched with PowerShell Arguments\" (Informational) was generated when cmd.exe spawned powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe reads HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer via Get-ItemProperty",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Windows Event Logs"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1012",
+  "Technique_Name": "Query Registry"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe decrypts, decompresses, and base64 decodes the Registry value into plaintext shellcode",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Deobfuscation Attempt\" (Medium) was generated when powershell.exe executed commands that can be used to deobfuscate commands or files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe executes the shellcode from the Registry by calling the CreateThread() API",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Windows Event Logs",
+    "Script Logs",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Behavioral Threat Detected\" (High) was generated when powershell.exe executed the shellcode from the Registry by calling the CreateThread() API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1106",
+  "Technique_Name": "Native API"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe transmits data to 192.168.0.4 over TCP",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "3. Deploy Toolkit",
+  "Substep": "3.B.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1095",
+  "Technique_Name": "Non-Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe calls the FindFirstFileW() and FindNextFileW() APIs",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe executes Get-NetComputer to query LDAP (port 389) via a network connection to 10.0.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Remote System Discovery\" was generated when Powershell.exe created an unusual ldap connection that might be used for reconnaissance."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe executes Find-LocalAdminAccess, which attempts a DCOM/RPC (port 135) connection to multiple hosts to check for access",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Powersploit Password Spray\" was generated when powershell.exe executed Find-LocalAdminAccess, which connected to multiple hosts over port 135 to check for access."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.A.3",
+  "Subtechnique": "T1110.003",
+  "Subtechnique_Name": "Brute Force: Password Spraying",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1110",
+  "Technique_Name": "Brute Force"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe successfully logs in to host 10.0.0.4 or 10.0.0.5 as user kmitnick",
+  "Datasources": [
+    "Process Monitoring",
+    "Authentication Logs",
+    "Process Monitoring",
+    "Authentication Logs"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon Successful Network Login\" (Low) was generated when user kmitnick successfully logged into cfo (10.0.0.5)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.A.4",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads rad353F7.ps1 from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Scripts\" (Low) was generated when powershell.exe downloaded rad353F7.ps1 from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads smrs.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" (Low) was generated when powershell.exe downloaded smrs.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe executes rad353F7.ps1",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"PowerShell Suspicious Flags Signal\" (Low) was generated when powershell.exe executed rad353F7.ps1."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe adds a value under HKCU:\\Software\\Classes\\ms-settings\\shell\\open\\command via New-Item and New-ItemProperty",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Windows Event Logs",
+    "Windows Registry"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "fodhelper.exe spawns cmd.exe as a high-integrity process (note: Due to the configuration of the environment, the adversary's process was high by default. This sub-step was evaluated based on the criteria of detecting data related to process integrity level as well as the executed mechanics of the UAC bypass)",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Suspicious Process Creation\" was generated when fodhelper.exe spawned cmd.exe.",
+    "A Technique detection named \"Bypass User Access Control\" was generated when fodhelper.exe spawned cmd.exe as a high-integrity process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.5",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "cmd.exe spawns smrs.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"CMD Executed an Uncommonly Executed Process\" was generated when cmd.exe executed smrs.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.6",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "smrs.exe opens and reads lsass.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Yara Malware Signature\" (High) was generated when smrs.exe was detected as a credential dumper.",
+    "A Technique detection named \"MiniDumper\" (High) was generated when smrs.exe opened and read lsass.exe.",
+    "A Technique detection named \"Sync.Mimikatz_RPM\" (High) was generated when smrs.exe opened and read lsass.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "4. Escalate Privileges",
+  "Substep": "4.B.7",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads pscp.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" (Low) was generated when powershell.exe created pscp.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads psexec.py from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Scripts\" (Low) was generated when powershell.exe created psexec.py."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads runtime from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" (Low) was generated when powershell.exe created runtime."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads plink.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" (Low) was generated when Powershell.exe created plink.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe downloads tiny.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" (Low) was generated when powershell.exe created tiny.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.6",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "Pscp.exe connects over SCP (port 22) to 10.0.0.7",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Execution of a CLI file transfer/copy utility\" (Low) was generated when pscp.exe was executed.",
+    "A Technique detection named \"Incoming SSH Connection\" (Low) was generated when pscp.exe connected over SCP (port 22) to 10.0.0.7."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.7",
+  "Subtechnique": "T1021.004",
+  "Subtechnique_Name": "Remote Services: SSH",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick logs on to bankfileserver (10.0.0.7)",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.8",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "Pscp.exe copies psexec.py to 10.0.0.7",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon Script File Dropped via SCP\" (Low) was generated when pscp.exe copied psexec.py to 10.0.0.7.",
+    "A Technique detection named \"SCP File Drop\" (Medium) was generated when pscp.exe copied psexec.py to 10.0.0.7."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.9",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "Pscp.exe copies runtime to 10.0.0.7",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon Executable Dropped Via SCP\" (Low) was generated when pscp.exe copied runtime to 10.0.0.7.",
+    "A Technique detection named \"Remote File Copy via SCP\" (Low) was generated when pscp.exe copied runtime to 10.0.0.7."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.10",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "Pscp.exe copies tiny.exe to 10.0.0.7",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"SCP File Drop\" (Medium) was generated when pscp.exe copied tiny.exe to 10.0.0.7.",
+    "A Technique detection named \"Uncommon File Dropped via SSH Daemon\" (Low) was generated when pscp.exe copied tiny.exe to 10.0.0.7."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.A.11",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "plink.exe connects over SSH (port 22) to 10.0.0.7",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Incoming SSH Connections\" was generated when plink.exe connected over SSH (port 22) to 10.0.0.7."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.1",
+  "Subtechnique": "T1021.004",
+  "Subtechnique_Name": "Remote Services: SSH",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick logs on to bankfileserver (10.0.0.7)",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious Account Login\" (Low) was generated when user kmitnick logged on to bankfileserver (10.0.0.7)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick executes ps ax",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Process enumeration using ps\" (Low) was generated when user kmitnick executes ps ax."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick executes ls -lsahR /var/",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"File Discovery Using ls\" (Low) was generated when user kmitnick executed ls -lsahR /var/."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick reads network-diagram-financial.xml via cat",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"File Data Collection\" was generated when user kmitnick read network-diagram-financial.xml via cat."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick reads help-desk-ticket.txt via cat",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon cat Command Execution\" (Low) was generated when user kmitnick read help-desk-ticket.txt via cat."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Linux Capability"
+  ],
+  "Criteria": "User kmitnick enumerates the domain controller via nslookup, which queries for the DC (10.0.0.4) over DNS (port 53)",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Nslookup Enumeration\" (Low) was generated when user kmitnick enumerated the domain controller via nslookup."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.B.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "psexec.py creates a logon to 10.0.0.4 as user kmitnick",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Impacket Used for Pass the Hash\" (Low) was generated when psexec.py created a logon to 10.0.0.4 as user kmitnick."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.C.1",
+  "Subtechnique": "T1550.002",
+  "Subtechnique_Name": "Use Alternate Authentication Material: Pass the Hash",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1550",
+  "Technique_Name": "Use Alternate Authentication Material"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "psexec.py connects to SMB shares on 10.0.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Linux to Windows Lateral Movement via SMB\" (Medium) was generated when psexec.py connected to 10.0.0.4 over port 445.",
+    "A Technique detection named \"SMB Traffic for Non-Standard Process\" (Low) was generated when psexec.py connected to SMB shares on 10.0.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.C.2",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "cmd.exe spawns from a service executable in C:\\Windows\\",
+  "Datasources": [
+    "Process Monitoring",
+    "Script Logs",
+    "RPC",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Remote Windows Service Creation\" (Informational) was generated when the service executable was created.",
+    "A Technique detection named \"Uncommon Process Execution from Services.exe\" (Low) was generated when cmd.exe spawned from a service executable in C:\\Windows\\."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.C.3",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "tiny.exe is created on 10.0.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.C.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1570",
+  "Technique_Name": "Lateral Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "cmd.exe spawns tiny.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Windows Scripting Engine Runs with System Privileges \" (Low) was generated when cmd.exe spawned tiny.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.C.5",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "tiny.exe loads shellcode from network connection into memory",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Behavioral Threat\" was generated when threat activity indicitive of shellcode was identified."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "5. Expand Access",
+  "Substep": "5.C.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "tiny.exe loads system.management.automation.dll",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "6. Discover Potential Targets",
+  "Substep": "6.A.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "PowerShell executes Get-ADComputer",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Powershell remote host discovery used\" (Low) was generated when PowerShell executed Get-ADComputer."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "6. Discover Potential Targets",
+  "Substep": "6.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "PowerShell executes Get-NetUser",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Powershell user discovery command used\" was generated when PowerShell executed Get-NetUser."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "6. Discover Potential Targets",
+  "Substep": "6.A.3",
+  "Subtechnique": "T1087.002",
+  "Subtechnique_Name": "Account Discovery: Domain Account",
+  "TacticGroup": "Discovery",
+  "Technique": "T1087",
+  "Technique_Name": "Account Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "tiny.exe downloads plink.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon executable dropping an uncommon executable\" (Low) was generated when tiny.exe downloaded plink.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "tiny.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon LOLBIN execution\" (Low) was generated when tiny.exe spawned cmd.exe.",
+    "A Technique detection named \"Behavioral Threat\" (Informational) was generated when an unsigned process (tiny.exe) spawned cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.A.2",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "plink.exe transmits data to 192.168.0.4 over SSH protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "User kmitnick logs on to bankdc (10.0.0.4)",
+  "Datasources": [
+    "Windows Event Logs",
+    "Windows Event Logs"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon Successful Network Login\" (Low) was generated when kmitnick logged on to bankdc (10.0.0.4)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.A.4",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "RDP session from the localhost over TCP port 3389",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A Technique detection named \"Remote RDP Session Enumeration via Qwinsta.exe\" (Low) was generated when powershell.exe was spawned and labeled as a remote process."
+  ],
+  "Footnotes": [
+    "Marked as delayed due to detection only coming after a new process was spawned"
+  ],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.A.5",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executes qwinsta /server:cfo",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Remote RDP Session Enumeration via Qwinsta.exe\" (Low) was generated when powershell.exe executed qwinsta /server:cfo."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "User kmitnick logs on to cfo (10.0.0.5)",
+  "Datasources": [
+    "Windows Event Logs"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon successful network login\" (Low) was generated when user kmitnick logged on to cfo (10.0.0.5)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.B.2",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "RDP session from 10.0.0.4 to 10.0.0.5 over TCP port 3389",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [
+    "Delayed"
+  ],
+  "DetectionText": [
+    "A Technique detection named \"Remote Desktop Protocol\" (Informational) was generated when powershell.exe was initiated from a remote terminal session."
+  ],
+  "Footnotes": [
+    "Marked as delayed due to detection only coming after a new process was spawned"
+  ],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.B.3",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "scp.exe downloads Java-Update.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Sandbox",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection was generated when Java-Update.exe was detected as malware.",
+    "A Technique detection named \"Uncommon executable dropping an uncommon executable\" (Low) was generated when scp.exe downloads Java-Update.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.C.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "dir lists the contents of C:\\Users\\Public",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Uncommon Directory Discovery\" (Informational) was generated when cmd.exe listed the contents of C:\\Users\\Public."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.C.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1083",
+  "Technique_Name": "File and Directory Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe downloads Java-Update.vbs from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"YARA Malware Signature\" (High) was generated when Java-Update.vbs was detected as malware.",
+    "A Technique detection named \"LOLBIN dropping uncommon scripts\" (Low) was generated when cmd.exe downloaded Java-Update.vbs from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.C.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Java-Update subkey is added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring",
+    "Windows Registry"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Autostart Registry key created by a commonly-abused process\" was generated when Java-Update subkey was added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run.",
+    "A Technique detection named \"New entry added to startup related Registry keys by signed process\" was generated when Java-Update subkey was added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run.",
+    "A Technique detection named \"Script file added to startup-related Registry keys\" was generated when Java-Update subkey was added to HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "7. Setup Persistence",
+  "Substep": "7.C.4",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "wscript.exe spawns Java-Update.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Memory Corruption Exploit\" was generated when Suscpicious access to DLLs was attempted.",
+    "A Technique detection named \"YARA Malware Signatue\" (High) was generated when wscript.exe spawned Java-Update.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "8. Gain Covert Access to Target",
+  "Substep": "8.A.1",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Java-Update.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"HTTPS Traffic via Direct IP\" (Informational) was generated when Java-Update.exe exchanged data with 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "8. Gain Covert Access to Target",
+  "Substep": "8.A.2",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Java-Update.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"HTTPS Traffic via Direct IP\" (Informational) was generated when Java-Update.exe exchanges data with 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "8. Gain Covert Access to Target",
+  "Substep": "8.A.3",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Java-Update.exe downloads DefenderUpgradeExec.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Sandbox",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection was generated when DefenderUpgradeExec.exe was detected as malware.",
+    "A Technique detection named \"Uncommon executable dropping uncommon executable\" was generated when Java-Update.exe downloaded DefenderUpgradeExec.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "DefenderUpgradeExec.exe calls the SetWindowsHookEx API",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon process calls keylogging syscalls\" (Low) was generated when DefenderUpgradeExec.exe called the SetWindowsHookEx API."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.A.2",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Java-Update.exe injects into explorer.exe with CreateRemoteThread",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Behavioral Threat\" was generated when Java-Update.exe wrote virtul memory in explorer.exe.",
+    "A Technique detection named \"Injection After Allocation\" (High) was generated when Java-Update.exe injected into explorer.exe with CreateRemoteThread."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "explorer.exe calls the CreateCompatibleBitmap API from Gdi32.dll",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Injected thread using suspicious API call\" (Low) was generated when explorer.exe called the CreateCompatibleBitmap API from Gdi32.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "explorer.exe reads C:\\Users\\jsmith\\AppData\\Local\\Temp\\Klog2.txt over to 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Injected thread reads an uncommon file\" (Low) was generated when explorer.exe read C:\\Users\\jsmith\\AppData\\Local\\Temp\\klog2.txt."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1005",
+  "Technique_Name": "Data from Local System"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "explorer.exe downloads infosMin48.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Executable file written to a temporary folder\" (Low) was generated when explorer.exe wrote infosMin48.exe to the TEMP folder.",
+    "A Technique detection named \"Injected thread writes an uncommon executable\" (Low) was generated when explorer.exe downloaded infosMin48.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "infosMin48.exe calls the VaultEnumerateItems API from vaultcli.dll",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring",
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious loading of vaultcli.dll by unsigned process\" (High) was generated when infosMin48.exe loaded vaultcli.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.B.2",
+  "Subtechnique": "T1555.003",
+  "Subtechnique_Name": "Credentials from Password Stores: Credentials from Web Browsers",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1555",
+  "Technique_Name": "Credentials from Password Stores"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe deletes files from C:\\Users\\jsmith\\AppData\\Local\\Temp\\",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicous file deletion by powershell.exe\" was generated when powershell.exe deleted files from C:\\Users\\jsmith\\AppData\\Local\\Temp\\."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "9. Profile a Victim User",
+  "Substep": "9.B.3",
+  "Subtechnique": "T1070.004",
+  "Subtechnique_Name": "Indicator Removal on Host: File Deletion",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1070",
+  "Technique_Name": "Indicator Removal on Host"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "explorer.exe downloads tightvnc-2.8.27-gpl-setup-64bit.msi from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Injected thread writes an uncommon executable\" (Low) was generated when explorer.exe downloaded tightvnc-2.8.27-gpl-setup-64bit.msi from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "explorer.exe downloads vnc-settings.reg from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Injected thread writes an uncommon script file\" (Low) was generated when explorer.exe downloaded vnc-settings.reg from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "netsh adds Service Host rule for TCP port 5900",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Netsh.exe modifies allowed firewall port/program lists\" (Low) was generated when netsh.exe added 'Service Host' rule to allow TCP port 5900 inbound."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.A.3",
+  "Subtechnique": "T1562.004",
+  "Subtechnique_Name": "Impair Defenses: Disable or Modify System Firewall",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1562",
+  "Technique_Name": "Impair Defenses"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "msiexec.exe adds the tvncontrol subkey in HKLM\\Software\\Microsoft\\CurrentVersion\\Run",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring",
+    "Windows Registry"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"New entry added to startup related Registry keys by signed process\" was generated when tvncontrol subkey was added to HKLM\\Software\\Microsoft\\CurrentVersion\\Run."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.A.4",
+  "Subtechnique": "T1547.001",
+  "Subtechnique_Name": "Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder",
+  "TacticGroup": "Persistence",
+  "Technique": "T1547",
+  "Technique_Name": "Boot or Logon Autostart Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Addition of subkeys in HKLM\\Software\\TightVNC\\Server",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Deletion of the Java-Update subkey in HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon reg.exe command-line executed\" (Low) was generated when Java-Update subkey at HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run was deleted."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1112",
+  "Technique_Name": "Modify Registry"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "tvnserver.exe accepts a connection from 192.168.0.4 over TCP port 5900",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Rare VNC session\" (Low) was generated when tvnserver.exe accepted a connection from 192.168.0.4 over TCP port 5900."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "10. Impersonate Victim",
+  "Substep": "10.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1219",
+  "Technique_Name": "Remote Access Software"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "explorer.exe spawns winword.exe when user clicks 2-list.rtf",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Execution",
+  "Technique": "T1204",
+  "Technique_Name": "User Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "2-list.rtf contains an embedded lnk payload that is dropped to disk",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Office process creates an unusual .LNK file\" was generated when 2-list.rtf contained an embedded lnk payload."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "winword.exe spawns mshta.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Mshta.exe launched with suspicious arguments\" (Medium) was generated when winword.exe spawned mshta.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.3",
+  "Subtechnique": "T1218.005",
+  "Subtechnique_Name": "Signed Binary Proxy Execution: Mshta",
+  "TacticGroup": "Execution",
+  "Technique": "T1218",
+  "Technique_Name": "Signed Binary Proxy Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "mshta.exe executes an embedded VBScript payload",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring",
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Behavioral Threat\" was generated when mshta.exe executed an embedded VBScript payload.",
+    "A Technique detection named \"VBScript or VBA Execution via vbscript/vbe7.dll\" was generated when mshta.exe executed an embedded VBScript payload."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.4",
+  "Subtechnique": "T1059.005",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Visual Basic",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "mshta.exe assembles text embedded within 2-list.rtf into a JS payload",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Script Logs",
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious VBScript obfuscation technique\" (Low) was generated when mshta.exe assembled text embedded within 2-list.rtf into a JS payload."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "mshta.exe makes a copy of the legitimate wscript.exe as Adb156.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Renamed Script Engine by Hash\" was generated when mshta.exe made a copy of the legitimate wscript.exe as Adb156.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.6",
+  "Subtechnique": "T1036.003",
+  "Subtechnique_Name": "Masquerading: Rename System Utilities",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "winword.exe spawns verclsid.exe and loads VBE7.DLL, VBEUI.DLL, and VBE7INTL.DLL",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring",
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Inter-Process Communication\" (Low) was generated when winword.exe spawned verclsid.exe and loads VBE7.DLL, VBEUI.DLL, and VBE7INTL.DLL."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.7",
+  "Subtechnique": "T1559.001",
+  "Subtechnique_Name": "Inter-Process Communication: Component Object Model",
+  "TacticGroup": "Execution",
+  "Technique": "T1559",
+  "Technique_Name": "Inter-Process Communication"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "mshta.exe loads taskschd.dll and creates a scheduled task to execute in 5 minutes",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring",
+    "Named Pipes",
+    "RPC",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Office process creates a scheduled task via file access\" (Medium) was generated when mshta.exe created a scheduled task to execute in 5 minutes."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "11. Initial Breach",
+  "Substep": "11.A.8",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "svchost.exe (-s Schedule) spawns Adb156.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Remote Scheduled Task Executed\" (Informational) was generated when svchost.exe spawned adb156.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "12. Delayed Malware Execution",
+  "Substep": "12.A.1",
+  "Subtechnique": "T1053.005",
+  "Subtechnique_Name": "Scheduled Task/Job: Scheduled Task",
+  "TacticGroup": "Execution",
+  "Technique": "T1053",
+  "Technique_Name": "Scheduled Task/Job"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Adb156.exe loads scrobj.dll and executes sql-rat.js using Jscript",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"JScript execution from renamed/unknown script engines executables\" (Low) was generated when  Adb156.exe executed sql-rat.js using Jscript."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "12. Delayed Malware Execution",
+  "Substep": "12.A.2",
+  "Subtechnique": "T1059.007",
+  "Subtechnique_Name": "Command and Scripting Interpreter: JavaScript/JScript",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Adb156.exe transmits data to 192.168.0.6 via MSSQL transactions",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Unusual Port used to Connect to an External Destination\" (Low) was generated when adb156.exe transmits data to 192.168.0.6 over port 1433."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "12. Delayed Malware Execution",
+  "Substep": "12.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Adb156.exe makes a WMI query for Win32_NetworkAdapterConfiguration",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Event Logs",
+    "RPC",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Security Tools Detection Attempted\" was generated when Adb156.exe made a WMI query for Win32_NetworkAdapterConfiguration."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "12. Delayed Malware Execution",
+  "Substep": "12.A.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Adb156.exe makes a WMI query for Win32_LogicalDisk",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Event Logs",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Security Tools Detection Attempted\" was generated when Adb156.exe made a WMI query for Win32_LogicalDisk."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "12. Delayed Malware Execution",
+  "Substep": "12.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe downloads stager.ps1 from 192.168.0.6",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon script files created in public directory\" was generated when Adb156.exe downloaded stager.ps1."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "12. Delayed Malware Execution",
+  "Substep": "12.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe makes a WMI query for Win32_Process",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Event Logs",
+    "WMI Objects",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Process Discovery\" (Informational) was generated when Adb156.exe made a WMI query for Win32_Process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"cmd.exe execution\" (Informational) was generated when Adb156.exe spawned cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.2",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe executes net view",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Enumeration using net.exe or net1.exe\" (Low) was generated when cmd.exe executed net view."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1135",
+  "Technique_Name": "Network Share Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe makes a WMI query for Win32_BIOS",
+  "Datasources": [
+    "Process Monitoring",
+    "WMI Objects",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"WMI Sandbox Virtualization Discovery\" (Informational) was generated when Adb156.exe made a WMI query for Win32_BIOS."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.4",
+  "Subtechnique": "T1497.001",
+  "Subtechnique_Name": "Virtualization/Sandbox Evasion: System Checks",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1497",
+  "Technique_Name": "Virtualization/Sandbox Evasion"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe queries the USERNAME environment variable",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Environment variables queried inside script\" was generated when Adb156.exe queried the USERNAME environment variable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1033",
+  "Technique_Name": "System Owner/User Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe queries the COMPUTERNAME environment variable",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Environment variables queried inside script\" was generated when  Adb156.exe queried the COMPUTERNAME environment variable."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.6",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe makes a WMI query for Win32_ComputerSystem",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"System network configuration discovery via WMI\" (Informational) was generated when  Adb156.exe made a WMI query for Win32_ComputerSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe makes a WMI query for Win32_OperatingSystem",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "WMI Objects"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"System information discovery via WMI\" (Informational) was generated when Adb156.exe made a WMI query for Win32_OperatingSystem."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.A.9",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1082",
+  "Technique_Name": "System Information Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe downloads takeScreenshot.ps1 from 192.168.0.6 via MSSQL transactions",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon script files created in public directory\" (Low) was generated when  Adb156.exe downloaded takeScreenshot.ps1."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.B.2",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe spawns powershell.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Command-line Process Started a Shell Process\" (Low) was generated when cmd.exe spawned powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.B.3",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executes CopyFromScreen()",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Possible screen capture from powershell.exe\" (Low) was generated when powershell.exe executed CopyFromScreen()."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe reads and uploads image.png to 192.168.0.6 via MSSQL transactions",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "13. Target Assessment",
+  "Substep": "13.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "Adb156.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.1",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "cmd.exe spawns powershell.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Non-PowerShell process launched with PowerShell\" (Informational) was generated when cmd.exe spawned powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.2",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe decodes an embedded DLL payload",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "DLL Monitoring",
+    "Script Logs",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Behavioral Threat\" was generated when powershell.exe decoded and imported a .dll.",
+    "A Technique detection named \"Powershell Executed Encoded Data\" was generated when the buffer of the dll was detected upon reading it in memory."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe executes the decoded payload using Invoke-Expression (IEX)",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Powershell executed encoded data\" was generated when powershell.exe executed the decoded payload using Invoke-Expression (IEX)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.4",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe loads shellcode from network connection into memory",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Deobfuscation attempt\" was generated when powershell.exe executed commands that can be used to deobfuscate commands or files."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1140",
+  "Technique_Name": "Deobfuscate/Decode Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"HTTP & HTTPS traffic originating for uncommonly located executable\" (Informational) was generated when powershell.exe connected to 192.168.0.4 over HTTPS."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.6",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "14. Staging Interactive Toolkit",
+  "Substep": "14.A.7",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe calls the CreateToolhelp32Snapshot() API",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Powershell process list query\" was generated when powershell queried the system process list."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads samcat.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN dropping an uncommon executable\" was generated when powershell.exe downloaded samcat.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads uac-samcats.ps1 from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" was generated when powershell.exe downloaded uac-samcats.ps1 from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe spawns powershell.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"PowerShell suspicious flags signal\" was generated when powershell.exe spawned powershell.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.4",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe spawns samcat.exe as a high-integrity process (note: Due to the configuration of the environment, the adversary's process was high by default. This sub-step was evaluated based on the criteria of detecting data related to process integrity level as well as the executed mechanics of the UAC bypass)",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"Powershell Run Key Added\" (Informational) was generated when a Registry entry used for User Account Control bypass was set.",
+    "A Technique detection named \"Rare process runs with high integrity level\" was generated when powershell.exe spawned samcat.exe as a high-integrity process."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.5",
+  "Subtechnique": "T1548.002",
+  "Subtechnique_Name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1548",
+  "Technique_Name": "Abuse Elevation Control Mechanism"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "samcat.exe opens and reads the SAM via LSASS",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "General",
+    "Technique",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"YARA Malware Signature\" was generated when samcat.exe was identified as a credential dumper.",
+    "A Technique detection named \"Mimikatz LSA Dump\" (High) was generated when samcat.exe opened and read lsass.exe.",
+    "A Technique detection named \"Behavioral Threat\" (Informational) was generated when a registry query for the SAM hive occured.",
+    "A Technique detection named \"Behavioral Threat\" was generated when a suspicious handle to lsass was detected."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.6",
+  "Subtechnique": "T1003.001",
+  "Subtechnique_Name": "OS Credential Dumping: LSASS Memory",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1003",
+  "Technique_Name": "OS Credential Dumping"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe calls the GetIpNetTable() API",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.7",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1016",
+  "Technique_Name": "System Network Configuration Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe spawns nslookup.exe, which queries the DC (10.0.1.4) over DNS (port 53)",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Enumeration command executed\" was generated when powershell.exe spawned nslookup.exe, which queried the DC (10.0.1.4) over DNS (port 53)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "15. Escalate Privileges",
+  "Substep": "15.A.8",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1018",
+  "Technique_Name": "Remote System Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads paexec.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection was generated when paexec.exe was detected as Grayware.",
+    "A Technique detection named \"LOLBIN dropping an uncommon executable\" (Low) was generated when powershell.exe downloaded paexec.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads hollow.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection was generated when hollow.exe was detected as malware.",
+    "A Technique detection named \"LOLBIN dropping an uncommon executable\" (Low) was generated when powershell.exe downloaded hollow.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "powershell.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Executed a Command Shell\" (Low) was generated when powershell.exe spawned cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.3",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "User kmitnick logs on to itadmin (10.0.1.6)",
+  "Datasources": [
+    "Windows Event Logs",
+    "Windows Event Logs"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon successful network login\" (Low) was generated when user kmitnick logged on to itadmin."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.4",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "SMB session from 10.0.1.5 to 10.0.1.6 over TCP port 135 or 445 with admin shares accessed",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"RPC traffic from non-standard process\" (Low) was generated when paexec.exe communicated over port 135 to 10.0.1.6."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.5",
+  "Subtechnique": "T1021.002",
+  "Subtechnique_Name": "Remote Services: SMB/Windows Admin Shares",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "Windows service started PAExec-{PID}-HOTELMANAGER.exe, which executes hollow.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Service Execution\" (Low) was generated when Windows service started PAExec-{PID}-HOTELMANAGER.exe, which executed hollow.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.6",
+  "Subtechnique": "T1569.002",
+  "Subtechnique_Name": "System Services: Service Execution",
+  "TacticGroup": "Execution",
+  "Technique": "T1569",
+  "Technique_Name": "System Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "hollow.exe spawns svchost.exe and unmaps its memory image via: NtUnmapViewOfSection",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon Process Injects Code\" (Low) was generated when hollow.exe spawned svchost.exe and unmapped its memory image via: NtUnmapViewOfSection."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.7",
+  "Subtechnique": "T1055.012",
+  "Subtechnique_Name": "Process Injection: Process Hollowing",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "svchost.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"HTTP & HTTPS traffic originating for uncommonly located executable\" (Informational) was generated when svchost.exe exchanges data with 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.8",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "svchost.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "Named Pipes"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Meterpreter Custom HTTPS\" (Informational) was generated when svchost.exe exchanged data with 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "16. Expand Access",
+  "Substep": "16.A.9",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "svchost.exe downloads srrstr.dll from 192.168.0.4 (port 443)",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection was generated when srrstr.dll was detected as malware.",
+    "A Technique detection named \"Injected thread writes an uncommon executable\" (Low) was generated when svchost.exe downloaded srrstr.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "17. Setup User Monitoring",
+  "Substep": "17.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "srrstr.dll is not the legitimate Windows System Protection Configuration Library",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "17. Setup User Monitoring",
+  "Substep": "17.A.2",
+  "Subtechnique": "T1036.005",
+  "Subtechnique_Name": "Masquerading: Match Legitimate Name or Location",
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1036",
+  "Technique_Name": "Masquerading"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "svchost.exe spawns cmd.exe",
+  "Datasources": [
+    "Process Monitoring",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"cmd.exe execution\" (Low) was generated when svchost.exe spawned cmd.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "17. Setup User Monitoring",
+  "Substep": "17.A.3",
+  "Subtechnique": "T1059.003",
+  "Subtechnique_Name": "Command and Scripting Interpreter: Windows Command Shell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "SystemPropertiesAdvanced.exe executes code in the illegitimate srrstr.dll",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"DLL Search Order Hijacking\" (Low) was generated when SystemPropertiesAdvanced.exe executed code in the illegitimate srrstr.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "17. Setup User Monitoring",
+  "Substep": "17.A.4",
+  "Subtechnique": "T1574.001",
+  "Subtechnique_Name": "Hijack Execution Flow: DLL Search Order Hijacking",
+  "TacticGroup": "Privilege Escalation",
+  "Technique": "T1574",
+  "Technique_Name": "Hijack Execution Flow"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Web application protocol\" (Low) was generated when rundll32.exe connected to 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "17. Setup User Monitoring",
+  "Substep": "17.A.5",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"HTTPS Traffic from Executable in Unusual Location\" (Low) was generated when rundll32.exe connected to 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "17. Setup User Monitoring",
+  "Substep": "17.A.6",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "svchost.exe injects into explorer.exe with CreateRemoteThread",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Behavioral threat\" (High) was generated when svchost.exe injected into explorer.exe with CreateRemoteThread."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "18. User Monitoring",
+  "Substep": "18.A.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "explorer.exe calls the CreateCompatibleBitmap API from Gdi32.dll",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious GdiBitBlt call\" (Low) was generated when explorer.exe called the BitBlt API after calling the CreateCompatibleBitmap API from Gdi32.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "18. User Monitoring",
+  "Substep": "18.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Collection",
+  "Technique": "T1113",
+  "Technique_Name": "Screen Capture"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "explorer.exe injects into mstsc.exe with CreateRemoteThread",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon Injection\" (Low) was generated when explorer.exe injected into mstsc.exe with CreateRemoteThread."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "18. User Monitoring",
+  "Substep": "18.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "mstsc.exe calls APIs such as GetAsyncKeyState, GetKeyState, or GetKeyboardState",
+  "Datasources": [],
+  "Detection": [
+    "None"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "Minimum detection criteria was not met for this procedure."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "18. User Monitoring",
+  "Substep": "18.A.4",
+  "Subtechnique": "T1056.001",
+  "Subtechnique_Name": "Input Capture: Keylogging",
+  "TacticGroup": "Credential Access",
+  "Technique": "T1056",
+  "Technique_Name": "Input Capture"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "User kmitnick logs on to accounting (10.0.1.7)",
+  "Datasources": [
+    "Windows Event Logs",
+    "Windows Event Logs"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Uncommon successful network login\" (Low) was generated when user kmitnick logged on to accounting (10.0.1.7)."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.A.1",
+  "Subtechnique": "T1078.002",
+  "Subtechnique_Name": "Valid Accounts: Domain Accounts",
+  "TacticGroup": "Persistence",
+  "Technique": "T1078",
+  "Technique_Name": "Valid Accounts"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "RDP session from 10.0.1.6 to 10.0.1.7 over TCP port 3389",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious RDP process\" (Low) was generated when an RDP session was created from itadmin (10.0.1.6) to accounting (10.0.1.7) over port 3389."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.A.2",
+  "Subtechnique": "T1021.001",
+  "Subtechnique_Name": "Remote Services: Remote Desktop Protocol",
+  "TacticGroup": "Lateral Movement",
+  "Technique": "T1021",
+  "Technique_Name": "Remote Services"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "itadmin (10.0.1.6) is relaying RDP traffic from attacker infrastructure",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Suspicious RDP communication\" (Low) was generated when itadmin (10.0.1.6) relayed RDP traffic."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.A.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1090",
+  "Technique_Name": "Proxy"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe spawns powershell.exe",
+  "Datasources": [
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.B.1",
+  "Subtechnique": "T1059.001",
+  "Subtechnique_Name": "Command and Scripting Interpreter: PowerShell",
+  "TacticGroup": "Execution",
+  "Technique": "T1059",
+  "Technique_Name": "Command and Scripting Interpreter"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe executes base64 encoded commands",
+  "Datasources": [
+    "Script Logs",
+    "Process Monitoring",
+    "Script Logs",
+    "Process Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Deobfuscation attempt\" (Medium) was generated when powershell.exe executed base64 encoded commands."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1027",
+  "Technique_Name": "Obfuscated Files or Information"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads dll329.dll from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN Dropping Uncommon Executable\" was generated when powershell.exe created dll329.dll."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "powershell.exe downloads sdbE376.tmp from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Ingress tool transfer\" was generated when powershell.exe downloaded sdbE376.tmp from 192.168.0.4 over RDP mounted network drive."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.B.4",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "sdbinst.exe installs sdbE376.tmp shim",
+  "Datasources": [
+    "Process Monitoring",
+    "Windows Registry",
+    "Process Monitoring",
+    "Process Monitoring",
+    "Windows Registry"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Application Shimming\" (Low) was generated when sdbinst.exe was executed.",
+    "A Technique detection named \"Shim Database Registration via Registry\" (Low) was generated when sdbinst.exe installed sdbE376.tmp shim database."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "19. Setup Shim Persistence",
+  "Substep": "19.B.5",
+  "Subtechnique": "T1546.011",
+  "Subtechnique_Name": "Event Triggered Execution: Application Shimming",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "AccountingIQ.exe queries HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\ and loads dll329.dll",
+  "Datasources": [
+    "Process Monitoring",
+    "DLL Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Unsigned module application shimming\" (Low) was generated when an unsigned module was loaded by an application shimming mechanism."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.A.1",
+  "Subtechnique": "T1546.011",
+  "Subtechnique_Name": "Event Triggered Execution: Application Shimming",
+  "TacticGroup": "Persistence",
+  "Technique": "T1546",
+  "Technique_Name": "Event Triggered Execution"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "AccountingIQ.exe injects into SyncHost.exe with CreateRemoteThread",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring",
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Unsigned Process Injected Code\" (Low) was generated when AccountingIQ.exe injected into SyncHost.exe."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.A.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Defense Evasion",
+  "Technique": "T1055",
+  "Technique_Name": "Process Injection"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC",
+    "Process Monitoring",
+    "Network Monitoring",
+    "RPC"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Web application protocol - HTTPS Traffic via Direct IP \" (Low) was generated when rundll32.exe exchanged data with 192.168.0.4 over HTTPS protocol."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.A.3",
+  "Subtechnique": "T1071.001",
+  "Subtechnique_Name": "Application Layer Protocol: Web Protocols",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1071",
+  "Technique_Name": "Application Layer Protocol"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [
+    "Protection Capability"
+  ],
+  "Criteria": "rundll32.exe transmits data to 192.168.0.4 over HTTPS protocol",
+  "Datasources": [
+    "Process Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "Network Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"HTTP or HTTPS traffic by unsigned process\" (Low) was generated when rundll32.exe exchanged TLS/SSL encrypted data with 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.A.4",
+  "Subtechnique": "T1573.002",
+  "Subtechnique_Name": "Encrypted Channel: Asymmetric Cryptography",
+  "TacticGroup": "Command and Control",
+  "Technique": "T1573",
+  "Technique_Name": "Encrypted Channel"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "rundll32.exe downloads debug.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN dropping an uncommon executable\" (Low) was generated when rundll32.exe downloaded debug.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.B.1",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "debug.exe calls the CreateToolhelp32Snapshot API",
+  "Datasources": [
+    "Process Monitoring",
+    "System Calls/API Monitoring"
+  ],
+  "Detection": [
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Process discovery system call called\" (Low) was generated when debug.exe called QueryProcessList."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.B.2",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Discovery",
+  "Technique": "T1057",
+  "Technique_Name": "Process Discovery"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "rundll32.exe downloads 7za.exe from 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"LOLBIN dropping an uncommon executable\" (Low) was generated when rundll32.exe downloaded 7za.exe from 192.168.0.4."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.B.3",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Command and Control",
+  "Technique": "T1105",
+  "Technique_Name": "Ingress Tool Transfer"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "7za.exe creates C:\\Users\\Public\\log.7z",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "Technique"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A Technique detection named \"Compression utility executed\" (Low) was generated when 7za.exe created C:\\Users\\Public\\log.7z."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.B.4",
+  "Subtechnique": "T1560.001",
+  "Subtechnique_Name": "Archive Collected Data: Archive via Utility",
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1560",
+  "Technique_Name": "Archive Collected Data"
+}
+{
+  "Adversary": "carbanak-fin7",
+  "Capability_Requirements": [],
+  "Criteria": "rundll32.exe reads and uploads log.7z to 192.168.0.4",
+  "Datasources": [
+    "Process Monitoring",
+    "File Monitoring",
+    "Network Monitoring",
+    "Process Monitoring",
+    "File Monitoring"
+  ],
+  "Detection": [
+    "Telemetry",
+    "General"
+  ],
+  "DetectionModifiers": [],
+  "DetectionText": [
+    "A General detection named \"LOLBIN read a compressed file\" (Low) was generated when rundll32.exe read log.7z."
+  ],
+  "Footnotes": [],
+  "Participant_Name": "paloaltonetworks",
+  "Procedure": null,
+  "ScreenshotDatasources": [],
+  "Step": "20. Steal Payment Data",
+  "Substep": "20.B.5",
+  "Subtechnique": null,
+  "Subtechnique_Name": null,
+  "TacticGroup": "Exfiltration",
+  "Technique": "T1041",
+  "Technique_Name": "Exfiltration Over Command and Control Channel"
+}
