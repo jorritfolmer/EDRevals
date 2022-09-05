@@ -13,6 +13,7 @@
    	<view name="detection_modifiers_wizard_spider_and_sandworm" />
   </collection>
   <collection label="Detection results per step">
+    <view name="steps_per_tacticgroup_per_adversary"/>
   	<view name="detection_results_per_step_apt3" />
   	<view name="detection_results_per_step_apt29" />
   	<view name="detection_results_per_step_carbanak_fin7" />

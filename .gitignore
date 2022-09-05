@@ -38,3 +38,4 @@ coverage.xml
 # Splunk:
 local/
 local.meta
+lookup_file_backups

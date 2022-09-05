@@ -1,0 +1,97 @@
+<form>
+  <label>Steps per TacticGroup per Adversary</label>
+  <fieldset submitButton="false">
+    <input type="dropdown" token="TacticGroup">
+      <label>TacticGroup</label>
+      <fieldForLabel>label</fieldForLabel>
+      <fieldForValue>TacticGroup</fieldForValue>
+      <search>
+        <query>index=main sourcetype="attackeval:json" 
+| stats count by TacticGroup 
+| lookup tacticgroup-mapping.csv TacticGroup output label 
+| sort label</query>
+        <earliest>0</earliest>
+        <latest></latest>
+      </search>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <chart>
+        <title>Count of substeps per TacticGroup for all Adversaries</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json" 
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup tacticgroup-mapping.csv TacticGroup output label AS TacticGroup 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| chart dc(Substep) as Substeps over TacticGroup by Adversary</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.chart">bar</option>
+        <option name="charting.chart.stackMode">stacked</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <table>
+        <title>Approximate count of execution methods used per Adversary</title>
+        <search>
+          <query>index=main sourcetype="attackeval:json"
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| eval Procedure=case(Procedure=="" OR isnull(Procedure) OR Procedure=="null",Criteria,1==1,Procedure)
+| stats count(eval(Detection_Type="2 Analytic")) as count_Analytic count(eval(Detection_Type="1 Telemetry")) as count_Telemetry count(eval(Detection_Type="0 None")) as count_None by Adversary,Step,Substep,Procedure
+| rex field=Procedure "(?i)(?&lt;tech1&gt;cmd|powershell|wmi|api|gui|\(\))"
+| rex field=Criteria "(?i)(?&lt;tech2&gt;cmd|powershell|wmi|api|gui|\(\))"
+| eval tech=mvdedup(mvappend(tech1,tech2,tech3))
+| eval tech=if(tech=="()","api",lower(tech))
+| chart count over tech by Adversary</query>
+          <earliest>0</earliest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>index=main sourcetype="attackeval:json" TacticGroup="$TacticGroup$"
+| eval Detection=trim('Detection{}') 
+| lookup detection-mapping.csv Detection OUTPUT Detection_Type_Coarse 
+| lookup Adversary-sort.csv Adversary OUTPUT sort_order label AS Adversary 
+| sort 0 Adversary,Participant_Name,Step,Substep 
+| eval Detection_Type=mvindex(mvsort(Detection_Type_Coarse),-1) 
+| eval Procedure=case(Procedure=="" OR isnull(Procedure) OR Procedure=="null",Criteria,1==1,Procedure)
+| stats count(eval(Detection_Type="2 Analytic")) as count_Analytic count(eval(Detection_Type="1 Telemetry")) as count_Telemetry count(eval(Detection_Type="0 None")) as count_None by Adversary,Step,Substep,Procedure
+| sort 0 Adversary,Step,Substep</query>
+          <earliest>0</earliest>
+          <latest></latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="count">100</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">none</option>
+        <option name="percentagesRow">false</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="rowNumbers">false</option>
+        <option name="totalsRow">false</option>
+        <option name="wrap">true</option>
+      </table>
+    </panel>
+  </row>
+</form>
